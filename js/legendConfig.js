@@ -35,6 +35,11 @@ const legendConfig = {
     label: "PA Future PEV",
     color: "red",
   },
+  "DVRPC-FuturePEV": {
+    iconType: "line",
+    label: "DVRPC Future PEV",
+    color: "red",
+  },
 };
 
 export default legendConfig;
