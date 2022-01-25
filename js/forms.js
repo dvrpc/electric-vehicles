@@ -45,8 +45,8 @@ const handleFormSelect = (selects, map) => {
         // add layer on first pass
         if (selected) {
           const mapLayer = secondaryMapLayers[layer];
-          map.addLayer(mapLayer, "road-pedestrian-case");
-          //  map.addLayer(mapLayer, "landcover");
+          // map.addLayer(mapLayer, "road-pedestrian-case");
+            map.addLayer(mapLayer, "landcover");
         }
       }
     });
