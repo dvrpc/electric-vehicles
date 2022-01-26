@@ -28,7 +28,7 @@ map.on('load', () => {
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
     handleLegend(allActiveToggles, legendContainer)
-
+    map.moveLayer('dvrpc-projected', 'dvrpc-current');
     // handle simple toggles - layers on/off and corresponding legend items on/off
     toggleForm.onchange = () => {
         activeInputs = handleForms('input', inputs, map)

@@ -57,50 +57,59 @@ const secondaryMapLayers = {
         'id': 'dvrpc-current',
         'type': 'circle',
         'source': 'pev',
-        'source-layer': 'pev',
+        'source-layer': 'pev_bg_centroids',
         'paint': {
-            // make circles larger as the user zooms from z12 to z22
             'circle-radius': {
-            'base': 1.75,
-            'stops': [[5, .75],[11, 2], [22, 180]]
-            },
-            'circle-color': [
-            'match',
-            ['get', 'TYPE'],
-            'current',
-            '#EA563D',
-            /* other */ '#ccc'
-            ]
+              property: 'CurPEV',
+              stops: [
+              [{zoom: 8, value: 2}, 1.5],
+              [{zoom: 8, value: 4}, 3],
+              [{zoom: 8, value: 8}, 5],
+              [{zoom: 8, value: 105}, 10],
+              [{zoom: 12, value: 2}, 3],
+              [{zoom: 12, value: 4}, 5],
+              [{zoom: 12, value: 8}, 8],
+              [{zoom: 12, value: 105}, 12],
+              ]
+              },
+              'circle-color': '#EA563D',
+              'circle-opacity':.75
             },
             "filter": ["all",
-            ["==","REGION","DVRPC"],
-            ["==", "TYPE", "current"]
+            ["==","MAPTYPE","DVRPC"],
+            [">=","CurPEV",0.1]
             ]   
     },
     'dvrpc-projected': {
-        'id': 'dvrpc-projected',
-        'type': 'circle',
-        'source': 'pev',
-        'source-layer': 'pev',
-        'paint': {
-            // make circles larger as the user zooms from z12 to z22
-            'circle-radius': {
-            'base': 1.75,
-            'stops': [[5, .75],[11, 2], [22, 180]]
-            },
-            'circle-color': [
-            'match',
-            ['get', 'TYPE'],
-            'projected',
-            '#3182D1',
-            /* other */ '#ccc'
+      'id': 'dvrpc-projected',
+      'type': 'circle',
+      'source': 'pev',
+      'source-layer': 'pev_bg_centroids',
+      'paint': {
+          // make circles larger as the user zooms from z12 to z22
+          'circle-radius': {
+            property: 'FutPEV',
+            stops: [
+            [{zoom: 8, value: 5}, 1.5],
+            [{zoom: 8, value: 11}, 2],
+            [{zoom: 8, value: 23}, 4],
+            [{zoom: 8, value: 50}, 7],
+            [{zoom: 8, value: 1500}, 10],
+            [{zoom: 11, value: 5}, 2],
+            [{zoom: 11, value: 11}, 3],
+            [{zoom: 11, value: 23}, 6],
+            [{zoom: 11, value: 50}, 9],
+            [{zoom: 11, value: 1500}, 12],
             ]
-        },
-        "filter": ["all",
-        ["==","REGION","DVRPC"],
-        ["==", "TYPE", "projected"]
-        ]  
-    },
+            },
+          'circle-color':'#3182D1',
+          'circle-opacity':.85
+      },
+      "filter": ["all",
+      ["==","MAPTYPE","DVRPC"],
+      [">=","FutPEV",0.1]
+      ]  
+  },
     'DVRPC-FuturePEV': {
         'id': 'DVRPC-FuturePEV',
         'type': 'fill',
@@ -122,6 +131,20 @@ const secondaryMapLayers = {
           'fill-color': expression2,
           'fill-opacity': 1
         }
+      },
+      'BG': {
+        'id': 'BG',
+        'type': 'line',
+        'source': 'census',
+        'source-layer': 'blocks',
+        'layout': {},
+        'paint': {
+          "line-width": .75,
+          "line-color": "#637886",
+        },
+        "filter": ["all",
+        ["==","DVRPC","Yes"]
+        ]  
       },
 }
 

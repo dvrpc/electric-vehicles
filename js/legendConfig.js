@@ -40,6 +40,11 @@ const legendConfig = {
     label: "DVRPC Future PEV",
     color: "red",
   },
+  "BG": {
+    iconType: "line",
+    label: "Block Group",
+    color: "red",
+  },
 };
 
 export default legendConfig;
