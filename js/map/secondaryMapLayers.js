@@ -62,10 +62,10 @@ const secondaryMapLayers = {
             'circle-radius': {
               property: 'CurPEV',
               stops: [
-              [{zoom: 8, value: 2}, 1.5],
-              [{zoom: 8, value: 4}, 3],
-              [{zoom: 8, value: 8}, 5],
-              [{zoom: 8, value: 105}, 10],
+              [{zoom: 8, value: 2}, 1],
+              [{zoom: 8, value: 4}, 2],
+              [{zoom: 8, value: 8}, 4],
+              [{zoom: 8, value: 105}, 8],
               [{zoom: 12, value: 2}, 3],
               [{zoom: 12, value: 4}, 5],
               [{zoom: 12, value: 8}, 8],
@@ -90,20 +90,20 @@ const secondaryMapLayers = {
           'circle-radius': {
             property: 'FutPEV',
             stops: [
-            [{zoom: 8, value: 5}, 1.5],
-            [{zoom: 8, value: 11}, 2],
-            [{zoom: 8, value: 23}, 4],
-            [{zoom: 8, value: 50}, 7],
-            [{zoom: 8, value: 1500}, 10],
-            [{zoom: 11, value: 5}, 2],
-            [{zoom: 11, value: 11}, 3],
-            [{zoom: 11, value: 23}, 6],
-            [{zoom: 11, value: 50}, 9],
-            [{zoom: 11, value: 1500}, 12],
+            [{zoom: 8, value: 5}, 2],
+            [{zoom: 8, value: 11}, 3],
+            [{zoom: 8, value: 23}, 5],
+            [{zoom: 8, value: 50}, 9],
+            [{zoom: 8, value: 1500}, 11],
+            [{zoom: 12, value: 5}, 2],
+            [{zoom: 12, value: 11}, 3],
+            [{zoom: 12, value: 23}, 6],
+            [{zoom: 12, value: 50}, 9],
+            [{zoom: 12, value: 1500}, 12],
             ]
             },
           'circle-color':'#3182D1',
-          'circle-opacity':.85
+          'circle-opacity':1
       },
       "filter": ["all",
       ["==","MAPTYPE","DVRPC"],
