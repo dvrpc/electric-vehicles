@@ -84,9 +84,9 @@
             <label class="flex-row flex-align-center flex-between label-select">
               PEV Distribution:
               <select>
-                <option value="BG">Block Group</option>
+                <!-- <option value="BG">Block Group</option> -->
                 <option value="PA-FuturePEV">PA Future PEV</option>
-                <option value="DVRPC-FuturePEV">DVRPC Future PEV</option>
+                <option value="DVRPC-CurrentPEV">DVRPC Current PEV</option>
               </select>
             </label>
             <fieldset>
@@ -104,39 +104,23 @@
             </fieldset>
           </form>
 
-          <h3 class="sidebar-h3">Section Subheader</h3>
-          <p>
-            Developed land federal highway administration intersection,
-            metropolitan planning organization not in my back yard planning
-            parking study ecosystem
-            <strong>sustainable communities</strong> strategy gentrification.
-            Loop detectors planner streetscape homeless suburb. But parks retail
-            sales tax air rights new urbanism minimum parking ratio.
-          </p>
+          <!-- <h3 class="sidebar-h3">Section Subheader</h3> -->
+          <div id="mcdStart" class='infoLeft' style="height:100vh;">
+            <div id="startContent">
+              <h1>Click the map to view Census Block Group level data.</h1>
+            </div>
+          </div>
 
-          <h3 class="sidebar-h3">Section Subheader</h3>
-          <p>
-            Compatible uses a geospatial analysis mode share street parking but
-            modernism. Feng shui youth county commercial corridor.
-            Unincorporated auction public works department community garden
-            household density <strong>school enrollment</strong>.
-          </p>
+        
 
-          <h3 class="sidebar-h3">Section Subheader</h3>
-          <p>
-            <strong>Census-designated place</strong> unique farmland Euclid v.
-            Ambler, internal functional compatible uses urban organic
-            transferable development right transit signal urban planning Census
-            tract. Parklet local control vacant sharrows groceries
-            transit-oriented development highway ramp not in my back yard loops
-            and lollipops ministerial act.
-          </p>
+         
         </div>
 
         <footer>contact: <a href="mailto:">name</a></footer>
       </section>
 
       <div id="map" class="map">
+       
         <div class="legend-container">
           <!-- <h4 class="legend-title">legend</h4> -->
           <div id="legend-container"></div>
@@ -184,7 +168,6 @@
 
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.js"></script>
-    <script src="js/pevPA.js"></script>
-    <script src="js/dvrpcPEV.js"></script>
+
   </body>
 </html>

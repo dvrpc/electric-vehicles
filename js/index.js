@@ -28,7 +28,8 @@ map.on('load', () => {
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
     handleLegend(allActiveToggles, legendContainer)
-    map.moveLayer('dvrpc-projected', 'dvrpc-current');
+    // This functiin reorders point features
+  //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
     // handle simple toggles - layers on/off and corresponding legend items on/off
     toggleForm.onchange = () => {
         activeInputs = handleForms('input', inputs, map)
@@ -37,6 +38,67 @@ map.on('load', () => {
 
         handleLegend(allActiveToggles, legendContainer)
     }
+
+    map.addSource('dvrpcPEVBG', {
+        type: 'vector',
+        url: 'https://tiles.dvrpc.org/data/pev.json'
+        });
+
+    map.addLayer({
+        'id': 'dvrpcPEVBG',
+        'type': 'fill',
+        'source': 'dvrpcPEVBG',
+        'source-layer': 'dvrpc_pev_bg',
+        'layout': {}, 
+        'paint': {
+            'fill-color': '#627BC1',
+            'fill-opacity': [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            1,
+            0.5
+            ]
+        }
+        });
+    var hoveredStateId = null;
+   
+    // When the user moves their mouse over the state-fill layer, we'll update the
+    // feature state for the feature under the mouse.
+    map.on('mousemove', 'dvrpcPEVBG', (e) => {
+      //  console.log(e.features[0].properties);
+     //   var tileID = e.features[0].properties.GEOID10;
+        map.getCanvas().style.cursor = "pointer";
+        if (e.features.length > 0) {
+        console.log(e.features[0].properties.GEOID10)
+        if (hoveredStateId !== null) {
+        map.setFeatureState(
+        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { hover: false }
+        );
+        }
+        hoveredStateId = e.features[0].properties.GEOID10;
+        map.setFeatureState(
+        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { hover: true }
+        );
+        }
+    });
+        
+        // When the mouse leaves the state-fill layer, update the feature state of the
+        // previously hovered feature.
+    map.on('mouseleave', 'dvrpcPEVBG', () => {
+        map.getCanvas().style.cursor = "";
+        if (hoveredStateId !== null) {
+        map.setFeatureState(
+        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { hover: false }
+        );
+        }
+        hoveredStateId = null;
+    });
+
+    
+      
 })
 
 // loading spinner 

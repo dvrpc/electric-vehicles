@@ -10,11 +10,6 @@
 
 */
 const legendConfig = {
-  "dvrpc-pev": {
-    iconType: "circle",
-    label: "dvrpc-pev",
-    color: "green",
-  },
   "dvrpc-current": {
     iconType: "circle",
     label: "Current PEV",
@@ -25,26 +20,21 @@ const legendConfig = {
     label: "Projected PEV",
     color: "#3182D1",
   },
-  "truck-v3": {
-    iconType: "circle",
-    label: "truck v3",
-    color: "orange",
-  },
   "PA-FuturePEV": {
     iconType: "line",
     label: "PA Future PEV",
     color: "red",
   },
-  "DVRPC-FuturePEV": {
+  "DVRPC-CurrentPEV": {
     iconType: "line",
-    label: "DVRPC Future PEV",
+    label: "DVRPC Current PEV",
     color: "red",
   },
-  "BG": {
-    iconType: "line",
-    label: "Block Group",
-    color: "red",
-  },
+  // "BG": {
+  //   iconType: "line",
+  //   label: "Block Group",
+  //   color: "red",
+  // },
 };
 
 export default legendConfig;

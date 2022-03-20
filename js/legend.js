@@ -3,9 +3,7 @@ import legendConfig from "./legendConfig.js";
 // fncs to handle legends
 const createLegendItem = (val) => {
   const legendDetails = legendConfig[val];
-  // console.log(legendConfig["truck-v3"]);
   if (legendDetails.label === "PA Future PEV") {
-    // alert("PA Future");
     return `
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">
@@ -21,18 +19,39 @@ const createLegendItem = (val) => {
  </div>
 `;
   }
-  return `
+  else if (legendDetails.label === "DVRPC Current PEV") {
+    return `
   <div class="flex-row flex-align-center legend-item">
-              <span class="legend-icon-${legendDetails.iconType}" style="background-color:${legendDetails.color};"></span>
-               <span class="legend-text">${legendDetails.label}</span>
+  <div id="legend-box2">
+  <div id='legend'>
+        <strong>Current PEV</strong>
+        <div class='legend clearfix'>
+          <span style='background:#b2182b;'></span>
+          <span style='background:#ef8a62;'></span>
+          <span style='background:#fddbc7;'></span>
+          <span style='background:#f7f7f7;'></span>
+          <span style='background:#d1e5f0;'></span>
+          <span style='background:#67a9cf;'></span>
+          <span style='background:#2166ac;'></span>
+          <label>10</label>
+          <label>16</label>
+          <label>23</label>
+          <label>32</label>
+          <label>50</label>
+          <label>100</label>
+          <label>1234</label>
+          <!-- <small>Source: <a href="#link to source">Name of source</a></small> -->
+          </div>
  </div>
 `;
-  // `
-  //         <div class="flex-row flex-align-center legend-item">
-  //             <span class="legend-icon-${legendDetails.iconType}" style="background-color:${legendDetails.color};"></span>
-  //             <span class="legend-text">${legendDetails.label}</span>
-  //         </div>
-  //     `;
+  }
+  return `
+  <div class="flex-row flex-align-center legend-item">
+        <span class="legend-icon-${legendDetails.iconType}" style="background-color:${legendDetails.color};"></span>
+        <span class="legend-text">${legendDetails.label}</span>
+  
+ </div>
+`;
 };
 
 const handleLegend = (vals, container) => {
