@@ -39,6 +39,17 @@ let expressionPA1 = ['interpolate',['linear'],
 ];
 
 const secondaryMapLayers = {
+  'DVRPC-BG': {
+    'id': 'DVRPC-BG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+   'fill-color': '#FFF',
+   'fill-opacity': 0.0,
+    },
+},
     'dvrpc-current': {
         'id': 'dvrpc-current',
         'type': 'circle',

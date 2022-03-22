@@ -15,6 +15,13 @@ const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
 const selects = toggleForm.querySelectorAll('select')
 
+$(document).ready(function () {
+    $("button").click(function () {
+            $('button').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+
 
 // map
 const map = makeMap()

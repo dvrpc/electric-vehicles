@@ -74,14 +74,109 @@
     <main class="flex-row flex-between main-content-wrapper">
       <section class="sidebar">
         <div class="sidebar-content">
-          <h2 class="sidebar-h2">Main Header</h2>
+          <!-- <h2 class="sidebar-h2">Main Header</h2> -->
 
-          <h3 class="sidebar-h3">Toggle Map Layers</h3>
+          <h3 class="sidebar-h3">Select a Geography</h3>
+         
+          <div
+          id="scoreTogglers"
+          data-title="Analysis Methods"
+          data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
+          >
+          <div id="scoreBox">
+            <div id="AS" class="score-cb">
+              <input
+                type="radio"
+                class="lbox-AS"
+                id="control_01"
+                name="select"
+                value="1"
+                checked
+              />
+              <label id="label-box-AS" class="AS" for="control_01">
+                DVRPC Region
+              </label>
+            </div>
+          </div>
+
+          <div id="scoreBox">
+            <div id="BS" class="score-cb">
+              <input
+                type="radio"
+                class="lbox-BS"
+                id="control_02"
+                name="select"
+                value="2"
+              />
+              <label id="label-box-BS" class="BS" for="control_02">
+                Pennsylvania
+              </label>
+            </div>
+          </div>
+
+          <div id="scoreBox">
+            <div id="WS" class="score-cb">
+              <input
+                type="radio"
+                class="lbox-WS"
+                id="control_03"
+                name="select"
+                value="3"
+              />
+              <label id="label-box-WS" class="WS" for="control_03">
+               New Jersey
+              </label>
+            </div>
+          </div>
+          </div>
+
+          <h3 class="sidebar-h3">Select a Map Theme</h3>
+          <div
+          id="scoreTogglers"
+          data-title="Analysis Methods"
+          data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
+          >
+          <div id="scoreBox2">
+            <div id="AS" class="score-cb">
+              <input
+                type="radio"
+                class="lbox-AS"
+                id="control_01"
+                name="select"
+                value="1"
+                checked
+              />
+              <label id="label-box-AS" class="AS" for="control_01">
+               PEV Distribution
+              </label>
+            </div>
+          </div>
+
+          <div id="scoreBox2">
+            <div id="BS" class="score-cb">
+              <input
+                type="radio"
+                class="lbox-BS"
+                id="control_02"
+                name="select"
+                value="2"
+              />
+              <label id="label-box-BS" class="BS" for="control_02">
+                Workplcae Charging
+              </label>
+            </div>
+          </div>
+          <div id="scoreBox2">
+          </div>
+
+          </div>
+
           <form id="toggle-form" class="sidebar-form">
             <label class="flex-row flex-align-center flex-between label-select">
-              PEV Distribution:
+              Choose a Map Layer:
               <select>
                 <!-- <option value="BG">Block Group</option> -->
+                <option value="DVRPC-BG">Block Group</option>
                 <option value="DVRPC-CurrentPEV">DVRPC Current PEV</option>
                 <option value="DVRPC-FuturePEV">DVRPC Future PEV</option>
                 <option value="PA-FuturePEV">PA Future PEV</option>
@@ -96,7 +191,7 @@
               </label>
               <br />
               <label class="label-input">
-                <input type="checkbox" value="dvrpc-projected" checked />
+                <input type="checkbox" value="dvrpc-projected" />
                 Projected - Number of PEV's
               </label>
             </fieldset>
@@ -114,10 +209,16 @@
               <div id="mcdName"></div>
               <div id="mcdInfo"></div>
             </div>
-            <div id='results'></div> 
-        </div>
 
-    
+            <div class='data-wrapper' id='data-wrapper'>     
+            <h2 class='data-subheader'>
+              Plug-In Electric Vehicle Distribution</h2>
+            <!-- <span class='data-heading-small'><br>(within 1/2 mile) as of 2013</span></h2>  -->
+            <div id='results'></div> 
+            </div>
+
+          </div>
+
         </div>
 
         <footer>contact: <a href="mailto:">name</a></footer>
@@ -170,8 +271,25 @@
       </div>
     </div>
 
+    <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"
+     ></script>
+    <script type="text/javascript" src="js/numeral.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+  
+  <script>
+      var _gaq = [["_setAccount", "UA-9825778-1"], ["_trackPageview"]];
+      (function (d) {
+        var g = d.createElement("script"),
+          s = d.scripts[0];
+        g.src = "//www.google-analytics.com/ga.js";
+        s.parentNode.insertBefore(g, s);
+      })(document);
+    </script>
 
   </body>
 </html>
