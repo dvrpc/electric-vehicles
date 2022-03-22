@@ -3,7 +3,7 @@ import legendConfig from "./legendConfig.js";
 // fncs to handle legends
 const createLegendItem = (val) => {
   const legendDetails = legendConfig[val];
-  if (legendDetails.label === "PA Future PEV") {
+  if (legendDetails.label === "PA Future PEV" ) {
     return `
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">
@@ -19,20 +19,20 @@ const createLegendItem = (val) => {
  </div>
 `;
   }
-  else if (legendDetails.label === "DVRPC Current PEV") {
+  else if (legendDetails.label === "DVRPC Current PEV"||legendDetails.label === "DVRPC Future PEV") {
     return `
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">
   <div id='legend'>
-        <strong>Current PEV</strong>
+        <strong>Current - PEVs Per 100 People</strong>
         <div class='legend clearfix'>
-          <span style='background:#b2182b;'></span>
-          <span style='background:#ef8a62;'></span>
-          <span style='background:#fddbc7;'></span>
-          <span style='background:#f7f7f7;'></span>
-          <span style='background:#d1e5f0;'></span>
-          <span style='background:#67a9cf;'></span>
-          <span style='background:#2166ac;'></span>
+          <span class='gb-1'></span>
+          <span class='gb-2'></span>
+          <span class='gb-3'></span>
+          <span class='gb-4'></span>
+          <span class='gb-5'></span>
+          <span class='gb-6'></span>
+          <span class='gb-7'></span>
           <label>10</label>
           <label>16</label>
           <label>23</label>

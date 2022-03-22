@@ -30,6 +30,11 @@ const legendConfig = {
     label: "DVRPC Current PEV",
     color: "red",
   },
+  "DVRPC-FuturePEV": {
+    iconType: "line",
+    label: "DVRPC Future PEV",
+    color: "red",
+  },
   // "BG": {
   //   iconType: "line",
   //   label: "Block Group",
