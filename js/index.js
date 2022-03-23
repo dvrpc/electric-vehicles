@@ -5,6 +5,13 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups} from "./click.js";
+import {
+    togglerDVRPC,
+    togglerPA,
+    togglerNJ,
+    togglerPEV,
+    togglerWP
+  } from "./toggler.js";
 
 
 const modal = document.getElementById('modal')
@@ -14,23 +21,20 @@ const legendContainer = document.getElementById('legend-container')
 const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
 const selects = toggleForm.querySelectorAll('select')
-$('#PA-FuturePEV').hide();
-document.getElementById("BS").addEventListener("click", function () {
-    // alert("Hello! I am an alert box!!");
-    // document.getElementById("PA-Layers")$("#PA-Layers").css({
-    //   "display": "block",
-    // });
-    $('#PA-FuturePEV').show();
-    // $("#layout_select")
-    // .find("option")
-    // .show()
-    // .not("option[value*='" + this.value + "']").hide();
 
-  });
+$('#PA-FuturePEV').hide();
+
 // map
 const map = makeMap()
 
 map.on('load', () => {
+      // wiring for on-click event on the map
+  togglerDVRPC(map);
+  togglerPA(map);
+  togglerNJ(map);
+  togglerPEV(map);
+  togglerWP(map);
+
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer])
  //   for(const layer in layers) map.addLayer(layers[layer], 'road-label')
