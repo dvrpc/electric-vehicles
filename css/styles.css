@@ -335,6 +335,10 @@ input[class="lbox-BS"],
 input[class="lbox-WS"] {
   display: none;
 }
+.red
+{
+  background:#254661;
+}
 .AS {
   background: #254661!important;
   border: 2px solid #254661 !important;
@@ -344,6 +348,9 @@ input[class="lbox-WS"] {
   background: #737a85 !important;
   border: 2px solid #737a85 !important;
   color: white;
+}
+.PA-Layers {
+display:none;
 }
 .WS {
   /* background: #d0d1ca!important;

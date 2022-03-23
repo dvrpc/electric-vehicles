@@ -14,15 +14,19 @@ const legendContainer = document.getElementById('legend-container')
 const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
 const selects = toggleForm.querySelectorAll('select')
+$('#PA-FuturePEV').hide();
+document.getElementById("BS").addEventListener("click", function () {
+    // alert("Hello! I am an alert box!!");
+    // document.getElementById("PA-Layers")$("#PA-Layers").css({
+    //   "display": "block",
+    // });
+    $('#PA-FuturePEV').show();
+    // $("#layout_select")
+    // .find("option")
+    // .show()
+    // .not("option[value*='" + this.value + "']").hide();
 
-$(document).ready(function () {
-    $("button").click(function () {
-            $('button').removeClass('active');
-            $(this).addClass('active');
-        });
-    });
-
-
+  });
 // map
 const map = makeMap()
 
