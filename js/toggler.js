@@ -14,6 +14,12 @@ const togglerDVRPC = (map) => {
   $('#NJ').children().eq(1).addClass('dull');  
   $(this).children().eq(1).removeClass();   
   $(this).children().eq(1).addClass('active');  
+
+  map.setFilter('county-outline', ['==', 'DVRPC', 'Yes']);
+  map.setFilter('municipality-outline', ['==', 'DVRPC', 'Yes']);
+  map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","DVRPC"],[">=","CurPEV",0.1]]);
+  map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","DVRPC"],[">=","FutPEV",0.1]]);
+  map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "visible");
  
     // $("input:checkbox[value='as_osm_limits']")
     //   .prop("checked", false)
@@ -38,8 +44,7 @@ const togglerDVRPC = (map) => {
     // $("label.NJ").css({
     //   "background": "#737a85",
     // });
-    // map.setLayoutProperty("stations", "visibility", "visible");
-    // map.setLayoutProperty("stationsB", "visibility", "none");
+
     // map.setLayoutProperty("stationsW", "visibility", "none");
   });
 };
@@ -59,6 +64,14 @@ const togglerPA = (map) => {
     $('#NJ').children().eq(1).addClass('dull');   
     $(this).children().eq(1).removeClass();   
     $(this).children().eq(1).addClass('active');  
+
+    map.setFilter('county-outline', ['==', 'STATE', 'PA']);
+    map.setFilter('municipality-outline', ['==', 'STATE', 'PA']);
+    map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","PA"],[">=","CurPEV",0.1]]);
+    map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","PA"],[">=","FutPEV",0.1]]);
+    map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "none");
+  //  map.setLayoutProperty("county-outline", "filter", "['==', 'STATE', 'PA']");
+  //  map.setLayoutProperty("municipality-outline", "filter", "['==', 'STATE', 'PA']");
     //  $("input:checkbox[value='as_osm_limits']")
     //   .prop("checked", false)
     //   .trigger("click");
@@ -97,6 +110,12 @@ const togglerNJ = (map) => {
   $('#PA').children().eq(1).addClass('dull');   
   $(this).children().eq(1).removeClass();   
   $(this).children().eq(1).addClass('active');  
+
+
+  map.setFilter('county-outline', ['==', 'STATE', 'NJ']);
+  map.setFilter('municipality-outline', ['==', 'STATE', 'NJ']);
+  map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","NJ"],[">=","CurPEV",0.1]]);
+  map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","NJ"],[">=","FutPEV",0.1]]);
   });
 };
 // Bike Score CheckBox toggle

@@ -25,7 +25,19 @@ const handleBlockGroups = function (props,map) {
   county  +
   '</span><span></span> County, <span>' +
   state +
-  '</span></small></h1>' ;
+  "</span></small></h1><div class='data-row' style='marging-top:9px'><span class='data-info'>Population</span><span class='data-value'> " +
+  props.POP +
+  "</span></div>" +
+  "<br><div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
+  props.HOUSUNIT+
+  "</span></div>" +
+  "<br><div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
+  props.JOBS +
+  "</span></div>" +
+  "<br><div class='data-row-last'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
+  props.PASS_VEH  +
+  "</span></div>" 
+  ;
   document.getElementById("mcdName").innerHTML = mcdInfo;
 
   var BGresults =
@@ -105,5 +117,48 @@ const handleBlockGroups = function (props,map) {
     //   zoom: 15,
     // });
 }
+
+const handleMCD = function (props,map) {
+ 
+  let lookupState = {
+    '34': "New Jersey",
+    '42': "Pennsylvania"
+  };
+
+  let state = lookupState[props.statefp10];
+
+  let lookupCounty = {
+    '017': "Bucks",
+    '029':"Chester",
+    '045': "Delaware",
+    '091': "Montgomery",
+    '101': "Philadelphia",
+    '005': "Burlington",
+    '007': "Camden",
+    '015': "Gloucester",
+    '021': "Mercer"
+  };
+
+  let county = lookupCounty[props.countyfp10];
+
+  var mcdAGGInfo = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
+  county  +
+  '</span><span></span> County, <span>' +
+  state +
+  "</span></small></h1><div class='data-row' style='marging-top:9px'><span class='data-info'>Population</span><span class='data-value'> " +
+  props.POP +
+  "</span></div>" +
+  "<br><div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
+  props.HOUSUNIT+
+  "</span></div>" +
+  "<br><div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
+  props.JOBS +
+  "</span></div>" +
+  "<br><div class='data-row-last'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
+  props.PASS_VEH  +
+  "</span></div>" 
+  ;
+  document.getElementById("mcdAGG").innerHTML = mcdAGGInfo;
+}
   
-export {handleBlockGroups};
+export {handleBlockGroups, handleMCD};

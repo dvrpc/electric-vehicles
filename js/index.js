@@ -4,7 +4,7 @@ import layers from './map/mapLayers.js'
 import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
-import {handleBlockGroups} from "./click.js";
+import {handleBlockGroups, handleMCD} from "./click.js";
 import {
     togglerDVRPC,
     togglerPA,
@@ -62,6 +62,42 @@ map.on('load', () => {
     });
 
     map.addLayer({
+        'id': 'dvrpcPEVMCD',
+        'type': 'fill',
+        'source': 'dvrpcPEVBG',
+        'source-layer': 'dvrpc_pev_mcd',
+        'layout': {}, 
+        'paint': {
+            // 'fill-color': '#e2eb32',
+            // // 'fill-opacity': 0.0,
+            // 'fill-outline-color':'#f2f12d',
+            'fill-opacity': 0.0
+        }
+    });
+
+    map.addLayer({
+        'id': 'dvrpcPEVBG-line',
+        'type': 'line',
+        'source': 'dvrpcPEVBG',
+        'source-layer': 'dvrpc_pev_bg',
+        'layout': {}, 
+        'paint': {
+            "line-width": .75,
+            "line-color": "#7e8d92",
+            "line-opacity": {
+                base: 9,
+                stops: [
+                  [9, .4],
+                  [10, .5],
+                  [11, .65],
+                  [12, .7],
+                  [13, .8],
+                  [14, .9],
+                ],
+        }},
+    });
+
+    map.addLayer({
         'id': 'dvrpcPEVBG',
         'type': 'fill',
         'source': 'dvrpcPEVBG',
@@ -88,7 +124,7 @@ map.on('load', () => {
     //   var tileID = e.features[0].properties.GEOID10;
         map.getCanvas().style.cursor = "pointer";
         if (e.features.length > 0) {
-        console.log(e.features[0])
+      //  console.log(e.features[0])
         if (hoveredStateId !== null) {
         map.setFeatureState(
         { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
@@ -121,18 +157,21 @@ map.on('load', () => {
         document.getElementById("mcdStart").style.display = "none";
         document.getElementById("mcdDetails").style.display = "inline-block";
         var props = e.features[0].properties;
-       // var coordinates = marker.features[0].geometry.coordinates;
+   //     var coordinates = e.features[0].geometry.coordinates[0];
         // var FID = e.features[0].id;
-      //  console.log(FID);
-          // $("#chart2013").css("display", "block");
-          // $("#data-wrapper").css("display", "block");
-          // handleSidebarDisplay()
+     //     console.log(coordinates);
+        // handleSidebarDisplay()
           handleBlockGroups(props,map)
-          // handleHighlight(FID)
+        // handleHighlight(FID)
       });
 
+
+    map.on('click','dvrpcPEVMCD', (e) => {
+        var props = e.features[0].properties;
+        handleMCD(props)
+    });
+
     
-      
 })
 
 // loading spinner 

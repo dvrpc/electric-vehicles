@@ -16,7 +16,14 @@ const layers = {
     source: "census",
     "source-layer": "municipalities",
     paint: {
-      "line-width": 0.5,
+      "line-width":{
+        base: 9,
+        stops: [
+          [8, 1],
+          [12, 3],
+          [13, 5],
+        ],
+      },
       "line-color": "#4a5c64",
     },
     filter: ["==", "DVRPC", "Yes"],
