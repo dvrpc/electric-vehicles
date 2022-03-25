@@ -10,14 +10,19 @@
 
 */
 const legendConfig = {
+  "charging": {
+    iconType: "circle",
+    label: "Charging Locations",
+    color: "#EA563D",
+  },
   "dvrpc-current": {
     iconType: "circle",
-    label: "Current PEV",
+    label: "Current PEVs (Centroid)",
     color: "#EA563D",
   },
   "dvrpc-projected": {
     iconType: "circle",
-    label: "Projected PEV",
+    label: "Projected PEVs (Centroid)",
     color: "#3182D1",
   },
   "PA-FuturePEV": {
@@ -25,14 +30,14 @@ const legendConfig = {
     label: "PA Future PEV",
     color: "red",
   },
-  "DVRPC-CurrentPEV": {
+  "DVRPC-CurrentPEV-BG": {
     iconType: "line",
-    label: "DVRPC Current PEV",
+    label: "Current PEVs (Block Group)",
     color: "red",
   },
-  "DVRPC-FuturePEV": {
+  "DVRPC-FuturePEV-BG": {
     iconType: "line",
-    label: "DVRPC Future PEV",
+    label: "Future PEVs (Block Group)",
     color: "red",
   },
   "DVRPC-BG": {

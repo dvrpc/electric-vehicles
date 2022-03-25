@@ -29,15 +29,15 @@ const map = makeMap()
 
 map.on('load', () => {
       // wiring for on-click event on the map
-  togglerDVRPC(map);
-  togglerPA(map);
-  togglerNJ(map);
-  togglerPEV(map);
-  togglerWP(map);
+    togglerDVRPC(map);
+    togglerPA(map);
+    togglerNJ(map);
+    togglerPEV(map);
+    togglerWP(map);
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer])
- //   for(const layer in layers) map.addLayer(layers[layer], 'road-label')
+    //   for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
     let activeInputs = handleForms('input', inputs, map)
@@ -75,15 +75,30 @@ map.on('load', () => {
         }
     });
 
+    map.addSource('dvrpcPEVBG-line', {
+        type: 'vector',
+        url: 'https://tiles.dvrpc.org/data/pev.json'
+    });
+
     map.addLayer({
         'id': 'dvrpcPEVBG-line',
         'type': 'line',
-        'source': 'dvrpcPEVBG',
+        'source': 'dvrpcPEVBG-line',
         'source-layer': 'dvrpc_pev_bg',
         'layout': {}, 
         'paint': {
-            "line-width": .75,
-            "line-color": "#7e8d92",
+            "line-width": [
+                'case',
+                ['boolean', ['feature-state', 'hover'], false],
+                6,
+                1
+                ],
+            "line-color":[
+                'case',
+                ['boolean', ['feature-state', 'hover'], false],
+                "#FF0000",
+                "#7e8d92"
+                ],
             "line-opacity": {
                 base: 9,
                 stops: [
@@ -95,6 +110,7 @@ map.on('load', () => {
                   [14, .9],
                 ],
         }},
+        "filter": [">=", "POP", 0.1],
     });
 
     map.addLayer({
@@ -113,7 +129,8 @@ map.on('load', () => {
             .8,
             0.0
             ]
-        }
+        },
+        "filter": [">=", "POP", 0.1],
     });
     var hoveredStateId = null;
    
@@ -121,7 +138,8 @@ map.on('load', () => {
     // feature state for the feature under the mouse.
     map.on('mousemove', 'dvrpcPEVBG', (e) => {
     //  console.log(e.features[0].properties);
-    //   var tileID = e.features[0].properties.GEOID10;
+        var tileID = e.features[0].properties.GEOID10;
+     //   var props = e.features[0].properties.GEOID10;
         map.getCanvas().style.cursor = "pointer";
         if (e.features.length > 0) {
       //  console.log(e.features[0])
@@ -130,26 +148,42 @@ map.on('load', () => {
         { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: false }
         );
+        map.setFeatureState(
+            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { hover: false }
+        );
         }
         hoveredStateId = e.features[0].id;
         map.setFeatureState(
         { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: true }
         );
+        map.setFeatureState(
+            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { hover: true}
+        );
         }
+     //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', tileID]);
+      //  handleHighlight(props)
     });
         
     // When the mouse leaves the state-fill layer, update the feature state of the
     // previously hovered feature.
     map.on('mouseleave', 'dvrpcPEVBG', () => {
+      //  var tileID = e.features[0].properties.GEOID10;
         map.getCanvas().style.cursor = "";
         if (hoveredStateId !== null) {
         map.setFeatureState(
         { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: false }
         );
+        map.setFeatureState(
+            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { hover: false }
+        );
         }
         hoveredStateId = null;
+     //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', 999999]);
     });
 
     map.on('click','dvrpcPEVBG', (e) => {
@@ -157,14 +191,13 @@ map.on('load', () => {
         document.getElementById("mcdStart").style.display = "none";
         document.getElementById("mcdDetails").style.display = "inline-block";
         var props = e.features[0].properties;
-   //     var coordinates = e.features[0].geometry.coordinates[0];
+        handleBlockGroups(props,map)
+        // var coordinates = e.features[0].geometry.coordinates[0];
         // var FID = e.features[0].id;
-     //     console.log(coordinates);
+        // console.log(coordinates);
         // handleSidebarDisplay()
-          handleBlockGroups(props,map)
         // handleHighlight(FID)
       });
-
 
     map.on('click','dvrpcPEVMCD', (e) => {
         var props = e.features[0].properties;

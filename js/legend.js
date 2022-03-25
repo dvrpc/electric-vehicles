@@ -19,7 +19,7 @@ const createLegendItem = (val) => {
  </div>
 `;
   }
-  else if (legendDetails.label === "DVRPC Current PEV"||legendDetails.label === "DVRPC Future PEV") {
+  else if (legendDetails.label === "Current PEVs (Block Group)"||legendDetails.label === "Future PEVs (Block Group)") {
     return `
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">

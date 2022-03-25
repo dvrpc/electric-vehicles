@@ -39,6 +39,30 @@ let expressionPA1 = ['interpolate',['linear'],
 ];
 
 const secondaryMapLayers = {
+  charging: {
+    id: "charging",
+    type: "circle",
+    source: "charging",
+    // minzoom: 11,
+    layout: {
+      visibility: "none",
+    },
+    paint: {
+      "circle-stroke-color": "#3C4C34",
+      "circle-stroke-width": 0.5,
+      "circle-color": "#c8ffaf",
+      "circle-radius": {
+        base: 9,
+        stops: [
+          [10, 2],
+          [12, 2.5],
+          [13, 3.5],
+          [14, 4],
+          [15, 4.4],
+        ],
+      },
+    },
+  },
   'DVRPC-BG': {
     'id': 'DVRPC-BG',
     'type': 'fill',
@@ -107,8 +131,8 @@ const secondaryMapLayers = {
       [">=","FutPEV",0.1]
       ]  
   },
-  'DVRPC-CurrentPEV': {
-        'id': 'DVRPC-CurrentPEV',
+  'DVRPC-CurrentPEV-BG': {
+        'id': 'DVRPC-CurrentPEV-BG',
         'type': 'fill',
         'source': 'pev',
         'source-layer': 'dvrpc_pev_bg',
@@ -128,8 +152,8 @@ const secondaryMapLayers = {
       },
         }
     },
-    'DVRPC-FuturePEV': {
-      'id': 'DVRPC-FuturePEV',
+    'DVRPC-FuturePEV-BG': {
+      'id': 'DVRPC-FuturePEV-BG',
       'type': 'fill',
       'source': 'pev',
       'source-layer': 'dvrpc_pev_bg',
