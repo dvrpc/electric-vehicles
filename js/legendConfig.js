@@ -13,7 +13,7 @@ const legendConfig = {
   "charging": {
     iconType: "circle",
     label: "Charging Locations",
-    color: "#EA563D",
+    color: "#c8ffaf",
   },
   "dvrpc-current": {
     iconType: "circle",
