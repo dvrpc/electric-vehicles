@@ -21,24 +21,28 @@ const handleBlockGroups = function (props,map) {
 
   let county = lookupCounty[props.countyfp10];
 
-  var mcdInfo = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
+  var BGName = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
   county  +
   '</span><span></span> County, <span>' +
   state +
-  "</span></small></h1><div class='data-row' style='marging-top:9px'><span class='data-info'>Population</span><span class='data-value'> " +
+  "</span></small></h1>" 
+  ;
+  document.getElementById("BGName").innerHTML = BGName;
+
+  var BGInfo = "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   props.POP +
   "</span></div>" +
-  "<br><div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
   props.HOUSUNIT+
   "</span></div>" +
-  "<br><div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
   props.JOBS +
   "</span></div>" +
-  "<br><div class='data-row-last'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   props.PASS_VEH  +
   "</span></div>" 
   ;
-  document.getElementById("mcdName").innerHTML = mcdInfo;
+  document.getElementById("BGInfo").innerHTML = BGInfo;
 
   var BGresults =
   "<div><table class='dataTable'>" +
@@ -93,20 +97,6 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "</table></div>";
-
-  // var BGresults = "<div class='data-row' style='marging-top:9px'><span class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</span><span class='data-value'> " +
-  // props.MUN_NAME +
-  // "</span></div>" +
-  // "<br><div class='data-row'><span class='data-info'>Projected Number of PEVs</span><span class='data-value'> " +
-  // props.MUN_NAME+
-  // "</span></div>" +
-  // "<br><div class='data-row'><span class='data-info'>Current - PEVs per Sq. Mi. </span><span class='data-value'> " +
-  // props.MUN_NAME +
-  // "</span></div>" +
-  // "<br><div class='data-row-last'><span class='data-info'>Projected - PEVs per Sq. Mi.</span><span class='data-value'> " +
-  // props.MUN_NAME  +
-  // "</span></div>" 
-  // ;
   document.getElementById("results").innerHTML = BGresults;
 
     // map.flyTo({
@@ -124,41 +114,43 @@ const handleMCD = function (props,map) {
     '34': "New Jersey",
     '42': "Pennsylvania"
   };
-
-  let state = lookupState[props.statefp10];
-
+  let state = lookupState[props.FIRST_MC_1.slice(0,2)];
   let lookupCounty = {
-    '017': "Bucks",
-    '029':"Chester",
-    '045': "Delaware",
-    '091': "Montgomery",
-    '101': "Philadelphia",
-    '005': "Burlington",
-    '007': "Camden",
-    '015': "Gloucester",
-    '021': "Mercer"
+    '42017': "Bucks",
+    '42029':"Chester",
+    '42045': "Delaware",
+    '42091': "Montgomery",
+    '42101': "Philadelphia",
+    '34005': "Burlington",
+    '34007': "Camden",
+    '34015': "Gloucester",
+    '34021': "Mercer"
   };
-
-  let county = lookupCounty[props.countyfp10];
-
-  var mcdAGGInfo = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
+  let county = lookupCounty[props.FIRST_MC_1.slice(0,5)];
+  var mcdName = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
   county  +
   '</span><span></span> County, <span>' +
   state +
-  "</span></small></h1><div class='data-row' style='marging-top:9px'><span class='data-info'>Population</span><span class='data-value'> " +
+  "</span></small></h1>" 
+  ;
+  document.getElementById("mcdName").innerHTML = mcdName;
+
+  var mcdAGGInfo = "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   props.POP +
   "</span></div>" +
-  "<br><div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
   props.HOUSUNIT+
   "</span></div>" +
-  "<br><div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
   props.JOBS +
   "</span></div>" +
-  "<br><div class='data-row-last'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
+  "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   props.PASS_VEH  +
   "</span></div>" 
   ;
   document.getElementById("mcdAGG").innerHTML = mcdAGGInfo;
+  
+
 }
   
 export {handleBlockGroups, handleMCD};

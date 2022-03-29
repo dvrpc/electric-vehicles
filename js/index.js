@@ -188,8 +188,8 @@ map.on('load', () => {
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
-        document.getElementById("mcdStart").style.display = "none";
-        document.getElementById("mcdDetails").style.display = "inline-block";
+        document.getElementById("mapStart").style.display = "none";
+        document.getElementById("mapDetails").style.display = "inline-block";
         var props = e.features[0].properties;
         handleBlockGroups(props,map)
         // var coordinates = e.features[0].geometry.coordinates[0];

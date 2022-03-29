@@ -10,7 +10,7 @@ body {
 }
 h1 {
   text-align: center;
-  font-size: inherit;
+  /* font-size: inherit; */
 }
 fieldset {
   font-size: 1em;
@@ -261,31 +261,6 @@ nav {
 .label-select {
   margin-bottom: var(--padding);
 }
-#mcdStart {
-  display: inline-block;
-}
-.infoLeft {
-  /* padding: 10px; */
-  width: 100%;
-  height: 100%;
-  background-color: var(--theme-offwhite2);
-  margin-top: 10px;
-}
-#startContent {
-  color: #fff;
-  border-radius: 3px;
-  text-align: center;
-  margin: 10px auto 13px auto;
-  padding: 0px 10%;
-  background-color: var(--theme-dark2);
-  width: 75%;
-  min-height: 30px;
-  border: 2px solid var(--theme-dark);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-}
-#mcdDetails {
-  display: none;
-}
 .button {
   background-color: #ddd;
   border: none;
@@ -309,7 +284,7 @@ nav {
   margin: 5px 0px 5px 10px;
   border-radius: 4px;
   border-color: #dadada;
-  background-color: #fff;
+  background-color: var(--theme-offwhite);
   overflow: hidden;
   display: flex;
   justify-content: space-between;
@@ -323,8 +298,8 @@ nav {
 }
 #scoreBox2 {
   display: block;
-  width: 40%;
-  margin: 15px 0px 0px 0px;
+  width: 50%;
+  margin: 5px 0px 0px 0px;
 }
 .score-cb {
   display: flex;
@@ -374,7 +349,22 @@ input[class="lbox-WP"] {
 }
 #label-box-DVRPC,
 #label-box-PA,
-#label-box-NJ,
+#label-box-NJ {
+  height: 100%;
+  background: white;
+  border: 1px solid #979797;
+  border-radius: 10px;
+  /* padding: 5px; */
+  padding: 0.8vh;
+  margin: 10px auto 10px auto;
+  text-align: center;
+  box-shadow: 0px 3px 10px -2px rgba(48, 149, 140, 0.5);
+  position: relative;
+  display: block;
+  /* width:140px; */
+  width: 30vh;
+  max-width: 140px;
+}
 #label-box-PEV,
 #label-box-WP {
   height: 100%;
@@ -382,14 +372,14 @@ input[class="lbox-WP"] {
   border: 1px solid #979797;
   border-radius: 10px;
   /* padding: 5px; */
-  padding: 0.5vh;
+  padding: 0.8vh;
   margin: 10px auto 10px auto;
   text-align: center;
   box-shadow: 0px 3px 10px -2px rgba(48, 149, 140, 0.5);
   position: relative;
   display: block;
   /* width:140px; */
-  width: 35vh;
+  width: 50vh;
   max-width: 140px;
 }
 #label-box-DVRPC:hover,
@@ -402,6 +392,56 @@ input[class="lbox-WP"] {
 }
 .PA-Layers {
   display: none;
+}
+/*Information Zone */
+#mapStart {
+  display: inline-block;
+}
+.infoLeft {
+  /* padding: 10px; */
+  width: 100%;
+  height: 100%;
+  background-color: var(--theme-offwhite2);
+  margin-top: 10px;
+}
+#startContent {
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  margin: 10px auto 13px auto;
+  padding: 0px 10%;
+  background-color: var(--theme-dark2);
+  width: 75%;
+  min-height: 30px;
+  border: 2px solid var(--theme-dark);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#mapDetails {
+  display: none;
+}
+#mcdName, #BGName  {
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  margin: 10px auto 13px auto;
+  /* padding: 0px 10% 10px 10%; */
+  background-color: var(--theme-dark);
+  width: 90%;
+  line-height: 30px;
+  border: 2px solid var(--theme-dark);
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+}
+#BGInfo  {
+  color: var(--theme-black);
+  border-radius: 3px;
+  text-align: center;
+  margin: 10px auto 13px auto;
+  /* padding: 0px 10% 10px 10%; */
+  background-color: var(--theme-offwhite);
+  width: 90%;
+  line-height: 30px;
+  /* border: 2px solid var(--theme-dark); */
+  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
 .dataTable {
   width: 100%;
@@ -447,7 +487,11 @@ input[class="lbox-WP"] {
   font-size: small;
   color: #808080;
 }
-.data-value {
+.data-row{
+  text-align: left;
+  margin: 10px;
+}
+.data-value { 
   font-size: medium;
   border-bottom: 1px dotted #414770;
 }
