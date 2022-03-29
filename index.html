@@ -170,7 +170,7 @@
 
           <form id="toggle-form" class="sidebar-form">
             <label class="flex-row flex-align-center flex-between label-select">
-              Choose a Map Layer:
+              Showing 
               <select name="layout_select" id="layout_select">
                 <!-- <option value="BG">Block Group</option> -->
                 <option value="dvrpc-current">Current PEVs (Centroid)</option>
@@ -180,9 +180,10 @@
                 <option value="PA-FuturePEV" id="PA-FuturePEV">PA Future PEV</option>
                 <option value="DVRPC-BG">Block Group</option>
               </select>
+              by Census Block Group
             </label>
             <fieldset>
-              <legend>Plug-In Electric Vehicles</legend>
+              <legend>Overlay Layers</legend>
 
               <label class="label-input">
                 <input type="checkbox" value="charging"/>
@@ -195,25 +196,32 @@
               </label> -->
             </fieldset>
           </form>
-
-          <!-- <h3 class="sidebar-h3">Section Subheader</h3> -->
           <div id="mapStart" class='infoLeft' style="height:100vh;">
             <div id="startContent">
-              <h1>Click the map to view Census Block Group level data</h1>
+              <h1>Click the map to view Municipal and Census Block Group level data</h1>
             </div>
           </div>
 
           <div id="mapDetails" class='infoLeft' style="height:100vh;">
             <div id='data-wrapper' class='data-wrapper'>
-              <div id="mcdName"></div>
-              <div id="mcdAGG"></div>
-              <div id="BGName"></div>
-              <div id="BGInfo"></div>
+             
+              <div class='data-wrapper' id='data-wrapper'>     
+                 <h2 class='data-subheader'>
+                 Municipal Level Information</h2>
+                 <div id="mcdName"></div>
+                  <div id="mcdAGG"></div>
+              </div>
+    
+              <div class='data-wrapper' id='data-wrapper'>     
+                  <h2 class='data-subheader'>
+                  Block Group Level Information</h2>
+                   <div id="BGName"></div>
+                   <div id="BGInfo"></div>
+              </div>
             </div>
 
             <div class='data-wrapper' id='data-wrapper'>     
-            <h2 class='data-subheader'>
-              Plug-In Electric Vehicle Distribution</h2>
+            <!-- <h2 class='data-subheader'>Plug-In Electric Vehicle Distribution</h2> -->
             <!-- <span class='data-heading-small'><br>(within 1/2 mile) as of 2013</span></h2>  -->
             <div id='results'></div> 
             </div>

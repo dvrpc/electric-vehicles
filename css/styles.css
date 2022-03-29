@@ -354,8 +354,7 @@ input[class="lbox-WP"] {
   background: white;
   border: 1px solid #979797;
   border-radius: 10px;
-  /* padding: 5px; */
-  padding: 0.8vh;
+  padding: 0.2vh;
   margin: 10px auto 10px auto;
   text-align: center;
   box-shadow: 0px 3px 10px -2px rgba(48, 149, 140, 0.5);
@@ -371,8 +370,7 @@ input[class="lbox-WP"] {
   background: white;
   border: 1px solid #979797;
   border-radius: 10px;
-  /* padding: 5px; */
-  padding: 0.8vh;
+  padding: 0.2vh;
   margin: 10px auto 10px auto;
   text-align: center;
   box-shadow: 0px 3px 10px -2px rgba(48, 149, 140, 0.5);
@@ -392,6 +390,15 @@ input[class="lbox-WP"] {
 }
 .PA-Layers {
   display: none;
+}
+select {
+  top: -0.15rem;
+  color: var(--theme-dvrpc);
+  border: 2px dotted transparent;
+  border-bottom-color: transparent;
+  position: relative;
+  border-radius: 5px;
+  border-bottom-color: rgba(85, 85, 38, 0.333);
 }
 /*Information Zone */
 #mapStart {
@@ -419,19 +426,20 @@ input[class="lbox-WP"] {
 #mapDetails {
   display: none;
 }
-#mcdName, #BGName  {
+#mcdName,
+#BGName {
   color: #fff;
   border-radius: 3px;
   text-align: center;
   margin: 10px auto 13px auto;
   /* padding: 0px 10% 10px 10%; */
-  background-color: var(--theme-dark);
+  background-color: var(--theme-dark2);
   width: 90%;
   line-height: 30px;
   border: 2px solid var(--theme-dark);
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
 }
-#BGInfo  {
+#BGInfo {
   color: var(--theme-black);
   border-radius: 3px;
   text-align: center;
@@ -472,10 +480,15 @@ input[class="lbox-WP"] {
   text-align: center;
   font-size: 20px;
 }
+.data-row {
+  /* text-align: left; */
+  margin: 10px;
+  border-bottom: 1px dotted #414770;
+}
 .data-info {
   font-size: small;
   color: #808080;
-  border-bottom: 1px dotted #414770;
+  /* border-bottom: 1px dotted #414770; */
   text-align: left;
 }
 .data-info2 {
@@ -483,17 +496,10 @@ input[class="lbox-WP"] {
   color: #808080;
   text-align: left;
 }
-.data-info {
-  font-size: small;
-  color: #808080;
-}
-.data-row{
-  text-align: left;
-  margin: 10px;
-}
-.data-value { 
+.data-value {
   font-size: medium;
-  border-bottom: 1px dotted #414770;
+  /* border-bottom: 1px dotted #414770; */
+  float: right;
 }
 .data-value2 {
   font-size: medium;

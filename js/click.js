@@ -21,30 +21,29 @@ const handleBlockGroups = function (props,map) {
 
   let county = lookupCounty[props.countyfp10];
 
-  var BGName = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
-  county  +
-  '</span><span></span> County, <span>' +
-  state +
-  "</span></small></h1>" 
+  var BGName = "<h3>Block Group ID:"+ props.GEOID10 +
+  "</span></h3>"
   ;
   document.getElementById("BGName").innerHTML = BGName;
 
-  var BGInfo = "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
-  props.POP +
+  var BGInfo = "<div class='data-row'><span class='data-info'>Municipality Containing This Block Group</span><span class='data-value'> " +
+  props.MUN_NAME +
+  "</span></div>" +
+  "<div>Demographics Summary</div>"+
+  "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
+  numeral(props.POP).format("(0,0)") +
   "</span></div>" +
   "<div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
-  props.HOUSUNIT+
+  numeral(props.HOUSUNIT).format("(0,0)")+
   "</span></div>" +
   "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
-  props.JOBS +
+  numeral(props.JOBS).format("(0,0)") +
   "</span></div>" +
+  "<div>Vehicular Summary</div>"+
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
-  props.PASS_VEH  +
-  "</span></div>" 
-  ;
-  document.getElementById("BGInfo").innerHTML = BGInfo;
-
-  var BGresults =
+  numeral(props.PASS_VEH).format("(0,0)")  +
+  "</span></div>"+
+  "<div>Plug-in Electric Vehicle Distribution</div>"+
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
@@ -97,7 +96,63 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "</table></div>";
-  document.getElementById("results").innerHTML = BGresults;
+  ;
+  document.getElementById("BGInfo").innerHTML = BGInfo;
+
+  // var BGresults =
+  // "<div><table class='dataTable'>" +
+  //   "<tr>" +
+  //   "<th scope='col'></th>" +
+  //   "<th scope='col'>Current</th>" +
+  //   "<th scope='col'>Projected</th>" +
+  //   "</tr>" +
+  //   "<tr class='dataTable-row'>" +
+  //   "<td class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.CurPEV).format("(0,0)") +
+  //   "</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.FutPEV).format("(0,0)") +
+  //   "</td>" +
+  //   "</tr>" +
+  //   "<tr class='dataTable-row'>" +
+  //   "<td class='data-info'>Percentage of Passenger Vehicles That Are PEVs</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.PerCuPEV).format("(0.00%)") +
+  //   "</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.PerFuPEV).format("(0.00%)") +
+  //   "</td>" +
+  //   "</tr>" +
+  //   "<tr class='dataTable-row'>" +
+  //   "<td class='data-info'>Number of PEVs per 100 People</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.CuPEVPop).format("(0,0.0)") +
+  //   "</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.FuPEVPop).format("(0,0.0)") +
+  //   "</td>" +
+  //   "</tr>" +
+  //   "<tr class='dataTable-row'>" +
+  //   "<td class='data-info'>Number of PEVs per 100 Housing Unit</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.CuPEV_HU).format("(0,0.0)") +
+  //   "</td>" +
+  //   "<td class='data-value'>" +
+  //   numeral(props.FuPEV_HU).format("(0,0.0)") +
+  //   "</td>" +
+  //   "</tr>" +
+  //   "<tr class='dataTable-row'>" +
+  //   "<td class='data-info2'>Number of PEVs per Sq. Mi.</td>" +
+  //   "<td class='data-value2'>" +
+  //    numeral(props.CuPEV_SM).format("(0,0.0)") +
+  //   "</td>" +
+  //   "<td class='data-value2'>" +
+  //    numeral(props.FUPEV_SM ).format("(0,0.0)")+
+  //   "</td>" +
+  //   "</tr>" +
+  //   "</table></div>";
+  // document.getElementById("results").innerHTML = BGresults;
 
     // map.flyTo({
     //   // created a parameter that pulls the lat/long values from the geojson
@@ -127,25 +182,32 @@ const handleMCD = function (props,map) {
     '34021': "Mercer"
   };
   let county = lookupCounty[props.FIRST_MC_1.slice(0,5)];
-  var mcdName = '<h1>'+ props.MUN_NAME +'<br><small><span> ' +
+  var mcdName = '<h3>'+ props.MUN_NAME +'<br><small><span> ' +
   county  +
   '</span><span></span> County, <span>' +
   state +
-  "</span></small></h1>" 
+  "</span></small></h3>" 
   ;
   document.getElementById("mcdName").innerHTML = mcdName;
 
-  var mcdAGGInfo = "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
-  props.POP +
+  var mcdAGGInfo = "<div>Demographic Summary</div><div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
+  numeral(props.POP).format("(0,0)") +
   "</span></div>" +
   "<div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
-  props.HOUSUNIT+
+  numeral(props.HOUSUNIT).format("(0,0)")+
   "</span></div>" +
   "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
-  props.JOBS +
+  numeral(props.JOBS).format("(0,0)") +
   "</span></div>" +
+  "<div>Vehicular Summary</div>"+
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
-  props.PASS_VEH  +
+  numeral(props.PASS_VEH).format("(0,0)")  +
+  "</span></div>" +
+  "<div class='data-row'><span class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</span><span class='data-value'> " +
+  numeral(props.CurPEV).format("(0,0)")  +
+  "</span></div>" +
+  "<div class='data-row'><span class='data-info'>Projected Number of PEVs</span><span class='data-value'> " +
+  numeral(props.FutPEV).format("(0,0)")  +
   "</span></div>" 
   ;
   document.getElementById("mcdAGG").innerHTML = mcdAGGInfo;
