@@ -8,8 +8,8 @@ const togglerDVRPC = (map) => {
       speed: 0.7,
       zoom: 8.4,
     });
-  $('#PA-FuturePEV').hide();
-  $('.DVRPC-PEV').show();
+  $('#pa-future').hide();
+  $('.dvrpc').show();
   document.getElementById('layout_select').selectedIndex=0;
   $('#PA').children().eq(1).removeClass();  
   $('#PA').children().eq(1).addClass('dull');  
@@ -20,8 +20,8 @@ const togglerDVRPC = (map) => {
 
   map.setFilter('county-outline', ['==', 'DVRPC', 'Yes']);
   map.setFilter('municipality-outline', ['==', 'DVRPC', 'Yes']);
-  map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","DVRPC"],[">=","CurPEV",0.1]]);
-  map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","DVRPC"],[">=","FutPEV",0.1]]);
+  // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","DVRPC"],[">=","CurPEV",0.1]]);
+  // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","DVRPC"],[">=","FutPEV",0.1]]);
   map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "visible");
   });
 };
@@ -34,8 +34,8 @@ const togglerPA = (map) => {
       speed: 0.7,
       zoom: 7,
     });
-    $('#PA-FuturePEV').show();
-    $('.DVRPC-PEV').hide();
+    $('#pa-future').show();
+    $('.dvrpc').hide();
     document.getElementById('layout_select').selectedIndex=4;
     $('#DVRPC').children().eq(1).removeClass();  
     $('#DVRPC').children().eq(1).addClass('dull'); 
@@ -46,8 +46,8 @@ const togglerPA = (map) => {
 
     map.setFilter('county-outline', ['==', 'STATE', 'PA']);
     map.setFilter('municipality-outline', ['==', 'STATE', 'PA']);
-    map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","PA"],[">=","CurPEV",0.1]]);
-    map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","PA"],[">=","FutPEV",0.1]]);
+    // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","PA"],[">=","CurPEV",0.1]]);
+    // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","PA"],[">=","FutPEV",0.1]]);
     map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "none");
   });
 };
@@ -61,7 +61,7 @@ const togglerNJ = (map) => {
       zoom: 7,
     });
 
-  $('#PA-FuturePEV').hide();
+  $('#pa-futyure').hide();
   $('#DVRPC').children().eq(1).removeClass();  
   $('#DVRPC').children().eq(1).addClass('dull'); 
   $('#PA').children().eq(1).removeClass();  
@@ -72,8 +72,8 @@ const togglerNJ = (map) => {
 
   map.setFilter('county-outline', ['==', 'STATE', 'NJ']);
   map.setFilter('municipality-outline', ['==', 'STATE', 'NJ']);
-  map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","NJ"],[">=","CurPEV",0.1]]);
-  map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","NJ"],[">=","FutPEV",0.1]]);
+  // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","NJ"],[">=","CurPEV",0.1]]);
+  // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","NJ"],[">=","FutPEV",0.1]]);
   });
 };
 // Bike Score CheckBox toggle
@@ -81,6 +81,26 @@ const togglerPEV = (map) => {
 };
 // Walk Score CheckBox toggle
 const togglerWP = (map) => {
+};
+
+// Bike Score CheckBox toggle
+const filterCurrent = () => {
+  document.getElementById("type_select").addEventListener("click", function (value) {
+   // console.log(value.target.value);
+    const layer = value.target.value;
+    // const selected = option.selected;
+    if (layer == "future") {
+      $('.current').hide();
+      $('.future').show();
+      document.getElementById('layout_select').value="dvrpc-projected";
+    } else {
+      $('.current').show();
+      $('.future').hide();
+      document.getElementById('layout_select').value="dvrpc-current";
+    }
+
+  });
+
 };
 
 // Home Page and Map interaction
@@ -110,4 +130,4 @@ const togglerWP = (map) => {
 //     });
 // };
 
-export { togglerDVRPC, togglerPA, togglerNJ, togglerPEV, togglerWP };
+export { togglerDVRPC, togglerPA, togglerNJ, togglerPEV, togglerWP, filterCurrent };

@@ -10,7 +10,8 @@ import {
     togglerPA,
     togglerNJ,
     togglerPEV,
-    togglerWP
+    togglerWP,
+    filterCurrent
   } from "./toggler.js";
 
 
@@ -22,7 +23,8 @@ const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
 const selects = toggleForm.querySelectorAll('#layout_select')
 
-$('#PA-FuturePEV').hide();
+$('#pa-future').hide();
+$('.future').hide();
 
 // map
 const map = makeMap()
@@ -34,6 +36,7 @@ map.on('load', () => {
     togglerNJ(map);
     togglerPEV(map);
     togglerWP(map);
+    filterCurrent();
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer])
