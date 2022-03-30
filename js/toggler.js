@@ -1,4 +1,5 @@
 // Access Score CheckBox toggle
+
 const togglerDVRPC = (map) => {
   document.getElementById("DVRPC").addEventListener("click", function () {
     map.flyTo({
@@ -8,6 +9,8 @@ const togglerDVRPC = (map) => {
       zoom: 8.4,
     });
   $('#PA-FuturePEV').hide();
+  $('.DVRPC-PEV').show();
+  document.getElementById('layout_select').selectedIndex=0;
   $('#PA').children().eq(1).removeClass();  
   $('#PA').children().eq(1).addClass('dull');  
   $('#NJ').children().eq(1).removeClass();  
@@ -20,32 +23,6 @@ const togglerDVRPC = (map) => {
   map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","DVRPC"],[">=","CurPEV",0.1]]);
   map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","DVRPC"],[">=","FutPEV",0.1]]);
   map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "visible");
- 
-    // $("input:checkbox[value='as_osm_limits']")
-    //   .prop("checked", false)
-    //   .trigger("click");
-    // $("input:checkbox[value='bs_limit']")
-    //   .prop("checked", true)
-    //   .trigger("click");
-    // $("input:checkbox[value='ws_limit']")
-    //   .prop("checked", true)
-    //   .trigger("click");
-
-    // document.documentElement.style.setProperty("--popup-color", "#30958c");
-
-    // document.getElementsByClassName("input[type=radio]").style.background = "#fff";
-    // $('.DVRPC').css("background" , "#737a85");
-    // $("label.DVRPC").css({
-    //   "background": "#254661",
-    // });
-    // $("label.PA").css({
-    //   "background": "#737a85",
-    // });
-    // $("label.NJ").css({
-    //   "background": "#737a85",
-    // });
-
-    // map.setLayoutProperty("stationsW", "visibility", "none");
   });
 };
 // Bike Score CheckBox toggle
@@ -58,6 +35,8 @@ const togglerPA = (map) => {
       zoom: 7,
     });
     $('#PA-FuturePEV').show();
+    $('.DVRPC-PEV').hide();
+    document.getElementById('layout_select').selectedIndex=4;
     $('#DVRPC').children().eq(1).removeClass();  
     $('#DVRPC').children().eq(1).addClass('dull'); 
     $('#NJ').children().eq(1).removeClass();  
@@ -70,27 +49,6 @@ const togglerPA = (map) => {
     map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","PA"],[">=","CurPEV",0.1]]);
     map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","PA"],[">=","FutPEV",0.1]]);
     map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "none");
-  //  map.setLayoutProperty("county-outline", "filter", "['==', 'STATE', 'PA']");
-  //  map.setLayoutProperty("municipality-outline", "filter", "['==', 'STATE', 'PA']");
-    //  $("input:checkbox[value='as_osm_limits']")
-    //   .prop("checked", false)
-    //   .trigger("click");
-    // $("input:checkbox[value='bs_limit']")
-    //   .prop("checked", true)
-    //   .trigger("click");
-    // $("input:checkbox[value='ws_limit']")
-    //   .prop("checked", true)
-    //   .trigger("click");
-
-    // $("label.DVRPC").css({
-    //   'background': '#737a85',
-    // });
-    // $("label.PA").css({
-    //   'background': '#254661',
-    // });
-    // $("label.NJ").css({
-    //   'background': '#737a85',
-    // });
   });
 };
 // Walk Score CheckBox toggle

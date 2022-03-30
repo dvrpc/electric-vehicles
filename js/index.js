@@ -20,7 +20,7 @@ const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
 const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
-const selects = toggleForm.querySelectorAll('select')
+const selects = toggleForm.querySelectorAll('#layout_select')
 
 $('#PA-FuturePEV').hide();
 
@@ -41,7 +41,7 @@ map.on('load', () => {
 
     // set default form state
     let activeInputs = handleForms('input', inputs, map)
-    let activeSelects = handleForms('select', selects, map)
+    let activeSelects = handleForms('#layout_select', selects, map)
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
     handleLegend(allActiveToggles, legendContainer)
@@ -50,7 +50,7 @@ map.on('load', () => {
     // handle simple toggles - layers on/off and corresponding legend items on/off
     toggleForm.onchange = () => {
         activeInputs = handleForms('input', inputs, map)
-        activeSelects = handleForms('select', selects, map)
+        activeSelects = handleForms('#layout_select', selects, map)
         allActiveToggles = [... activeSelects, ... activeInputs]
 
         handleLegend(allActiveToggles, legendContainer)
@@ -96,8 +96,7 @@ map.on('load', () => {
             "line-color":[
                 'case',
                 ['boolean', ['feature-state', 'hover'], false],
-                "#FF0000",
-                "#7e8d92"
+                "#FF0000", "#9cafb5"
                 ],
             "line-opacity": {
                 base: 9,
@@ -109,7 +108,8 @@ map.on('load', () => {
                   [13, .8],
                   [14, .9],
                 ],
-        }},
+             }
+    },
         "filter": [">=", "POP", 0.1],
     });
 
@@ -122,7 +122,7 @@ map.on('load', () => {
         'paint': {
             'fill-color': '#e2eb32',
             // 'fill-opacity': 0.0,
-            'fill-outline-color':'#f2f12d',
+            // 'fill-outline-color':'#f2f12d',
             'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],

@@ -26,10 +26,10 @@ const handleBlockGroups = function (props,map) {
   ;
   document.getElementById("BGName").innerHTML = BGName;
 
-  var BGInfo = "<div class='data-row'><span class='data-info'>Municipality Containing This Block Group</span><span class='data-value'> " +
+  var BGInfo = "<div><span class='data-info'>Municipality Containing This Block Group</span></span></div><div><span> " +
   props.MUN_NAME +
   "</span></div>" +
-  "<div>Demographics Summary</div>"+
+  "<div><i class='fa-solid fa-people'></i>Demographics Summary</div>"+
   "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   numeral(props.POP).format("(0,0)") +
   "</span></div>" +
@@ -39,7 +39,7 @@ const handleBlockGroups = function (props,map) {
   "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
   numeral(props.JOBS).format("(0,0)") +
   "</span></div>" +
-  "<div>Vehicular Summary</div>"+
+  "<div><i class='fa-solid fa-car'></i>Vehicular Summary</div>"+
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>"+
@@ -52,46 +52,46 @@ const handleBlockGroups = function (props,map) {
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-left'>" +
     numeral(props.CurPEV).format("(0,0)") +
     "</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-right'>" +
     numeral(props.FutPEV).format("(0,0)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Percentage of Passenger Vehicles That Are PEVs</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-left'>" +
     numeral(props.PerCuPEV).format("(0.00%)") +
     "</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-right'>" +
     numeral(props.PerFuPEV).format("(0.00%)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Number of PEVs per 100 People</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-left'>" +
     numeral(props.CuPEVPop).format("(0,0.0)") +
     "</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-right'>" +
     numeral(props.FuPEVPop).format("(0,0.0)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Number of PEVs per 100 Housing Unit</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-left'>" +
     numeral(props.CuPEV_HU).format("(0,0.0)") +
     "</td>" +
-    "<td class='data-value'>" +
+    "<td class='data-value-right'>" +
     numeral(props.FuPEV_HU).format("(0,0.0)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info2'>Number of PEVs per Sq. Mi.</td>" +
-    "<td class='data-value2'>" +
+    "<td class='data-value2-left'>" +
      numeral(props.CuPEV_SM).format("(0,0.0)") +
     "</td>" +
-    "<td class='data-value2'>" +
+    "<td class='data-value2-right'>" +
      numeral(props.FUPEV_SM ).format("(0,0.0)")+
     "</td>" +
     "</tr>" +

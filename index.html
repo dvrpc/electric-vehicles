@@ -32,6 +32,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&amp;display=swap"
     />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
     <link
       rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
@@ -169,16 +170,25 @@
           </div>
 
           <form id="toggle-form" class="sidebar-form">
-            <label class="flex-row flex-align-center flex-between label-select">
+            <label class=" flex-align-center flex-between label-select">
               Showing 
+              <select name="type_select" id="type_select" >
+                <option value="current" >Current</option>
+                <option value="future" >Future</option>
+              </select>
+
               <select name="layout_select" id="layout_select">
                 <!-- <option value="BG">Block Group</option> -->
-                <option value="dvrpc-current">Current PEVs (Centroid)</option>
-                <option value="dvrpc-projected">Future PEVs (Centroid)</option>
-                <option value="DVRPC-CurrentPEV-BG">Current PEVs (Block Group)</option>
-                <option value="DVRPC-FuturePEV-BG">Future PEVs (Block Group)</option>
+                <option value="dvrpc-current" >Current PEVs (Centroid)</option>
+                <option value="dvrpc-projected" >Future PEVs (Centroid)</option>
+                <option value="DVRPC-CurrentPEV-BG" class="DVRPC-PEV">Current PEVs (Block Group)</option>
+                <option value="DVRPC-FuturePEV-BG" class="DVRPC-PEV">Future PEVs (Block Group)</option>
+                <option value="DVRPC-CurrentPEV-Pop" class="DVRPC-PEV">Current PEVs per 100 People</option>
+                <option value="DVRPC-FuturePEV-Pop" class="DVRPC-PEV">Future PEVs per 100 People</option>
+                <option value="DVRPC-CurrentPEV-HH" class="DVRPC-PEV">Current PEVs per Household</option>
+                <option value="DVRPC-FuturePEV-HH" class="DVRPC-PEV">Future PEVs per Household</option>
                 <option value="PA-FuturePEV" id="PA-FuturePEV">PA Future PEV</option>
-                <option value="DVRPC-BG">Block Group</option>
+                <!-- <option value="DVRPC-BG">Block Group</option> -->
               </select>
               by Census Block Group
             </label>
@@ -218,12 +228,6 @@
                    <div id="BGName"></div>
                    <div id="BGInfo"></div>
               </div>
-            </div>
-
-            <div class='data-wrapper' id='data-wrapper'>     
-            <!-- <h2 class='data-subheader'>Plug-In Electric Vehicle Distribution</h2> -->
-            <!-- <span class='data-heading-small'><br>(within 1/2 mile) as of 2013</span></h2>  -->
-            <div id='results'></div> 
             </div>
 
           </div>

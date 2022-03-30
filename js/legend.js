@@ -19,7 +19,7 @@ const createLegendItem = (val) => {
  </div>
 `;
   }
-  else if (legendDetails.label === "Current PEVs (Block Group)"||legendDetails.label === "Future PEVs (Block Group)") {
+  else if (legendDetails.label === "Current PEVs (Block Group)"||legendDetails.label === "Future PEVs (Block Group)"||legendDetails.label === "Current PEVs per 100 People"||legendDetails.label === "Future PEVs per 100 People"||legendDetails.label === "Current PEVs per Household"||legendDetails.label === "Future PEVs per Household") {
     return `
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">
@@ -33,13 +33,13 @@ const createLegendItem = (val) => {
           <span class='gb-5'></span>
           <span class='gb-6'></span>
           <span class='gb-7'></span>
-          <label>10</label>
-          <label>16</label>
-          <label>23</label>
-          <label>32</label>
-          <label>50</label>
-          <label>100</label>
-          <label>1234</label>
+          <label>.98</label>
+          <label>1.64</label>
+          <label>2.66</label>
+          <label>4.22</label>
+          <label>6.47</label>
+          <label>11.83</label>
+          <label>105</label>
           <!-- <small>Source: <a href="#link to source">Name of source</a></small> -->
           </div>
  </div>

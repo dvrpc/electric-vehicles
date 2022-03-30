@@ -17,10 +17,7 @@ const handleFormInputs = (inputs, map) => {
       // add layer on first pass
       if (checked) {
         const mapLayer = secondaryMapLayers[layer];
-   //     map.addLayer(mapLayer, "admin-1-boundary-bg");
-           //    map.addLayer(mapLayer, "road-pedestrian-case");
            map.addLayer(mapLayer, "road-label");
-        //    map.addLayer(mapLayer, "landcover");
       }
     }
   });
@@ -48,9 +45,7 @@ const handleFormSelect = (selects, map) => {
         // add layer on first pass
         if (selected) {
           const mapLayer = secondaryMapLayers[layer];
-       //    map.addLayer(mapLayer, "road-pedestrian-case");
            map.addLayer(mapLayer, "road-label");
-        //    map.addLayer(mapLayer, "landcover");
         }
       }
     });
@@ -61,7 +56,7 @@ const handleFormSelect = (selects, map) => {
 
 const handleForms = (type, toggles, map) => {
   switch (type) {
-    case "select":
+    case "#layout_select":
       return handleFormSelect(toggles, map);
     default:
       return handleFormInputs(toggles, map);
