@@ -26,39 +26,32 @@ const legendConfig = {
     color: "#3182D1",
   },
   "PA-FuturePEV": {
-    iconType: "line",
-    label: "PA Future PEV",
-    color: "red",
+    label: "PA Future PEV"
   },
   "DVRPC-CurrentPEV-BG": {
-    iconType: "line",
     label: "Current PEVs (Block Group)",
-    color: "red",
-  },
-  "DVRPC-FuturePEV-BG": {
-    iconType: "line",
-    label: "Future PEVs (Block Group)",
-    color: "red",
+    legendLable1:"0.98",
+    legendLable2:"1.64",
+    legendLable3:"2.66",
+    legendLable4:"4.22",
+    legendLable5:"6.47",
+    legendLable6:"11.83",
+    legendLable7:"105"
   },
   "DVRPC-CurrentPEV-Pop": {
-    iconType: "line",
-    label: "Current PEVs per 100 People",
-    color: "red",
-  },
-  "DVRPC-FuturePEV-Pop": {
-    iconType: "line",
-    label: "Future PEVs per 100 People",
-    color: "red",
+    label: "Current PEVs per 100 People"
   },
   "DVRPC-CurrentPEV-HH": {
-    iconType: "line",
-    label: "Current PEVs per Household",
-    color: "red",
+    label: "Current PEVs per Household"
+  },
+  "DVRPC-FuturePEV-BG": {
+    label: "Future PEVs (Block Group)"
+  },
+  "DVRPC-FuturePEV-Pop": {
+    label: "Future PEVs per 100 People"
   },
   "DVRPC-FuturePEV-HH": {
-    iconType: "line",
-    label: "Future PEVs per Household",
-    color: "red",
+    label: "Future PEVs per Household"
   },
   // "DVRPC-BG": {
   //   iconType: "line",

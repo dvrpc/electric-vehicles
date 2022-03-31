@@ -24,7 +24,7 @@ const createLegendItem = (val) => {
   <div class="flex-row flex-align-center legend-item">
   <div id="legend-box2">
   <div id='legend'>
-        <strong>Current - PEVs Per 100 People</strong>
+        <strong>${legendDetails.label}</strong>
         <div class='legend clearfix'>
           <span class='gb-1'></span>
           <span class='gb-2'></span>
@@ -33,13 +33,13 @@ const createLegendItem = (val) => {
           <span class='gb-5'></span>
           <span class='gb-6'></span>
           <span class='gb-7'></span>
-          <label>.98</label>
-          <label>1.64</label>
-          <label>2.66</label>
-          <label>4.22</label>
-          <label>6.47</label>
-          <label>11.83</label>
-          <label>105</label>
+          <label>${legendDetails.legendLable1}</label>
+          <label>${legendDetails.legendLable2}</label>
+          <label>${legendDetails.legendLable3}</label>
+          <label>${legendDetails.legendLable4}</label>
+          <label>${legendDetails.legendLable5}</label>
+          <label>${legendDetails.legendLable6}</label>
+          <label>${legendDetails.legendLable7}</label>
           <!-- <small>Source: <a href="#link to source">Name of source</a></small> -->
           </div>
  </div>
