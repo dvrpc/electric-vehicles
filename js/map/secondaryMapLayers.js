@@ -352,7 +352,6 @@ const secondaryMapLayers = {
   base: 9,
   stops: [
     [9, 1],
-    [10, .8],
     [11, .7],
     [12, .65],
     [13, .5],
@@ -373,7 +372,6 @@ const secondaryMapLayers = {
   base: 9,
   stops: [
     [9, 1],
-    [10, .8],
     [11, .7],
     [12, .65],
     [13, .5],
@@ -394,7 +392,6 @@ const secondaryMapLayers = {
             base: 9,
             stops: [
               [9, 1],
-              [10, .8],
               [11, .7],
               [12, .65],
               [13, .5],
