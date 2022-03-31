@@ -85,7 +85,7 @@ const togglerWP = (map) => {
 
 // Bike Score CheckBox toggle
 const filterCurrent = () => {
-  document.getElementById("type_select").addEventListener("click", function (value) {
+  document.getElementById("type_select").addEventListener("change", function (value) {
    // console.log(value.target.value);
     const layer = value.target.value;
     // const selected = option.selected;

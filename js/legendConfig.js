@@ -53,6 +53,12 @@ const legendConfig = {
   "DVRPC-FuturePEV-HH": {
     label: "Future PEVs per Household"
   },
+  "DVRPC-FC-KD-SM": {
+    label: "DVRPC-FC-KD-SM"
+  },
+  "DVRPC-FC-KD-JB": {
+    label: "DVRPC-FC-KD-JB"
+  },
   // "DVRPC-BG": {
   //   iconType: "line",
   //   label: "Block Group",

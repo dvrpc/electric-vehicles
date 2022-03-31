@@ -6,6 +6,22 @@ let pev5 = '#4eb3d3';
 let pev6 = '#2b8cbe';
 let pev7 = '#08589e';
 
+let wp1 = '#ffffd4';
+let wp2 = '#fed976';
+let wp3 = '#feb24c';
+let wp4 = '#fd8d3c';
+let wp5 = '#fc4e2a';
+let wp6 = '#e31a1c';
+let wp7 = '#b10026';
+
+let wpjob1 = '#8c510a';
+let wpjob2 = '#d8b365';
+let wpjob3 = '#f6e8c3';
+let wpjob4 = '#f5f5f5';
+let wpjob5 = '#c7eae5';
+let wpjob6 = '#5ab4ac';
+let wpjob7 = '#01665e';
+
 let expression1 = ['interpolate',['linear'],
 ['get', 'CurPEV'],
   0, pev1,
@@ -70,6 +86,28 @@ let FutHH = ['interpolate',['linear'],
 4.31,  pev5,
 6.66,  pev6,
 12.27, pev7
+];
+
+let FC_KD_SM = ['interpolate',['linear'],
+['get', 'FC_KD_SM'],
+12.29, wp1,
+28.98, wp2,
+56.37, wp3,
+100.15,  wp4,
+164.75,  wp5,
+321.26,  wp6,
+64383, wp7
+];
+
+let FC_KD_JB = ['interpolate',['linear'],
+['get', 'FC_KD_JB'],
+.054, wpjob1,
+.074, wpjob2,
+.0898, wpjob3,
+.1046,  wpjob4,
+.1228,  wpjob5,
+.1517,  wpjob6,
+.7153, wpjob7
 ];
 
 let expressionPA1 = ['interpolate',['linear'],
@@ -289,6 +327,48 @@ const secondaryMapLayers = {
   'layout': {},
   'paint': {
  'fill-color': FutHH,
+ "fill-opacity": {
+  base: 9,
+  stops: [
+    [9, 1],
+    [10, .8],
+    [11, .7],
+    [12, .65],
+    [13, .5],
+    [14, .4],
+  ],
+},
+  }
+},
+'DVRPC-FC-KD-SM': {
+  'id': 'DVRPC-FC-KD-SM',
+  'type': 'fill',
+  'source': 'pev',
+  'source-layer': 'dvrpc_pev_bg',
+  'layout': {},
+  'paint': {
+ 'fill-color': FC_KD_SM,
+ "fill-opacity": {
+  base: 9,
+  stops: [
+    [9, 1],
+    [10, .8],
+    [11, .7],
+    [12, .65],
+    [13, .5],
+    [14, .4],
+  ],
+},
+  }
+},
+'DVRPC-FC-KD-JB': {
+  'id': 'DVRPC-FC-KD-JB',
+  'type': 'fill',
+  'source': 'pev',
+  'source-layer': 'dvrpc_pev_bg',
+  'layout': {},
+  'paint': {
+ 'fill-color': FC_KD_JB,
  "fill-opacity": {
   base: 9,
   stops: [
