@@ -31,6 +31,7 @@ const legendConfig = {
   "DVRPC-CurrentPEV-BG": {
     label: "Current PEVs",
     legendType:"scale",
+    note:"note",
     class:"gb",
     legendLable1:"0.98",
     legendLable2:"1.64",
@@ -43,6 +44,7 @@ const legendConfig = {
   "DVRPC-CurrentPEV-Pop": {
     label: "Current PEVs per 100 People",
     legendType:"scale",
+    note:"note",
     class:"gb",
     legendLable1:"0.08%",
     legendLable2:"0.13%",
@@ -55,26 +57,85 @@ const legendConfig = {
   "DVRPC-CurrentPEV-HH": {
     label: "Current PEVs per Household",
     legendType:"scale",
-    class:"gb"
+    note:"note",
+    class:"gb",
+    legendLable1:"0.229%",
+    legendLable2:"0.355%",
+    legendLable3:"0.548%",
+    legendLable4:"0.7783%",
+    legendLable5:"1.16%",
+    legendLable6:"1.89%",
+    legendLable7:"11.019%"
+  },
+  "DVRPC-CurrentPEV-SM": {
+    label: "Current PEVs per Sq. Mi.",
+    legendType:"scale",
+    note:"note",
+    class:"gb",
+    legendLable1:"2.98",
+    legendLable2:"5.25",
+    legendLable3:"8.01",
+    legendLable4:"11.9",
+    legendLable5:"17.65",
+    legendLable6:"33.71",
+    legendLable7:"760.41"
   },
   "DVRPC-FuturePEV-BG": {
     label: "Future PEVs",
     legendType:"scale",
-    class:"gb"
+    note:"note",
+    class:"gb",
+    legendLable1:"4.49",
+    legendLable2:"7.87",
+    legendLable3:"12.87",
+    legendLable4:"21.39",
+    legendLable5:"35.52",
+    legendLable6:"72.51",
+    legendLable7:"1233.16"
   },
   "DVRPC-FuturePEV-Pop": {
     label: "Future PEVs per 100 People",
     legendType:"scale",
-    class:"gb"
+    note:"note",
+    class:"gb",
+    legendLable1:"0.44%",
+    legendLable2:"0.72%",
+    legendLable3:"1.13%",
+    legendLable4:"1.69%",
+    legendLable5:"2.54%",
+    legendLable6:"4.75%",
+    legendLable7:"56.12%"
   },
   "DVRPC-FuturePEV-HH": {
     label: "Future PEVs per Household",
     legendType:"scale",
-    class:"gb"
+    note:"note",
+    class:"gb",
+    legendLable1:"1.25%",
+    legendLable2:"1.94%",
+    legendLable3:"2.94%",
+    legendLable4:"4.31%",
+    legendLable5:"6.66%",
+    legendLable6:"12.27%",
+    legendLable7:"133.81%"
+  },
+  "DVRPC-FuturePEV-SM": {
+    label: "Future PEVs per Sq. Mi.",
+    legendType:"scale",
+    note:"note",
+    class:"gb",
+    legendLable1:"26.97",
+    legendLable2:"45.94",
+    legendLable3:"67.38",
+    legendLable4:"92.56",
+    legendLable5:"134.82",
+    legendLable6:"238.44",
+    legendLable7:"10,856.59"
   },
   "DVRPC-FC-KD-SM": {
     label: "Free Charging - kWh of Demand per sq. mi.",
     legendType:"scale",
+    note:"note",
     class:"yor",
     legendLable1:"12.29",
     legendLable2:"28.98",
@@ -88,6 +149,7 @@ const legendConfig = {
   "DVRPC-FC-KD-JB": {
     label: "Free Charging - kWh of Demand per Job",
     legendType:"scale",
+    note:"note",
     class:"brg",
     legendLable1:"0.0546",
     legendLable2:"0.074",
@@ -100,7 +162,8 @@ const legendConfig = {
   },
   "PA-FuturePEV": {
     label: "PA Future PEV",
-    legendType:"scale"
+    legendType:"scale",
+    note:"note"
   },
   // "DVRPC-BG": {
   //   iconType: "line",

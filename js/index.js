@@ -25,6 +25,8 @@ const selects = toggleForm.querySelectorAll('#layout_select')
 
 $('#pa-future').hide();
 $('.future').hide();
+$('.workplace').hide();
+
 
 // map
 const map = makeMap()

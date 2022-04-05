@@ -173,8 +173,10 @@
             <label class=" flex-align-center flex-between label-select">
               Showing 
               <select name="type_select" id="type_select" >
-                <option value="current" >Current</option>
-                <option value="future" >Future</option>
+                <option value="current" class="distribution" >Current</option>
+                <option value="future" class="distribution" >Future</option>
+                <option value="free" class="workplace" >Free Charing</option>
+                <option value="paid" class="workplace" >Paid Charing</option>
               </select>
 
               <select name="layout_select" id="layout_select">
@@ -183,10 +185,13 @@
                 <option value="DVRPC-CurrentPEV-BG" class="dvrpc current pev">Current PEVs</option>
                 <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">Current PEVs per 100 People</option>
                 <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">Current PEVs per Household</option>
+                <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">Current PEVs per Sq. Mi.</option>
+
                 <option value="dvrpc-projected" id="topFuture" class="dvrpc future pev">Future PEVs (Centroid)</option>
                 <option value="DVRPC-FuturePEV-BG" class="dvrpc future pev">Future PEVs</option>
                 <option value="DVRPC-FuturePEV-Pop" class="dvrpc future pev">Future PEVs per 100 People</option>
                 <option value="DVRPC-FuturePEV-HH" class="dvrpc future pev">Future PEVs per Household</option>
+                <option value="DVRPC-FuturePEV-SM" class="dvrpc future pev">Future PEVs per Sq. Mi.</option>
           
                 <option value="DVRPC-FC-KD-SM" class="dvrpc free work">DVRPC-FC-KD-SM</option>
                 <option value="DVRPC-FC-KD-JB" class="dvrpc free work">DVRPC-FC-KD-JB</option>

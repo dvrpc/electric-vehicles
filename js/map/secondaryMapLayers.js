@@ -21,7 +21,7 @@ let wpjob4 = '#f5f5f5';
 let wpjob5 = '#c7eae5';
 let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
-
+// Current
 let expression1 = ['interpolate',['linear'],
 ['get', 'CurPEV'],
   0, pev1,
@@ -33,37 +33,15 @@ let expression1 = ['interpolate',['linear'],
 11.83,pev7
 ];
 
-let expression2 = ['interpolate',['linear'],
-['get', 'FutPEV'],
-0, pev1,
-4.49, pev2,
-7.87, pev3,
-12.87,  pev4,
-21.39,  pev5,
-35.52,  pev6,
-72.51, pev7
-];
-
 let CurPop = ['interpolate',['linear'],
 ['get', 'CuPEVPop'],
-0, pev1,
+   0, pev1,
 .086, pev2,
 .138, pev3,
 .2085,  pev4,
 .303,  pev5,
 .45,  pev6,
 .71, pev7
-];
-
-let FutPop = ['interpolate',['linear'],
-['get', 'FuPEVPop'],
-0, pev1,
-.44, pev2,
-.72, pev3,
-1.13,  pev4,
-1.69,  pev5,
-2.54,  pev6,
-4.75, pev7
 ];
 
 let CurHH = ['interpolate',['linear'],
@@ -77,6 +55,39 @@ let CurHH = ['interpolate',['linear'],
 1.89, pev7
 ];
 
+let CurSM = ['interpolate',['linear'],
+['get', 'CuPEV_SM'],
+0, pev1,
+2.98, pev2,
+5.25,pev3,
+8.01, pev4,
+11.9, pev5,
+17.65, pev6,
+33.71, pev7
+];
+// Future
+let expression2 = ['interpolate',['linear'],
+['get', 'FutPEV'],
+0, pev1,
+4.49, pev2,
+7.87, pev3,
+12.87,  pev4,
+21.39,  pev5,
+35.52,  pev6,
+72.51, pev7
+];
+
+let FutPop = ['interpolate',['linear'],
+['get', 'FuPEVPop'],
+0, pev1,
+.44, pev2,
+.72, pev3,
+1.13,  pev4,
+1.69,  pev5,
+2.54,  pev6,
+4.75, pev7
+];
+
 let FutHH = ['interpolate',['linear'],
 ['get', 'FuPEV_HU'],
 0, pev1,
@@ -86,6 +97,17 @@ let FutHH = ['interpolate',['linear'],
 4.31,  pev5,
 6.66,  pev6,
 12.27, pev7
+];
+
+let FutSM = ['interpolate',['linear'],
+['get', 'FUPEV_SM'],
+0, pev1,
+26.97, pev2,
+45.94,pev3,
+67.38, pev4,
+92.56, pev5,
+134.82, pev6,
+238.44, pev7
 ];
 
 let FC_KD_SM = ['interpolate',['linear'],
@@ -186,36 +208,6 @@ const secondaryMapLayers = {
         [">=","CurPEV",0.1]
         ]   
 },
-'dvrpc-projected': {
-  'id': 'dvrpc-projected',
-  'type': 'circle',
-  'source': 'pev',
-  'source-layer': 'pev_bg_centroids',
-  'paint': {
-      // make circles larger as the user zooms from z12 to z22
-      'circle-radius': {
-        property: 'FutPEV',
-        stops: [
-        [{zoom: 8, value: 42.05}, 1],
-        [{zoom: 8, value: 124.15}, 2],
-        [{zoom: 8, value: 259.88}, 4],
-        [{zoom: 8, value: 509.8}, 7.5],
-        [{zoom: 8, value: 1235}, 11],
-        [{zoom: 12, value: 42.05}, 2],
-        [{zoom: 12, value: 124.15}, 4],
-        [{zoom: 12, value: 259.88}, 6.6],
-        [{zoom: 12, value: 509.8}, 9.5],
-        [{zoom: 12, value: 1235}, 14],
-        ]
-        },
-      'circle-color':'#3182D1',
-      'circle-opacity':1
-  },
-  "filter": ["all",
-  ["==","MAPTYPE","DVRPC"],
-  [">=","FutPEV",0.1]
-  ]  
-  },
   'DVRPC-CurrentPEV-BG': {
         'id': 'DVRPC-CurrentPEV-BG',
         'type': 'fill',
@@ -234,27 +226,6 @@ const secondaryMapLayers = {
         ],
       },
         }
-    },
-    'DVRPC-FuturePEV-BG': {
-      'id': 'DVRPC-FuturePEV-BG',
-      'type': 'fill',
-      'source': 'pev',
-      'source-layer': 'dvrpc_pev_bg',
-      'layout': {},
-      'paint': {
-     'fill-color': expression2,
-     "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
-      }
   },
   'DVRPC-CurrentPEV-Pop': {
     'id': 'DVRPC-CurrentPEV-Pop',
@@ -264,27 +235,6 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
    'fill-color': CurPop,
-   "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [10, .8],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-},
-  'DVRPC-FuturePEV-Pop': {
-    'id': 'DVRPC-FuturePEV-Pop',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-   'fill-color': FutPop,
    "fill-opacity": {
     base: 9,
     stops: [
@@ -319,14 +269,14 @@ const secondaryMapLayers = {
 },
   }
 },
-'DVRPC-FuturePEV-HH': {
-  'id': 'DVRPC-FuturePEV-HH',
+'DVRPC-CurrentPEV-SM': {
+  'id': 'DVRPC-CurrentPEV-SM',
   'type': 'fill',
   'source': 'pev',
   'source-layer': 'dvrpc_pev_bg',
   'layout': {},
   'paint': {
- 'fill-color': FutHH,
+ 'fill-color': CurSM,
  "fill-opacity": {
   base: 9,
   stops: [
@@ -340,66 +290,180 @@ const secondaryMapLayers = {
 },
   }
 },
-'DVRPC-FC-KD-SM': {
-  'id': 'DVRPC-FC-KD-SM',
+'dvrpc-projected': {
+  'id': 'dvrpc-projected',
+  'type': 'circle',
+  'source': 'pev',
+  'source-layer': 'pev_bg_centroids',
+  'paint': {
+      // make circles larger as the user zooms from z12 to z22
+      'circle-radius': {
+        property: 'FutPEV',
+        stops: [
+        [{zoom: 8, value: 42.05}, 1],
+        [{zoom: 8, value: 124.15}, 2],
+        [{zoom: 8, value: 259.88}, 4],
+        [{zoom: 8, value: 509.8}, 7.5],
+        [{zoom: 8, value: 1235}, 11],
+        [{zoom: 12, value: 42.05}, 2],
+        [{zoom: 12, value: 124.15}, 4],
+        [{zoom: 12, value: 259.88}, 6.6],
+        [{zoom: 12, value: 509.8}, 9.5],
+        [{zoom: 12, value: 1235}, 14],
+        ]
+        },
+      'circle-color':'#3182D1',
+      'circle-opacity':1
+  },
+  "filter": ["all",
+  ["==","MAPTYPE","DVRPC"],
+  [">=","FutPEV",0.1]
+  ]  
+  },
+  'DVRPC-FuturePEV-BG': {
+  'id': 'DVRPC-FuturePEV-BG',
   'type': 'fill',
   'source': 'pev',
   'source-layer': 'dvrpc_pev_bg',
   'layout': {},
   'paint': {
- 'fill-color': FC_KD_SM,
+ 'fill-color': expression2,
  "fill-opacity": {
   base: 9,
   stops: [
     [9, 1],
+    [10, .8],
     [11, .7],
     [12, .65],
     [13, .5],
     [14, .4],
-  ],
-},
-  }
-},
-'DVRPC-FC-KD-JB': {
-  'id': 'DVRPC-FC-KD-JB',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
- 'fill-color': FC_KD_JB,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
-  }
-},
-    'PA-FuturePEV': {
-        'id': 'PA-FuturePEV',
-        'type': 'fill',
-        'source': 'pev',
-        'source-layer': 'pa_pev_bg',
-        'layout': {},
-        'paint': {
-          'fill-color': expressionPA1,
-          "fill-opacity": {
-            base: 9,
-            stops: [
-              [9, 1],
-              [11, .7],
-              [12, .65],
-              [13, .5],
-              [14, .4],
-            ],
-          },
-        }
-      },
+   ],
+  },
+    }
+  },
+  'DVRPC-FuturePEV-Pop': {
+    'id': 'DVRPC-FuturePEV-Pop',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+   'fill-color': FutPop,
+   "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [10, .8],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+      ],
+    },
+      }
+  },
+  'DVRPC-FuturePEV-HH': {
+    'id': 'DVRPC-FuturePEV-HH',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+    'fill-color': FutHH,
+    "fill-opacity": {
+      base: 9,
+      stops: [
+        [9, 1],
+        [10, .8],
+        [11, .7],
+        [12, .65],
+        [13, .5],
+        [14, .4],
+      ],
+    },
+      }
+  },
+  'DVRPC-FuturePEV-SM': {
+    'id': 'DVRPC-FuturePEV-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+    'fill-color': FutSM,
+    "fill-opacity": {
+      base: 9,
+      stops: [
+        [9, 1],
+        [10, .8],
+        [11, .7],
+        [12, .65],
+        [13, .5],
+        [14, .4],
+      ],
+    },
+      }
+  },
+  'DVRPC-FC-KD-SM': {
+    'id': 'DVRPC-FC-KD-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': FC_KD_SM,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'DVRPC-FC-KD-JB': {
+    'id': 'DVRPC-FC-KD-JB',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': FC_KD_JB,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'PA-FuturePEV': {
+      'id': 'PA-FuturePEV',
+      'type': 'fill',
+      'source': 'pev',
+      'source-layer': 'pa_pev_bg',
+      'layout': {},
+      'paint': {
+        'fill-color': expressionPA1,
+        "fill-opacity": {
+          base: 9,
+          stops: [
+            [9, 1],
+            [11, .7],
+            [12, .65],
+            [13, .5],
+            [14, .4],
+          ],
+        },
+      }
+    },
 }
 
 export default secondaryMapLayers

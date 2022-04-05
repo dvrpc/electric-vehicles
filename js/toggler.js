@@ -61,7 +61,7 @@ const togglerNJ = (map) => {
       zoom: 7,
     });
 
-  $('#pa-futyure').hide();
+  $('#pa-future').hide();
   $('#DVRPC').children().eq(1).removeClass();  
   $('#DVRPC').children().eq(1).addClass('dull'); 
   $('#PA').children().eq(1).removeClass();  
@@ -78,9 +78,29 @@ const togglerNJ = (map) => {
 };
 // Bike Score CheckBox toggle
 const togglerPEV = (map) => {
+  document.getElementById("PEV").addEventListener("click", function () {
+    $('.workplace').hide();
+    $('.distribution').show();
+    document.getElementById('type_select').value="current";
+
+    $('#WP').children().eq(1).removeClass();  
+    $('#WP').children().eq(1).addClass('dull'); 
+    $(this).children().eq(1).removeClass();   
+    $(this).children().eq(1).addClass('active');  
+  });
 };
 // Walk Score CheckBox toggle
 const togglerWP = (map) => {
+  document.getElementById("WP").addEventListener("click", function () {
+    $('.workplace').show();
+    $('.distribution').hide();
+    document.getElementById('type_select').value="free";
+
+    $('#PEV').children().eq(1).removeClass();  
+    $('#PEV').children().eq(1).addClass('dull'); 
+    $(this).children().eq(1).removeClass();   
+    $(this).children().eq(1).addClass('active');  
+  });
 };
 
 // Bike Score CheckBox toggle
