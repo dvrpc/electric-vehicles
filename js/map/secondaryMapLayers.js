@@ -65,6 +65,16 @@ let CurSM = ['interpolate',['linear'],
 17.65, pev6,
 33.71, pev7
 ];
+let CurVeh = ['interpolate',['linear'],
+['get', 'PerCuPEV'],
+ 0, pev1,
+.0016, pev2,
+.0024,pev3,
+.0032, pev4,
+.0044, pev5,
+.0065, pev6,
+.0103, pev7
+];
 // Future
 let expression2 = ['interpolate',['linear'],
 ['get', 'FutPEV'],
@@ -109,29 +119,105 @@ let FutSM = ['interpolate',['linear'],
 134.82, pev6,
 238.44, pev7
 ];
-
+let FutVeh = ['interpolate',['linear'],
+['get', 'PerFuPEV'],
+0.0, pev1,
+.0111, pev2,
+.0149, pev3,
+.01983, pev4,
+.02648, pev5,
+.03766, pev6,
+.06804, pev7
+];
+// Free Charging
 let FC_KD_SM = ['interpolate',['linear'],
 ['get', 'FC_KD_SM'],
-12.29, wp1,
-28.98, wp2,
-56.37, wp3,
-100.15,  wp4,
-164.75,  wp5,
-321.26,  wp6,
-64383, wp7
+0,wp1,
+12.29, wp2,
+28.98, wp3,
+56.37, wp4,
+100.15,  wp5,
+164.75,  wp6,
+321.26,  wp7
 ];
 
 let FC_KD_JB = ['interpolate',['linear'],
 ['get', 'FC_KD_JB'],
-.054, wpjob1,
-.074, wpjob2,
-.0898, wpjob3,
-.1046,  wpjob4,
-.1228,  wpjob5,
-.1517,  wpjob6,
-.7153, wpjob7
+ 0, wpjob1 ,
+.054, wpjob2 ,
+.074, wpjob3 ,
+.0898, wpjob4 ,
+.1046,  wpjob5 ,
+.1228,  wpjob6 ,
+.1517,  wpjob7
 ];
 
+let FC_CE_SM = ['interpolate',['linear'],
+['get', 'FC_CE_SM'],
+0,wp1,
+1.802, wp2,
+4.2266, wp3,
+8.1766, wp4,
+14.1452,  wp5,
+23.9576,  wp6,
+44.3198,  wp7
+];
+
+let FC_CE_JB = ['interpolate',['linear'],
+['get', 'FC_CE_JB'],
+0,wpjob1,
+.0083, wpjob2,
+.0108, wpjob3,
+.0128, wpjob4,
+.0145,  wpjob5,
+.0169,  wpjob6,
+.0209,  wpjob7
+];
+// Paid Charging
+let PC_KD_SM = ['interpolate',['linear'],
+['get', 'PC_KD_SM'],
+0, wp1,
+8.52, wp2,
+20.03, wp3,
+39.14,  wp4,
+69.46,  wp5,
+114.29,  wp6,
+222.67, wp7
+];
+
+let PC_KD_JB = ['interpolate',['linear'],
+['get', 'PC_KD_JB'],
+0, wpjob1,
+.0378, wpjob2,
+.0512, wpjob3,
+.0623,  wpjob4,
+.0724,  wpjob5,
+.0853,  wpjob6,
+.1052, wpjob7
+];
+
+let PC_CE_SM = ['interpolate',['linear'],
+['get', 'PC_CE_SM'],
+0, wp1,
+1.2, wp2,
+2.83, wp3,
+5.48,  wp4,
+9.5,  wp5,
+15.96,  wp6,
+29.68, wp7
+];
+
+let PC_CE_JB = ['interpolate',['linear'],
+['get', 'PC_CE_JB'],
+0, wpjob1,
+.0056, wpjob2,
+.0072, wpjob3,
+.0085,  wpjob4,
+.0097,  wpjob5,
+.0113,  wpjob6,
+.014,   wpjob7
+];
+// PA
 let expressionPA1 = ['interpolate',['linear'],
 ['get', 'FutPEV'],
 10, '#b2182b',
@@ -290,6 +376,27 @@ const secondaryMapLayers = {
 },
   }
 },
+'DVRPC-CurrentPEV-Veh': {
+  'id': 'DVRPC-CurrentPEV-Veh',
+  'type': 'fill',
+  'source': 'pev',
+  'source-layer': 'dvrpc_pev_bg',
+  'layout': {},
+  'paint': {
+ 'fill-color': CurVeh,
+ "fill-opacity": {
+  base: 9,
+  stops: [
+    [9, 1],
+    [10, .8],
+    [11, .7],
+    [12, .65],
+    [13, .5],
+    [14, .4],
+  ],
+},
+  }
+},
 'dvrpc-projected': {
   'id': 'dvrpc-projected',
   'type': 'circle',
@@ -404,6 +511,28 @@ const secondaryMapLayers = {
     },
       }
   },
+  'DVRPC-FuturePEV-Veh': {
+    'id': 'DVRPC-FuturePEV-Veh',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+    'fill-color': FutVeh,
+    "fill-opacity": {
+      base: 9,
+      stops: [
+        [9, 1],
+        [10, .8],
+        [11, .7],
+        [12, .65],
+        [13, .5],
+        [14, .4],
+      ],
+    },
+      }
+  },
+  // FREE
   'DVRPC-FC-KD-SM': {
     'id': 'DVRPC-FC-KD-SM',
     'type': 'fill',
@@ -444,6 +573,128 @@ const secondaryMapLayers = {
   },
     }
   },
+  'DVRPC-FC-CE-SM': {
+    'id': 'DVRPC-FC-CE-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': FC_CE_SM,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'DVRPC-FC-CE-JB': {
+    'id': 'DVRPC-FC-CE-JB',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': FC_CE_JB,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  //Paid
+  'DVRPC-PC-KD-SM': {
+    'id': 'DVRPC-PC-KD-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': PC_KD_SM,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'DVRPC-PC-KD-JB': {
+    'id': 'DVRPC-PC-KD-JB',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': PC_KD_JB,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'DVRPC-PC-CE-SM': {
+    'id': 'DVRPC-PC-CE-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': PC_CE_SM,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  'DVRPC-PC-CE-JB': {
+    'id': 'DVRPC-PC-CE-JB',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {},
+    'paint': {
+  'fill-color': PC_CE_JB,
+  "fill-opacity": {
+    base: 9,
+    stops: [
+      [9, 1],
+      [11, .7],
+      [12, .65],
+      [13, .5],
+      [14, .4],
+    ],
+  },
+    }
+  },
+  //PA
   'PA-FuturePEV': {
       'id': 'PA-FuturePEV',
       'type': 'fill',

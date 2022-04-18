@@ -80,6 +80,19 @@ const legendConfig = {
     legendLable6:"33.71",
     legendLable7:"760.41"
   },
+  "DVRPC-CurrentPEV-Veh": {
+    label: "Percentage of Passengers that are PEVs",
+    legendType:"scale",
+    note:"note",
+    class:"gb",
+    legendLable1:"0.16%",
+    legendLable2:"0.24%",
+    legendLable3:"0.32%",
+    legendLable4:"0.44%",
+    legendLable5:"0.6543%",
+    legendLable6:"1.03%",
+    legendLable7:"5.7866%"
+  },
   "DVRPC-FuturePEV-BG": {
     label: "Future PEVs",
     legendType:"scale",
@@ -132,8 +145,21 @@ const legendConfig = {
     legendLable6:"238.44",
     legendLable7:"10,856.59"
   },
+  "DVRPC-FuturePEV-Veh": {
+    label: "Percentage of Passengers that are PEVs",
+    legendType:"scale",
+    note:"note",
+    class:"gb",
+    legendLable1:"1.11%",
+    legendLable2:"1.49%",
+    legendLable3:"1.983%",
+    legendLable4:"2.648%",
+    legendLable5:"3.766%",
+    legendLable6:"6.804%",
+    legendLable7:"66.757%"
+  },
   "DVRPC-FC-KD-SM": {
-    label: "Free Charging - kWh of Demand per sq. mi.",
+    label: "Free Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
     note:"note",
     class:"yor",
@@ -160,6 +186,92 @@ const legendConfig = {
     legendLable7:"0.7153",
     note:"kWh of Workplace Charging Demand per Job"
   },
+  "DVRPC-FC-CE-SM": {
+    label: "Free Charging - Charging Event per Sq. Mi.",
+    legendType:"scale",
+    note:"note",
+    class:"yor",
+    legendLable1:"1.802",
+    legendLable2:"4.2266",
+    legendLable3:"8.1766",
+    legendLable4:"14.1452",
+    legendLable5:"23.9576",
+    legendLable6:"44.3198",
+    legendLable7:"9048.8279",
+    note:"Number of Workplace Charging Events per Square Mile"
+  },
+  "DVRPC-FC-CE-JB": {
+    label: "Free Charging - Charging Event per Job",
+    legendType:"scale",
+    note:"note",
+    class:"brg",
+    legendLable1:"0.0083",
+    legendLable2:"0.0108",
+    legendLable3:"0.0128",
+    legendLable4:"0.0145",
+    legendLable5:"0.0169",
+    legendLable6:"0.0209",
+    legendLable7:"0.111",
+    note:"Number of Workplace Charging Events per Job"
+  },
+
+  "DVRPC-PC-KD-SM": {
+    label: "Paid Charging - kWh of Demand per Sq. Mi.",
+    legendType:"scale",
+    note:"note",
+    class:"yor",
+    legendLable1:"8.52",
+    legendLable2:"20.03",
+    legendLable3:"39.14",
+    legendLable4:"69.46",
+    legendLable5:"114.29",
+    legendLable6:"222.67",
+    legendLable7:"44668.03",
+    note:"kWh of Workplace Charging Demand per Square Mile"
+  },
+  "DVRPC-PC-KD-JB": {
+    label: "Paid Charging - kWh of Demand per Job",
+    legendType:"scale",
+    note:"note",
+    class:"brg",
+    legendLable1:"0.0378",
+    legendLable2:"0.0512",
+    legendLable3:"0.0623",
+    legendLable4:"0.0724",
+    legendLable5:"0.0853",
+    legendLable6:"0.1052",
+    legendLable7:"0.4934",
+    note:"kWh of Workplace Charging Demand per Job"
+  },
+  "DVRPC-PC-CE-SM": {
+    label: "Paid Charging - Charging Event per Sq. Mi.",
+    legendType:"scale",
+    note:"note",
+    class:"yor",
+    legendLable1:"1.2",
+    legendLable2:"2.83",
+    legendLable3:"5.48",
+    legendLable4:"9.5",
+    legendLable5:"15.96",
+    legendLable6:"29.68",
+    legendLable7:"6080.94",
+    note:"Number of Workplace Charging Events per Square Mile"
+  },
+  "DVRPC-PC-CE-JB": {
+    label: "Paid Charging - Charging Event per Job",
+    legendType:"scale",
+    note:"note",
+    class:"brg",
+    legendLable1:"0.0056",
+    legendLable2:"0.0072",
+    legendLable3:"0.0085",
+    legendLable4:"0.0097",
+    legendLable5:"0.0113",
+    legendLable6:"0.014",
+    legendLable7:"0.074",
+    note:"Number of Workplace Charging Events per Job"
+  },
+
   "PA-FuturePEV": {
     label: "PA Future PEV",
     legendType:"scale",
