@@ -76,12 +76,16 @@ const togglerNJ = (map) => {
   // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","NJ"],[">=","FutPEV",0.1]]);
   });
 };
-// Bike Score CheckBox toggle
+// PEV Distrubtion
 const togglerPEV = (map) => {
   document.getElementById("PEV").addEventListener("click", function () {
     $('.workplace').hide();
+    $('.current').show();
     $('.distribution').show();
+    $('.free').hide();
+    $('.paid').hide();
     document.getElementById('type_select').value="current";
+    document.getElementById('layout_select').value="dvrpc-current";
 
     $('#WP').children().eq(1).removeClass();  
     $('#WP').children().eq(1).addClass('dull'); 
@@ -89,13 +93,19 @@ const togglerPEV = (map) => {
     $(this).children().eq(1).addClass('active');  
   });
 };
-// Walk Score CheckBox toggle
+// WorkPlace 
 const togglerWP = (map) => {
   document.getElementById("WP").addEventListener("click", function () {
     $('.workplace').show();
+    $('.free').show();
     $('.distribution').hide();
-    document.getElementById('type_select').value="free";
-
+    $('.current').hide();
+    $('.future').hide();
+    
+    document.getElementById('type_select').selectedIndex=2;
+    document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+  
+   
     $('#PEV').children().eq(1).removeClass();  
     $('#PEV').children().eq(1).addClass('dull'); 
     $(this).children().eq(1).removeClass();   
@@ -113,11 +123,19 @@ const filterCurrent = () => {
       $('.current').hide();
       $('.future').show();
       document.getElementById('layout_select').value="dvrpc-projected";
-    } else {
+    } else if (layer == "current"){
       $('.current').show();
       $('.future').hide();
       document.getElementById('layout_select').value="dvrpc-current";
-    }
+    } else if (layer == "free"){
+    $('.free').show();
+    $('.paid').hide();
+    document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+  } else {
+    $('.paid').show();
+    $('.free').hide();
+    document.getElementById('layout_select').value="DVRPC-PC-KD-SM";
+  }
 
   });
 
