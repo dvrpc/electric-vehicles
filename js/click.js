@@ -21,15 +21,14 @@ const handleBlockGroups = function (props,map) {
 
   let county = lookupCounty[props.countyfp10];
 
-  var BGName = "<h3>Block Group ID:"+ props.GEOID10 +
-  "</span></h3>"
+  var BGName = "<h3>Block Group ID: "+ props.GEOID10 +
+  "</span></h3>"+"<div class='data-subtitle'><span>Municipality Containing This Block Group: </span></span></div><div class='data-subtitle'><span> " +
+  props.MUN_NAME +
+  "</span></div>" 
   ;
   document.getElementById("BGName").innerHTML = BGName;
 
-  var BGInfo = "<div><span class='data-info'>Municipality Containing This Block Group</span></span></div><div><span> " +
-  props.MUN_NAME +
-  "</span></div>" +
-  "<div><i class='fa-solid fa-people'></i>Demographics Summary</div>"+
+  var BGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Block Group Demographics Summary</div>"+
   "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   numeral(props.POP).format("(0,0)") +
   "</span></div>" +
@@ -39,11 +38,11 @@ const handleBlockGroups = function (props,map) {
   "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
   numeral(props.JOBS).format("(0,0)") +
   "</span></div>" +
-  "<div><i class='fa-solid fa-car'></i>Vehicular Summary</div>"+
+  "<div class='data-subtitle'><i class='fa-solid fa-car'></i>&nbsp Block Group Vehicular Summary</div>"+
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>"+
-  "<div>Plug-in Electric Vehicle Distribution</div>"+
+  "<div class='data-subtitle2'>Plug-in Electric Vehicle Distribution</div>"+
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
@@ -95,72 +94,53 @@ const handleBlockGroups = function (props,map) {
      numeral(props.FUPEV_SM ).format("(0,0.0)")+
     "</td>" +
     "</tr>" +
-    "</table></div>";
+    "</table></div>"+
+    "<div class='data-subtitle2'>Workplace Charging Demand</div>"+
+    "<div><table class='dataTable'>" +
+      "<tr>" +
+      "<th scope='col'></th>" +
+      "<th scope='col'>Free</th>" +
+      "<th scope='col'>Paid</th>" +
+      "</tr>" +
+      "<tr class='dataTable-row'>" +
+      "<td class='data-info'>kWh of Demand per Sq. Mi.</td>" +
+      "<td class='data-value-left'>" +
+      numeral(props.FC_KD_SM).format("(0,0.00)") +
+      "</td>" +
+      "<td class='data-value-right'>" +
+      numeral(props.PC_KD_SM).format("(0,0.00)") +
+      "</td>" +
+      "</tr>" +
+      "<tr class='dataTable-row'>" +
+      "<td class='data-info'>Charing Events per Sq. Mi.</td>" +
+      "<td class='data-value-left'>" +
+      numeral(props.FC_CE_SM).format("(0,0.00)") +
+      "</td>" +
+      "<td class='data-value-right'>" +
+      numeral(props.PC_CE_SM).format("(0,0.00)") +
+      "</td>" +
+      "</tr>" +
+      "<tr class='dataTable-row'>" +
+      "<td class='data-info'>kWh of Demand per Job</td>" +
+      "<td class='data-value-left'>" +
+      numeral(props.FC_KD_JB).format("(0,0.000)") +
+      "</td>" +
+      "<td class='data-value-right'>" +
+      numeral(props.PC_KD_JB).format("(0,0.000)") +
+      "</td>" +
+      "</tr>" +
+      "<tr class='dataTable-row'>" +
+      "<td class='data-info'>Charing Events per Job</td>" +
+      "<td class='data-value-left'>" +
+      numeral(props.FC_CE_JB).format("(0.000)") +
+      "</td>" +
+      "<td class='data-value-right'>" +
+      numeral(props.FC_CE_JB).format("(0.000)") +
+      "</td>" +
+      "</tr>" +
+      "</table></div>";
   ;
   document.getElementById("BGInfo").innerHTML = BGInfo;
-
-  // var BGresults =
-  // "<div><table class='dataTable'>" +
-  //   "<tr>" +
-  //   "<th scope='col'></th>" +
-  //   "<th scope='col'>Current</th>" +
-  //   "<th scope='col'>Projected</th>" +
-  //   "</tr>" +
-  //   "<tr class='dataTable-row'>" +
-  //   "<td class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.CurPEV).format("(0,0)") +
-  //   "</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.FutPEV).format("(0,0)") +
-  //   "</td>" +
-  //   "</tr>" +
-  //   "<tr class='dataTable-row'>" +
-  //   "<td class='data-info'>Percentage of Passenger Vehicles That Are PEVs</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.PerCuPEV).format("(0.00%)") +
-  //   "</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.PerFuPEV).format("(0.00%)") +
-  //   "</td>" +
-  //   "</tr>" +
-  //   "<tr class='dataTable-row'>" +
-  //   "<td class='data-info'>Number of PEVs per 100 People</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.CuPEVPop).format("(0,0.0)") +
-  //   "</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.FuPEVPop).format("(0,0.0)") +
-  //   "</td>" +
-  //   "</tr>" +
-  //   "<tr class='dataTable-row'>" +
-  //   "<td class='data-info'>Number of PEVs per 100 Housing Unit</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.CuPEV_HU).format("(0,0.0)") +
-  //   "</td>" +
-  //   "<td class='data-value'>" +
-  //   numeral(props.FuPEV_HU).format("(0,0.0)") +
-  //   "</td>" +
-  //   "</tr>" +
-  //   "<tr class='dataTable-row'>" +
-  //   "<td class='data-info2'>Number of PEVs per Sq. Mi.</td>" +
-  //   "<td class='data-value2'>" +
-  //    numeral(props.CuPEV_SM).format("(0,0.0)") +
-  //   "</td>" +
-  //   "<td class='data-value2'>" +
-  //    numeral(props.FUPEV_SM ).format("(0,0.0)")+
-  //   "</td>" +
-  //   "</tr>" +
-  //   "</table></div>";
-  // document.getElementById("results").innerHTML = BGresults;
-
-    // map.flyTo({
-    //   // created a parameter that pulls the lat/long values from the geojson
-    //   center: coordinates,
-    //   pitch: 20,
-    //   speed: 0.7,
-    //   zoom: 15,
-    // });
 }
 
 const handleMCD = function (props,map) {
@@ -190,7 +170,7 @@ const handleMCD = function (props,map) {
   ;
   document.getElementById("mcdName").innerHTML = mcdName;
 
-  var mcdAGGInfo = "<div>Demographic Summary</div><div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
+  var mcdAGGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Municipal Demographic Summary</div><div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   numeral(props.POP).format("(0,0)") +
   "</span></div>" +
   "<div class='data-row'><span class='data-info'>Households</span><span class='data-value'> " +
@@ -199,7 +179,7 @@ const handleMCD = function (props,map) {
   "<div class='data-row'><span class='data-info'>Jobs </span><span class='data-value'> " +
   numeral(props.JOBS).format("(0,0)") +
   "</span></div>" +
-  "<div>Vehicular Summary</div>"+
+  "<div class='data-subtitle'><i class='fa-solid fa-car'></i>&nbsp Municipal Vehicular Summary</div>"+
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>" +
