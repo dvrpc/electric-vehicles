@@ -59,13 +59,13 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"gb",
-    legendLable1:"0.229%",
-    legendLable2:"0.355%",
-    legendLable3:"0.548%",
-    legendLable4:"0.7783%",
+    legendLable1:"0.23%",
+    legendLable2:"0.35%",
+    legendLable3:"0.54%",
+    legendLable4:"0.77%",
     legendLable5:"1.16%",
     legendLable6:"1.89%",
-    legendLable7:"11.019%"
+    legendLable7:"11.02%"
   },
   "DVRPC-CurrentPEV-SM": {
     label: "Current PEVs per Sq. Mi.",
@@ -89,9 +89,9 @@ const legendConfig = {
     legendLable2:"0.24%",
     legendLable3:"0.32%",
     legendLable4:"0.44%",
-    legendLable5:"0.6543%",
+    legendLable5:"0.65%",
     legendLable6:"1.03%",
-    legendLable7:"5.7866%"
+    legendLable7:"5.78%"
   },
   "DVRPC-FuturePEV-BG": {
     label: "Future PEVs",
@@ -104,7 +104,7 @@ const legendConfig = {
     legendLable4:"21.39",
     legendLable5:"35.52",
     legendLable6:"72.51",
-    legendLable7:"1233.16"
+    legendLable7:"1,233.16"
   },
   "DVRPC-FuturePEV-Pop": {
     label: "Future PEVs per 100 People",
@@ -152,11 +152,11 @@ const legendConfig = {
     class:"gb",
     legendLable1:"1.11%",
     legendLable2:"1.49%",
-    legendLable3:"1.983%",
-    legendLable4:"2.648%",
-    legendLable5:"3.766%",
-    legendLable6:"6.804%",
-    legendLable7:"66.757%"
+    legendLable3:"1.98%",
+    legendLable4:"2.65%",
+    legendLable5:"3.76%",
+    legendLable6:"6.80%",
+    legendLable7:"66.76%"
   },
   "DVRPC-FC-KD-SM": {
     label: "Free Charging - kWh of Demand per Sq. Mi.",
@@ -169,7 +169,7 @@ const legendConfig = {
     legendLable4:"100.15",
     legendLable5:"164.75",
     legendLable6:"321.26",
-    legendLable7:"64382.29",
+    legendLable7:"64,382.29",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
   "DVRPC-FC-KD-JB": {
@@ -177,13 +177,13 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"brg",
-    legendLable1:"0.0546",
-    legendLable2:"0.074",
-    legendLable3:"0.0898",
-    legendLable4:"0.1046",
-    legendLable5:"0.1228",
-    legendLable6:"0.1517",
-    legendLable7:"0.7153",
+    legendLable1:"0.05",
+    legendLable2:"0.07",
+    legendLable3:"0.09",
+    legendLable4:"0.10",
+    legendLable5:"0.12",
+    legendLable6:"0.15",
+    legendLable7:"0.71",
     note:"kWh of Workplace Charging Demand per Job"
   },
   "DVRPC-FC-CE-SM": {
@@ -191,13 +191,13 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"yor",
-    legendLable1:"1.802",
-    legendLable2:"4.2266",
-    legendLable3:"8.1766",
-    legendLable4:"14.1452",
-    legendLable5:"23.9576",
-    legendLable6:"44.3198",
-    legendLable7:"9048.8279",
+    legendLable1:"1.80",
+    legendLable2:"4.22",
+    legendLable3:"8.17",
+    legendLable4:"14.14",
+    legendLable5:"23.95",
+    legendLable6:"44.31",
+    legendLable7:"9,048.82",
     note:"Number of Workplace Charging Events per Square Mile"
   },
   "DVRPC-FC-CE-JB": {
@@ -205,12 +205,12 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"brg",
-    legendLable1:"0.0083",
-    legendLable2:"0.0108",
-    legendLable3:"0.0128",
-    legendLable4:"0.0145",
-    legendLable5:"0.0169",
-    legendLable6:"0.0209",
+    legendLable1:"0.008",
+    legendLable2:"0.011",
+    legendLable3:"0.013",
+    legendLable4:"0.014",
+    legendLable5:"0.016",
+    legendLable6:"0.020",
     legendLable7:"0.111",
     note:"Number of Workplace Charging Events per Job"
   },
@@ -226,7 +226,7 @@ const legendConfig = {
     legendLable4:"69.46",
     legendLable5:"114.29",
     legendLable6:"222.67",
-    legendLable7:"44668.03",
+    legendLable7:"44,668.03",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
   "DVRPC-PC-KD-JB": {
@@ -234,13 +234,13 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"brg",
-    legendLable1:"0.0378",
-    legendLable2:"0.0512",
-    legendLable3:"0.0623",
-    legendLable4:"0.0724",
-    legendLable5:"0.0853",
-    legendLable6:"0.1052",
-    legendLable7:"0.4934",
+    legendLable1:"0.037",
+    legendLable2:"0.051",
+    legendLable3:"0.062",
+    legendLable4:"0.072",
+    legendLable5:"0.085",
+    legendLable6:"0.105",
+    legendLable7:"0.493",
     note:"kWh of Workplace Charging Demand per Job"
   },
   "DVRPC-PC-CE-SM": {
@@ -254,7 +254,7 @@ const legendConfig = {
     legendLable4:"9.5",
     legendLable5:"15.96",
     legendLable6:"29.68",
-    legendLable7:"6080.94",
+    legendLable7:"6,080.94",
     note:"Number of Workplace Charging Events per Square Mile"
   },
   "DVRPC-PC-CE-JB": {
@@ -262,11 +262,11 @@ const legendConfig = {
     legendType:"scale",
     note:"note",
     class:"brg",
-    legendLable1:"0.0056",
-    legendLable2:"0.0072",
-    legendLable3:"0.0085",
-    legendLable4:"0.0097",
-    legendLable5:"0.0113",
+    legendLable1:"0.005",
+    legendLable2:"0.007",
+    legendLable3:"0.008",
+    legendLable4:"0.010",
+    legendLable5:"0.011",
     legendLable6:"0.014",
     legendLable7:"0.074",
     note:"Number of Workplace Charging Events per Job"

@@ -24,7 +24,7 @@ if (legendDetails.legendType === "scale") {
           <label>${legendDetails.legendLable5}</label>
           <label>${legendDetails.legendLable6}</label>
           <label>${legendDetails.legendLable7}</label>
-          <small>${legendDetails.note}</small>
+          <div class="legend-note">${legendDetails.note}</div>
           </div>
  </div>
 `;
