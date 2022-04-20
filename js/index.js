@@ -6,9 +6,9 @@ import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
 import {
-    togglerDVRPC,
-    togglerPA,
-    togglerNJ,
+    // togglerDVRPC,
+    // togglerPA,
+    // togglerNJ,
     togglerPEV,
     togglerWP,
     filterCurrent
@@ -35,11 +35,11 @@ const map = makeMap()
 
 map.on('load', () => {
       // wiring for on-click event on the map
-    togglerDVRPC(map);
-    togglerPA(map);
-    togglerNJ(map);
-    togglerPEV(map);
-    togglerWP(map);
+    // togglerDVRPC(map);
+    // togglerPA(map);
+    // togglerNJ(map);
+    togglerPEV();
+    togglerWP();
     filterCurrent();
 
     for(const source in sources) map.addSource(source, sources[source])

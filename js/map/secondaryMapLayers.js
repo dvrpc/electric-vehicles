@@ -22,9 +22,9 @@ let wpjob5 = '#c7eae5';
 let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 // Current
-let expression1 = ['interpolate',['linear'],
+let expression1 = ['step',
 ['get', 'CurPEV'],
-  0, pev1,
+pev1,
 .98, pev2,
 1.64, pev3,
 2.66, pev4 ,
@@ -33,9 +33,9 @@ let expression1 = ['interpolate',['linear'],
 11.83,pev7
 ];
 
-let CurPop = ['interpolate',['linear'],
+let CurPop = ['step',
 ['get', 'CuPEVPop'],
-   0, pev1,
+pev1,
 .086, pev2,
 .138, pev3,
 .2085,  pev4,
@@ -44,9 +44,9 @@ let CurPop = ['interpolate',['linear'],
 .71, pev7
 ];
 
-let CurHH = ['interpolate',['linear'],
+let CurHH = ['step',
 ['get', 'CuPEV_HU'],
-0, pev1,
+pev1,
 .229, pev2,
 .355,pev3,
 .548, pev4,
@@ -55,9 +55,9 @@ let CurHH = ['interpolate',['linear'],
 1.89, pev7
 ];
 
-let CurSM = ['interpolate',['linear'],
+let CurSM = ['step',
 ['get', 'CuPEV_SM'],
-0, pev1,
+pev1,
 2.98, pev2,
 5.25,pev3,
 8.01, pev4,
@@ -65,9 +65,9 @@ let CurSM = ['interpolate',['linear'],
 17.65, pev6,
 33.71, pev7
 ];
-let CurVeh = ['interpolate',['linear'],
+let CurVeh = ['step',
 ['get', 'PerCuPEV'],
- 0, pev1,
+pev1,
 .0016, pev2,
 .0024,pev3,
 .0032, pev4,
@@ -76,9 +76,9 @@ let CurVeh = ['interpolate',['linear'],
 .0103, pev7
 ];
 // Future
-let expression2 = ['interpolate',['linear'],
+let expression2 = ['step',
 ['get', 'FutPEV'],
-0, pev1,
+pev1,
 4.49, pev2,
 7.87, pev3,
 12.87,  pev4,
@@ -87,9 +87,9 @@ let expression2 = ['interpolate',['linear'],
 72.51, pev7
 ];
 
-let FutPop = ['interpolate',['linear'],
+let FutPop = ['step',
 ['get', 'FuPEVPop'],
-0, pev1,
+pev1,
 .44, pev2,
 .72, pev3,
 1.13,  pev4,
@@ -98,9 +98,9 @@ let FutPop = ['interpolate',['linear'],
 4.75, pev7
 ];
 
-let FutHH = ['interpolate',['linear'],
+let FutHH = ['step',
 ['get', 'FuPEV_HU'],
-0, pev1,
+pev1,
 1.25,pev2,
 1.94, pev3,
 2.94,  pev4,
@@ -109,9 +109,9 @@ let FutHH = ['interpolate',['linear'],
 12.27, pev7
 ];
 
-let FutSM = ['interpolate',['linear'],
+let FutSM = ['step',
 ['get', 'FUPEV_SM'],
-0, pev1,
+pev1,
 26.97, pev2,
 45.94,pev3,
 67.38, pev4,
@@ -119,9 +119,9 @@ let FutSM = ['interpolate',['linear'],
 134.82, pev6,
 238.44, pev7
 ];
-let FutVeh = ['interpolate',['linear'],
+let FutVeh = ['step',
 ['get', 'PerFuPEV'],
-0.0, pev1,
+pev1,
 .0111, pev2,
 .0149, pev3,
 .01983, pev4,
@@ -130,9 +130,9 @@ let FutVeh = ['interpolate',['linear'],
 .06804, pev7
 ];
 // Free Charging
-let FC_KD_SM = ['interpolate',['linear'],
+let FC_KD_SM = ['step',
 ['get', 'FC_KD_SM'],
-0,wp1,
+wp1,
 12.29, wp2,
 28.98, wp3,
 56.37, wp4,
@@ -141,9 +141,9 @@ let FC_KD_SM = ['interpolate',['linear'],
 321.26,  wp7
 ];
 
-let FC_KD_JB = ['interpolate',['linear'],
+let FC_KD_JB = ['step',
 ['get', 'FC_KD_JB'],
- 0, wpjob1 ,
+ wpjob1 ,
 .054, wpjob2 ,
 .074, wpjob3 ,
 .0898, wpjob4 ,
@@ -152,9 +152,9 @@ let FC_KD_JB = ['interpolate',['linear'],
 .1517,  wpjob7
 ];
 
-let FC_CE_SM = ['interpolate',['linear'],
+let FC_CE_SM = ['step',
 ['get', 'FC_CE_SM'],
-0,wp1,
+wp1,
 1.802, wp2,
 4.2266, wp3,
 8.1766, wp4,
@@ -163,9 +163,9 @@ let FC_CE_SM = ['interpolate',['linear'],
 44.3198,  wp7
 ];
 
-let FC_CE_JB = ['interpolate',['linear'],
+let FC_CE_JB = ['step',
 ['get', 'FC_CE_JB'],
-0,wpjob1,
+wpjob1,
 .0083, wpjob2,
 .0108, wpjob3,
 .0128, wpjob4,
@@ -174,9 +174,9 @@ let FC_CE_JB = ['interpolate',['linear'],
 .0209,  wpjob7
 ];
 // Paid Charging
-let PC_KD_SM = ['interpolate',['linear'],
+let PC_KD_SM = ['step',
 ['get', 'PC_KD_SM'],
-0, wp1,
+wp1,
 8.52, wp2,
 20.03, wp3,
 39.14,  wp4,
@@ -185,9 +185,9 @@ let PC_KD_SM = ['interpolate',['linear'],
 222.67, wp7
 ];
 
-let PC_KD_JB = ['interpolate',['linear'],
+let PC_KD_JB = ['step',
 ['get', 'PC_KD_JB'],
-0, wpjob1,
+wpjob1,
 .0378, wpjob2,
 .0512, wpjob3,
 .0623,  wpjob4,
@@ -196,9 +196,9 @@ let PC_KD_JB = ['interpolate',['linear'],
 .1052, wpjob7
 ];
 
-let PC_CE_SM = ['interpolate',['linear'],
+let PC_CE_SM = ['step',
 ['get', 'PC_CE_SM'],
-0, wp1,
+wp1,
 1.2, wp2,
 2.83, wp3,
 5.48,  wp4,
@@ -207,9 +207,9 @@ let PC_CE_SM = ['interpolate',['linear'],
 29.68, wp7
 ];
 
-let PC_CE_JB = ['interpolate',['linear'],
+let PC_CE_JB = ['step',
 ['get', 'PC_CE_JB'],
-0, wpjob1,
+wpjob1,
 .0056, wpjob2,
 .0072, wpjob3,
 .0085,  wpjob4,
@@ -218,9 +218,9 @@ let PC_CE_JB = ['interpolate',['linear'],
 .014,   wpjob7
 ];
 // PA
-let expressionPA1 = ['interpolate',['linear'],
+let expressionPA1 = ['step',
 ['get', 'FutPEV'],
-10, '#b2182b',
+'#b2182b',
 15,'#ef8a62',
 22,'#fddbc7',
 32, '#f7f7f7',

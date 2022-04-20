@@ -1,83 +1,75 @@
 // Access Score CheckBox toggle
 
-const togglerDVRPC = (map) => {
-  document.getElementById("DVRPC").addEventListener("click", function () {
-    map.flyTo({
-      // created a parameter that pulls the lat/long values from the geojson
-      center: [-75.2273, 40.071],
-      speed: 0.7,
-      zoom: 8.4,
-    });
-  $('#pa-future').hide();
-  $('.dvrpc').show();
-  document.getElementById('layout_select').selectedIndex=0;
-  $('#PA').children().eq(1).removeClass();  
-  $('#PA').children().eq(1).addClass('dull');  
-  $('#NJ').children().eq(1).removeClass();  
-  $('#NJ').children().eq(1).addClass('dull');  
-  $(this).children().eq(1).removeClass();   
-  $(this).children().eq(1).addClass('active');  
+// const togglerDVRPC = (map) => {
+//   document.getElementById("DVRPC").addEventListener("click", function () {
+//     map.flyTo({
+//       // created a parameter that pulls the lat/long values from the geojson
+//       center: [-75.2273, 40.071],
+//       speed: 0.7,
+//       zoom: 8.4,
+//     });
+//   $('#pa-future').hide();
+//   $('.dvrpc').show();
+//   document.getElementById('layout_select').selectedIndex=0;
+//   $('#PA').children().eq(1).removeClass();  
+//   $('#PA').children().eq(1).addClass('dull');  
+//   $('#NJ').children().eq(1).removeClass();  
+//   $('#NJ').children().eq(1).addClass('dull');  
+//   $(this).children().eq(1).removeClass();   
+//   $(this).children().eq(1).addClass('active');  
 
-  map.setFilter('county-outline', ['==', 'DVRPC', 'Yes']);
-  map.setFilter('municipality-outline', ['==', 'DVRPC', 'Yes']);
-  // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","DVRPC"],[">=","CurPEV",0.1]]);
-  // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","DVRPC"],[">=","FutPEV",0.1]]);
-  map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "visible");
-  });
-};
-// Bike Score CheckBox toggle
-const togglerPA = (map) => {
-  document.getElementById("PA").addEventListener("click", function () {
-    map.flyTo({
-      // created a parameter that pulls the lat/long values from the geojson
-      center: [-77.76,40.92],
-      speed: 0.7,
-      zoom: 7,
-    });
-    $('#pa-future').show();
-    $('.dvrpc').hide();
-    document.getElementById('layout_select').selectedIndex=4;
-    $('#DVRPC').children().eq(1).removeClass();  
-    $('#DVRPC').children().eq(1).addClass('dull'); 
-    $('#NJ').children().eq(1).removeClass();  
-    $('#NJ').children().eq(1).addClass('dull');   
-    $(this).children().eq(1).removeClass();   
-    $(this).children().eq(1).addClass('active');  
+//   map.setFilter('county-outline', ['==', 'DVRPC', 'Yes']);
+//   map.setFilter('municipality-outline', ['==', 'DVRPC', 'Yes']);
+//   map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "visible");
+//   });
+// };
+// // Bike Score CheckBox toggle
+// const togglerPA = (map) => {
+//   document.getElementById("PA").addEventListener("click", function () {
+//     map.flyTo({
+//       center: [-77.76,40.92],
+//       speed: 0.7,
+//       zoom: 7,
+//     });
+//     $('#pa-future').show();
+//     $('.dvrpc').hide();
+//     document.getElementById('layout_select').selectedIndex=4;
+//     $('#DVRPC').children().eq(1).removeClass();  
+//     $('#DVRPC').children().eq(1).addClass('dull'); 
+//     $('#NJ').children().eq(1).removeClass();  
+//     $('#NJ').children().eq(1).addClass('dull');   
+//     $(this).children().eq(1).removeClass();   
+//     $(this).children().eq(1).addClass('active');  
 
-    map.setFilter('county-outline', ['==', 'STATE', 'PA']);
-    map.setFilter('municipality-outline', ['==', 'STATE', 'PA']);
-    // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","PA"],[">=","CurPEV",0.1]]);
-    // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","PA"],[">=","FutPEV",0.1]]);
-    map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "none");
-  });
-};
-// Walk Score CheckBox toggle
-const togglerNJ = (map) => {
-  document.getElementById("NJ").addEventListener("click", function () {
-    map.flyTo({
-      // created a parameter that pulls the lat/long values from the geojson
-      center: [ -74.52, 40.24],
-      speed: 0.7,
-      zoom: 7,
-    });
+//     map.setFilter('county-outline', ['==', 'STATE', 'PA']);
+//     map.setFilter('municipality-outline', ['==', 'STATE', 'PA']);
+//     map.setLayoutProperty("dvrpcPEVBG-line", "visibility", "none");
+//   });
+// };
+// // Walk Score CheckBox toggle
+// const togglerNJ = (map) => {
+//   document.getElementById("NJ").addEventListener("click", function () {
+//     map.flyTo({
+//       center: [ -74.52, 40.24],
+//       speed: 0.7,
+//       zoom: 7,
+//     });
 
-  $('#pa-future').hide();
-  $('#DVRPC').children().eq(1).removeClass();  
-  $('#DVRPC').children().eq(1).addClass('dull'); 
-  $('#PA').children().eq(1).removeClass();  
-  $('#PA').children().eq(1).addClass('dull');   
-  $(this).children().eq(1).removeClass();   
-  $(this).children().eq(1).addClass('active');  
+//   $('#pa-future').hide();
+//   $('#DVRPC').children().eq(1).removeClass();  
+//   $('#DVRPC').children().eq(1).addClass('dull'); 
+//   $('#PA').children().eq(1).removeClass();  
+//   $('#PA').children().eq(1).addClass('dull');   
+//   $(this).children().eq(1).removeClass();   
+//   $(this).children().eq(1).addClass('active');  
 
 
-  map.setFilter('county-outline', ['==', 'STATE', 'NJ']);
-  map.setFilter('municipality-outline', ['==', 'STATE', 'NJ']);
-  // map.setFilter('dvrpc-current', ["all",["==","MAPTYPE","NJ"],[">=","CurPEV",0.1]]);
-  // map.setFilter('dvrpc-projected', ["all",["==","MAPTYPE","NJ"],[">=","FutPEV",0.1]]);
-  });
-};
+//   map.setFilter('county-outline', ['==', 'STATE', 'NJ']);
+//   map.setFilter('municipality-outline', ['==', 'STATE', 'NJ']);
+//   });
+// };
 // PEV Distrubtion
-const togglerPEV = (map) => {
+const togglerPEV = () => {
   document.getElementById("PEV").addEventListener("click", function () {
     $('.workplace').hide();
     $('.current').show();
@@ -86,6 +78,7 @@ const togglerPEV = (map) => {
     $('.paid').hide();
     document.getElementById('type_select').value="current";
     document.getElementById('layout_select').value="dvrpc-current";
+    $("#layout_select").trigger("change");
 
     $('#WP').children().eq(1).removeClass();  
     $('#WP').children().eq(1).addClass('dull'); 
@@ -94,18 +87,21 @@ const togglerPEV = (map) => {
   });
 };
 // WorkPlace 
-const togglerWP = (map) => {
+const togglerWP = () => {
   document.getElementById("WP").addEventListener("click", function () {
     $('.workplace').show();
     $('.free').show();
     $('.distribution').hide();
     $('.current').hide();
     $('.future').hide();
-    
     document.getElementById('type_select').selectedIndex=2;
-    document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+    // document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+
+    var evt = document.getElementById('layout_select');
+    evt.value="DVRPC-FC-KD-SM";
+    $("#layout_select").trigger("change");
+
   
-   
     $('#PEV').children().eq(1).removeClass();  
     $('#PEV').children().eq(1).addClass('dull'); 
     $(this).children().eq(1).removeClass();   
@@ -128,14 +124,14 @@ const filterCurrent = () => {
       $('.future').hide();
       document.getElementById('layout_select').value="dvrpc-current";
     } else if (layer == "free"){
-    $('.free').show();
-    $('.paid').hide();
-    document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
-  } else {
-    $('.paid').show();
-    $('.free').hide();
-    document.getElementById('layout_select').value="DVRPC-PC-KD-SM";
-  }
+      $('.free').show();
+      $('.paid').hide();
+      document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+    } else {
+      $('.paid').show();
+      $('.free').hide();
+      document.getElementById('layout_select').value="DVRPC-PC-KD-SM";
+    }
 
   });
 
@@ -168,4 +164,5 @@ const filterCurrent = () => {
 //     });
 // };
 
-export { togglerDVRPC, togglerPA, togglerNJ, togglerPEV, togglerWP, filterCurrent };
+// export { togglerDVRPC, togglerPA, togglerNJ, togglerPEV, togglerWP, filterCurrent };
+export {togglerPEV, togglerWP, filterCurrent };
