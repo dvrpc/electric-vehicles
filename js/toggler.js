@@ -77,7 +77,7 @@ const togglerPEV = () => {
     $('.free').hide();
     $('.paid').hide();
     document.getElementById('type_select').value="current";
-    document.getElementById('layout_select').value="dvrpc-current";
+    document.getElementById('layout_select').value="DVRPC-CurrentPEV-BG";
     $("#layout_select").trigger("change");
 
     $('#WP').children().eq(1).removeClass();  
@@ -118,11 +118,11 @@ const filterCurrent = () => {
     if (layer == "future") {
       $('.current').hide();
       $('.future').show();
-      document.getElementById('layout_select').value="dvrpc-projected";
+      document.getElementById('layout_select').value="DVRPC-FuturePEV-BG";
     } else if (layer == "current"){
       $('.current').show();
       $('.future').hide();
-      document.getElementById('layout_select').value="dvrpc-current";
+      document.getElementById('layout_select').value="DVRPC-CurrentPEV-BG";
     } else if (layer == "free"){
       $('.free').show();
       $('.paid').hide();

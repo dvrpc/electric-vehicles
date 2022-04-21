@@ -270,18 +270,7 @@ const legendConfig = {
     legendLable6:"0.014",
     legendLable7:"0.074",
     note:"Number of Workplace Charging Events per Job"
-  },
-
-  "PA-FuturePEV": {
-    label: "PA Future PEV",
-    legendType:"scale",
-    note:"note"
-  },
-  // "DVRPC-BG": {
-  //   iconType: "line",
-  //   label: "Block Group",
-  //   color: "red",
-  // },
+  }
 };
 
 export default legendConfig;
