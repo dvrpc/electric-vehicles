@@ -1,7 +1,7 @@
 import makeMap from './map/map.js'
 import sources from './map/mapSources.js'
 import layers from './map/mapLayers.js'
-import handleModal from './modal.js'
+// import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
@@ -15,9 +15,9 @@ import {
   } from "./toggler.js";
 
 
-const modal = document.getElementById('modal')
-const modalToggle = document.getElementById('modal-toggle')
-const closeModal = document.getElementById('close-modal')
+// const modal = document.getElementById('modal')
+// const modalToggle = document.getElementById('modal-toggle')
+// const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
 const toggleForm = document.getElementById('toggle-form')
 const inputs = toggleForm.querySelectorAll('input')
@@ -222,4 +222,4 @@ map.on('idle', () => {
 
 
 // modal
-handleModal(modal, modalToggle, closeModal)
+// handleModal(modal, modalToggle, closeModal)
