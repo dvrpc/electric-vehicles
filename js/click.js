@@ -194,5 +194,9 @@ const handleMCD = function (props,map) {
   
 
 }
+
+const handleCharging = function (props,map){
+  alert("Hello! I am an alert box!!");
+}
   
-export {handleBlockGroups, handleMCD};
+export {handleBlockGroups, handleMCD, handleCharging};

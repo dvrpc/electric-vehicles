@@ -4,7 +4,7 @@ import layers from './map/mapLayers.js'
 // import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
-import {handleBlockGroups, handleMCD} from "./click.js";
+import {handleBlockGroups, handleMCD, handleCharging} from "./click.js";
 import {
     // togglerDVRPC,
     // togglerPA,
@@ -209,6 +209,19 @@ map.on('load', () => {
     map.on('click','dvrpcPEVMCD', (e) => {
         var props = e.features[0].properties;
         handleMCD(props)
+    });
+// Charging Station Actions
+    map.on('mousemove', 'charging', (e) => {
+            map.getCanvas().style.cursor = "pointer";
+    });
+
+    map.on('mouseleave', 'charging', (e) => {
+        map.getCanvas().style.cursor = "";
+    });     
+
+    map.on('click','charging', (e) => {
+        var props = e.features[0].properties;
+        handleCharging(props)
     });
 
     
