@@ -229,7 +229,16 @@ let expressionPA1 = ['step',
 1234,'#2166ac'
 ];
 
-const secondaryMapLayers = {
+let mapOpacity = {
+  base: 9,
+  stops: [
+    [12,1],
+    [13, .7],
+    [14, .5],
+    [15, .4],
+  ],
+};
+const overlay = {
   'charging': {
     id: 'charging',
     type: 'circle',
@@ -239,9 +248,9 @@ const secondaryMapLayers = {
       visibility: 'none',
     },
     paint: {
-      "circle-stroke-color": "#3C4C34",
+      "circle-stroke-color": "#ffffff",
       "circle-stroke-width": 0.5,
-      "circle-color": "#c8ffaf",
+      "circle-color": "#ae017e",
       "circle-radius": {
         base: 9,
         stops: [
@@ -253,7 +262,10 @@ const secondaryMapLayers = {
         ],
       },
     },
-  },
+  }
+}
+
+const secondaryMapLayers = {
   'DVRPC-BG': {
     'id': 'DVRPC-BG',
     'type': 'fill',
@@ -320,19 +332,9 @@ const secondaryMapLayers = {
     'source-layer': 'dvrpc_pev_bg',
     'layout': {},
     'paint': {
-   'fill-color': CurPop,
-   "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [10, .8],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
+      'fill-color': CurPop,
+      'fill-opacity': mapOpacity
+      }
 },
 'DVRPC-CurrentPEV-HH': {
   'id': 'DVRPC-CurrentPEV-HH',
@@ -341,18 +343,8 @@ const secondaryMapLayers = {
   'source-layer': 'dvrpc_pev_bg',
   'layout': {},
   'paint': {
- 'fill-color': CurHH,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
+    'fill-color': CurHH,
+     'fill-opacity': mapOpacity
   }
 },
 'DVRPC-CurrentPEV-SM': {
@@ -363,17 +355,7 @@ const secondaryMapLayers = {
   'layout': {},
   'paint': {
  'fill-color': CurSM,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
+ 'fill-opacity': mapOpacity
   }
 },
 'DVRPC-CurrentPEV-Veh': {
@@ -384,17 +366,7 @@ const secondaryMapLayers = {
   'layout': {},
   'paint': {
  'fill-color': CurVeh,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
+ 'fill-opacity': mapOpacity
   }
 },
 'dvrpc-projected': {
@@ -435,17 +407,7 @@ const secondaryMapLayers = {
   'layout': {},
   'paint': {
  'fill-color': expression2,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-   ],
-  },
+ 'fill-opacity': mapOpacity
     }
   },
   'DVRPC-FuturePEV-Pop': {
@@ -456,17 +418,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
    'fill-color': FutPop,
-   "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [10, .8],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-      ],
-    },
+   'fill-opacity': mapOpacity
       }
   },
   'DVRPC-FuturePEV-HH': {
@@ -477,17 +429,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
     'fill-color': FutHH,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
+    'fill-opacity': mapOpacity
       }
   },
   'DVRPC-FuturePEV-SM': {
@@ -498,17 +440,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
     'fill-color': FutSM,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
+    'fill-opacity': mapOpacity
       }
   },
   'DVRPC-FuturePEV-Veh': {
@@ -519,17 +451,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
     'fill-color': FutVeh,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
+    'fill-opacity': mapOpacity
       }
   },
   // FREE
@@ -541,16 +463,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': FC_KD_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-FC-KD-JB': {
@@ -561,16 +474,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': FC_KD_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-FC-CE-SM': {
@@ -581,16 +485,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': FC_CE_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-FC-CE-JB': {
@@ -601,16 +496,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': FC_CE_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   //Paid
@@ -622,16 +508,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': PC_KD_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-PC-KD-JB': {
@@ -642,16 +519,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': PC_KD_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-PC-CE-SM': {
@@ -662,16 +530,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': PC_CE_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   'DVRPC-PC-CE-JB': {
@@ -682,16 +541,7 @@ const secondaryMapLayers = {
     'layout': {},
     'paint': {
   'fill-color': PC_CE_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
+  'fill-opacity': mapOpacity
     }
   },
   //PA
@@ -703,18 +553,9 @@ const secondaryMapLayers = {
       'layout': {},
       'paint': {
         'fill-color': expressionPA1,
-        "fill-opacity": {
-          base: 9,
-          stops: [
-            [9, 1],
-            [11, .7],
-            [12, .65],
-            [13, .5],
-            [14, .4],
-          ],
-        },
+        'fill-opacity': mapOpacity
       }
     },
 }
 
-export default secondaryMapLayers
+export {secondaryMapLayers, overlay };

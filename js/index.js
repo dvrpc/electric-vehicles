@@ -47,7 +47,7 @@ map.on('load', () => {
     //   for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
-    let activeInputs = handleForms('input', inputs, map)
+    let activeInputs = handleForms('#charging', inputs, map)
     let activeSelects = handleForms('#layout_select', selects, map)
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
@@ -56,7 +56,7 @@ map.on('load', () => {
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
     // handle simple toggles - layers on/off and corresponding legend items on/off
     toggleForm.onchange = () => {
-        activeInputs = handleForms('input', inputs, map)
+        activeInputs = handleForms('#charging', inputs, map)
         activeSelects = handleForms('#layout_select', selects, map)
         allActiveToggles = [... activeSelects, ... activeInputs]
 
@@ -75,9 +75,6 @@ map.on('load', () => {
         'source-layer': 'dvrpc_pev_mcd',
         'layout': {}, 
         'paint': {
-            // 'fill-color': '#e2eb32',
-            // // 'fill-opacity': 0.0,
-            // 'fill-outline-color':'#f2f12d',
             'fill-opacity': 0.0
         }
     });
@@ -128,8 +125,6 @@ map.on('load', () => {
         'layout': {}, 
         'paint': {
             'fill-color': '#e2eb32',
-            // 'fill-opacity': 0.0,
-            // 'fill-outline-color':'#f2f12d',
             'fill-opacity': [
             'case',
             ['boolean', ['feature-state', 'hover'], false],

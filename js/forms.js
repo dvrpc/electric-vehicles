@@ -1,4 +1,4 @@
-import secondaryMapLayers from "./map/secondaryMapLayers.js";
+import {secondaryMapLayers, overlay} from "./map/secondaryMapLayers.js";
 
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
@@ -16,8 +16,8 @@ const handleFormInputs = (inputs, map) => {
     } else {
       // add layer on first pass
       if (checked) {
-        const mapLayer = secondaryMapLayers[layer];
-           map.addLayer(mapLayer, "road-label");
+        const mapLayer = overlay[layer];
+           map.addLayer(mapLayer);
       }
     }
   });
