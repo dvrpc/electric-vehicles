@@ -81,7 +81,7 @@ const legendConfig = {
     legendLable7:"760.41"
   },
   "DVRPC-CurrentPEV-Veh": {
-    label: "Current - Percentage of Passengers that are PEVs",
+    label: "Current - Percentage of Passenger Vehicles that are PEVs",
     legendType:"scale",
     // note:"note",
     class:"gb",
@@ -147,7 +147,7 @@ const legendConfig = {
     legendLable7:"10,856.59"
   },
   "DVRPC-FuturePEV-Veh": {
-    label: "Projected - Percentage of Passengers that are PEVs",
+    label: "Projected - Percentage of Passenger Vehicles that are PEVs",
     legendType:"scale",
     // note:"note",
     class:"gb",

@@ -207,17 +207,49 @@ map.on('load', () => {
     });
 // Charging Station Actions
     map.on('mousemove', 'charging', (e) => {
-            map.getCanvas().style.cursor = "pointer";
+        map.getCanvas().style.cursor = "pointer";
+        var props = e.features[0].properties;
+    //    handleCharging(props)
+        createPopUpCL(e.features[0])
     });
 
     map.on('mouseleave', 'charging', (e) => {
         map.getCanvas().style.cursor = "";
+        closePopUp();
     });     
 
-    map.on('click','charging', (e) => {
-        var props = e.features[0].properties;
-        handleCharging(props)
-    });
+    // map.on('click','charging', (e) => {
+    //     var props = e.features[0].properties;
+    //     handleCharging(props)
+    //     createPopUpCL(e.features[0])
+    // });
+
+    function createPopUpCL(currentFeature) {
+        const popUps = document.getElementsByClassName("mapboxgl-popup");
+        if (popUps[0]) popUps[0].remove();
+        // var popup = new mapboxgl.Popup({ closeOnClick: false })
+        new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
+          .setLngLat(currentFeature.geometry.coordinates)
+          .setHTML(
+          "<h3>"
+          + currentFeature.properties.Station_Na
+          +"<br><small>"
+          + currentFeature.properties.Street_Add 
+          +" </small></h3> <p>Connectors:"
+          + currentFeature.properties.EV_Connect 
+          +"</p><p>EV Level 1:"
+          + currentFeature.properties.EV_Level1 
+          +"</p> <p>EVSE Ports:"
+          + currentFeature.properties.EV_Level2 
+          +"</p>"
+          )
+          .addTo(map);
+      }
+    
+      function closePopUp() {
+        const popUps = document.getElementsByClassName("mapboxgl-popup");
+        if (popUps[0]) popUps[0].remove();
+      }
 
     
 })

@@ -118,11 +118,11 @@ const filterCurrent = () => {
     if (layer == "future") {
       $('.current').hide();
       $('.future').show();
-      document.getElementById('layout_select').value="DVRPC-FuturePEV-Pop";
+      document.getElementById('layout_select').value="DVRPC-FuturePEV-Veh";
     } else if (layer == "current"){
       $('.current').show();
       $('.future').hide();
-      document.getElementById('layout_select').value="DVRPC-CurrentPEV-Pop";
+      document.getElementById('layout_select').value="DVRPC-CurrentPEV-Veh";
     } else if (layer == "free"){
       $('.free').show();
       $('.paid').hide();
