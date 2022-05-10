@@ -542,7 +542,7 @@ select {
   background-color: #fff;
   color: var(--theme-black);
   z-index: 1;
-  padding: var(--padding);
+  padding: 7px;
 }
 .legend-title {
   color: var(--theme-dvrpc-accent);
@@ -586,12 +586,31 @@ select {
   float: left;
   height: 15px;
   width: 14%;
-  text-align: right;
+  text-align: left;
   font-size: 11px;
   color: #808080;
 }
 .legend-note{
   font-size: 11px;
+}
+.vertical-line{
+  background-color:#fff; /* Line color */
+  display: block;
+  float: left;
+  height: 15px;
+  width: 13.5%;
+  text-align: left;
+  border-left: 1.5px solid #D3D3D3;
+  margin-left: 0.5px;
+}
+.vertical-line-blank{
+  background-color:#fff; /* Line color */
+  display: block;
+  float: left;
+  height: 15px;
+  width: 3%;
+  text-align: left;
+  border-left: 1.5px solid #D3D3D3;
 }
 
 #legend-box-Item {

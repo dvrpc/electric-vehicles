@@ -17,6 +17,13 @@ if (legendDetails.legendType === "scale") {
           <span class='${legendDetails.class}-5'></span>
           <span class='${legendDetails.class}-6'></span>
           <span class='${legendDetails.class}-7'></span>
+          <div class="vertical-line"></div>
+          <div class="vertical-line"></div>
+          <div class="vertical-line"></div>
+          <div class="vertical-line"></div>
+          <div class="vertical-line"></div>
+          <div class="vertical-line"></div>
+          <div class="vertical-line-blank"></div>
           <label>${legendDetails.legendLable1}</label>
           <label>${legendDetails.legendLable2}</label>
           <label>${legendDetails.legendLable3}</label>

@@ -85,13 +85,14 @@ const legendConfig = {
     legendType:"scale",
     // note:"note",
     class:"gb",
-    legendLable1:"0.16%",
-    legendLable2:"0.24%",
-    legendLable3:"0.32%",
-    legendLable4:"0.44%",
-    legendLable5:"0.65%",
-    legendLable6:"1.03%",
-    legendLable7:"5.78%"
+    legendLable1:"0%",
+    legendLable2:"0.16%",
+    legendLable3:"0.24%",
+    legendLable4:"0.32%",
+    legendLable5:"0.44%",
+    legendLable6:"0.65%",
+    legendLable7:"1.03%",
+    legendLable8:"5.78%"
   },
   "DVRPC-FuturePEV-BG": {
     label: "Future PEVs",

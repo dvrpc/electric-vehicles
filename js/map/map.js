@@ -4,8 +4,9 @@ mapboxgl.accessToken =
 const initMap = () => {
   return new mapboxgl.Map({
     container: "map",
-     style: "mapbox://styles/mapbox/light-v10",
-    //style: "mapbox://styles/crvanpollard/ck4edq5c250ra1cn0tl6qa96o",
+    //   style: "mapbox://styles/mapbox/light-v10",
+    // DVRPC Roadways
+    style: "mapbox://styles/crvanpollard/ck4edq5c250ra1cn0tl6qa96o",
     //style: "mapbox://styles/crvanpollard/ck5fpyqti0v971itf7edp2eyd",
     center: [-75.2273, 40.071],
     bounds: [

@@ -5,7 +5,15 @@ const layers = {
     source: "census",
     "source-layer": "county",
     paint: {
-      "line-width": 2.5,
+      "line-width":{
+        base: 9,
+        stops: [
+          [8, 2.5],
+          [10, 4],
+          [12, 6],
+          // [13, 8],
+        ],
+      },
       "line-color": "#505a5e",
     },
     filter: ["==", "DVRPC", "Yes"],
@@ -20,11 +28,13 @@ const layers = {
         base: 9,
         stops: [
           [8, 1],
-          [12, 3],
-          [13, 5],
+          [10, 1.5],
+          [12, 2.5],
+          // [13, 6],
         ],
       },
-      "line-color": "#4a5c64",
+      // "line-color": "#4a5c64",
+      "line-color":   "#fcfcfc",
     },
     filter: ["==", "DVRPC", "Yes"],
   },
