@@ -226,6 +226,17 @@ map.on('load', () => {
 
     function createPopUpCL(currentFeature) {
         const popUps = document.getElementsByClassName("mapboxgl-popup");
+
+         if (currentFeature.properties.EV_Level1 > 0){
+            var ev_type1 = "<p>Type: Level 1 (EVSE Ports:" + currentFeature.properties.EV_Level1 +")";
+          } else {
+          var ev_type1 = ""}; 
+
+          if (currentFeature.properties.EV_Level2 > 0){
+            var ev_type2 = "<p>Type: Level 2 (EVSE Ports:" + currentFeature.properties.EV_Level2 +")";
+          } else {
+          var ev_type2 = ""};   
+
         if (popUps[0]) popUps[0].remove();
         // var popup = new mapboxgl.Popup({ closeOnClick: false })
         new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
@@ -235,12 +246,11 @@ map.on('load', () => {
           + currentFeature.properties.Station_Na
           +"<br><small>"
           + currentFeature.properties.Street_Add 
-          +" </small></h3> <p>Connectors:"
+          +" </small></h3>"
+          + ev_type1
+          + ev_type2
+          +"<p>Connectors:"
           + currentFeature.properties.EV_Connect 
-          +"</p><p>EV Level 1:"
-          + currentFeature.properties.EV_Level1 
-          +"</p> <p>EVSE Ports:"
-          + currentFeature.properties.EV_Level2 
           +"</p>"
           )
           .addTo(map);
