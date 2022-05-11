@@ -243,10 +243,6 @@ const overlay = {
     id: 'charging',
     type: 'circle',
     source: 'charging',
-    // minzoom: 11,
-    layout: {
-      visibility: 'none',
-    },
     paint: {
       "circle-stroke-color": "#ffffff",
       "circle-stroke-width": 0.5,
