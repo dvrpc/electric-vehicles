@@ -228,29 +228,47 @@ map.on('load', () => {
         const popUps = document.getElementsByClassName("mapboxgl-popup");
 
          if (currentFeature.properties.EV_Level1 > 0){
-            var ev_type1 = "<p>Type: Level 1 (EVSE Ports:" + currentFeature.properties.EV_Level1 +")";
+            var ev_type1 = "<p><b>Type:</b> Level 1 <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_Level1 +"</p>";
           } else {
           var ev_type1 = ""}; 
 
           if (currentFeature.properties.EV_Level2 > 0){
-            var ev_type2 = "<p>Type: Level 2 (EVSE Ports:" + currentFeature.properties.EV_Level2 +")";
+            var ev_type2 = "<p><b>Type:</b> Level 2 <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_Level2 +"</p>";
           } else {
-          var ev_type2 = ""};   
+          var ev_type2 = ""};  
+
+          if (currentFeature.properties.EV_DC_Fast > 0){
+            var ev_dcfast = "<p><b>Type:</b> DC Fast <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_DC_Fast  +"</p>";
+          } else {
+          var ev_dcfast = ""}; 
+          
+          
 
         if (popUps[0]) popUps[0].remove();
         // var popup = new mapboxgl.Popup({ closeOnClick: false })
         new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
-          "<h3>"
+          "<p><B>"
           + currentFeature.properties.Station_Na
-          +"<br><small>"
+          +"</B></p><p>"
           + currentFeature.properties.Street_Add 
-          +" </small></h3>"
+          +"</p><p>"
+          + currentFeature.properties.City 
+          +", "
+          + currentFeature.properties.State
+          +", "
+          + currentFeature.properties.ZIP
+          +"</p><hr>"
           + ev_type1
           + ev_type2
-          +"<p>Connectors:"
+          + ev_dcfast
+          +"<p><b>Connector(s):</b> "
           + currentFeature.properties.EV_Connect 
+          +"</p><p><b>EV Network:</b> "
+          + currentFeature.properties.EV_Network
+          +"</p><p><b>Access Info:</b> "
+          + currentFeature.properties.Access_Day
           +"</p>"
           )
           .addTo(map);
