@@ -265,11 +265,11 @@ map.on('load', () => {
           + ev_dcfast
           +"<p><b>Connector(s):</b> "
           + currentFeature.properties.EV_Connect 
-          +"</p><p><b>EV Network:</b> "
+          +"</p><p><b>Charge Network:</b> "
           + currentFeature.properties.EV_Network
           +"</p><p><b>Access Info:</b> "
           + currentFeature.properties.Access_Day
-          +"</p>"
+          +"</p><p><i>Station details are subject to change.</i></p>"
           )
           .addTo(map);
       }
