@@ -226,23 +226,26 @@ map.on('load', () => {
 
     function createPopUpCL(currentFeature) {
         const popUps = document.getElementsByClassName("mapboxgl-popup");
+        function replacer(key, value) {
+            return value.replaceAll(/[^\w\s]/gi, '').replace(/ " /, '');
+          }
 
-         if (currentFeature.properties.EV_Level1 > 0){
-            var ev_type1 = "<p><b>Type:</b> Level 1 <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_Level1 +"</p>";
+         if (currentFeature.properties.ev_level1_evse_num > 0){
+            var ev_type1 = "<p><b>Type:</b> Level 1 <br><b>EVSE Ports:</b> " + currentFeature.properties.ev_level1_evse_num +"</p>";
           } else {
           var ev_type1 = ""}; 
 
-          if (currentFeature.properties.EV_Level2 > 0){
-            var ev_type2 = "<p><b>Type:</b> Level 2 <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_Level2 +"</p>";
+          if (currentFeature.properties.ev_level2_evse_num > 0){
+            var ev_type2 = "<p><b>Type:</b> Level 2 <br><b>EVSE Ports:</b> " + currentFeature.properties.ev_level2_evse_num +"</p>";
           } else {
           var ev_type2 = ""};  
 
-          if (currentFeature.properties.EV_DC_Fast > 0){
-            var ev_dcfast = "<p><b>Type:</b> DC Fast <br><b>EVSE Ports:</b> " + currentFeature.properties.EV_DC_Fast  +"</p>";
+          if (currentFeature.properties.ev_dc_fast_num > 0){
+            var ev_dcfast = "<p><b>Type:</b> DC Fast <br><b>EVSE Ports:</b> " + currentFeature.properties.ev_dc_fast_num  +"</p>";
           } else {
           var ev_dcfast = ""}; 
-          
-          
+          var ev_connect_values = currentFeature.properties.ev_connector_types;
+          var ev_connect = JSON.stringify(ev_connect_values,replacer,", ");
 
         if (popUps[0]) popUps[0].remove();
         // var popup = new mapboxgl.Popup({ closeOnClick: false })
@@ -250,25 +253,25 @@ map.on('load', () => {
           .setLngLat(currentFeature.geometry.coordinates)
           .setHTML(
           "<p><B>"
-          + currentFeature.properties.Station_Na
+          + currentFeature.properties.station_name
           +"</B></p><p>"
-          + currentFeature.properties.Street_Add 
+          + currentFeature.properties.street_address
           +"</p><p>"
-          + currentFeature.properties.City 
+          + currentFeature.properties.sity 
           +", "
-          + currentFeature.properties.State
+          + currentFeature.properties.state
           +", "
-          + currentFeature.properties.ZIP
+          + currentFeature.properties.zIP
           +"</p><hr>"
           + ev_type1
           + ev_type2
           + ev_dcfast
           +"<p><b>Connector(s):</b> "
-          + currentFeature.properties.EV_Connect 
+          + ev_connect
           +"</p><p><b>Charge Network:</b> "
-          + currentFeature.properties.EV_Network
+          + currentFeature.properties.ev_network
           +"</p><p><b>Access Info:</b> "
-          + currentFeature.properties.Access_Day
+          + currentFeature.properties.access_days_time
           +"</p><p><i>Station details are subject to change.</i></p>"
           )
           .addTo(map);
