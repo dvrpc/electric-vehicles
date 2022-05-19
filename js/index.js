@@ -226,10 +226,15 @@ map.on('load', () => {
 
     function createPopUpCL(currentFeature) {
         const popUps = document.getElementsByClassName("mapboxgl-popup");
-        function replacer(key, value) {
-            return value.replaceAll(/[^\w\s]/gi, '').replace(/ " /, '');
-          }
 
+        function replacer(key, value) {
+            return value.replace(/[^\w\s]/gi, '').replace(/["']/g, '');
+          }
+         
+
+          var ev_connect_values = currentFeature.properties.ev_connector_types.replace(/[^\w\s]/gi, '').replace(/["']/g, '');
+          var ev_connect = ev_connect_values;
+        //   console.log(ev_connect_values);
          if (currentFeature.properties.ev_level1_evse_num > 0){
             var ev_type1 = "<p><b>Type:</b> Level 1 <br><b>EVSE Ports:</b> " + currentFeature.properties.ev_level1_evse_num +"</p>";
           } else {
@@ -244,9 +249,7 @@ map.on('load', () => {
             var ev_dcfast = "<p><b>Type:</b> DC Fast <br><b>EVSE Ports:</b> " + currentFeature.properties.ev_dc_fast_num  +"</p>";
           } else {
           var ev_dcfast = ""}; 
-          var ev_connect_values = currentFeature.properties.ev_connector_types;
-          var ev_connect = JSON.stringify(ev_connect_values,replacer,", ");
-
+    
         if (popUps[0]) popUps[0].remove();
         // var popup = new mapboxgl.Popup({ closeOnClick: false })
         new mapboxgl.Popup({ closeButton: false, closeOnClick: false })
