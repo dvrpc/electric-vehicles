@@ -145,27 +145,41 @@ const handleBlockGroups = function (props,map) {
 
 const handleMCD = function (props,map) {
  
-  let lookupState = {
-    '34': "New Jersey",
-    '42': "Pennsylvania"
-  };
-  let state = lookupState[props.FIRST_MC_1.slice(0,2)];
-  let lookupCounty = {
-    '42017': "Bucks",
-    '42029':"Chester",
-    '42045': "Delaware",
-    '42091': "Montgomery",
-    '42101': "Philadelphia",
-    '34005': "Burlington",
-    '34007': "Camden",
-    '34015': "Gloucester",
-    '34021': "Mercer"
-  };
-  let county = lookupCounty[props.FIRST_MC_1.slice(0,5)];
+  // let lookupState = {
+  //   '34': "New Jersey",
+  //   '42': "Pennsylvania"
+  // };
+  // let state = lookupState[props.FIRST_MC_1.slice(0,2)];
+
+  // let lookupCounty = {
+  //   '42017': "Bucks",
+  //   '42029':"Chester",
+  //   '42045': "Delaware",
+  //   '42091': "Montgomery",
+  //   '42101': "Philadelphia",
+  //   '34005': "Burlington",
+  //   '34007': "Camden",
+  //   '34015': "Gloucester",
+  //   '34021': "Mercer"
+  // };
+  // let county = lookupCounty[props.FIRST_MC_1.slice(0,5)];
+
+  // if (props.MUN_NAME === 'Philadelphia') {
+    
+  //   // document.getElementById("mun-info").style.display = "block";
+  //   // document.getElementById("mcdName").style.display = "block";
+  //   // document.getElementById("mcdAGG").style.display = "block";
+  // } else {
+  //   // document.getElementById("mun-info").style.display = "block";
+  //   // document.getElementById("mcdName").style.display = "block";
+  //   // document.getElementById("mcdAGG").style.display = "block";
+  // }
+
+  
   var mcdName = '<h3>'+ props.MUN_NAME +'<br><small><span> ' +
-  county  +
+  props.CO_NAME  +
   '</span><span></span> County, <span>' +
-  state +
+  props.STATE +
   "</span></small></h3>" 
   ;
   document.getElementById("mcdName").innerHTML = mcdName;

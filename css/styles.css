@@ -456,7 +456,7 @@ select {
   border-bottom: 1px dotted #414770;
   /* margin: 0px 10px 0px 0px; */
 }
-.data-wrapper {
+.data-wrapper, #mun-info {
   background-color: #fff;
   border-radius: 3px;
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);

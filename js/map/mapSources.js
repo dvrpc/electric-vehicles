@@ -10,6 +10,11 @@ const sources = {
         // data:'https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/DVRPC_PEV/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=geojson',
         generateId: true, //
     },
+    'pev2':{
+        type: "geojson",
+        data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/DVRPC_PEV/FeatureServer/2/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+        generateId: true, //
+    },
     'pev': {
         type: 'vector',
         url: 'https://tiles.dvrpc.org/data/pev.json'

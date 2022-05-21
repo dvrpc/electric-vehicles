@@ -63,20 +63,57 @@ map.on('load', () => {
         handleLegend(allActiveToggles, legendContainer)
     }
 
-    map.addSource('dvrpcPEVBG', {
-        type: 'vector',
-        url: 'https://tiles.dvrpc.org/data/pev.json'
+    map.addSource('dvrpcPEVMCD', {
+      type: "geojson",
+      data: "https://services1.arcgis.com/LWtWv6q6BJyKidj8/ArcGIS/rest/services/DVRPC_EV_MCD/FeatureServer/2/query?where=1%3D1&outFields=*&outSR=4326&f=geojson",
+      generateId: true, //
     });
 
     map.addLayer({
         'id': 'dvrpcPEVMCD',
         'type': 'fill',
-        'source': 'dvrpcPEVBG',
-        'source-layer': 'dvrpc_pev_mcd',
+        'source': 'dvrpcPEVMCD',
+      //  'source-layer': 'dvrpc_pev_mcd',
         'layout': {}, 
         'paint': {
             'fill-opacity': 0.0
         }
+    });
+    // map.addSource('CPA-line', {
+    //     type: 'vector',
+    //     url: 'https://tiles.dvrpc.org/data/dvrpc-municipal.json'
+    // });
+  
+    // map.addLayer({
+    //     'id': 'CPA-line',
+    //     'type': 'line',
+    //     'source': 'CPA-line',
+    //     'source-layer': 'phlplanningareas',
+    //     'layout': {}, 
+    //     'paint': {
+    //         "line-width":{
+    //             base: 9,
+    //             stops: [
+    //               [8, 2],
+    //               [10, 3],
+    //               [12, 5],
+    //             ],
+    //           },
+    //         "line-color": "#fcfcfc",
+    //         "line-opacity": 1,
+    // }
+    // });
+    map.addLayer({
+        'id': 'CPA-line2',
+        'type': 'line',
+        'source': 'CPA-line',
+        'source-layer': 'phlplanningareas',
+        'layout': {}, 
+        'paint': {
+            "line-width": 2,
+            "line-color": "#9cafb5",
+            "line-opacity": 1,
+    }
     });
 
     map.addSource('dvrpcPEVBG-line', {
@@ -116,6 +153,11 @@ map.on('load', () => {
     },
         "filter": [">=", "POP", 0.1],
     });
+
+    map.addSource('dvrpcPEVBG', {
+      type: 'vector',
+      url: 'https://tiles.dvrpc.org/data/pev.json'
+  });
 
     map.addLayer({
         'id': 'dvrpcPEVBG',
@@ -226,11 +268,6 @@ map.on('load', () => {
 
     function createPopUpCL(currentFeature) {
         const popUps = document.getElementsByClassName("mapboxgl-popup");
-
-        function replacer(key, value) {
-            return value.replace(/[^\w\s]/gi, '').replace(/["']/g, '');
-          }
-         
 
           var ev_connect_values = currentFeature.properties.ev_connector_types.replace(/[^\w\s]/gi, '').replace(/["']/g, '');
           var ev_connect = ev_connect_values;
