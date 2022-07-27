@@ -69,39 +69,39 @@
 //   });
 // };
 // PEV Distrubtion
+
+// @update: layout_select and other  variable changes
 const togglerPEV = () => {
   document.getElementById("PEV").addEventListener("click", function () {
-    $('.workplace').hide();
-    $('.current').show();
     $('.distribution').show();
-    $('.free').hide();
-    $('.paid').hide();
-    document.getElementById('type_select').value="current";
-    document.getElementById('layout_select').value="DVRPC-CurrentPEV-BG";
+    $('.pev').show();
+    $('.workplace').hide();
+    $('.charge').hide();
+
+    // document.getElementById('type_select').value="current";
+    document.getElementById('type_select').selectedIndex=0;
+    document.getElementById('layout_select').selectedIndex = document.getElementById('pevTop').index;
     $("#layout_select").trigger("change");
 
     $('#WP').children().eq(1).removeClass();  
     $('#WP').children().eq(1).addClass('dull'); 
     $(this).children().eq(1).removeClass();   
-    $(this).children().eq(1).addClass('active');  
+    $(this).children().eq(1).addClass('active');
   });
 };
 // WorkPlace 
 const togglerWP = () => {
   document.getElementById("WP").addEventListener("click", function () {
     $('.workplace').show();
-    $('.free').show();
+    $('.charge').show();
     $('.distribution').hide();
-    $('.current').hide();
-    $('.future').hide();
-    document.getElementById('type_select').selectedIndex=2;
-    // document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+    $('.pev').hide();
 
-    var evt = document.getElementById('layout_select');
-    evt.value="DVRPC-FC-KD-SM";
+    document.getElementById('type_select').selectedIndex=2;
+    document.getElementById('layout_select').selectedIndex = document.getElementById('chargeTop').index;
+  
     $("#layout_select").trigger("change");
 
-  
     $('#PEV').children().eq(1).removeClass();  
     $('#PEV').children().eq(1).addClass('dull'); 
     $(this).children().eq(1).removeClass();   
@@ -112,26 +112,37 @@ const togglerWP = () => {
 // Bike Score CheckBox toggle
 const filterCurrent = () => {
   document.getElementById("type_select").addEventListener("change", function (value) {
-   // console.log(value.target.value);
-    const layer = value.target.value;
-    // const selected = option.selected;
-    if (layer == "future") {
-      $('.current').hide();
-      $('.future').show();
-      document.getElementById('layout_select').value="DVRPC-FuturePEV-BG";
-    } else if (layer == "current"){
-      $('.current').show();
-      $('.future').hide();
-      document.getElementById('layout_select').value="DVRPC-CurrentPEV-BG";
-    } else if (layer == "free"){
-      $('.free').show();
-      $('.paid').hide();
-      document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
-    } else {
-      $('.paid').show();
-      $('.free').hide();
-      document.getElementById('layout_select').value="DVRPC-PC-KD-SM";
+    const layerGroup = value.target.value;
+    const selected = $('#layout_select option:selected').value
+
+    // new if statement only looks for PEV vs chargin
+    if (layerGroup == "time" ) {
+      $('.charge').hide();
+      $('.pev').show();
+    } else if (layerGroup == "charge" ) {
+      $('.pev').hide();
+      $('.charge').show();
     }
+
+    document.getElementById('layout_select').value = selected;
+
+    // if (layer == "future") {
+    //   $('.current').hide();
+    //   $('.future').show();
+    //   document.getElementById('layout_select').value="DVRPC-FuturePEV-BG";
+    // } else if (layer == "current"){
+    //   $('.current').show();
+    //   $('.future').hide();
+    //   document.getElementById('layout_select').value="DVRPC-CurrentPEV-BG";
+    // } else if (layer == "free"){
+    //   $('.free').show();
+    //   $('.paid').hide();
+    //   document.getElementById('layout_select').value="DVRPC-FC-KD-SM";
+    // } else {
+    //   $('.paid').show();
+    //   $('.free').hide();
+    //   document.getElementById('layout_select').value="DVRPC-PC-KD-SM";
+    // }
 
   });
 

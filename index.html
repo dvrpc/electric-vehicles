@@ -168,14 +168,28 @@
             <label class=" flex-align-center flex-between label-select">
               Showing 
               <select name="type_select" id="type_select" >
-                <option value="current" class="distribution" >Current</option>
-                <option value="future" class="distribution" >Future</option>
-                <option value="free" class="workplace" >Free Charing</option>
-                <option value="paid" class="workplace" >Paid Charing</option>
+                <!-- @update: current/future = PEV, free/paid = charging -->
+                <option value="time" data-layer="DVRPC-CurrentPEV-BG" class="distribution" >Current</option>
+                <option value="time" data-layer="DVRPC-FuturePEV-BG" class="distribution" >Future</option>
+                <option value="charge" data-layer="DVRPC-FC-KD-SM" class="workplace" >Free Charging</option>
+                <option value="charge" data-layer="DVRPC-PC-KD-SM" class="workplace" >Paid Charigng</option>
               </select>
 
               <select name="layout_select" id="layout_select">
-                <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">Current PEVs</option>
+                <!-- @update: one PEV jawn and one chargin Jawn -->
+                <option value="DVRPC-CurrentPEV-BG" id="pevTop" class="dvrpc pev">PEVs</option>
+                <option value="DVRPC-CurrentPEV-Pop" class="dvrpc pev">PEVs per 100 People</option>
+                <option value="DVRPC-CurrentPEV-HH" class="dvrpc pev">PEVs per Household</option>
+                <option value="DVRPC-CurrentPEV-SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
+                <option value="DVRPC-CurrentPEV-Veh" class="dvrpc pev">Percentage of Passengers that are PEVs</option>
+
+                <option value="DVRPC-FC-KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
+                <option value="DVRPC-FC-KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
+                <option value="DVRPC-FC-CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
+                <option value="DVRPC-FC-CE-JB" class="dvrpc charge">Charging Event per Job</option>
+
+
+                <!-- <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">Current PEVs</option>
                 <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">Current PEVs per 100 People</option>
                 <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">Current PEVs per Household</option>
                 <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">Current PEVs per Sq. Mi.</option>
@@ -195,9 +209,11 @@
                 <option value="DVRPC-PC-KD-SM" id="topPaid" class="dvrpc paid work">Paid Charging - kWh of Demand per Sq. Mi.</option>
                 <option value="DVRPC-PC-KD-JB" class="dvrpc paid work">Paid Charging - kWh of Demand per Job</option>
                 <option value="DVRPC-PC-CE-SM" class="dvrpc paid work">Paid Charging - Charging Event per Sq. Mi.</option>
-                <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">Paid Charging - Charging Event per Job</option>
+                <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">Paid Charging - Charging Event per Job</option> -->
 
-                <option value="PA-FuturePEV" id="pa-future" >PA Future PEV</option>
+                <!-- @update where does this belong? -->
+                <!-- <option value="PA-FuturePEV" id="pa-future" >PA Future PEV</option> -->
+
                 <!-- <option value="DVRPC-BG">Block Group</option> -->
               </select>
               by Census Block Group
