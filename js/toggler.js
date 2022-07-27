@@ -71,6 +71,7 @@
 // PEV Distrubtion
 
 // @update: layout_select and other  variable changes
+// cosmetic changes to select
 const togglerPEV = () => {
   document.getElementById("PEV").addEventListener("click", function () {
     $('.distribution').show();
@@ -78,11 +79,9 @@ const togglerPEV = () => {
     $('.workplace').hide();
     $('.charge').hide();
 
-    // document.getElementById('type_select').value="current";
     document.getElementById('type_select').selectedIndex=0;
     document.getElementById('layout_select').selectedIndex = document.getElementById('pevTop').index;
-    $("#layout_select").trigger("change");
-
+    
     $('#WP').children().eq(1).removeClass();  
     $('#WP').children().eq(1).addClass('dull'); 
     $(this).children().eq(1).removeClass();   
@@ -100,31 +99,32 @@ const togglerWP = () => {
     document.getElementById('type_select').selectedIndex=2;
     document.getElementById('layout_select').selectedIndex = document.getElementById('chargeTop').index;
   
-    $("#layout_select").trigger("change");
-
     $('#PEV').children().eq(1).removeClass();  
     $('#PEV').children().eq(1).addClass('dull'); 
-    $(this).children().eq(1).removeClass();   
+    $(this).children().eq(1).removeClass();
     $(this).children().eq(1).addClass('active');  
   });
 };
 
 // Bike Score CheckBox toggle
+// show/hide select options
 const filterCurrent = () => {
   document.getElementById("type_select").addEventListener("change", function (value) {
     const layerGroup = value.target.value;
-    const selected = $('#layout_select option:selected').value
 
     // new if statement only looks for PEV vs chargin
     if (layerGroup == "time" ) {
       $('.charge').hide();
       $('.pev').show();
+      $('.pev').each(function() {
+        // this.value = 
+      })
     } else if (layerGroup == "charge" ) {
       $('.pev').hide();
       $('.charge').show();
     }
 
-    document.getElementById('layout_select').value = selected;
+    // document.getElementById('layout_select').value = selected;
 
     // if (layer == "future") {
     //   $('.current').hide();
@@ -145,7 +145,6 @@ const filterCurrent = () => {
     // }
 
   });
-
 };
 
 // Home Page and Map interaction

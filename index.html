@@ -75,119 +75,117 @@
     <main class="flex-row flex-between main-content-wrapper">
       <section class="sidebar">
         <div class="sidebar-content">
-
-          <!-- <h3 class="sidebar-h3">Select a Geography</h3>
+          <form id="main-form" class="sidebar-form">
+              <!-- <h3 class="sidebar-h3">Select a Geography</h3>
           
-          <div id="scoreTogglers" data-title="Analysis Methods" data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method.">
-          <div id="scoreBox">
-            <div id="DVRPC" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-DVRPC"
-                id="control_01"
-                name="select"
-                value="1"
-                checked
-              />
-              <label id="label-box-DVRPC" class="DVRPC" for="control_01">
-                DVRPC Region
-              </label>
-            </div>
-          </div>
+              <div id="scoreTogglers" data-title="Analysis Methods" data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method.">
+                <div id="scoreBox">
+                  <div id="DVRPC" class="score-cb">
+                    <input
+                      type="radio"
+                      class="lbox-DVRPC"
+                      id="control_01"
+                      name="select"
+                      value="1"
+                      checked
+                    />
+                    <label id="label-box-DVRPC" class="DVRPC" for="control_01">
+                      DVRPC Region
+                    </label>
+                  </div>
+                </div>
 
-          <div id="scoreBox">
-            <div id="PA" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-PA"
-                id="control_02"
-                name="select"
-                value="2"
-              />
-              <label id="label-box-PA" class="PA" for="control_02">
-                Pennsylvania
-              </label>
-            </div>
-          </div>
+                <div id="scoreBox">
+                  <div id="PA" class="score-cb">
+                    <input
+                      type="radio"
+                      class="lbox-PA"
+                      id="control_02"
+                      name="select"
+                      value="2"
+                    />
+                    <label id="label-box-PA" class="PA" for="control_02">
+                      Pennsylvania
+                    </label>
+                  </div>
+                </div>
 
-          <div id="scoreBox">
-            <div id="NJ" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-NJ"
-                id="control_03"
-                name="select"
-                value="3"
-              />
-              <label id="label-box-NJ" class="NJ" for="control_03">
-               New Jersey
-              </label>
+                <div id="scoreBox">
+                  <div id="NJ" class="score-cb">
+                    <input
+                      type="radio"
+                      class="lbox-NJ"
+                      id="control_03"
+                      name="select"
+                      value="3"
+                    />
+                    <label id="label-box-NJ" class="NJ" for="control_03">
+                    New Jersey
+                    </label>
+                  </div>
+              </div>
+            </div> -->
+            <h3 class="sidebar-h3">Select a Map Theme</h3>
+            <div
+            id="scoreTogglers"
+            data-title="Analysis Methods"
+            data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
+            >
+            <div id="scoreBox2">
+              <div id="PEV" class="score-cb">
+                <input
+                  type="radio"
+                  class="lbox-PEV"
+                  id="control_04"
+                  name="select"
+                  value="distro"
+                  checked
+                />
+                <label id="label-box-PEV" class="PEV" for="control_04">
+                 PEV Distribution
+                </label>
+              </div>
             </div>
-          </div>
-        </div> -->
-
-          <h3 class="sidebar-h3">Select a Map Theme</h3>
-          <div
-          id="scoreTogglers"
-          data-title="Analysis Methods"
-          data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
-          >
-          <div id="scoreBox2">
-            <div id="PEV" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-PEV"
-                id="control_04"
-                name="select"
-                value="4"
-                checked
-              />
-              <label id="label-box-PEV" class="PEV" for="control_04">
-               PEV Distribution
-              </label>
+  
+            <div id="scoreBox2">
+              <div id="WP" class="score-cb">
+                <input
+                  type="radio"
+                  class="lbox-WP"
+                  id="control_05"
+                  name="select"
+                  value="charging"
+                />
+                <label id="label-box-WP" class="WP" for="control_05">
+                  Workplace Charging
+                </label>
+              </div>
             </div>
-          </div>
-
-          <div id="scoreBox2">
-            <div id="WP" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-WP"
-                id="control_05"
-                name="select"
-                value="5"
-              />
-              <label id="label-box-WP" class="WP" for="control_05">
-                Workplace Charging
-              </label>
             </div>
-          </div>
-          </div>
 
-          <form id="toggle-form" class="sidebar-form">
+            <!-- scenario toggles -->
             <label class=" flex-align-center flex-between label-select">
               Showing 
               <select name="type_select" id="type_select" >
                 <!-- @update: current/future = PEV, free/paid = charging -->
-                <option value="time" data-layer="DVRPC-CurrentPEV-BG" class="distribution" >Current</option>
-                <option value="time" data-layer="DVRPC-FuturePEV-BG" class="distribution" >Future</option>
-                <option value="charge" data-layer="DVRPC-FC-KD-SM" class="workplace" >Free Charging</option>
-                <option value="charge" data-layer="DVRPC-PC-KD-SM" class="workplace" >Paid Charigng</option>
+                <option value="time" data-type="current" class="distribution" >Current</option>
+                <option value="time" data-type="future" class="distribution" >Future</option>
+                <option value="charge" data-type="free" class="workplace" >Free Charging</option>
+                <option value="charge" data-type="paid" class="workplace" >Paid Charging</option>
               </select>
 
               <select name="layout_select" id="layout_select">
                 <!-- @update: one PEV jawn and one chargin Jawn -->
-                <option value="DVRPC-CurrentPEV-BG" id="pevTop" class="dvrpc pev">PEVs</option>
-                <option value="DVRPC-CurrentPEV-Pop" class="dvrpc pev">PEVs per 100 People</option>
-                <option value="DVRPC-CurrentPEV-HH" class="dvrpc pev">PEVs per Household</option>
-                <option value="DVRPC-CurrentPEV-SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
-                <option value="DVRPC-CurrentPEV-Veh" class="dvrpc pev">Percentage of Passengers that are PEVs</option>
+                <option value="DVRPC-CurrentPEV-Pop" data-type="pev" id="pevTop" class="dvrpc pev">PEVs</option>
+                <option data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+                <option data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+                <option data-type="pevSqMi" class="dvrpc pev">PEVs per Sq. Mi.</option>
+                <option data-type="pevPass" class="dvrpc pev">Percentage of Passengers that are PEVs</option>
 
-                <option value="DVRPC-FC-KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
-                <option value="DVRPC-FC-KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
-                <option value="DVRPC-FC-CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
-                <option value="DVRPC-FC-CE-JB" class="dvrpc charge">Charging Event per Job</option>
-
+                <option value="DVRPC-FC-KD-SM" data-type="kwhSqiMi" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
+                <option data-type="kwhJob" class="dvrpc charge">kWh of Demand per Job</option>
+                <option data-type="chargeSqMi" class="dvrpc charge">Charging Event per Sq. Mi.</option>
+                <option data-type="chargeJob" class="dvrpc charge">Charging Event per Job</option>
 
                 <!-- <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">Current PEVs</option>
                 <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">Current PEVs per 100 People</option>
@@ -218,6 +216,9 @@
               </select>
               by Census Block Group
             </label>
+          </form>
+
+          <form id="overlay-form" class="sidebar-form">
             <fieldset>
               <legend>Overlay Layers</legend>
 

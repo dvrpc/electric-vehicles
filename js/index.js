@@ -19,16 +19,12 @@ const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
-const toggleForm = document.getElementById('toggle-form')
-const inputs = toggleForm.querySelectorAll('input')
-const selects = toggleForm.querySelectorAll('#layout_select')
+const mainForm = document.getElementById('main-form')
+const overlayForm = document.getElementById('overlay-form')
+const mainInputs = mainForm.querySelectorAll('input')
+const mainSelects = mainForm.querySelectorAll('select')
 
-$('#pa-future').hide();
-$('.future').hide();
-$('.workplace').hide();
-$('.free').hide();
-$('.paid').hide();
-
+$('.charge').hide()
 
 // map
 const map = makeMap()
@@ -38,26 +34,26 @@ map.on('load', () => {
     // togglerDVRPC(map);
     // togglerPA(map);
     // togglerNJ(map);
+    
     togglerPEV();
     togglerWP();
     filterCurrent();
 
     for(const source in sources) map.addSource(source, sources[source])
-    for(const layer in layers) map.addLayer(layers[layer])
-    //   for(const layer in layers) map.addLayer(layers[layer], 'road-label')
+    for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
-    let activeInputs = handleForms('input', inputs, map)
-    let activeSelects = handleForms('#layout_select', selects, map)
+    let activeInputs = handleForms('input-main', mainInputs, map)
+    let activeSelects = handleForms('select-main', mainSelects, map)
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
     handleLegend(allActiveToggles, legendContainer)
     // This functiin reorders point features
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
     // handle simple toggles - layers on/off and corresponding legend items on/off
-    toggleForm.onchange = () => {
+    mainForm.onchange = () => {
         activeInputs = handleForms('input', inputs, map)
-        activeSelects = handleForms('#layout_select', selects, map)
+        activeSelects = handleForms('select', selects, map)
         allActiveToggles = [... activeSelects, ... activeInputs]
 
         handleLegend(allActiveToggles, legendContainer)
