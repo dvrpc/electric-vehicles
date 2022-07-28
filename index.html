@@ -83,7 +83,7 @@
                   type="radio"
                   class="lbox"
                   name="geo"
-                  value="dvrpc"
+                  value="DVRPC"
                   checked
                 />
                 DVRPC Region
@@ -94,7 +94,7 @@
                   type="radio"
                   class="lbox"
                   name="geo"
-                  value="pa"
+                  value="PA"
                 />
                 PA
               </label>
@@ -104,7 +104,7 @@
                   type="radio"
                   class="lbox"
                   name="geo"
-                  value="nj"
+                  value="NJ"
                 />
                 NJ
               </label>
@@ -134,53 +134,15 @@
               </label>
             </div>
 
-            <!-- <h3 class="sidebar-h3">Select a Map Theme</h3>
-            <div
-            class="scoreTogglers"
-            data-title="Analysis Methods"
-            data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
-            >
-            <div id="scoreBox2">
-              <div id="PEV" class="score-cb">
-                <input
-                  type="radio"
-                  class="lbox"
-                  id="control_04"
-                  name="select"
-                  value="distro"
-                  checked
-                />
-                <label id="label-box-PEV" class="PEV" for="control_04">
-                 PEV Distribution
-                </label>
-              </div>
-            </div>
-  
-            <div id="scoreBox2">
-              <div id="WP" class="score-cb">
-                <input
-                  type="radio"
-                  class="lbox"
-                  id="control_05"
-                  name="select"
-                  value="charging"
-                />
-                <label id="label-box-WP" class="WP" for="control_05">
-                  Workplace Charging
-                </label>
-              </div>
-            </div>
-            </div> -->
-
             <!-- scenario toggles -->
             <h3 class="sidebar-h3">Select Data</h3>
             <label class="flex-align-center flex-between label-select">
               view
               <select name="type_select" id="type_select" >
-                <option value="current" data-type="time" class="distribution">Current</option>
-                <option value="future" data-type="time" class="distribution">Future</option>
-                <option value="free" data-type="charge" class="workplace" >Free Charging</option>
-                <option value="paid" data-type="charge" class="workplace" >Paid Charging</option>
+                <option value="Current" data-type="time" class="distribution">Current</option>
+                <option value="Future" data-type="time" class="distribution">Future</option>
+                <option value="FC" data-type="charge" class="workplace" >Free Charging</option>
+                <option value="PC" data-type="charge" class="workplace" >Paid Charging</option>
               </select>
             </label>
 

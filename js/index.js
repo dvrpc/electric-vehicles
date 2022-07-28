@@ -1,6 +1,7 @@
 import makeMap from './map/map.js'
 import sources from './map/mapSources.js'
 import layers from './map/mapLayers.js'
+import secondaryMapLayers from "./map/secondaryMapLayers.js";
 import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
@@ -54,62 +55,35 @@ map.on('load', () => {
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
-    // let activeSelects = handleForms('select-main', mainSelects, map)
-    // let allActiveToggles = [... activeSelects]
-    // handleLegend(allActiveToggles, legendContainer)
-    // @update ^ rethink legend
+    // @update: reincorporate legend handling
 
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
-
-    // @update new logic
-    // @update simpler solution:
-        // rather than doing a complex state jawn,
-        // consider sticking with only listening to the layout toggles
-        // on change. other form actions toggle their value field
-        // and the old 
-        // I.E.
-            // on input change, invoke a function that
-            // toggles the value (and content?) of the options
-            // call handleForms just on the selects
-            // e-z p-z?....
         
-    mainForm.onchange = e => {
+    mainForm.onchange = () => {
         // clear existing layer
         const activeMainLayer = localStorage.getItem('active-main-layer')
         map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
 
-        // sample query: DVRPC-CurrentPEV-Pop
-        // sample query 2: DVRPC-FC-KD-SM
-
         // extract and build new query
-        const geo = 'DVRPC'
-        const theme ='distribution'
-        const type = $(`#type_select option:selected`).val() // current, future, free or paid
-        const layer = $(`#layout_select option:selected`).val()
+        const geo = $('input[name=geo]:checked', '#main-form').val()
+        const theme = $('input[name=theme]:checked', '#main-form').val()
+        const type = $('#type_select option:selected').val()
+        const layer = $('#layout_select option:selected').val()
 
-        let query;
+        let newMainLayer;
 
-        if(theme == 'workplace') query = chargeType(geo, type, layer)
-        else query = pevType(geo, type, layer)
+        if(theme == 'workplace') newMainLayer = chargeType(geo, type, layer)
+        else newMainLayer = pevType(geo, type, layer)
 
-        console.log('query is ', query)
+        // toggle visibility or add layer (first pass only)
+        if (map.getLayer(newMainLayer)) {
+            map.setLayoutProperty(newMainLayer, "visibility", 'visible');
+          } else {
+            map.addLayer(secondaryMapLayers[newMainLayer], "road-label");
+        }
 
-        // `
-        //     <option value="DVRPC-CurrentPEV-Pop" data-type="pev" id="pevTop" class="dvrpc pev">PEVs</option>
-        //     <option data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
-        //     <option data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
-        //     <option data-type="pevSqMi" class="dvrpc pev">PEVs per Sq. Mi.</option>
-        //     <option data-type="pevPass" class="dvrpc pev">PEV Market Share (%)</option>
-        // `
-
-        // handleForms('main', )
-        // main handleForms will output the new active layer
-        // onchange will iterate over array of all layers?
-        // activeInputs = handleForms('input', inputs, map)
-        // activeSelects = handleForms('select', selects, map)
-        // allActiveToggles = [... activeSelects, ... activeInputs]
-
-        // handleLegend(allActiveToggles, legendContainer)
+        // update localStorage
+        localStorage.setItem('active-main-layer', newMainLayer)
     }
 
     // @update: remove active legend, look into fnc update
