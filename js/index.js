@@ -21,9 +21,9 @@ const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
 const mainForm = document.getElementById('main-form')
-const mainSelects = mainForm.querySelectorAll('#layout_select')
 const overlayForm = document.getElementById('overlay-form')
 const overlayInputs = overlayForm.querySelectorAll('input')
+const mapDetails = document.getElementById('mapDetails')
 
 $('.charge').hide()
 $('.workplace').hide()
@@ -32,14 +32,6 @@ localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 
 // map
 const map = makeMap()
-
-const pevType = (geo, time, showing) => {
-    return `${geo}-${time}PEV-${showing}`
-  }
-  // type = FC or PC
-  const chargeType = (geo, cost, showing) => {
-    return `${geo}-${cost}-${showing}`
-  }
 
 map.on('load', () => {
       // wiring for on-click event on the map
@@ -58,32 +50,14 @@ map.on('load', () => {
     // @update: reincorporate legend handling
 
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
-        
+
     mainForm.onchange = () => {
-        // clear existing layer
-        const activeMainLayer = localStorage.getItem('active-main-layer')
-        map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
+        // update map
+        handleForms('main', null, map)
 
-        // extract and build new query
-        const geo = $('input[name=geo]:checked', '#main-form').val()
-        const theme = $('input[name=theme]:checked', '#main-form').val()
-        const type = $('#type_select option:selected').val()
-        const layer = $('#layout_select option:selected').val()
-
-        let newMainLayer;
-
-        if(theme == 'workplace') newMainLayer = chargeType(geo, type, layer)
-        else newMainLayer = pevType(geo, type, layer)
-
-        // toggle visibility or add layer (first pass only)
-        if (map.getLayer(newMainLayer)) {
-            map.setLayoutProperty(newMainLayer, "visibility", 'visible');
-          } else {
-            map.addLayer(secondaryMapLayers[newMainLayer], "road-label");
-        }
-
-        // update localStorage
-        localStorage.setItem('active-main-layer', newMainLayer)
+        // clear any clicked queries
+        console.log(mapDetails)
+        // while(mapDetails.firstChild) mapDetails.removeChild(mapDetails.firstChild)
     }
 
     // @update: remove active legend, look into fnc update

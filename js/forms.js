@@ -55,12 +55,48 @@ const handleFormSelect = (selects, map) => {
   return active;
 };
 
+const pevType = (geo, time, showing) => {
+  return `${geo}-${time}PEV-${showing}`
+}
+
+// type = FC or PC
+const chargeType = (geo, cost, showing) => {
+return `${geo}-${cost}-${showing}`
+}
+
+const constructMainQuery = map => {
+  // clear existing layer
+  const activeMainLayer = localStorage.getItem('active-main-layer')
+  map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
+
+  // extract and build new query
+  const geo = $('input[name=geo]:checked', '#main-form').val()
+  const theme = $('input[name=theme]:checked', '#main-form').val()
+  const type = $('#type_select option:selected').val()
+  const layer = $('#layout_select option:selected').val()
+
+  let newMainLayer;
+
+  if(theme == 'workplace') newMainLayer = chargeType(geo, type, layer)
+  else newMainLayer = pevType(geo, type, layer)
+
+  // toggle visibility or add layer (first pass only)
+  if (map.getLayer(newMainLayer)) {
+      map.setLayoutProperty(newMainLayer, "visibility", 'visible');
+    } else {
+      map.addLayer(secondaryMapLayers[newMainLayer], "road-label");
+  }
+
+  // update localStorage
+  localStorage.setItem('active-main-layer', newMainLayer)
+}
+
 const handleForms = (type, toggles, map) => {
   switch (type) {
     case 'select-main':
       return handleFormSelect(toggles, map)
     case 'main':
-      // @update: pull main form onchange from index into here
+      constructMainQuery(map)
       break      
     default:
       return handleFormInputs(toggles, map);
