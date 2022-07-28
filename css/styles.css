@@ -254,9 +254,6 @@ nav {
 .sidebar-fieldset label {
   margin-right: 5px;
 }
-.label-select {
-  margin-bottom: var(--padding);
-}
 .button {
   background-color: #ddd;
   border: none;
@@ -357,12 +354,11 @@ input[class="lbox"]{
   display: none;
 }
 select {
-  top: -0.15rem;
   color: var(--theme-dvrpc);
   border: 2px dotted transparent;
   border-bottom-color: transparent;
-  position: relative;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  margin-top: 15px;
   border-bottom-color: rgba(85, 85, 38, 0.333);
 }
 /*Information Zone */
@@ -557,7 +553,6 @@ select {
 .legend-note{
   font-size: 11px;
 }
-
 #legend-box-Item {
   text-align: center;
   margin-bottom: 5px;
@@ -665,10 +660,8 @@ select {
 /* Footer */
 footer {
   height: calc(5% - 20px);
-  width: 100%;
+  width: calc(100% - var(--padding-2));
   padding: var(--padding);
-  box-shadow: var(--box-shadow);
-  overflow-y: auto;
   background-color: var(--theme-white);
   color: var(--theme-black);
 }

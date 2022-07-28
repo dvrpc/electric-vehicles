@@ -106,7 +106,7 @@ const togglerWP = () => {
 // show/hide select options
 const filterCurrent = () => {
   document.getElementById("type_select").addEventListener("change", function (value) {
-    const layerGroup = value.target.value;
+    const layerGroup = value.target.dataset.type;
 
     // new if statement only looks for PEV vs chargin
     if (layerGroup == "time" ) {

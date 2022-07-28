@@ -32,18 +32,6 @@ pev1,
 6.47, pev6 ,
 11.83,pev7
 ];
-
-let CurPop = ['step',
-['get', 'CuPEVPop'],
-pev1,
-.086, pev2,
-.138, pev3,
-.2085,  pev4,
-.303,  pev5,
-.45,  pev6,
-.71, pev7
-];
-
 let CurHH = ['step',
 ['get', 'CuPEV_HU'],
 pev1,
@@ -313,27 +301,6 @@ const secondaryMapLayers = {
       },
         }
   },
-  'DVRPC-CurrentPEV-Pop': {
-    'id': 'DVRPC-CurrentPEV-Pop',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-   'fill-color': CurPop,
-   "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [10, .8],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-},
 'DVRPC-CurrentPEV-HH': {
   'id': 'DVRPC-CurrentPEV-HH',
   'type': 'fill',

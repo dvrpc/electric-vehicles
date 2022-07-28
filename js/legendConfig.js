@@ -31,7 +31,6 @@ const legendConfig = {
   "DVRPC-CurrentPEV-BG": {
     label: "Current PEVs",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"0.98",
     legendLable2:"1.64",
@@ -44,7 +43,6 @@ const legendConfig = {
   "DVRPC-CurrentPEV-Pop": {
     label: "Current PEVs per 100 People",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"0.08%",
     legendLable2:"0.13%",
@@ -57,7 +55,6 @@ const legendConfig = {
   "DVRPC-CurrentPEV-HH": {
     label: "Current PEVs per Household",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"0.23%",
     legendLable2:"0.35%",
@@ -70,7 +67,6 @@ const legendConfig = {
   "DVRPC-CurrentPEV-SM": {
     label: "Current PEVs per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"2.98",
     legendLable2:"5.25",
@@ -83,7 +79,6 @@ const legendConfig = {
   "DVRPC-CurrentPEV-Veh": {
     label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"0.16%",
     legendLable2:"0.24%",
@@ -96,7 +91,6 @@ const legendConfig = {
   "DVRPC-FuturePEV-BG": {
     label: "Future PEVs",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"4.49",
     legendLable2:"7.87",
@@ -109,7 +103,6 @@ const legendConfig = {
   "DVRPC-FuturePEV-Pop": {
     label: "Future PEVs per 100 People",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"0.44%",
     legendLable2:"0.72%",
@@ -122,7 +115,6 @@ const legendConfig = {
   "DVRPC-FuturePEV-HH": {
     label: "Future PEVs per Household",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"1.25%",
     legendLable2:"1.94%",
@@ -135,7 +127,6 @@ const legendConfig = {
   "DVRPC-FuturePEV-SM": {
     label: "Future PEVs per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"26.97",
     legendLable2:"45.94",
@@ -148,7 +139,6 @@ const legendConfig = {
   "DVRPC-FuturePEV-Veh": {
     label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
-    note:"note",
     class:"gb",
     legendLable1:"1.11%",
     legendLable2:"1.49%",
@@ -161,7 +151,6 @@ const legendConfig = {
   "DVRPC-FC-KD-SM": {
     label: "Free Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"yor",
     legendLable1:"12.29",
     legendLable2:"28.98",
@@ -175,7 +164,6 @@ const legendConfig = {
   "DVRPC-FC-KD-JB": {
     label: "Free Charging - kWh of Demand per Job",
     legendType:"scale",
-    note:"note",
     class:"brg",
     legendLable1:"0.05",
     legendLable2:"0.07",
@@ -189,7 +177,6 @@ const legendConfig = {
   "DVRPC-FC-CE-SM": {
     label: "Free Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"yor",
     legendLable1:"1.80",
     legendLable2:"4.22",
@@ -203,7 +190,6 @@ const legendConfig = {
   "DVRPC-FC-CE-JB": {
     label: "Free Charging - Charging Event per Job",
     legendType:"scale",
-    note:"note",
     class:"brg",
     legendLable1:"0.008",
     legendLable2:"0.011",
@@ -218,7 +204,6 @@ const legendConfig = {
   "DVRPC-PC-KD-SM": {
     label: "Paid Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"yor",
     legendLable1:"8.52",
     legendLable2:"20.03",
@@ -232,7 +217,6 @@ const legendConfig = {
   "DVRPC-PC-KD-JB": {
     label: "Paid Charging - kWh of Demand per Job",
     legendType:"scale",
-    note:"note",
     class:"brg",
     legendLable1:"0.037",
     legendLable2:"0.051",
@@ -246,7 +230,6 @@ const legendConfig = {
   "DVRPC-PC-CE-SM": {
     label: "Paid Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
-    note:"note",
     class:"yor",
     legendLable1:"1.2",
     legendLable2:"2.83",
@@ -260,7 +243,6 @@ const legendConfig = {
   "DVRPC-PC-CE-JB": {
     label: "Paid Charging - Charging Event per Job",
     legendType:"scale",
-    note:"note",
     class:"brg",
     legendLable1:"0.005",
     legendLable2:"0.007",

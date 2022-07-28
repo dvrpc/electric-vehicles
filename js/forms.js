@@ -1,9 +1,21 @@
 import secondaryMapLayers from "./map/secondaryMapLayers.js";
 
+// simple get of active state, no map toggling built in
+const extractInput = inputs => {
+  let active = {};
+
+  inputs.forEach(input => {
+    if(input.checked) {
+      active[input.name] = input.value
+    }
+  })
+
+  console.log('active object ', active)
+}
+
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
   let active = [];
-  console.log(inputs)
 
   inputs.forEach((input) => {
     const layer = input.value;
@@ -13,7 +25,6 @@ const handleFormInputs = (inputs, map) => {
     if (checked) active.push(layer);
 
     if (map.getLayer(layer)) {
-      console.log('map layer ', layer)
       map.setLayoutProperty(layer, "visibility", visibility);
     } else {
       // add layer on first pass
@@ -27,7 +38,20 @@ const handleFormInputs = (inputs, map) => {
   return active;
 };
 
-// handles: select
+// attempt 41: form onchange
+  // 1: iterate through #layout_select and hide all
+  // 2: iterate through inputs & #type_select to extract params
+  // 3: use params to build correct layer id
+      // use pevType and chargeType fncs to generate the correct values
+  // 5: set layoutvisibility of that layer, done
+// 
+
+// attempt 4902: state?
+// fuck all the forms, pull active layer from state
+// on form toggle, clear existing layer from localStorage.mainLayer
+// build new layer as described above
+// set visibility and set new localStorage jawn
+
 const handleFormSelect = (selects, map) => {
   let active = [];
 
@@ -55,6 +79,7 @@ const handleFormSelect = (selects, map) => {
 
   return active;
 };
+
 
 const extractSelect = id => $(`#${id} option:selected`).val()
 
@@ -104,8 +129,11 @@ const pevType = (geo, time, showing) => {
 const chargeType = (geo, cost, showing) => {
   return `${geo}-${cost}-${showing}`
 }
+
 // receive obj with active form elements organized by type
-const constructQuery = toggles => {
+const constructQuery = (toggles) => {
+  const inputs = toggles.inputs
+  const selects = toggles.selects
   // extract btn states
 
   // extract select states
@@ -129,7 +157,7 @@ const constructQuery = toggles => {
   }
   let jawn;
 
-  // extract 
+  // extract
 
   // pick layer from pevType or chargeType fnc
   if(toggles.theme == 'distribution') {
@@ -143,10 +171,15 @@ const constructQuery = toggles => {
 }
 
 const handleForms = (type, toggles, map) => {
-  console.log('for mtype ', type)
   switch (type) {
-    case "main":
-      constructQuery()
+    case 'select-main':
+      return handleFormSelect(toggles, map)
+    case 'main':
+      // step 1: construct query from active inputs & return select-like objects
+        // don't need to be atual selects, just objects with .selected and .value
+      constructQuery(toggles, map)
+
+      // step 2: call handleFormSelects (?)
       break      
     default:
       return handleFormInputs(toggles, map);

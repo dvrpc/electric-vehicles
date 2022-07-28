@@ -82,8 +82,8 @@
                 <input
                   type="radio"
                   class="lbox"
-                  name="select"
-                  value="distro"
+                  name="geo"
+                  value="dvrpc"
                   checked
                 />
                 DVRPC Region
@@ -93,8 +93,8 @@
                 <input
                   type="radio"
                   class="lbox"
-                  name="select"
-                  value="charging"
+                  name="geo"
+                  value="pa"
                 />
                 PA
               </label>
@@ -103,8 +103,8 @@
                 <input
                   type="radio"
                   class="lbox"
-                  name="select"
-                  value="charging"
+                  name="geo"
+                  value="nj"
                 />
                 NJ
               </label>
@@ -116,8 +116,8 @@
                 <input
                   type="radio"
                   class="lbox"
-                  name="select"
-                  value="distro"
+                  name="theme"
+                  value="distribution"
                   checked
                 />
                 PEV Distribution
@@ -127,8 +127,8 @@
                 <input
                   type="radio"
                   class="lbox"
-                  name="select"
-                  value="charging"
+                  name="theme"
+                  value="workplace"
                 />
                 Workplace Charging
               </label>
@@ -177,32 +177,32 @@
             <label class="flex-align-center flex-between label-select">
               view
               <select name="type_select" id="type_select" >
-                <option value="time" data-type="current" class="distribution" >Current</option>
-                <option value="time" data-type="future" class="distribution" >Future</option>
-                <option value="charge" data-type="free" class="workplace" >Free Charging</option>
-                <option value="charge" data-type="paid" class="workplace" >Paid Charging</option>
+                <option value="current" data-type="time" class="distribution">Current</option>
+                <option value="future" data-type="time" class="distribution">Future</option>
+                <option value="free" data-type="charge" class="workplace" >Free Charging</option>
+                <option value="paid" data-type="charge" class="workplace" >Paid Charging</option>
               </select>
             </label>
 
+            <!-- value here is extracted for the query builder -->
             <label class="flex-align-center flex-between label-select">
               <select name="layout_select" id="layout_select">
-                <option value="DVRPC-CurrentPEV-Pop" data-type="pev" id="pevTop" class="dvrpc pev">PEVs</option>
-                <option data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
-                <option data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
-                <option data-type="pevSqMi" class="dvrpc pev">PEVs per Sq. Mi.</option>
-                <option data-type="pevPass" class="dvrpc pev">PEV Market Share (%)</option>
-                <option value="DVRPC-FC-KD-SM" data-type="kwhSqiMi" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
-                <option data-type="kwhJob" class="dvrpc charge">kWh of Demand per Job</option>
-                <option data-type="chargeSqMi" class="dvrpc charge">Charging Event per Sq. Mi.</option>
-                <option data-type="chargeJob" class="dvrpc charge">Charging Event per Job</option>
+                <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option>
+                <option value="Pop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+                <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+                <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
+                <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
+                <option value="KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
+                <option value="KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
+                <option value="CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
+                <option value="CE-JB" class="dvrpc charge">Charging Event per Job</option>
               </select>
             </label>
 
                 <!-- @update where does this belong? -->
                 <!-- <option value="PA-FuturePEV" id="pa-future" >PA Future PEV</option> -->
 
-                <!-- <option value="DVRPC-BG">Block Group</option> -->
-              by Census Block Group
+              <br />by Census Block Group
           </form>
 
           <form id="overlay-form" class="sidebar-form">

@@ -20,13 +20,25 @@ const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
 const mainForm = document.getElementById('main-form')
+const mainSelects = mainForm.querySelectorAll('#layout_select')
 const overlayForm = document.getElementById('overlay-form')
+const overlayInputs = overlayForm.querySelectorAll('input')
 
 $('.charge').hide()
 $('.workplace').hide()
 
+localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
+
 // map
 const map = makeMap()
+
+const pevType = (geo, time, showing) => {
+    return `${geo}-${time}PEV-${showing}`
+  }
+  // type = FC or PC
+  const chargeType = (geo, cost, showing) => {
+    return `${geo}-${cost}-${showing}`
+  }
 
 map.on('load', () => {
       // wiring for on-click event on the map
@@ -42,21 +54,68 @@ map.on('load', () => {
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
-    // let activeInputs = handleForms('input-main', mainInputs, map)
-    let activeSelects = handleForms('select-main', mainSelects, map)
-    let allActiveToggles = [... activeSelects, ... activeInputs]
+    // let activeSelects = handleForms('select-main', mainSelects, map)
+    // let allActiveToggles = [... activeSelects]
+    // handleLegend(allActiveToggles, legendContainer)
+    // @update ^ rethink legend
 
-    handleLegend(allActiveToggles, legendContainer)
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
 
     // @update new logic
+    // @update simpler solution:
+        // rather than doing a complex state jawn,
+        // consider sticking with only listening to the layout toggles
+        // on change. other form actions toggle their value field
+        // and the old 
+        // I.E.
+            // on input change, invoke a function that
+            // toggles the value (and content?) of the options
+            // call handleForms just on the selects
+            // e-z p-z?....
+        
     mainForm.onchange = e => {
-        handleForms('main', )
+        // clear existing layer
+        const activeMainLayer = localStorage.getItem('active-main-layer')
+        map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
+
+        // sample query: DVRPC-CurrentPEV-Pop
+        // sample query 2: DVRPC-FC-KD-SM
+
+        // extract and build new query
+        const geo = 'DVRPC'
+        const theme ='distribution'
+        const type = $(`#type_select option:selected`).val() // current, future, free or paid
+        const layer = $(`#layout_select option:selected`).val()
+
+        let query;
+
+        if(theme == 'workplace') query = chargeType(geo, type, layer)
+        else query = pevType(geo, type, layer)
+
+        console.log('query is ', query)
+
+        // `
+        //     <option value="DVRPC-CurrentPEV-Pop" data-type="pev" id="pevTop" class="dvrpc pev">PEVs</option>
+        //     <option data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+        //     <option data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+        //     <option data-type="pevSqMi" class="dvrpc pev">PEVs per Sq. Mi.</option>
+        //     <option data-type="pevPass" class="dvrpc pev">PEV Market Share (%)</option>
+        // `
+
+        // handleForms('main', )
+        // main handleForms will output the new active layer
+        // onchange will iterate over array of all layers?
         // activeInputs = handleForms('input', inputs, map)
         // activeSelects = handleForms('select', selects, map)
         // allActiveToggles = [... activeSelects, ... activeInputs]
 
         // handleLegend(allActiveToggles, legendContainer)
+    }
+
+    // @update: remove active legend, look into fnc update
+    overlayForm.onchange = () => {
+        let activeOverlayInputs = handleForms('input', overlayInputs, map)
+        handleLegend(activeOverlayInputs, legendContainer)
     }
 
     map.addSource('dvrpcPEVBG', {
@@ -206,8 +265,6 @@ map.on('load', () => {
         var props = e.features[0].properties;
         handleMCD(props)
     });
-
-    
 })
 
 // loading spinner 
