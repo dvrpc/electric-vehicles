@@ -3,6 +3,7 @@ import secondaryMapLayers from "./map/secondaryMapLayers.js";
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
   let active = [];
+  console.log(inputs)
 
   inputs.forEach((input) => {
     const layer = input.value;
@@ -12,6 +13,7 @@ const handleFormInputs = (inputs, map) => {
     if (checked) active.push(layer);
 
     if (map.getLayer(layer)) {
+      console.log('map layer ', layer)
       map.setLayoutProperty(layer, "visibility", visibility);
     } else {
       // add layer on first pass
@@ -100,23 +102,21 @@ const constructQuery = toggles => {
   // pick layer from pevType or chargeType fnc
   if(toggles.theme == 'distribution') {
     jawn = pevType(toggles.geo, toggles.showing, toggles.type)
+  
   } else if(toggles.theme == 'workplace') {
     jawn = chargeType(toggles.geo, toggles.showing, toggles.type) 
   }
-
-  console.log(jawn)
 
   return jawn
 }
 
 const handleForms = (type, toggles, map) => {
-  console.log('type ', type)
+  console.log('for mtype ', type)
   switch (type) {
     case "select-main":
-      // return handleFormSelect(toggles, map);
-      return constructQuery()
-    case 'input-main':
-
+      handleFormSelect(toggles, map);
+      constructQuery()
+      break      
     default:
       return handleFormInputs(toggles, map);
   }

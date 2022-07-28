@@ -214,7 +214,7 @@ nav {
 
 /* Sidebar */
 .sidebar {
-  width: 40%;
+  width: 33%;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -237,10 +237,6 @@ nav {
   color: var(--theme-dvrpc-accent);
   font-size: 1.125em;
   font-weight: 400;
-  margin-top: var(--padding-double);
-}
-.sidebar-h3:first-of-type {
-  margin-top: var(--padding);
 }
 .sidebar-img {
   display: block;
@@ -280,23 +276,17 @@ nav {
 .button:active {
   background-color: #efa801;
 }
-#scoreTogglers {
-  margin: 5px 0px 5px 10px;
-  border-radius: 4px;
+.scoreTogglers {
+  margin: 5px 0px 25px 0px;
+  border-radius: var(--border-radius);
   border-color: #dadada;
-  background-color: var(--theme-offwhite);
   overflow: hidden;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   flex-wrap: wrap;
 }
-#scoreBox2 {
-  display: block;
-  width: 33%;
-  margin: 15px 0px 0px 0px;
-}
-#scoreBox2 {
+.scoreBox2 {
   display: block;
   width: 50%;
   margin: 5px 0px 0px 0px;
@@ -307,12 +297,12 @@ nav {
 .centerCssClass {
   background-color: blue;
 }
-.active {
+.toggle-btn-active {
   background: #254661 !important;
   border: 2px solid #254661 !important;
   color: white;
 }
-.dull {
+.toggle-btn-dull {
   background: #737a85 !important;
   border: 2px solid #737a85 !important;
   color: white;
@@ -321,31 +311,8 @@ input.radio:active {
   background: #200007;
 }
 /* hides radio button */
-input[class="lbox-DVRPC"],
-input[class="lbox-PA"],
-input[class="lbox-NJ"],
-input[class="lbox-PEV"],
-input[class="lbox-WP"] {
+input[class="lbox"]{
   display: none;
-}
-.DVRPC,
-.PEV {
-  background: #254661 !important;
-  border: 2px solid #254661 !important;
-  color: white;
-}
-.PA {
-  background: #737a85 !important;
-  border: 2px solid #737a85 !important;
-  color: white;
-}
-.NJ,
-.WP {
-  /* background: #d0d1ca!important;
-  border: 2px solid #d0d1ca !important; */
-  background: #737a85 !important;
-  border: 2px solid #737a85 !important;
-  color: white;
 }
 #label-box-DVRPC,
 #label-box-PA,
@@ -364,27 +331,25 @@ input[class="lbox-WP"] {
   width: 30vh;
   max-width: 140px;
 }
-#label-box-PEV,
-#label-box-WP {
+.toggle-btn{
   height: 100%;
   background: white;
   border: 1px solid #979797;
   border-radius: 10px;
-  padding: 0.2vh;
+  padding: 5px 10px;
   margin: 10px auto 10px auto;
   text-align: center;
   box-shadow: 0px 3px 10px -2px rgba(48, 149, 140, 0.5);
   position: relative;
   display: block;
-  /* width:140px; */
-  width: 50vh;
+  cursor: pointer;
+  min-width: 85px;
   max-width: 140px;
 }
 #label-box-DVRPC:hover,
 #label-box-PA:hover,
 #label-box-NJ:hover,
-#label-box-PEV:hover,
-#label-box-WP:hover {
+.toggle-btn:hover {
   font-weight: 700;
   box-shadow: 0 0 22px rgba(230, 154, 142, 0.8);
 }
@@ -508,7 +473,7 @@ select {
 /* Map */
 .map {
   position: relative;
-  width: 60%;
+  width: 67%;
   height: 100%;
 }
 .mapboxgl-popup-content {

@@ -25,6 +25,7 @@ const mainInputs = mainForm.querySelectorAll('input')
 const mainSelects = mainForm.querySelectorAll('select')
 
 $('.charge').hide()
+$('.workplace').hide()
 
 // map
 const map = makeMap()
@@ -43,7 +44,7 @@ map.on('load', () => {
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     // set default form state
-    let activeInputs = handleForms('input-main', mainInputs, map)
+    // let activeInputs = handleForms('input-main', mainInputs, map)
     let activeSelects = handleForms('select-main', mainSelects, map)
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
@@ -52,7 +53,7 @@ map.on('load', () => {
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
     // handle simple toggles - layers on/off and corresponding legend items on/off
     mainForm.onchange = () => {
-        activeInputs = handleForms('input', inputs, map)
+        // activeInputs = handleForms('input', inputs, map)
         activeSelects = handleForms('select', selects, map)
         allActiveToggles = [... activeSelects, ... activeInputs]
 

@@ -83,7 +83,7 @@
                   <div id="DVRPC" class="score-cb">
                     <input
                       type="radio"
-                      class="lbox-DVRPC"
+                      class="lbox"
                       id="control_01"
                       name="select"
                       value="1"
@@ -99,7 +99,7 @@
                   <div id="PA" class="score-cb">
                     <input
                       type="radio"
-                      class="lbox-PA"
+                      class="lbox"
                       id="control_02"
                       name="select"
                       value="2"
@@ -114,7 +114,7 @@
                   <div id="NJ" class="score-cb">
                     <input
                       type="radio"
-                      class="lbox-NJ"
+                      class="lbox"
                       id="control_03"
                       name="select"
                       value="3"
@@ -125,9 +125,69 @@
                   </div>
               </div>
             </div> -->
+
+            <h3 class="sidebar-h3">Select a Geography</h3>
+            <div class="scoreTogglers">
+              <label id="DVRPC" class="toggle-btn toggle-btn toggle-btn-active">
+                <input
+                  type="radio"
+                  class="lbox"
+                  name="select"
+                  value="distro"
+                  checked
+                />
+                DVRPC Region
+              </label>
+
+              <label id="PA" class="toggle-btn toggle-btn">
+                <input
+                  type="radio"
+                  class="lbox"
+                  name="select"
+                  value="charging"
+                />
+                PA
+              </label>
+
+              <label id="NJ" class="toggle-btn toggle-btn">
+                <input
+                  type="radio"
+                  class="lbox"
+                  name="select"
+                  value="charging"
+                />
+                NJ
+              </label>
+            </div>
+            
+            <!-- jawn -->
             <h3 class="sidebar-h3">Select a Map Theme</h3>
+            <div class="scoreTogglers">
+              <label id="PEV" class="toggle-btn toggle-btn-active PEV scoreBox2 score-cb">
+                <input
+                  type="radio"
+                  class="lbox"
+                  name="select"
+                  value="distro"
+                  checked
+                />
+                PEV Distribution
+              </label>
+
+              <label id="WP" class="toggle-btn WP score-cb">
+                <input
+                  type="radio"
+                  class="lbox"
+                  name="select"
+                  value="charging"
+                />
+                Workplace Charging
+              </label>
+            </div>
+
+            <!-- <h3 class="sidebar-h3">Select a Map Theme</h3>
             <div
-            id="scoreTogglers"
+            class="scoreTogglers"
             data-title="Analysis Methods"
             data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
             >
@@ -135,7 +195,7 @@
               <div id="PEV" class="score-cb">
                 <input
                   type="radio"
-                  class="lbox-PEV"
+                  class="lbox"
                   id="control_04"
                   name="select"
                   value="distro"
@@ -151,7 +211,7 @@
               <div id="WP" class="score-cb">
                 <input
                   type="radio"
-                  class="lbox-WP"
+                  class="lbox"
                   id="control_05"
                   name="select"
                   value="charging"
@@ -161,7 +221,7 @@
                 </label>
               </div>
             </div>
-            </div>
+            </div> -->
 
             <!-- scenario toggles -->
             <label class=" flex-align-center flex-between label-select">
