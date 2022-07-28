@@ -23,6 +23,7 @@ const legendContainer = document.getElementById('legend-container')
 const mainForm = document.getElementById('main-form')
 const overlayForm = document.getElementById('overlay-form')
 const overlayInputs = overlayForm.querySelectorAll('input')
+const mapStart = document.getElementById('mapStart')
 const mapDetails = document.getElementById('mapDetails')
 
 $('.charge').hide()
@@ -56,8 +57,8 @@ map.on('load', () => {
         handleForms('main', null, map)
 
         // clear any clicked queries
-        console.log(mapDetails)
-        // while(mapDetails.firstChild) mapDetails.removeChild(mapDetails.firstChild)
+        mapDetails.style.display = 'none'
+        mapStart.style.display = 'inline-block'
     }
 
     // @update: remove active legend, look into fnc update
@@ -198,8 +199,8 @@ map.on('load', () => {
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
-        document.getElementById("mapStart").style.display = "none";
-        document.getElementById("mapDetails").style.display = "inline-block";
+        mapStart.style.display = "none";
+        mapDetails.style.display = "inline-block";
         var props = e.features[0].properties;
         handleBlockGroups(props,map)
         // var coordinates = e.features[0].geometry.coordinates[0];
