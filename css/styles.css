@@ -302,10 +302,10 @@ nav {
   border: 2px solid #254661 !important;
   color: white;
 }
-.toggle-btn-dull {
-  background: #737a85 !important;
-  border: 2px solid #737a85 !important;
-  color: white;
+.toggle-btn-active:hover {
+  cursor: default;
+  box-shadow: none !important;
+  font-weight: initial !important;
 }
 input.radio:active {
   background: #200007;

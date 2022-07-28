@@ -82,9 +82,7 @@ const togglerPEV = () => {
     document.getElementById('type_select').selectedIndex=0;
     document.getElementById('layout_select').selectedIndex = document.getElementById('pevTop').index;
 
-    $('#WP').removeClass('toggle-btn-active');  
-    $('#WP').addClass('toggle-btn-dull'); 
-    $(this).removeClass('toggle-btn-dull');   
+    $('#WP').removeClass('toggle-btn-active');
     $(this).addClass('toggle-btn-active');
   });
 };
@@ -99,9 +97,7 @@ const togglerWP = () => {
     document.getElementById('type_select').selectedIndex=2;
     document.getElementById('layout_select').selectedIndex = document.getElementById('chargeTop').index;
 
-    $('#PEV').removeClass('toggle-btn-active');  
-    $('#PEV').addClass('toggle-btn-dull');
-    $(this).removeClass('toggle-btn-dull');   
+    $('#PEV').removeClass('toggle-btn-active');
     $(this).addClass('toggle-btn-active');
   });
 };
