@@ -21,8 +21,6 @@ const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
 const mainForm = document.getElementById('main-form')
 const overlayForm = document.getElementById('overlay-form')
-const mainInputs = mainForm.querySelectorAll('input')
-const mainSelects = mainForm.querySelectorAll('select')
 
 $('.charge').hide()
 $('.workplace').hide()
@@ -49,15 +47,16 @@ map.on('load', () => {
     let allActiveToggles = [... activeSelects, ... activeInputs]
 
     handleLegend(allActiveToggles, legendContainer)
-    // This functiin reorders point features
     //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
-    // handle simple toggles - layers on/off and corresponding legend items on/off
-    mainForm.onchange = () => {
-        // activeInputs = handleForms('input', inputs, map)
-        activeSelects = handleForms('select', selects, map)
-        allActiveToggles = [... activeSelects, ... activeInputs]
 
-        handleLegend(allActiveToggles, legendContainer)
+    // @update new logic
+    mainForm.onchange = e => {
+        handleForms('main', )
+        // activeInputs = handleForms('input', inputs, map)
+        // activeSelects = handleForms('select', selects, map)
+        // allActiveToggles = [... activeSelects, ... activeInputs]
+
+        // handleLegend(allActiveToggles, legendContainer)
     }
 
     map.addSource('dvrpcPEVBG', {

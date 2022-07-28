@@ -58,6 +58,29 @@ const handleFormSelect = (selects, map) => {
 
 const extractSelect = id => $(`#${id} option:selected`).val()
 
+
+// @update: existing combinations of jawns:
+// <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">Current PEVs</option>
+//                 <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">Current PEVs per 100 People</option>
+//                 <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">Current PEVs per Household</option>
+//                 <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">Current PEVs per Sq. Mi.</option>
+//                 <option value="DVRPC-CurrentPEV-Veh" class="dvrpc current pev">Current Percentage of Passengers that are PEVs</option>
+
+//                 <option value="DVRPC-FuturePEV-BG" id="topFuture"class="dvrpc future pev">Future PEVs</option>
+//                 <option value="DVRPC-FuturePEV-Pop" class="dvrpc future pev">Future PEVs per 100 People</option>
+//                 <option value="DVRPC-FuturePEV-HH" class="dvrpc future pev">Future PEVs per Household</option>
+//                 <option value="DVRPC-FuturePEV-SM" class="dvrpc future pev">Future PEVs per Sq. Mi.</option>
+//                 <option value="DVRPC-FuturePEV-Veh" class="dvrpc future pev">Future Percentage of Passengers that are PEVs</option>
+
+//                 <option value="DVRPC-FC-KD-SM" id="topFree" class="dvrpc free work">Free Charging - kWh of Demand per Sq. Mi.</option>
+//                 <option value="DVRPC-FC-KD-JB" class="dvrpc free work">Free Charging - kWh of Demand per Job</option>
+//                 <option value="DVRPC-FC-CE-SM" class="dvrpc free work">Free Charging - Charging Event per Sq. Mi.</option>
+//                 <option value="DVRPC-FC-CE-JB" class="dvrpc free work">Free Charging - Charging Event per Job</option>
+
+//                 <option value="DVRPC-PC-KD-SM" id="topPaid" class="dvrpc paid work">Paid Charging - kWh of Demand per Sq. Mi.</option>
+//                 <option value="DVRPC-PC-KD-JB" class="dvrpc paid work">Paid Charging - kWh of Demand per Job</option>
+//                 <option value="DVRPC-PC-CE-SM" class="dvrpc paid work">Paid Charging - Charging Event per Sq. Mi.</option>
+//                 <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">Paid Charging - Charging Event per Job</option>
 // @update: wholeslae change to all map/toggle stuff
   // - put geographical btns, category btns and type select under one form
   // listen to form change and extract all active form elements
@@ -83,6 +106,13 @@ const chargeType = (geo, cost, showing) => {
 }
 // receive obj with active form elements organized by type
 const constructQuery = toggles => {
+  // extract btn states
+
+  // extract select states
+
+  // spread over onto objects
+
+
   // {
   //   geo: pa // dvrpc // nj,
   //   theme: distribution // workplace,
@@ -99,6 +129,8 @@ const constructQuery = toggles => {
   }
   let jawn;
 
+  // extract 
+
   // pick layer from pevType or chargeType fnc
   if(toggles.theme == 'distribution') {
     jawn = pevType(toggles.geo, toggles.showing, toggles.type)
@@ -113,8 +145,7 @@ const constructQuery = toggles => {
 const handleForms = (type, toggles, map) => {
   console.log('for mtype ', type)
   switch (type) {
-    case "select-main":
-      handleFormSelect(toggles, map);
+    case "main":
       constructQuery()
       break      
     default:

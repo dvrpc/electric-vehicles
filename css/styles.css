@@ -131,7 +131,7 @@ nav {
   position: relative;
   height: 6vh;
   padding: 0 var(--padding);
-  background-color: var(--theme-dvrpc);
+  background-color: var(--theme-sidebar);
   color: var(--theme-white);
   box-shadow: var(--box-shadow-nav);
   z-index: 2;
