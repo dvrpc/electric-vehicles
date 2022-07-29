@@ -263,13 +263,11 @@ const legendConfig = {
     label: "Current PEVs (New Jersey)",
     legendType:"scale",
     class:"gb",
-    legendLable1:"0.98",
-    legendLable2:"1.64",
-    legendLable3:"2.66",
-    legendLable4:"4.22",
-    legendLable5:"6.47",
-    legendLable6:"11.83",
-    legendLable7:"105"
+    legendLable1:"1.16",
+    legendLable2:"2.37",
+    legendLable3:"4.49",
+    legendLable4:"8.89",
+    legendLable5:"10.5",
   },
 };
 

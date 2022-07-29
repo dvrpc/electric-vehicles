@@ -620,17 +620,15 @@ const secondaryMapLayers = {
     'type': 'fill',
     'source': 'pev',
     'source-layer': 'nj_pev_bg',
-    'layout': {},
     'paint': {
       'fill-color': ['step',
           ['get', 'CurPEV'],
           pev1,
-          .98, pev2,
-          1.64, pev3,
-          2.66, pev4 ,
-          4.22, pev5 ,
-          6.47, pev6 ,
-          11.83,pev7
+          1.16, pev2,
+          2.37, pev3,
+          4.49, pev4,
+          8.89, pev5,
+          10.5, pev6
         ],
       "fill-opacity": {
         base: 9,

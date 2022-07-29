@@ -1,6 +1,8 @@
 import legendConfig from "./legendConfig.js";
 
 // fncs to handle legends
+// @update: iterate over entries to allow for legends w/different steps
+// instead of hard coding
 const createLegendItem = (val) => {
   const legendDetails = legendConfig[val];
 if (legendDetails.legendType === "scale") {
