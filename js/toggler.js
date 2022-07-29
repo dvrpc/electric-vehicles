@@ -101,7 +101,46 @@ const togglerWP = () => {
   });
 };
 
-// @update: fnc for geo btns to update state on click
+// update state, mapZoom & muni/county boundaries on geobtns click
+const togglerNJ = map => {
+  document.getElementById("NJ-toggle").addEventListener("click", function () {
+    map.fitBounds([
+      [-75.559614, 38.928519],
+      [-73.893979, 41.357423]
+    ])
+
+    $('#DVRPC-toggle').removeClass('toggle-btn-active')
+    $('#PA-toggle').removeClass('toggle-btn-active')
+    $(this).addClass('toggle-btn-active')
+  }
+)}
+
+const togglerPA = map => {
+  document.getElementById("PA-toggle").addEventListener("click", function () {
+    map.fitBounds([
+      [-80.519891, 39.7198],
+      [-74.689516, 42.26986]
+    ])
+
+    $('#DVRPC-toggle').removeClass('toggle-btn-active')
+    $('#NJ-toggle').removeClass('toggle-btn-active')
+    $(this).addClass('toggle-btn-active')
+  }
+)}
+
+const togglerDVRPC = map => {
+  document.getElementById("DVRPC-toggle").addEventListener("click", function () {
+    map.fitBounds([
+      [-76.09405517578125, 39.49211914385648],
+      [-74.32525634765625, 40.614734298694216]
+    ])
+
+    $('#NJ-toggle').removeClass('toggle-btn-active')
+    $('#PA-toggle').removeClass('toggle-btn-active')
+    $(this).addClass('toggle-btn-active')
+  }
+)}
+
 
 // Show/hide select options
 const filterCurrent = () => {
@@ -147,4 +186,4 @@ const filterCurrent = () => {
 // };
 
 // export { togglerDVRPC, togglerPA, togglerNJ, togglerPEV, togglerWP, filterCurrent };
-export {togglerPEV, togglerWP, filterCurrent };
+export {togglerPEV, togglerWP, togglerDVRPC, togglerPA, togglerNJ, filterCurrent };

@@ -256,9 +256,21 @@ const legendConfig = {
     legendLable6:"0.014",
     legendLable7:"0.074",
     note:"Number of Workplace Charging Events per Job"
-  }
+  },
 
   // New Jersey
+  "NJ-CurrentPEV-BG": {
+    label: "Current PEVs (New Jersey)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.98",
+    legendLable2:"1.64",
+    legendLable3:"2.66",
+    legendLable4:"4.22",
+    legendLable5:"6.47",
+    legendLable6:"11.83",
+    legendLable7:"105"
+  },
 };
 
 export default legendConfig;

@@ -5,7 +5,7 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
-import { togglerPEV, togglerWP, filterCurrent } from "./toggler.js";
+import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
 
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
@@ -28,6 +28,9 @@ map.on('load', () => {
     togglerPEV();
     togglerWP();
     filterCurrent();
+    togglerPA(map)
+    togglerNJ(map)
+    togglerDVRPC(map)
 
     handleLegend(['DVRPC-CurrentPEV-BG'], legendContainer)
 

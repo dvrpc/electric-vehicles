@@ -22,6 +22,18 @@ let wpjob5 = '#c7eae5';
 let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
+// PA
+let expressionPA1 = ['step',
+['get', 'FutPEV'],
+'#b2182b',
+15,'#ef8a62',
+22,'#fddbc7',
+32, '#f7f7f7',
+50, '#d1e5f0',
+99, '#67a9cf',
+1234,'#2166ac'
+];
+
 let CurHH = ['step',
 ['get', 'CuPEV_HU'],
 pev1,
@@ -53,8 +65,7 @@ pev1,
 .0065, pev6,
 .0103, pev7
 ];
-// Future
-let expression2 = ['step',
+let FutPev = ['step',
 ['get', 'FutPEV'],
 pev1,
 4.49, pev2,
@@ -64,7 +75,6 @@ pev1,
 35.52,  pev6,
 72.51, pev7
 ];
-
 let FutPop = ['step',
 ['get', 'FuPEVPop'],
 pev1,
@@ -75,7 +85,6 @@ pev1,
 2.54,  pev6,
 4.75, pev7
 ];
-
 let FutHH = ['step',
 ['get', 'FuPEV_HU'],
 pev1,
@@ -86,7 +95,6 @@ pev1,
 6.66,  pev6,
 12.27, pev7
 ];
-
 let FutSM = ['step',
 ['get', 'FUPEV_SM'],
 pev1,
@@ -107,7 +115,6 @@ pev1,
 .03766, pev6,
 .06804, pev7
 ];
-// Free Charging
 let FC_KD_SM = ['step',
 ['get', 'FC_KD_SM'],
 wp1,
@@ -118,7 +125,6 @@ wp1,
 164.75,  wp6,
 321.26,  wp7
 ];
-
 let FC_KD_JB = ['step',
 ['get', 'FC_KD_JB'],
  wpjob1 ,
@@ -129,7 +135,6 @@ let FC_KD_JB = ['step',
 .1228,  wpjob6 ,
 .1517,  wpjob7
 ];
-
 let FC_CE_SM = ['step',
 ['get', 'FC_CE_SM'],
 wp1,
@@ -140,7 +145,6 @@ wp1,
 23.9576,  wp6,
 44.3198,  wp7
 ];
-
 let FC_CE_JB = ['step',
 ['get', 'FC_CE_JB'],
 wpjob1,
@@ -151,7 +155,6 @@ wpjob1,
 .0169,  wpjob6,
 .0209,  wpjob7
 ];
-// Paid Charging
 let PC_KD_SM = ['step',
 ['get', 'PC_KD_SM'],
 wp1,
@@ -162,7 +165,6 @@ wp1,
 114.29,  wp6,
 222.67, wp7
 ];
-
 let PC_KD_JB = ['step',
 ['get', 'PC_KD_JB'],
 wpjob1,
@@ -173,7 +175,6 @@ wpjob1,
 .0853,  wpjob6,
 .1052, wpjob7
 ];
-
 let PC_CE_SM = ['step',
 ['get', 'PC_CE_SM'],
 wp1,
@@ -184,7 +185,6 @@ wp1,
 15.96,  wp6,
 29.68, wp7
 ];
-
 let PC_CE_JB = ['step',
 ['get', 'PC_CE_JB'],
 wpjob1,
@@ -195,17 +195,10 @@ wpjob1,
 .0113,  wpjob6,
 .014,   wpjob7
 ];
-// PA
-let expressionPA1 = ['step',
-['get', 'FutPEV'],
-'#b2182b',
-15,'#ef8a62',
-22,'#fddbc7',
-32, '#f7f7f7',
-50, '#d1e5f0',
-99, '#67a9cf',
-1234,'#2166ac'
-];
+
+
+// New Jersey
+
 
 const secondaryMapLayers = {
   'charging': {
@@ -228,52 +221,10 @@ const secondaryMapLayers = {
       },
     },
   },
-// @update: useless layer?
-//   'DVRPC-BG': {
-//     'id': 'DVRPC-BG',
-//     'type': 'fill',
-//     'source': 'pev',
-//     'source-layer': 'dvrpc_pev_bg',
-//     'layout': {},
-//     'paint': {
-//    'fill-color': '#FFF',
-//    'fill-opacity': 0.0,
-//     },
-// },
-// @update what is?
-// 'dvrpc-current': {
-//     'id': 'dvrpc-current',
-//     'type': 'circle',
-//     'source': 'pev',
-//     'source-layer': 'pev_bg_centroids',
-//     'paint': {
-//         'circle-radius': {
-//           property: 'CurPEV',
-//           stops: [
-//           [{zoom: 8, value: 1.16}, .5],
-//           [{zoom: 8, value: 2.37}, 1],
-//           [{zoom: 8, value: 4.49}, 2],
-//           [{zoom: 8, value: 8.89}, 3],
-//           [{zoom: 8, value: 105}, 5],
-//           [{zoom: 12, value: 1.16}, 2],
-//           [{zoom: 12, value: 2.37}, 3],
-//           [{zoom: 12, value: 4.49}, 4],
-//           [{zoom: 12, value: 8.89}, 6],
-//           [{zoom: 12, value: 105}, 9],
-//           ]
-//           },
-//           'circle-color': '#EA563D',
-//           'circle-opacity':.75
-//         },
-//         "filter": ["all",
-//         ["==","MAPTYPE","DVRPC"],
-//         [">=","CurPEV",0.1]
-//         ]   
-// },
 
 // DVRPC
 'DVRPC-CurrentPEV-Pop': {
-  'id': 'dvrpc-CurrentPEV-Pop',
+  'id': 'DVRPC-CurrentPEV-Pop',
   'type': 'fill',
   'source': 'pev',
   'source-layer': 'dvrpc_pev_bg',
@@ -402,7 +353,7 @@ const secondaryMapLayers = {
   'source-layer': 'dvrpc_pev_bg',
   'layout': {},
   'paint': {
- 'fill-color': expression2,
+ 'fill-color': FutPev,
  "fill-opacity": {
   base: 9,
   stops: [
@@ -662,6 +613,39 @@ const secondaryMapLayers = {
   },
     }
   },
+
+  // New Jersey
+  'NJ-CurrentPEV-BG': {
+    'id': 'NJ-CurrentPEV-BG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+          ['get', 'CurPEV'],
+          pev1,
+          .98, pev2,
+          1.64, pev3,
+          2.66, pev4 ,
+          4.22, pev5 ,
+          6.47, pev6 ,
+          11.83,pev7
+        ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .9],
+          [12, .8],
+          [14, .4],
+        ],
+      },
+    }
+  },
+
+
+
   //PA
   'PA-FuturePEV': {
       'id': 'PA-FuturePEV',
@@ -686,3 +670,47 @@ const secondaryMapLayers = {
 }
 
 export default secondaryMapLayers
+
+
+// @update declutter unknown layers
+//   'DVRPC-BG': {
+//     'id': 'DVRPC-BG',
+//     'type': 'fill',
+//     'source': 'pev',
+//     'source-layer': 'dvrpc_pev_bg',
+//     'layout': {},
+//     'paint': {
+//    'fill-color': '#FFF',
+//    'fill-opacity': 0.0,
+//     },
+// },
+// @update what is?
+// 'dvrpc-current': {
+//     'id': 'dvrpc-current',
+//     'type': 'circle',
+//     'source': 'pev',
+//     'source-layer': 'pev_bg_centroids',
+//     'paint': {
+//         'circle-radius': {
+//           property: 'CurPEV',
+//           stops: [
+//           [{zoom: 8, value: 1.16}, .5],
+//           [{zoom: 8, value: 2.37}, 1],
+//           [{zoom: 8, value: 4.49}, 2],
+//           [{zoom: 8, value: 8.89}, 3],
+//           [{zoom: 8, value: 105}, 5],
+//           [{zoom: 12, value: 1.16}, 2],
+//           [{zoom: 12, value: 2.37}, 3],
+//           [{zoom: 12, value: 4.49}, 4],
+//           [{zoom: 12, value: 8.89}, 6],
+//           [{zoom: 12, value: 105}, 9],
+//           ]
+//           },
+//           'circle-color': '#EA563D',
+//           'circle-opacity':.75
+//         },
+//         "filter": ["all",
+//         ["==","MAPTYPE","DVRPC"],
+//         [">=","CurPEV",0.1]
+//         ]   
+// },

@@ -74,7 +74,7 @@ const layers = {
         'fill-opacity': 0.0
     }
   },
-  dvrpcPevLines: {
+  PevLines: {
     'id': 'dvrpcPEVBG-line',
     'type': 'line',
     'source': 'pev',
@@ -106,7 +106,7 @@ const layers = {
       },
     "filter": [">=", "POP", 0.1],
   },
-  dvrpcPevFills: {
+  PevFills: {
     'id': 'dvrpcPEVBG',
     'type': 'fill',
     'source': 'pev',
