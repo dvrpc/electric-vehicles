@@ -21,17 +21,7 @@ let wpjob4 = '#f5f5f5';
 let wpjob5 = '#c7eae5';
 let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
-// Current
-let expression1 = ['step',
-['get', 'CurPEV'],
-pev1,
-.98, pev2,
-1.64, pev3,
-2.66, pev4 ,
-4.22, pev5 ,
-6.47, pev6 ,
-11.83,pev7
-];
+
 let CurHH = ['step',
 ['get', 'CuPEV_HU'],
 pev1,
@@ -217,10 +207,6 @@ let expressionPA1 = ['step',
 1234,'#2166ac'
 ];
 
-const generateFuck = () => {
-
-}
-
 const secondaryMapLayers = {
   'charging': {
     id: 'charging',
@@ -284,6 +270,8 @@ const secondaryMapLayers = {
 //         [">=","CurPEV",0.1]
 //         ]   
 // },
+
+// DVRPC
 'DVRPC-CurrentPEV-Pop': {
   'id': 'dvrpc-CurrentPEV-Pop',
   'type': 'fill',
@@ -313,27 +301,6 @@ const secondaryMapLayers = {
       ],
     },
   }
-},
-  'CurrentPEV-BG': geo => {
-    return {
-      'id': `${geo}-CurrentPEV-BG`,
-      'type': 'fill',
-      'source': 'pev',
-      'source-layer': 'dvrpc_pev_bg',
-      'layout': {},
-      'paint': {
-        'fill-color': expression1,
-        "fill-opacity": {
-          base: 9,
-          stops: [
-            [9, 1],
-            [10, .9],
-            [12, .8],
-            [14, .4],
-          ],
-        },
-      }
-    }
 },
 'DVRPC-CurrentPEV-HH': {
   'id': 'DVRPC-CurrentPEV-HH',

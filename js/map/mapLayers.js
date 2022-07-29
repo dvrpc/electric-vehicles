@@ -37,7 +37,7 @@ const layers = {
     filter: ["==", "DVRPC", "Yes"],
   },
   'DVRPC-CurrentPEV-BG': {
-    'id': 'dvrpc-CurrentPEV-BG',
+    'id': 'DVRPC-CurrentPEV-BG',
     'type': 'fill',
     'source': 'pev',
     'source-layer': 'dvrpc_pev_bg',
@@ -63,7 +63,66 @@ const layers = {
         ],
       },
     }
-}
+  },
+  dvrpcMCD: {
+    'id': 'dvrpcPEVMCD',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_mcd',
+    'layout': {}, 
+    'paint': {
+        'fill-opacity': 0.0
+    }
+  },
+  dvrpcPevLines: {
+    'id': 'dvrpcPEVBG-line',
+    'type': 'line',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {}, 
+    'paint': {
+        "line-width": [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            6,
+            1
+            ],
+        "line-color":[
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            "#FF0000", "#9cafb5"
+            ],
+        "line-opacity": {
+            base: 9,
+            stops: [
+              [9, .4],
+              [10, .5],
+              [11, .65],
+              [12, .7],
+              [13, .8],
+              [14, .9],
+            ],
+         }
+      },
+    "filter": [">=", "POP", 0.1],
+  },
+  dvrpcPevFills: {
+    'id': 'dvrpcPEVBG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {}, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        .8,
+        0.0
+        ]
+    },
+    "filter": [">=", "POP", 0.1],
+  }
 };
 
 export default layers;

@@ -55,11 +55,10 @@ const handleFormSelect = (selects, map) => {
   return active;
 };
 
+// helpers to build layer id query
 const pevType = (geo, time, showing) => {
   return `${geo}-${time}PEV-${showing}`
 }
-
-// type = FC or PC
 const chargeType = (geo, cost, showing) => {
 return `${geo}-${cost}-${showing}`
 }
@@ -84,19 +83,13 @@ const constructMainQuery = map => {
   if (map.getLayer(newMainLayer)) {
       map.setLayoutProperty(newMainLayer, "visibility", 'visible');
     } else {
-      // @update: invoke new fncs to generate layer objs on the fly
-      map.addLayer(secondaryMapLayers[newMainLayer], "road-label");
+      map.addLayer(secondaryMapLayers[newMainLayer], "dvrpcPEVBG-line");
   }
 
   // update localStorage
   localStorage.setItem('active-main-layer', newMainLayer)
 
-  // return truncated layer id for legend use
-  let layerLegendID = newMainLayer.split('-')
-  layerLegendID.shift()
-  layerLegendID = layerLegendID.join('-')
-
-  return layerLegendID
+  return newMainLayer
 }
 
 const handleForms = (type, toggles, map) => {
