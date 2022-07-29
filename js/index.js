@@ -14,9 +14,12 @@ import {
 } from "./toggler.js";
 
 $(document).ready(() => {
-  // default view
-  $("#about-section").show();
-  $("#map-section").hide();
+  // default page id
+  const defaultPage = "home-section";
+
+  [...document.querySelectorAll(".section")].map((page) => {
+    if (page.id !== defaultPage) $(page).hide();
+  });
 
   // navigation event handler
   const navBtns = [...document.querySelectorAll(".nav-btn")];

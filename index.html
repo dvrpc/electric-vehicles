@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Planning for Electric Vehicles</title>
-    <meta
-      name="viewport"
-      content="width=device-width,initial-scale=1,shrink-to-fit=no"
-    />
-    <meta name="created" content="" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta
-      name="author"
-      content="Delaware Valley Regional Planning Commission (DVRPC)"
-    />
-    <meta name="owner" content="webmaster@dvrpc.org" />
-    <meta name="distribution" content="global" />
-    <meta name="robots" content="index, follow" />
-    <meta name="copyright" content="1995-2020 all rights reserved" />
-    <!--  DVRPC Website VERSION #7.0 Copyright (c) 1995-2020 Delaware Valley Regional Planning Commission. All rights reserved.   -->
 
-    <!-- social media -->
-    <meta property="og:title" content="" />
-    <meta propery="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="" />
+<head>
+  <meta charset="utf-8" />
+  <title>Planning for Electric Vehicles</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+  <meta name="created" content="" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <meta name="author" content="Delaware Valley Regional Planning Commission (DVRPC)" />
+  <meta name="owner" content="webmaster@dvrpc.org" />
+  <meta name="distribution" content="global" />
+  <meta name="robots" content="index, follow" />
+  <meta name="copyright" content="1995-2020 all rights reserved" />
+  <!--  DVRPC Website VERSION #7.0 Copyright (c) 1995-2020 Delaware Valley Regional Planning Commission. All rights reserved.   -->
 
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&amp;display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
-      type="text/css"
-    />
-    <link
-      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
-      rel="stylesheet"
-    />
+  <!-- social media -->
+  <meta property="og:title" content="" />
+  <meta propery="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:description" content="" />
+  <meta property="og:image" content="" />
 
-    <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 800px)" />
-    <script defer type="module" src="./js/index.js"></script>
-  </head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&amp;display=swap" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <link rel="stylesheet"
+    href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
+    type="text/css" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet" />
 
-  <body>
-    <nav class="flex-row flex-align-center">
-      <a href="/" class="nav-links"
-        ><img
-          src="./img/DVRPC-logo.png"
-          alt="DVRPC logo"
-          id="dvrpc-logo"
-          class="nav-logos"
-      /></a>
+  <link rel="stylesheet" href="./css/styles.css" />
+  <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 800px)" />
+  <script defer type="module" src="./js/index.js"></script>
+</head>
 
-      <span class="nav-vr">|</span>
+<body>
+  <nav class="flex-row flex-align-center">
+    <a href="/" class="nav-links"><img src="./img/DVRPC-logo.png" alt="DVRPC logo" id="dvrpc-logo"
+        class="nav-logos" /></a>
 
-      <img
-        src="./imgs/project-logo.png"
-        alt=""
-        class="project-logo"
-        title="bruhhh"
-      />
+    <span class="nav-vr">|</span>
 
-      <h1>Planning for Electric Vehicles</h1>
+    <img src="./imgs/project-logo.png" alt="" class="project-logo" title="bruhhh" />
 
-      <span class="nav-vr">|</span>
+    <h1>Planning for Electric Vehicles</h1>
 
-      <button id="btn-about" class="nav-btn">about</button>
-      <button id="btn-map" class="nav-btn">map</button>
-    </nav>
+    <span class="nav-vr">|</span>
 
-    <main>
-      <div id="about-section" class="section">
+    <button id="btn-home" class="nav-btn">home</button>
+    <button id="btn-data" class="nav-btn">data</button>
+    <button id="btn-map" class="nav-btn">map</button>
+    <button id="btn-glossary" class="nav-btn">glossary</button>
+  </nav>
+  <main>
+    <div id="home-section" class="section">
+      <div class="text-container">
         <h1>Planning for Electric Vehicles</h1>
         <p>Mapping Vehicle Distribution and Workplace Charging Demand</p>
         <i>
@@ -112,9 +88,7 @@
           has been working with
           <a href="https://phev.ucdavis.edu/research/">UC Davis researchers</a>
           to calibrate their
-          <a
-            href="https://phev.ucdavis.edu/project/uc-davis-gis-ev-planning-toolbox-for-mpos/"
-          >
+          <a href="https://phev.ucdavis.edu/project/uc-davis-gis-ev-planning-toolbox-for-mpos/">
             Electric Vehicle Planning Toolkit
           </a>
           to the Greater Philadelphia region. The Toolkit is run in ArcGIS and
@@ -137,25 +111,51 @@
           </a>
           ; and commuting distances between block groups from DVRPC's Travel
           Demand Model. For more information on the Toolkit, please see a
-          <a
-            href="https://drive.google.com/open?id=1AR3GkRqFNmtrRe3Qqk9VSXtOcMRx9uOG"
-            >one-page summary of the Toolkit</a
-          >, the Toolkit instruction manuals (<a
-            href="https://drive.google.com/open?id=1UYdTteNdhpYStN-j7_K5yh_rgRIDNUe5"
-            >Market Analysis Tool</a
-          >
+          <a href="https://drive.google.com/open?id=1AR3GkRqFNmtrRe3Qqk9VSXtOcMRx9uOG">one-page summary of the
+            Toolkit</a>, the Toolkit instruction manuals (<a
+            href="https://drive.google.com/open?id=1UYdTteNdhpYStN-j7_K5yh_rgRIDNUe5">Market Analysis Tool</a>
           and
-          <a
-            href="https://drive.google.com/open?id=1IojKElZHts9eI1UTx5UqM848VD_qEzzZ"
-            >Workplace Charging Analysis Tool</a
-          >), or visit the
-          <a
-            href="https://phev.ucdavis.edu/project/uc-davis-gis-ev-planning-toolbox-for-mpos/"
-            >project site</a
-          >
+          <a href="https://drive.google.com/open?id=1IojKElZHts9eI1UTx5UqM848VD_qEzzZ">Workplace Charging Analysis
+            Tool</a>), or visit the
+          <a href="https://phev.ucdavis.edu/project/uc-davis-gis-ev-planning-toolbox-for-mpos/">project site</a>
           on the UC Davis website.
         </p>
-        <br />
+      </div>
+      <div class="text-container">
+        <h1>Disclaimer</h1>
+        <i>
+          <p>
+            The Delaware Valley Regional Planning Commission is the federally
+            designated Metropolitan Planning Organization for a diverse
+            nine-county region in two states: Bucks, Chester, Delaware,
+            Montgomery, and Philadelphia in Pennsylvania; and Burlington,
+            Camden, Gloucester, and Mercer in New Jersey.
+          </p>
+          <br />
+          <p>
+            DVRPC's vision for the Greater Philadelphia Region is a prosperous,
+            innovative, equitable, resilient, and sustainable region that
+            increases mobility choices by investing in a safe and modern
+            transportation system; that protects and preserves our natural
+            resources while creating healthy communities; and that fosters
+            greater opportunities for all.
+          </p>
+          <p>
+            DVRPC's mission is to achieve this vision by convening the widest
+            array of partners to inform and facilitate data-driven
+            decision-making. We are engaged across the region, and strive to be
+            leaders and innovators, exploring new ideas and creating best
+            practices.
+          </p>
+          <p>
+            For more information, visit<a href="https://www.dvrpc.org/Policies/">https://www.dvrpc.org/Policies/</a>
+          </p>
+        </i>
+      </div>
+    </div>
+    <div id="data-section" class="section">
+      <div class="text-container">
+        <h1>Data</h1>
         <p>
           The following series of maps show interactive results of the
           geographic distribution of PEVs and the associated demand for
@@ -180,11 +180,10 @@
             <p>
               New Jersey: 330,000 passenger vehicles (about 10 percent) are
               PEVs.
-              <a
-                href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml"
-                >This is in line with the New Jersey, state-wide, zero-emission
-                vehicle adoption goal for 2025.</a
-              >
+              <a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml">This is in line with the
+                New
+                Jersey, state-wide, zero-emission
+                vehicle adoption goal for 2025.</a>
               However, this tool does not predict the total number of passenger
               vehicles in 2025.
             </p>
@@ -202,12 +201,12 @@
           goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for
           the region.
         </p>
+      </div>
+      <div class="text-container">
         <h1>PEV Distribution</h1>
         <p>
-          <a
-            href="https://drive.google.com/file/d/1dWqTvCc8vAE2un0KJ1O3X1_ySKIg-pa_/view?usp=sharing"
-            >Map 1 - PEV Distribution</a
-          >
+          <a href="https://drive.google.com/file/d/1dWqTvCc8vAE2un0KJ1O3X1_ySKIg-pa_/view?usp=sharing">Map 1 - PEV
+            Distribution</a>
         </p>
         <p>
           PEV Distribution shows layers for current and projected numbers of
@@ -233,12 +232,14 @@
           residences to include a certain number of PEV parking spaces with
           charging.
         </p>
+      </div>
+      <div class="text-container">
+
+
         <h1>Workplace Charging Demand</h1>
         <p>
-          <a
-            href="https://drive.google.com/file/d/1SUvBCIr9vMLYmr0nyhax2dX842bU_gxC/view?usp=sharing"
-            >Map 2 - Paid Charging kWh per Square Mile</a
-          >
+          <a href="https://drive.google.com/file/d/1SUvBCIr9vMLYmr0nyhax2dX842bU_gxC/view?usp=sharing">Map 2 - Paid
+            Charging kWh per Square Mile</a>
         </p>
         <p>
           Workplace Charging Demand shows layers depicting workplace charging
@@ -267,10 +268,8 @@
         </p>
         <br />
         <p>
-          <a
-            href="https://drive.google.com/file/d/1UcQUYLngx55AN8r6BgmJuugE_Ls1QlVe/view?usp=sharing"
-            >Map 3 - Paid Charing per job</a
-          >
+          <a href="https://drive.google.com/file/d/1UcQUYLngx55AN8r6BgmJuugE_Ls1QlVe/view?usp=sharing">Map 3 - Paid
+            Charing per job</a>
         </p>
         <p>
           This level of analysis is useful for employers who may be looking at
@@ -322,17 +321,14 @@
           </li>
           <li>
             <p>
-              <a href="https://www.census.gov/programs-surveys/acs"
-                >2015-2019 American Community Survey 5-year Estimates</a
-              >
+              <a href="https://www.census.gov/programs-surveys/acs">2015-2019 American Community Survey 5-year
+                Estimates</a>
             </p>
           </li>
           <li>
             <p>
-              <a href="https://lehd.ces.census.gov/data/"
-                >LEHD Origin-Destination Employment Statistics (LODES), version
-                7</a
-              >
+              <a href="https://lehd.ces.census.gov/data/">LEHD Origin-Destination Employment Statistics (LODES), version
+                7</a>
             </p>
           </li>
           <li>
@@ -348,140 +344,14 @@
             </p>
           </li>
         </ol>
-        <br />
-        <p>Glossary of Terms</p>
-        <p>
-          ACS: American Community Survey. The ACS is an ongoing survey updated
-          annually by the U.S. Census Bureau. It regularly gathers information
-          previously contained only in the long form of the decennial census,
-          such as ancestry, citizenship, educational attainment, income,
-          language proficiency, migration, disability, employment, and housing
-          characteristics.
-        </p>
-        <p>AEV: All-Electric Vehicle. An alternate term for BEV.</p>
-        <p>
-          Census Block: The smallest geographic area for which the Census Bureau
-          collects and tabulates decennial census data.
-        </p>
-        <p>
-          Census Block Group: A combination of census blocks that is a
-          subdivision of a census tract. The Block Group is the smallest
-          geographic entity for which the decennial census tabulates and
-          publishes the sample data (socioeconomic information).
-        </p>
-        <p>
-          Charging Event: The act of plugging-in a PEV to charge the battery.
-        </p>
-        <p>
-          EDC: Electric Distribution Company. The public utility that provides
-          facilities for the transmission and distribution of electricity to
-          retail customers. Electric distribution companies are regulated by
-          state utility commissions. Exceptions include building or facility
-          owners or operators that manage their internal distribution system and
-          supply electric power and electric services to occupants of the
-          building or facility.
-        </p>
-        <p>
-          EV: A generic term for a vehicle that gets some or all of its power
-          from an electric motor. Sometimes used to mean PEV, BEV, or AEV (and
-          occasionally HEV).
-        </p>
-        <p>
-          GIS: Geographic Information System. A Geographic Information System is
-          a system designed to capture, store, manipulate, analyze, manage, and
-          present spatial or geographic data. GIS applications are tools that
-          allow users to create interactive queries, analyze spatial
-          information, edit data in maps, and present the results of all these
-          operations. Esri's ArcGIS is a popular GIS software application.
-        </p>
-        <p>
-          HEV: Hybrid Electric Vehicle. HEVs are vehicles that do not plug in,
-          but have a large battery on board that is charged by the vehicle's
-          braking. The energy stored by this battery assists the ICE in moving
-          the car, significantly improving the gas mileage. Current examples
-          include the Toyota Prius and Honda Accord Hybrid.
-        </p>
-        <p>
-          ICE: Internal Combustion Engine. Gasoline and diesel cars and trucks
-          use an internal combustion engine to convert fuel to the motion that
-          moves the vehicle. Propane or compressed natural gas are used in some
-          ICE vehicles as well.
-        </p>
-        <p>
-          kWh: Kilowatt-hour. A measure of electrical energy equivalent to a
-          power consumption of 1,000 watts (about what a hand-held hair dryer
-          uses) for 1 hour. It is the standard unit of measurement to describe
-          PEV battery capacities and the amount of electricity transferred to
-          the battery during charging.
-        </p>
-        <p>LEHD: Longitudinal Employer-Household Dynamics.</p>
-        <p>
-          LODES: Longitudinal Employer-Household Dynamics (LEHD)
-          Origin-Destination Employment Statistics. LODES Data provides detailed
-          spatial distributions of workers' employment and residential locations
-          and the relation between the two at the Census Block level. LODES also
-          provides characteristic detail on age, earnings, industry
-          distributions, and local workforce indicators.
-        </p>
-        <p>MPO: Metropolitan Planning Organization.</p>
-        <p>Municipality: A city, township, or borough.</p>
-        <p>
-          PHEV: Plug-in Hybrid Electric Vehicle. PHEVs use both an ICE and an
-          electric motor with a battery that recharges by plugging into an
-          external source. Depending on its exact configuration, the PHEV's
-          battery can either assist the ICE, or fully power the vehicle until
-          the battery has been discharged, at which time the vehicle continues
-          to operate as an HEV. A current example is the Toyota Prius Prime.
-        </p>
-        <p>
-          PEV: Plug-in Electric Vehicle. An EV that plugs into an external
-          source to charge an on-board battery that provides the electricity for
-          the electric motor. Some EVs, such as trollies, subways, trains, and
-          trolley buses, are powered by external electricity, from overhead
-          wires or a track. Others are powered by fuel cells (FCEVs). These are
-          not covered in this document, which addresses only PEVs.
-        </p>
-        <br />
-        <hr />
-        <br />
-        <i>
-          <p>
-            The Delaware Valley Regional Planning Commission is the federally
-            designated Metropolitan Planning Organization for a diverse
-            nine-county region in two states: Bucks, Chester, Delaware,
-            Montgomery, and Philadelphia in Pennsylvania; and Burlington,
-            Camden, Gloucester, and Mercer in New Jersey.
-          </p>
-          <br />
-          <p>
-            DVRPC's vision for the Greater Philadelphia Region is a prosperous,
-            innovative, equitable, resilient, and sustainable region that
-            increases mobility choices by investing in a safe and modern
-            transportation system; that protects and preserves our natural
-            resources while creating healthy communities; and that fosters
-            greater opportunities for all.
-          </p>
-          <p>
-            DVRPC's mission is to achieve this vision by convening the widest
-            array of partners to inform and facilitate data-driven
-            decision-making. We are engaged across the region, and strive to be
-            leaders and innovators, exploring new ideas and creating best
-            practices.
-          </p>
-          <p>
-            For more information, visit<a href="https://www.dvrpc.org/Policies/"
-              >https://www.dvrpc.org/Policies/</a
-            >
-          </p>
-        </i>
       </div>
-      <div
-        id="map-section"
-        class="section flex-row flex-between main-content-wrapper"
-      >
-        <section class="sidebar">
-          <div class="sidebar-content">
-            <!-- <h3 class="sidebar-h3">Select a Geography</h3>
+    </div>
+    </div>
+    </div>
+    <div id="map-section" class="section flex-row flex-between main-content-wrapper">
+      <section class="sidebar">
+        <div class="sidebar-content">
+          <!-- <h3 class="sidebar-h3">Select a Geography</h3>
           
           <div id="scoreTogglers" data-title="Analysis Methods" data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method.">
           <div id="scoreBox">
@@ -531,221 +401,277 @@
           </div>
         </div> -->
 
-            <h3 class="sidebar-h3">Select a Map Theme</h3>
-            <div
-              id="scoreTogglers"
-              data-title="Analysis Methods"
-              data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
-            >
-              <div id="scoreBox2">
-                <div id="PEV" class="score-cb">
-                  <input
-                    type="radio"
-                    class="lbox-PEV"
-                    id="control_04"
-                    name="select"
-                    value="4"
-                    checked
-                  />
-                  <label id="label-box-PEV" class="PEV" for="control_04">
-                    PEV Distribution
-                  </label>
-                </div>
-              </div>
-
-              <div id="scoreBox2">
-                <div id="WP" class="score-cb">
-                  <input
-                    type="radio"
-                    class="lbox-WP"
-                    id="control_05"
-                    name="select"
-                    value="5"
-                  />
-                  <label id="label-box-WP" class="WP" for="control_05">
-                    Workplace Charging
-                  </label>
-                </div>
+          <h3 class="sidebar-h3">Select a Map Theme</h3>
+          <div id="scoreTogglers" data-title="Analysis Methods"
+            data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method.">
+            <div id="scoreBox2">
+              <div id="PEV" class="score-cb">
+                <input type="radio" class="lbox-PEV" id="control_04" name="select" value="4" checked />
+                <label id="label-box-PEV" class="PEV" for="control_04">
+                  PEV Distribution
+                </label>
               </div>
             </div>
 
-            <form id="toggle-form" class="sidebar-form">
-              <label class="flex-align-center flex-between label-select">
-                Showing
-                <select name="type_select" id="type_select">
-                  <option value="current" class="distribution">Current</option>
-                  <option value="future" class="distribution">Future</option>
-                  <option value="free" class="workplace">Free Charing</option>
-                  <option value="paid" class="workplace">Paid Charing</option>
-                </select>
-
-                <select name="layout_select" id="layout_select">
-                  <option
-                    value="DVRPC-CurrentPEV-BG"
-                    id="topCurrent"
-                    class="dvrpc current pev"
-                  >
-                    Current PEVs
-                  </option>
-                  <option
-                    value="DVRPC-CurrentPEV-Pop"
-                    class="dvrpc current pev"
-                  >
-                    Current PEVs per 100 People
-                  </option>
-                  <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">
-                    Current PEVs per Household
-                  </option>
-                  <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">
-                    Current PEVs per Sq. Mi.
-                  </option>
-                  <option
-                    value="DVRPC-CurrentPEV-Veh"
-                    class="dvrpc current pev"
-                  >
-                    Current Percentage of Passengers that are PEVs
-                  </option>
-
-                  <option
-                    value="DVRPC-FuturePEV-BG"
-                    id="topFuture"
-                    class="dvrpc future pev"
-                  >
-                    Future PEVs
-                  </option>
-                  <option value="DVRPC-FuturePEV-Pop" class="dvrpc future pev">
-                    Future PEVs per 100 People
-                  </option>
-                  <option value="DVRPC-FuturePEV-HH" class="dvrpc future pev">
-                    Future PEVs per Household
-                  </option>
-                  <option value="DVRPC-FuturePEV-SM" class="dvrpc future pev">
-                    Future PEVs per Sq. Mi.
-                  </option>
-                  <option value="DVRPC-FuturePEV-Veh" class="dvrpc future pev">
-                    Future Percentage of Passengers that are PEVs
-                  </option>
-
-                  <option
-                    value="DVRPC-FC-KD-SM"
-                    id="topFree"
-                    class="dvrpc free work"
-                  >
-                    Free Charging - kWh of Demand per Sq. Mi.
-                  </option>
-                  <option value="DVRPC-FC-KD-JB" class="dvrpc free work">
-                    Free Charging - kWh of Demand per Job
-                  </option>
-                  <option value="DVRPC-FC-CE-SM" class="dvrpc free work">
-                    Free Charging - Charging Event per Sq. Mi.
-                  </option>
-                  <option value="DVRPC-FC-CE-JB" class="dvrpc free work">
-                    Free Charging - Charging Event per Job
-                  </option>
-
-                  <option
-                    value="DVRPC-PC-KD-SM"
-                    id="topPaid"
-                    class="dvrpc paid work"
-                  >
-                    Paid Charging - kWh of Demand per Sq. Mi.
-                  </option>
-                  <option value="DVRPC-PC-KD-JB" class="dvrpc paid work">
-                    Paid Charging - kWh of Demand per Job
-                  </option>
-                  <option value="DVRPC-PC-CE-SM" class="dvrpc paid work">
-                    Paid Charging - Charging Event per Sq. Mi.
-                  </option>
-                  <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">
-                    Paid Charging - Charging Event per Job
-                  </option>
-
-                  <option value="PA-FuturePEV" id="pa-future">
-                    PA Future PEV
-                  </option>
-                  <!-- <option value="DVRPC-BG">Block Group</option> -->
-                </select>
-                by Census Block Group
-              </label>
-              <fieldset>
-                <legend>Overlay Layers</legend>
-
-                <label class="label-input">
-                  <input type="checkbox" value="charging" />
-                  Charging Locations
+            <div id="scoreBox2">
+              <div id="WP" class="score-cb">
+                <input type="radio" class="lbox-WP" id="control_05" name="select" value="5" />
+                <label id="label-box-WP" class="WP" for="control_05">
+                  Workplace Charging
                 </label>
-                <br />
-                <!-- <label class="label-input">
+              </div>
+            </div>
+          </div>
+
+          <form id="toggle-form" class="sidebar-form">
+            <label class="flex-align-center flex-between label-select">
+              Showing
+              <select name="type_select" id="type_select">
+                <option value="current" class="distribution">Current</option>
+                <option value="future" class="distribution">Future</option>
+                <option value="free" class="workplace">Free Charing</option>
+                <option value="paid" class="workplace">Paid Charing</option>
+              </select>
+
+              <select name="layout_select" id="layout_select">
+                <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">
+                  Current PEVs
+                </option>
+                <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">
+                  Current PEVs per 100 People
+                </option>
+                <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">
+                  Current PEVs per Household
+                </option>
+                <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">
+                  Current PEVs per Sq. Mi.
+                </option>
+                <option value="DVRPC-CurrentPEV-Veh" class="dvrpc current pev">
+                  Current Percentage of Passengers that are PEVs
+                </option>
+
+                <option value="DVRPC-FuturePEV-BG" id="topFuture" class="dvrpc future pev">
+                  Future PEVs
+                </option>
+                <option value="DVRPC-FuturePEV-Pop" class="dvrpc future pev">
+                  Future PEVs per 100 People
+                </option>
+                <option value="DVRPC-FuturePEV-HH" class="dvrpc future pev">
+                  Future PEVs per Household
+                </option>
+                <option value="DVRPC-FuturePEV-SM" class="dvrpc future pev">
+                  Future PEVs per Sq. Mi.
+                </option>
+                <option value="DVRPC-FuturePEV-Veh" class="dvrpc future pev">
+                  Future Percentage of Passengers that are PEVs
+                </option>
+
+                <option value="DVRPC-FC-KD-SM" id="topFree" class="dvrpc free work">
+                  Free Charging - kWh of Demand per Sq. Mi.
+                </option>
+                <option value="DVRPC-FC-KD-JB" class="dvrpc free work">
+                  Free Charging - kWh of Demand per Job
+                </option>
+                <option value="DVRPC-FC-CE-SM" class="dvrpc free work">
+                  Free Charging - Charging Event per Sq. Mi.
+                </option>
+                <option value="DVRPC-FC-CE-JB" class="dvrpc free work">
+                  Free Charging - Charging Event per Job
+                </option>
+
+                <option value="DVRPC-PC-KD-SM" id="topPaid" class="dvrpc paid work">
+                  Paid Charging - kWh of Demand per Sq. Mi.
+                </option>
+                <option value="DVRPC-PC-KD-JB" class="dvrpc paid work">
+                  Paid Charging - kWh of Demand per Job
+                </option>
+                <option value="DVRPC-PC-CE-SM" class="dvrpc paid work">
+                  Paid Charging - Charging Event per Sq. Mi.
+                </option>
+                <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">
+                  Paid Charging - Charging Event per Job
+                </option>
+
+                <option value="PA-FuturePEV" id="pa-future">
+                  PA Future PEV
+                </option>
+                <!-- <option value="DVRPC-BG">Block Group</option> -->
+              </select>
+              by Census Block Group
+            </label>
+            <fieldset>
+              <legend>Overlay Layers</legend>
+
+              <label class="label-input">
+                <input type="checkbox" value="charging" />
+                Charging Locations
+              </label>
+              <br />
+              <!-- <label class="label-input">
                 <input type="checkbox" value="dvrpc-projected" />
                 Projected - Number of PEV's
               </label> -->
-              </fieldset>
-            </form>
-            <div id="mapStart" class="infoLeft" style="height: 100vh">
-              <div id="startContent">
-                <h1>
-                  Click the map to view Municipal and Census Block Group level
-                  data
-                </h1>
-              </div>
-            </div>
-
-            <div id="mapDetails" class="infoLeft" style="height: 100vh">
-              <div id="data-wrapper" class="data-wrapper">
-                <div class="data-wrapper" id="data-wrapper">
-                  <h2 class="data-subheader">Municipal Level Information</h2>
-                  <div id="mcdName"></div>
-                  <div id="mcdAGG"></div>
-                </div>
-
-                <div class="data-wrapper" id="data-wrapper">
-                  <h2 class="data-subheader">Block Group Level Information</h2>
-                  <div id="BGName"></div>
-                  <div id="BGInfo"></div>
-                </div>
-              </div>
+            </fieldset>
+          </form>
+          <div id="mapStart" class="infoLeft" style="height: 100vh">
+            <div id="startContent">
+              <h1>
+                Click the map to view Municipal and Census Block Group level
+                data
+              </h1>
             </div>
           </div>
 
-          <footer>
-            contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a>
-          </footer>
-        </section>
+          <div id="mapDetails" class="infoLeft" style="height: 100vh">
+            <div id="data-wrapper" class="data-wrapper">
+              <div class="data-wrapper" id="data-wrapper">
+                <h2 class="data-subheader">Municipal Level Information</h2>
+                <div id="mcdName"></div>
+                <div id="mcdAGG"></div>
+              </div>
 
-        <div id="map" class="map">
-          <div class="legend-container">
-            <!-- <h4 class="legend-title">legend</h4> -->
-            <div id="legend-container"></div>
-          </div>
-
-          <div class="lds-ring lds-ring-active">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
+              <div class="data-wrapper" id="data-wrapper">
+                <h2 class="data-subheader">Block Group Level Information</h2>
+                <div id="BGName"></div>
+                <div id="BGInfo"></div>
+              </div>
+            </div>
           </div>
         </div>
+
+        <footer>
+          contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a>
+        </footer>
+      </section>
+
+      <div id="map" class="map">
+        <div class="legend-container">
+          <!-- <h4 class="legend-title">legend</h4> -->
+          <div id="legend-container"></div>
+        </div>
+
+        <div class="lds-ring lds-ring-active">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
       </div>
-    </main>
+    </div>
+    <div id="glossary-section" class="section">
+      <div class="text-container">
+        <h1>Glossary of Terms</h1>
+        <p>
+          <b>ACS:</b> American Community Survey. The ACS is an ongoing survey updated
+          annually by the U.S. Census Bureau. It regularly gathers information
+          previously contained only in the long form of the decennial census,
+          such as ancestry, citizenship, educational attainment, income,
+          language proficiency, migration, disability, employment, and housing
+          characteristics.
+        </p>
+        <p><b>AEV:</b> All-Electric Vehicle. An alternate term for BEV.</p>
+        <p>
+          <b>Census Block:</b> The smallest geographic area for which the Census Bureau
+          collects and tabulates decennial census data.
+        </p>
+        <p>
+          <b>Census Block Group:</b> A combination of census blocks that is a
+          subdivision of a census tract. The Block Group is the smallest
+          geographic entity for which the decennial census tabulates and
+          publishes the sample data (socioeconomic information).
+        </p>
+        <p>
+          <b>Charging Event:</b> The act of plugging-in a PEV to charge the battery.
+        </p>
+        <p>
+          <b>EDC:</b> Electric Distribution Company. The public utility that provides
+          facilities for the transmission and distribution of electricity to
+          retail customers. Electric distribution companies are regulated by
+          state utility commissions. Exceptions include building or facility
+          owners or operators that manage their internal distribution system and
+          supply electric power and electric services to occupants of the
+          building or facility.
+        </p>
+        <p>
+          <b>EV:</b> A generic term for a vehicle that gets some or all of its power
+          from an electric motor. Sometimes used to mean PEV, BEV, or AEV (and
+          occasionally HEV).
+        </p>
+        <p>
+          <b>GIS:</b> Geographic Information System. A Geographic Information System is
+          a system designed to capture, store, manipulate, analyze, manage, and
+          present spatial or geographic data. GIS applications are tools that
+          allow users to create interactive queries, analyze spatial
+          information, edit data in maps, and present the results of all these
+          operations. Esri's ArcGIS is a popular GIS software application.
+        </p>
+        <p>
+          <b>HEV:</b> Hybrid Electric Vehicle. HEVs are vehicles that do not plug in,
+          but have a large battery on board that is charged by the vehicle's
+          braking. The energy stored by this battery assists the ICE in moving
+          the car, significantly improving the gas mileage. Current examples
+          include the Toyota Prius and Honda Accord Hybrid.
+        </p>
+        <p>
+          <b>ICE:</b> Internal Combustion Engine. Gasoline and diesel cars and trucks
+          use an internal combustion engine to convert fuel to the motion that
+          moves the vehicle. Propane or compressed natural gas are used in some
+          ICE vehicles as well.
+        </p>
+        <p>
+          <b>kWh:</b> Kilowatt-hour. A measure of electrical energy equivalent to a
+          power consumption of 1,000 watts (about what a hand-held hair dryer
+          uses) for 1 hour. It is the standard unit of measurement to describe
+          PEV battery capacities and the amount of electricity transferred to
+          the battery during charging.
+        </p>
+        <p><b>LEHD:</b> Longitudinal Employer-Household Dynamics.</p>
+        <p>
+          <b>LODES:</b> Longitudinal Employer-Household Dynamics (LEHD)
+          Origin-Destination Employment Statistics. LODES Data provides detailed
+          spatial distributions of workers' employment and residential locations
+          and the relation between the two at the Census Block level. LODES also
+          provides characteristic detail on age, earnings, industry
+          distributions, and local workforce indicators.
+        </p>
+        <p><b>MPO:</b> Metropolitan Planning Organization.</p>
+        <p>Municipality: A city, township, or borough.</p>
+        <p>
+          <b>PHEV:</b> Plug-in Hybrid Electric Vehicle. PHEVs use both an ICE and an
+          electric motor with a battery that recharges by plugging into an
+          external source. Depending on its exact configuration, the PHEV's
+          battery can either assist the ICE, or fully power the vehicle until
+          the battery has been discharged, at which time the vehicle continues
+          to operate as an HEV. A current example is the Toyota Prius Prime.
+        </p>
+        <p>
+          <b>PEV:</b> Plug-in Electric Vehicle. An EV that plugs into an external
+          source to charge an on-board battery that provides the electricity for
+          the electric motor. Some EVs, such as trollies, subways, trains, and
+          trolley buses, are powered by external electricity, from overhead
+          wires or a track. Others are powered by fuel cells (FCEVs). These are
+          not covered in this document, which addresses only PEVs.
+        </p>
+      </div>
+    </div>
+  </main>
 
-    <script
-      type="text/javascript"
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"
-    ></script>
-    <script type="text/javascript" src="js/numeral.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
-    <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/numeral.js"></script>
+  <script
+    src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
 
-    <script>
-      var _gaq = [["_setAccount", "UA-9825778-1"], ["_trackPageview"]];
-      (function (d) {
-        var g = d.createElement("script"),
-          s = d.scripts[0];
-        g.src = "//www.google-analytics.com/ga.js";
-        s.parentNode.insertBefore(g, s);
-      })(document);
-    </script>
-  </body>
+  <script>
+    var _gaq = [["_setAccount", "UA-9825778-1"], ["_trackPageview"]];
+    (function (d) {
+      var g = d.createElement("script"),
+        s = d.scripts[0];
+      g.src = "//www.google-analytics.com/ga.js";
+      s.parentNode.insertBefore(g, s);
+    })(document);
+  </script>
+</body>
+
 </html>

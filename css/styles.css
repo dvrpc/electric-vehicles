@@ -710,10 +710,50 @@ footer {
 }
 /* END Footer */
 
-#about-section {
+#about-section,
+#disclaimer-section,
+#glossary-section,
+#data-section,
+#home-section {
   padding: 3%;
 }
 
 #about-section > h1 {
   margin: 1% 0 1% 0;
+}
+
+#glossary-section > div > * {
+  margin: 2% 0 2%;
+}
+
+.text-container {
+  background-color: #fff;
+  color: #434343;
+  font-size: 14px;
+  overflow-y: hidden;
+  border-left: 2px solid #fff;
+  padding: 10px 25px 25px;
+  margin: 3%;
+  box-shadow: 0 0 10px #b7b7b7;
+}
+
+@media (min-width: 768px) {
+  #about-section,
+  #disclaimer-section,
+  #glossary-section,
+  #data-section,
+  #home-section {
+    padding: 0%;
+  }
+
+  .text-container {
+    margin-top: 1%;
+    margin-bottom: 1%;
+  }
+
+  #glossary-section > div {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
