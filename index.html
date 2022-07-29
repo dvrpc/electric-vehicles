@@ -48,13 +48,22 @@
 
     <span class="nav-vr">|</span>
 
-    <button id="btn-home" class="nav-btn">home</button>
-    <button id="btn-data" class="nav-btn">data</button>
-    <button id="btn-map" class="nav-btn">map</button>
-    <button id="btn-glossary" class="nav-btn">glossary</button>
+    <div id="nav-btns">
+      <button id="btn-home" class="nav-btn">home</button>
+      <button id="btn-data" class="nav-btn">data</button>
+      <button id="btn-map" class="nav-btn">map</button>
+      <button id="btn-glossary" class="nav-btn">glossary</button>
+    </div>
   </nav>
   <main>
     <div id="home-section" class="section">
+      <div class="hero-image">
+        <div class="hero-text">
+          <h1>Planning for Electric Vehicles</h1>
+          <p>Mapping Vehicle Distribution and Workplace Charging Demand</p>
+          <p>DVRPC in collaboration with PH&EV Research Center at UC Davis</p>
+        </div>
+      </div>
       <div class="text-container">
         <h1>Planning for Electric Vehicles</h1>
         <p>Mapping Vehicle Distribution and Workplace Charging Demand</p>
@@ -155,54 +164,58 @@
     </div>
     <div id="data-section" class="section">
       <div class="text-container">
-        <h1>Data</h1>
-        <p>
-          The following series of maps show interactive results of the
-          geographic distribution of PEVs and the associated demand for
-          workplace charging calculated by the calibrated DVRPC/UC Davis EV
-          Planning Toolkit for ArcGIS (the Toolkit). These results reflect the
-          following PEV penetration scenarios:
-        </p>
-        <ul>
-          <li>
-            <p>
-              DVRPC Region: 5 percent of passenger vehicles (or about 200,000
-              vehicles) are PEVs;
-            </p>
-          </li>
-          <li>
-            <p>
-              Pennsylvania: 5 percent of passenger vehicles (or about 400,000
-              vehicles) are PEVs;
-            </p>
-          </li>
-          <li>
-            <p>
-              New Jersey: 330,000 passenger vehicles (about 10 percent) are
-              PEVs.
-              <a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml">This is in line with the
-                New
-                Jersey, state-wide, zero-emission
-                vehicle adoption goal for 2025.</a>
-              However, this tool does not predict the total number of passenger
-              vehicles in 2025.
-            </p>
-          </li>
-        </ul>
-        <br />
-        <p>
-          DVRPC considered using projections based on planning horizon. However,
-          there is a wide variation in the projections available, and there is
-          no one "official" projection. In addition, these projections are
-          generally at a much larger geography than the DVRPC region,
-          Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New
-          Jersey officials working on EVs. Pennsylvania suggested that we use a
-          5 percent PEV penetration. New Jersey suggested that we use their 2025
-          goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for
-          the region.
-        </p>
+        <img src="./img/Analysis.jpg" alt="Delaware Valley region map" />
+        <div>
+          <h1>Data</h1>
+          <p>
+            The following series of maps show interactive results of the
+            geographic distribution of PEVs and the associated demand for
+            workplace charging calculated by the calibrated DVRPC/UC Davis EV
+            Planning Toolkit for ArcGIS (the Toolkit). These results reflect the
+            following PEV penetration scenarios:
+          </p>
+          <ul>
+            <li>
+              <p>
+                DVRPC Region: 5 percent of passenger vehicles (or about 200,000
+                vehicles) are PEVs;
+              </p>
+            </li>
+            <li>
+              <p>
+                Pennsylvania: 5 percent of passenger vehicles (or about 400,000
+                vehicles) are PEVs;
+              </p>
+            </li>
+            <li>
+              <p>
+                New Jersey: 330,000 passenger vehicles (about 10 percent) are
+                PEVs.
+                <a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml">This is in line with the
+                  New
+                  Jersey, state-wide, zero-emission
+                  vehicle adoption goal for 2025.</a>
+                However, this tool does not predict the total number of passenger
+                vehicles in 2025.
+              </p>
+            </li>
+          </ul>
+          <br />
+          <p>
+            DVRPC considered using projections based on planning horizon. However,
+            there is a wide variation in the projections available, and there is
+            no one "official" projection. In addition, these projections are
+            generally at a much larger geography than the DVRPC region,
+            Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New
+            Jersey officials working on EVs. Pennsylvania suggested that we use a
+            5 percent PEV penetration. New Jersey suggested that we use their 2025
+            goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for
+            the region.
+          </p>
+        </div>
       </div>
       <div class="text-container">
+        <img src="./img/PEV.jpg" alt="Delaware Valley PEV distribution" />
         <h1>PEV Distribution</h1>
         <p>
           <a href="https://drive.google.com/file/d/1dWqTvCc8vAE2un0KJ1O3X1_ySKIg-pa_/view?usp=sharing">Map 1 - PEV
@@ -234,8 +247,7 @@
         </p>
       </div>
       <div class="text-container">
-
-
+        <img src="./img/WorkPlaceChargin.jpg" alt="Delaware Valley workplace charging distribution" />
         <h1>Workplace Charging Demand</h1>
         <p>
           <a href="https://drive.google.com/file/d/1SUvBCIr9vMLYmr0nyhax2dX842bU_gxC/view?usp=sharing">Map 2 - Paid
@@ -345,8 +357,6 @@
           </li>
         </ol>
       </div>
-    </div>
-    </div>
     </div>
     <div id="map-section" class="section flex-row flex-between main-content-wrapper">
       <section class="sidebar">
