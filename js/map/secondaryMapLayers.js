@@ -217,12 +217,15 @@ let expressionPA1 = ['step',
 1234,'#2166ac'
 ];
 
+const generateFuck = () => {
+
+}
+
 const secondaryMapLayers = {
   'charging': {
     id: 'charging',
     type: 'circle',
     source: 'charging',
-    // minzoom: 11,
     paint: {
       "circle-stroke-color": "#3C4C34",
       "circle-stroke-width": 0.5,
@@ -239,65 +242,99 @@ const secondaryMapLayers = {
       },
     },
   },
-  'DVRPC-BG': {
-    'id': 'DVRPC-BG',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-   'fill-color': '#FFF',
-   'fill-opacity': 0.0,
+// @update: useless layer?
+//   'DVRPC-BG': {
+//     'id': 'DVRPC-BG',
+//     'type': 'fill',
+//     'source': 'pev',
+//     'source-layer': 'dvrpc_pev_bg',
+//     'layout': {},
+//     'paint': {
+//    'fill-color': '#FFF',
+//    'fill-opacity': 0.0,
+//     },
+// },
+// @update what is?
+// 'dvrpc-current': {
+//     'id': 'dvrpc-current',
+//     'type': 'circle',
+//     'source': 'pev',
+//     'source-layer': 'pev_bg_centroids',
+//     'paint': {
+//         'circle-radius': {
+//           property: 'CurPEV',
+//           stops: [
+//           [{zoom: 8, value: 1.16}, .5],
+//           [{zoom: 8, value: 2.37}, 1],
+//           [{zoom: 8, value: 4.49}, 2],
+//           [{zoom: 8, value: 8.89}, 3],
+//           [{zoom: 8, value: 105}, 5],
+//           [{zoom: 12, value: 1.16}, 2],
+//           [{zoom: 12, value: 2.37}, 3],
+//           [{zoom: 12, value: 4.49}, 4],
+//           [{zoom: 12, value: 8.89}, 6],
+//           [{zoom: 12, value: 105}, 9],
+//           ]
+//           },
+//           'circle-color': '#EA563D',
+//           'circle-opacity':.75
+//         },
+//         "filter": ["all",
+//         ["==","MAPTYPE","DVRPC"],
+//         [">=","CurPEV",0.1]
+//         ]   
+// },
+'DVRPC-CurrentPEV-Pop': {
+  'id': 'dvrpc-CurrentPEV-Pop',
+  'type': 'fill',
+  'source': 'pev',
+  'source-layer': 'dvrpc_pev_bg',
+  'layout': {},
+  'paint': {
+    'fill-color': ['step',
+      ['get', 'CuPEVPop'],
+      pev1,
+      .086, pev2,
+      .138, pev3,
+      .2085,  pev4,
+      .303,  pev5,
+      .45,  pev6,
+      .71, pev7
+    ],
+    "fill-opacity": {
+      base: 9,
+      stops: [
+        [9, 1],
+        [10, .8],
+        [11, .7],
+        [12, .65],
+        [13, .5],
+        [14, .4],
+      ],
     },
+  }
 },
-'dvrpc-current': {
-    'id': 'dvrpc-current',
-    'type': 'circle',
-    'source': 'pev',
-    'source-layer': 'pev_bg_centroids',
-    'paint': {
-        'circle-radius': {
-          property: 'CurPEV',
+  'CurrentPEV-BG': geo => {
+    return {
+      'id': `${geo}-CurrentPEV-BG`,
+      'type': 'fill',
+      'source': 'pev',
+      'source-layer': 'dvrpc_pev_bg',
+      'layout': {},
+      'paint': {
+        'fill-color': expression1,
+        "fill-opacity": {
+          base: 9,
           stops: [
-          [{zoom: 8, value: 1.16}, .5],
-          [{zoom: 8, value: 2.37}, 1],
-          [{zoom: 8, value: 4.49}, 2],
-          [{zoom: 8, value: 8.89}, 3],
-          [{zoom: 8, value: 105}, 5],
-          [{zoom: 12, value: 1.16}, 2],
-          [{zoom: 12, value: 2.37}, 3],
-          [{zoom: 12, value: 4.49}, 4],
-          [{zoom: 12, value: 8.89}, 6],
-          [{zoom: 12, value: 105}, 9],
-          ]
-          },
-          'circle-color': '#EA563D',
-          'circle-opacity':.75
+            [9, 1],
+            [10, .9],
+            [12, .8],
+            [14, .4],
+          ],
         },
-        "filter": ["all",
-        ["==","MAPTYPE","DVRPC"],
-        [">=","CurPEV",0.1]
-        ]   
+      }
+    }
 },
-  'DVRPC-CurrentPEV-BG': {
-        'id': 'DVRPC-CurrentPEV-BG',
-        'type': 'fill',
-        'source': 'pev',
-        'source-layer': 'dvrpc_pev_bg',
-        'layout': {},
-        'paint': {
-       'fill-color': expression1,
-       "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .9],
-          [12, .8],
-          [14, .4],
-        ],
-      },
-        }
-  },
 'DVRPC-CurrentPEV-HH': {
   'id': 'DVRPC-CurrentPEV-HH',
   'type': 'fill',

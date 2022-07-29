@@ -16,19 +16,21 @@ const legendConfig = {
     label: "Charging Locations",
     color: "#c8ffaf",
   },
-  "dvrpc-current": {
-    legendType:"circle",
-    iconType: "circle",
-    label: "Current PEVs (Centroid)",
-    color: "#EA563D",
-  },
+  // @update what is? overlay layer?
+  // "dvrpc-current": {
+  //   legendType:"circle",
+  //   iconType: "circle",
+  //   label: "Current PEVs (Centroid)",
+  //   color: "#EA563D",
+  // },
   "dvrpc-projected": {
     legendType:"circle",
     iconType: "circle",
     label: "Projected PEVs (Centroid)",
     color: "#3182D1",
   },
-  "DVRPC-CurrentPEV-BG": {
+  // @update: geographic prefix (DVRPC-) might be able to be removed
+  "CurrentPEV-BG": {
     label: "Current PEVs",
     legendType:"scale",
     class:"gb",
@@ -40,7 +42,7 @@ const legendConfig = {
     legendLable6:"11.83",
     legendLable7:"105"
   },
-  "DVRPC-CurrentPEV-Pop": {
+  "CurrentPEV-Pop": {
     label: "Current PEVs per 100 People",
     legendType:"scale",
     class:"gb",
@@ -52,7 +54,7 @@ const legendConfig = {
     legendLable6:"0.71%",
     legendLable7:"3.74%"
   },
-  "DVRPC-CurrentPEV-HH": {
+  "CurrentPEV-HH": {
     label: "Current PEVs per Household",
     legendType:"scale",
     class:"gb",
@@ -64,7 +66,7 @@ const legendConfig = {
     legendLable6:"1.89%",
     legendLable7:"11.02%"
   },
-  "DVRPC-CurrentPEV-SM": {
+  "CurrentPEV-SM": {
     label: "Current PEVs per Sq. Mi.",
     legendType:"scale",
     class:"gb",
@@ -76,7 +78,7 @@ const legendConfig = {
     legendLable6:"33.71",
     legendLable7:"760.41"
   },
-  "DVRPC-CurrentPEV-Veh": {
+  "CurrentPEV-Veh": {
     label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
     class:"gb",
@@ -88,7 +90,7 @@ const legendConfig = {
     legendLable6:"1.03%",
     legendLable7:"5.78%"
   },
-  "DVRPC-FuturePEV-BG": {
+  "FuturePEV-BG": {
     label: "Future PEVs",
     legendType:"scale",
     class:"gb",
@@ -100,7 +102,7 @@ const legendConfig = {
     legendLable6:"72.51",
     legendLable7:"1,233.16"
   },
-  "DVRPC-FuturePEV-Pop": {
+  "FuturePEV-Pop": {
     label: "Future PEVs per 100 People",
     legendType:"scale",
     class:"gb",
@@ -112,7 +114,7 @@ const legendConfig = {
     legendLable6:"4.75%",
     legendLable7:"56.12%"
   },
-  "DVRPC-FuturePEV-HH": {
+  "FuturePEV-HH": {
     label: "Future PEVs per Household",
     legendType:"scale",
     class:"gb",
@@ -124,7 +126,7 @@ const legendConfig = {
     legendLable6:"12.27%",
     legendLable7:"133.81%"
   },
-  "DVRPC-FuturePEV-SM": {
+  "FuturePEV-SM": {
     label: "Future PEVs per Sq. Mi.",
     legendType:"scale",
     class:"gb",
@@ -136,7 +138,7 @@ const legendConfig = {
     legendLable6:"238.44",
     legendLable7:"10,856.59"
   },
-  "DVRPC-FuturePEV-Veh": {
+  "FuturePEV-Veh": {
     label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
     class:"gb",
@@ -148,7 +150,7 @@ const legendConfig = {
     legendLable6:"6.80%",
     legendLable7:"66.76%"
   },
-  "DVRPC-FC-KD-SM": {
+  "FC-KD-SM": {
     label: "Free Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
@@ -161,7 +163,7 @@ const legendConfig = {
     legendLable7:"64,382.29",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
-  "DVRPC-FC-KD-JB": {
+  "FC-KD-JB": {
     label: "Free Charging - kWh of Demand per Job",
     legendType:"scale",
     class:"brg",
@@ -174,7 +176,7 @@ const legendConfig = {
     legendLable7:"0.71",
     note:"kWh of Workplace Charging Demand per Job"
   },
-  "DVRPC-FC-CE-SM": {
+  "FC-CE-SM": {
     label: "Free Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
     class:"yor",
@@ -187,7 +189,7 @@ const legendConfig = {
     legendLable7:"9,048.82",
     note:"Number of Workplace Charging Events per Square Mile"
   },
-  "DVRPC-FC-CE-JB": {
+  "FC-CE-JB": {
     label: "Free Charging - Charging Event per Job",
     legendType:"scale",
     class:"brg",
@@ -201,7 +203,7 @@ const legendConfig = {
     note:"Number of Workplace Charging Events per Job"
   },
 
-  "DVRPC-PC-KD-SM": {
+  "PC-KD-SM": {
     label: "Paid Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
@@ -214,7 +216,7 @@ const legendConfig = {
     legendLable7:"44,668.03",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
-  "DVRPC-PC-KD-JB": {
+  "PC-KD-JB": {
     label: "Paid Charging - kWh of Demand per Job",
     legendType:"scale",
     class:"brg",
@@ -227,7 +229,7 @@ const legendConfig = {
     legendLable7:"0.493",
     note:"kWh of Workplace Charging Demand per Job"
   },
-  "DVRPC-PC-CE-SM": {
+  "PC-CE-SM": {
     label: "Paid Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
     class:"yor",
@@ -240,7 +242,7 @@ const legendConfig = {
     legendLable7:"6,080.94",
     note:"Number of Workplace Charging Events per Square Mile"
   },
-  "DVRPC-PC-CE-JB": {
+  "PC-CE-JB": {
     label: "Paid Charging - Charging Event per Job",
     legendType:"scale",
     class:"brg",

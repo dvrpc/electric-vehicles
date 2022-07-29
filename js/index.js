@@ -28,7 +28,7 @@ const mapDetails = document.getElementById('mapDetails')
 $('.charge').hide()
 $('.workplace').hide()
 
-localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
+localStorage.setItem('active-main-layer', 'dvprc-CurrentPEV-BG')
 
 // map
 const map = makeMap()
@@ -38,20 +38,20 @@ map.on('load', () => {
     togglerWP();
     filterCurrent();
 
-    handleLegend(['DVRPC-CurrentPEV-BG'], legendContainer)
+    handleLegend(['CurrentPEV-BG'], legendContainer)
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     mainForm.onchange = () => {
         // update map & return layer id
-        const newLayer = handleForms('main', null, map)
-
+        let layerLegendID = handleForms('main', null, map)
+        
         // clear any clicked queries
         mapDetails.style.display = 'none'
         mapStart.style.display = 'inline-block'
 
-        handleLegend([newLayer], legendContainer)
+        handleLegend([layerLegendID], legendContainer)
     }
 
     overlayForm.onchange = () => {
@@ -60,15 +60,10 @@ map.on('load', () => {
         handleLegend(activeOverlayInputs, legendContainer)
     }
 
-    map.addSource('dvrpcPEVBG', {
-        type: 'vector',
-        url: 'https://tiles.dvrpc.org/data/pev.json'
-    });
-
     map.addLayer({
         'id': 'dvrpcPEVMCD',
         'type': 'fill',
-        'source': 'dvrpcPEVBG',
+        'source': 'pev',
         'source-layer': 'dvrpc_pev_mcd',
         'layout': {}, 
         'paint': {
@@ -79,15 +74,10 @@ map.on('load', () => {
         }
     });
 
-    map.addSource('dvrpcPEVBG-line', {
-        type: 'vector',
-        url: 'https://tiles.dvrpc.org/data/pev.json'
-    });
-
     map.addLayer({
         'id': 'dvrpcPEVBG-line',
         'type': 'line',
-        'source': 'dvrpcPEVBG-line',
+        'source': 'pev',
         'source-layer': 'dvrpc_pev_bg',
         'layout': {}, 
         'paint': {
@@ -120,7 +110,7 @@ map.on('load', () => {
     map.addLayer({
         'id': 'dvrpcPEVBG',
         'type': 'fill',
-        'source': 'dvrpcPEVBG',
+        'source': 'pev',
         'source-layer': 'dvrpc_pev_bg',
         'layout': {}, 
         'paint': {
@@ -149,21 +139,21 @@ map.on('load', () => {
       //  console.log(e.features[0])
         if (hoveredStateId !== null) {
         map.setFeatureState(
-        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: false }
         );
         map.setFeatureState(
-            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
             { hover: false }
         );
         }
         hoveredStateId = e.features[0].id;
         map.setFeatureState(
-        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: true }
         );
         map.setFeatureState(
-            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
             { hover: true}
         );
         }
@@ -178,11 +168,11 @@ map.on('load', () => {
         map.getCanvas().style.cursor = "";
         if (hoveredStateId !== null) {
         map.setFeatureState(
-        { source: 'dvrpcPEVBG', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
         { hover: false }
         );
         map.setFeatureState(
-            { source: 'dvrpcPEVBG-line', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
             { hover: false }
         );
         }

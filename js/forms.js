@@ -84,13 +84,19 @@ const constructMainQuery = map => {
   if (map.getLayer(newMainLayer)) {
       map.setLayoutProperty(newMainLayer, "visibility", 'visible');
     } else {
+      // @update: invoke new fncs to generate layer objs on the fly
       map.addLayer(secondaryMapLayers[newMainLayer], "road-label");
   }
 
   // update localStorage
   localStorage.setItem('active-main-layer', newMainLayer)
 
-  return localStorage.getItem('active-main-layer')
+  // return truncated layer id for legend use
+  let layerLegendID = newMainLayer.split('-')
+  layerLegendID.shift()
+  layerLegendID = layerLegendID.join('-')
+
+  return layerLegendID
 }
 
 const handleForms = (type, toggles, map) => {
