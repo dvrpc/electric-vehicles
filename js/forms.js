@@ -89,6 +89,8 @@ const constructMainQuery = map => {
 
   // update localStorage
   localStorage.setItem('active-main-layer', newMainLayer)
+
+  return localStorage.getItem('active-main-layer')
 }
 
 const handleForms = (type, toggles, map) => {
@@ -96,8 +98,7 @@ const handleForms = (type, toggles, map) => {
     case 'select-main':
       return handleFormSelect(toggles, map)
     case 'main':
-      constructMainQuery(map)
-      break      
+      return constructMainQuery(map)
     default:
       return handleFormInputs(toggles, map);
   }

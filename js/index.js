@@ -1,7 +1,6 @@
 import makeMap from './map/map.js'
 import sources from './map/mapSources.js'
 import layers from './map/mapLayers.js'
-import secondaryMapLayers from "./map/secondaryMapLayers.js";
 import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
@@ -34,36 +33,30 @@ localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 // map
 const map = makeMap()
 
-map.on('load', () => {
-      // wiring for on-click event on the map
-    // togglerDVRPC(map);
-    // togglerPA(map);
-    // togglerNJ(map);
-    
+map.on('load', () => {    
     togglerPEV();
     togglerWP();
     filterCurrent();
 
+    handleLegend(['DVRPC-CurrentPEV-BG'], legendContainer)
+
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
-    // set default form state
-    // @update: reincorporate legend handling
-
-    //  map.moveLayer('dvrpc-projected', 'dvrpc-current');
-
     mainForm.onchange = () => {
-        // update map
-        handleForms('main', null, map)
+        // update map & return layer id
+        const newLayer = handleForms('main', null, map)
 
         // clear any clicked queries
         mapDetails.style.display = 'none'
         mapStart.style.display = 'inline-block'
+
+        handleLegend([newLayer], legendContainer)
     }
 
-    // @update: remove active legend, look into fnc update
     overlayForm.onchange = () => {
-        let activeOverlayInputs = handleForms('input', overlayInputs, map)
+        const activeOverlayInputs = handleForms('input', overlayInputs, map)
+        activeOverlayInputs.push(localStorage.getItem('active-main-layer'))
         handleLegend(activeOverlayInputs, legendContainer)
     }
 

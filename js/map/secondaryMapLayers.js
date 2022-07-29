@@ -223,9 +223,6 @@ const secondaryMapLayers = {
     type: 'circle',
     source: 'charging',
     // minzoom: 11,
-    layout: {
-      visibility: 'none',
-    },
     paint: {
       "circle-stroke-color": "#3C4C34",
       "circle-stroke-width": 0.5,
