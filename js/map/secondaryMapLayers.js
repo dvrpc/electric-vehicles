@@ -624,11 +624,12 @@ const secondaryMapLayers = {
       'fill-color': ['step',
           ['get', 'CurPEV'],
           pev1,
-          1.16, pev2,
-          2.37, pev3,
-          4.49, pev4,
-          8.89, pev5,
-          10.5, pev6
+          0.98, pev2,
+          1.64, pev3,
+          2.66, pev4,
+          4.22, pev5,
+          6.47, pev6,
+          11.83, pev7
         ],
       "fill-opacity": {
         base: 9,
@@ -641,30 +642,187 @@ const secondaryMapLayers = {
       },
     }
   },
-
+  'NJ-CurrentPEV-Pop': {
+    'id': 'NJ-CurrentPEV-Pop',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'CuPEVPop'],
+        pev1,
+        0.086, pev2,
+        0.138, pev3,
+        0.2085, pev4,
+        0.303, pev5,
+        0.45, pev6,
+        0.71, pev7,
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4],
+        ],
+      },
+    }
+  },
+  'NJ-CurrentPEV-HH': {
+    'id': 'NJ-CurrentPEV-HH',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+          ['get', 'CuPEV_HU'],
+          pev1,
+          0.229, pev2,
+          0.355, pev3,
+          0.548, pev4,
+          0.7783, pev5,
+          1.16, pev6,
+          1.89, pev7,
+        ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4],
+        ],
+      }
+    }
+  },
+  'NJ-CurrentPEV-SM': {
+    'id': 'NJ-CurrentPEV-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'CuPEV_SM'],
+        pev1,
+        2.98, pev2,
+        5.25, pev3,
+        8.01, pev4,
+        11.9, pev5,
+        17.65, pev6,
+        33.71, pev7
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4],
+        ]
+      }
+    }
+  },
+  'NJ-CurrentPEV-Veh': {
+    'id': 'NJ-CurrentPEV-Veh',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'PerCuPEV'],
+        pev1,
+        0.0016, pev2,
+        0.0024, pev3,
+        0.0032, pev4,
+        0.0044, pev5,
+        0.006543, pev6,
+        0.0103, pev7,
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4],
+        ]
+      }
+    }
+  },
 
 
   //PA
-  'PA-FuturePEV': {
-      'id': 'PA-FuturePEV',
-      'type': 'fill',
-      'source': 'pev',
-      'source-layer': 'pa_pev_bg',
-      'layout': {},
-      'paint': {
-        'fill-color': expressionPA1,
-        "fill-opacity": {
-          base: 9,
-          stops: [
-            [9, 1],
-            [11, .7],
-            [12, .65],
-            [13, .5],
-            [14, .4],
-          ],
-        },
-      }
-    },
+  'PA-CurrentPEV-BG': {
+    'id': 'PA-CurrentPEV-BG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+          ['get', 'CurPEV'],
+          pev1,
+          .98, pev2,
+          1.64, pev3,
+          2.66, pev4 ,
+          4.22, pev5 ,
+          6.47, pev6 ,
+          11.83,pev7
+        ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .9],
+          [12, .8],
+          [14, .4],
+        ],
+      },
+    }
+  },
+  'PA-CurrentPEV-Pop': {
+    'id': 'PA-CurrentPEV-Pop',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'CuPEVPop'],
+        pev1,
+        0.07, pev2,
+        0.1, pev3,
+        0.14, pev4,
+        0.19, pev5,
+        0.28, pev6,
+        0.71, pev7,
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4],
+        ],
+      },
+    }
+  },
 }
 
 export default secondaryMapLayers
@@ -712,3 +870,24 @@ export default secondaryMapLayers
 //         [">=","CurPEV",0.1]
 //         ]   
 // },
+
+  // 'PA-FuturePEV': {
+  //     'id': 'PA-FuturePEV',
+  //     'type': 'fill',
+  //     'source': 'pev',
+  //     'source-layer': 'pa_pev_bg',
+  //     'layout': {},
+  //     'paint': {
+  //       'fill-color': expressionPA1,
+  //       "fill-opacity": {
+  //         base: 9,
+  //         stops: [
+  //           [9, 1],
+  //           [11, .7],
+  //           [12, .65],
+  //           [13, .5],
+  //           [14, .4],
+  //         ],
+  //       },
+  //     }
+  //   },

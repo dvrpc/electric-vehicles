@@ -263,11 +263,88 @@ const legendConfig = {
     label: "Current PEVs (New Jersey)",
     legendType:"scale",
     class:"gb",
-    legendLable1:"1.16",
-    legendLable2:"2.37",
-    legendLable3:"4.49",
-    legendLable4:"8.89",
-    legendLable5:"10.5",
+    legendLable1:"0.98",
+    legendLable2:"1.64",
+    legendLable3:"2.66",
+    legendLable4:"4.22",
+    legendLable5:"6.47",
+    legendLabel6:"11.83",
+    legendLabel7:"104.9"
+  },
+  "NJ-CurrentPEV-Pop": {
+    label: "Current PEVs per 100 People (New Jersey)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.086%",
+    legendLable2:"0.138%",
+    legendLable3:"0.2085%",
+    legendLable4:"0.303%",
+    legendLable5:"0.45%",
+    legendLabel6:"0.71%",
+    legendLabel7:"3.74%"
+  },
+  "NJ-CurrentPEV-HH": {
+    label: "Current PEVs per Household (New Jersey)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.229%",
+    legendLable2:"0.355%",
+    legendLable3:"0.548%",
+    legendLable4:"0.7783%",
+    legendLable5:"1.16%",
+    legendLable6:"1.89%",
+    legendLable7:"11.019%"
+  },
+  "NJ-CurrentPEV-SM": {
+    label: "Current PEVs per Sq. Mi. (New Jersey)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"2.98",
+    legendLable2:"5.25",
+    legendLable3:"8.01",
+    legendLable4:"11.9",
+    legendLable5:"17.65",
+    legendLable6:"33.71",
+    legendLable7:"760.41"
+  },
+  "NJ-CurrentPEV-Veh": {
+    label: "Percentage of Passengers that are PEVs (New Jersey)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.0016%",
+    legendLable2:"0.0024%",
+    legendLable3:"0.0032%",
+    legendLable4:"0.0044%",
+    legendLable5:"0.006543%",
+    legendLable6:"0.0103%",
+    legendLable7:"0.057866%"
+  },
+
+
+  // Pennsylvannia
+  "PA-CurrentPEV-BG": {
+    label: "Current PEVs (Pennsylvannia) FAKE DATA - DVRPC JAWN STILL",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.98",
+    legendLable2:"1.64",
+    legendLable3:"2.66",
+    legendLable4:"4.22",
+    legendLable5:"6.47",
+    legendLable6:"11.83",
+    legendLable7:"105"
+  },
+  "PA-CurrentPEV-Pop": {
+    label: "Current PEVs per 100 People (Pennsylvannia)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.07%",
+    legendLable2:"0.1%",
+    legendLable3:"0.14%",
+    legendLable4:"0.19%",
+    legendLable5:"0.28%",
+    legendLable6:"0.71%",
+    legendLable7:"3.74%"
   },
 };
 
