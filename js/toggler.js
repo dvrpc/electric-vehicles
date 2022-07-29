@@ -104,10 +104,7 @@ const togglerWP = () => {
 // update state, mapZoom & muni/county boundaries on geobtns click
 const togglerNJ = map => {
   document.getElementById("NJ-toggle").addEventListener("click", function () {
-    map.fitBounds([
-      [-75.559614, 38.928519],
-      [-73.893979, 41.357423]
-    ])
+    map.flyTo({center: [ -74.52, 40.24], speed: 0.7, zoom: 7})
 
     $('#DVRPC-toggle').removeClass('toggle-btn-active')
     $('#PA-toggle').removeClass('toggle-btn-active')
@@ -117,10 +114,7 @@ const togglerNJ = map => {
 
 const togglerPA = map => {
   document.getElementById("PA-toggle").addEventListener("click", function () {
-    map.fitBounds([
-      [-80.519891, 39.7198],
-      [-74.689516, 42.26986]
-    ])
+    map.flyTo({center: [-77.76,40.92], speed: 0.7, zoom: 7})
 
     $('#DVRPC-toggle').removeClass('toggle-btn-active')
     $('#NJ-toggle').removeClass('toggle-btn-active')
