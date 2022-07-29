@@ -346,6 +346,42 @@ const legendConfig = {
     legendLable6:"0.71%",
     legendLable7:"3.74%"
   },
+  "PA-CurrentPEV-HH": {
+    label: "Current PEVs per Household (Pennsylvannia)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.183%",
+    legendLable2:"0.253%",
+    legendLable3:"0.347%",
+    legendLable4:"0.48%",
+    legendLable5:"0.69%",
+    legendLable6:"1.15%",
+    legendLable7:"9.78%"
+  },
+  "PA-CurrentPEV-SM": {
+    label: "Current PEVs per Sq. Mi. (Pennsylvannia)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.21",
+    legendLable2:"1.07",
+    legendLable3:"2.91",
+    legendLable4:"5.41",
+    legendLable5:"9.62",
+    legendLable6:"19.36",
+    legendLable7:"760.41"
+  },
+  "PA-CurrentPEV-Veh": {
+    label: "Percentage of Passengers that are PEVs (Pennsylvannia)",
+    legendType:"scale",
+    class:"gb",
+    legendLable1:"0.01%",
+    legendLable2:"0.015%",
+    legendLable3:"0.02%",
+    legendLable4:"0.028%",
+    legendLable5:"0.038%",
+    legendLable6:"0.066%",
+    legendLable7:"0.43%"
+  },
 };
 
 export default legendConfig;

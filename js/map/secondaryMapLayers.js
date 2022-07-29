@@ -281,18 +281,27 @@ const secondaryMapLayers = {
   'source-layer': 'dvrpc_pev_bg',
   'layout': {},
   'paint': {
- 'fill-color': CurSM,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
+    'fill-color': ['step',
+      ['get', 'CuPEV_SM'],
+      pev1,
+      2.98, pev2,
+      5.25,pev3,
+      8.01, pev4,
+      11.9, pev5,
+      17.65, pev6,
+      33.71, pev7
+    ],
+    "fill-opacity": {
+      base: 9,
+      stops: [
+        [9, 1],
+        [10, .8],
+        [11, .7],
+        [12, .65],
+        [13, .5],
+        [14, .4],
+      ]
+    }
   }
 },
 'DVRPC-CurrentPEV-Veh': {
@@ -777,9 +786,9 @@ const secondaryMapLayers = {
           pev1,
           .98, pev2,
           1.64, pev3,
-          2.66, pev4 ,
-          4.22, pev5 ,
-          6.47, pev6 ,
+          2.66, pev4,
+          4.22, pev5,
+          6.47, pev6,
           11.83,pev7
         ],
       "fill-opacity": {
@@ -788,9 +797,9 @@ const secondaryMapLayers = {
           [9, 1],
           [10, .9],
           [12, .8],
-          [14, .4],
-        ],
-      },
+          [14, .4]
+        ]
+      }
     }
   },
   'PA-CurrentPEV-Pop': {
@@ -808,7 +817,7 @@ const secondaryMapLayers = {
         0.14, pev4,
         0.19, pev5,
         0.28, pev6,
-        0.71, pev7,
+        0.71, pev7
       ],
       "fill-opacity": {
         base: 9,
@@ -818,9 +827,99 @@ const secondaryMapLayers = {
           [11, .7],
           [12, .65],
           [13, .5],
-          [14, .4],
-        ],
-      },
+          [14, .4]
+        ]
+      }
+    }
+  },
+  'PA-CurrentPEV-HH': {
+    'id': 'PA-CurrentPEV-HH',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'CuPEV_HU'],
+        pev1,
+        0.183, pev2,
+        0.253, pev3,
+        0.347, pev4,
+        0.48, pev5,
+        0.69, pev6,
+        1.15, pev7
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4]
+        ]
+      }
+    }
+  },
+  'PA-CurrentPEV-SM': {
+    'id': 'PA-CurrentPEV-SM',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'CuPEV_SM'],
+        pev1,
+        0.21, pev2,
+        1.07, pev3,
+        2.91, pev4,
+        5.41, pev5,
+        9.62, pev6,
+        19.36, pev7
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4]
+        ]
+      }
+    }
+  },
+  'PA-CurrentPEV-Veh': {
+    'id': 'PA-CurrentPEV-Veh',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {},
+    'paint': {
+      'fill-color': ['step',
+        ['get', 'PerCuPEV'],
+        pev1,
+        0.001, pev2,
+        0.0015, pev3,
+        0.002, pev4,
+        0.0028, pev5,
+        0.0038, pev6,
+        0.0066, pev7,
+      ],
+      "fill-opacity": {
+        base: 9,
+        stops: [
+          [9, 1],
+          [10, .8],
+          [11, .7],
+          [12, .65],
+          [13, .5],
+          [14, .4]
+        ]
+      }
     }
   },
 }

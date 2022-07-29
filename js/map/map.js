@@ -4,15 +4,14 @@ mapboxgl.accessToken =
 const initMap = () => {
   return new mapboxgl.Map({
     container: "map",
-    //  style: "mapbox://styles/mapbox/light-v10",
     style: "mapbox://styles/crvanpollard/ck5fpyqti0v971itf7edp2eyd",
     center: [-75.2273, 40.071],
     bounds: [
       [-76.09405517578125, 39.49211914385648],
       [-74.32525634765625, 40.614734298694216],
     ],
-    minZoom: 8,
-    maxZoom: 25
+    minZoom: 5,
+    maxZoom: 17
   });
 };
 

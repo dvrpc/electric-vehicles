@@ -114,7 +114,7 @@ const togglerNJ = map => {
 
 const togglerPA = map => {
   document.getElementById("PA-toggle").addEventListener("click", function () {
-    map.flyTo({center: [-77.76,40.92], speed: 0.7, zoom: 7})
+    map.flyTo({center: [-77.76,40.92], speed: 0.7, zoom: 6.25})
 
     $('#DVRPC-toggle').removeClass('toggle-btn-active')
     $('#NJ-toggle').removeClass('toggle-btn-active')
