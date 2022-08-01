@@ -22,18 +22,17 @@ let wpjob5 = '#c7eae5';
 let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
-// PA
-let expressionPA1 = ['step',
-['get', 'FutPEV'],
-'#b2182b',
-15,'#ef8a62',
-22,'#fddbc7',
-32, '#f7f7f7',
-50, '#d1e5f0',
-99, '#67a9cf',
-1234,'#2166ac'
-];
-
+// DVRPC Layer Specs
+let CurPop = ['step',
+['get', 'CuPEVPop'],
+pev1,
+.086, pev2,
+.138, pev3,
+.2085,  pev4,
+.303,  pev5,
+.45,  pev6,
+.71, pev7
+]
 let CurHH = ['step',
 ['get', 'CuPEV_HU'],
 pev1,
@@ -44,7 +43,6 @@ pev1,
 1.16, pev6,
 1.89, pev7
 ];
-
 let CurSM = ['step',
 ['get', 'CuPEV_SM'],
 pev1,
@@ -196,54 +194,132 @@ wpjob1,
 .014,   wpjob7
 ];
 
+
+// New Jersey Layer Specs
+
+
+
+// PA Layer Specs
+
+
+
+// Obj to reference all geographic layer specs
 const layerSpecs = {
   'DVRPC-CurrentPEV-Pop': {
     id: 'DVRPC-CurrentPEV-Pop',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: ['step',
-      ['get', 'CuPEVPop'],
-      pev1,
-      .086, pev2,
-      .138, pev3,
-      .2085,  pev4,
-      .303,  pev5,
-      .45,  pev6,
-      .71, pev7
-    ]
+    fillColor: CurPop
+  },
+  'DVRPC-CurrentPEV-HH': {
+    id: 'DVRPC-CurrentPEV-HH',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: CurHH,
+  },
+  'DVRPC-CurrentPEV-SM': {
+    id: 'DVRPC-CurrentPEV-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: CurSM,
+  },
+  'DVRPC-CurrentPEV-Veh': {
+    id: 'DVRPC-CurrentPEV-Veh',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: CurVeh,
+  },
+  'DVRPC-FuturePEV-BG': {
+    id: 'DVRPC-FuturePEV-BG',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FutPev,
+  },
+  'DVRPC-FuturePEV-Pop': {
+    id: 'DVRPC-FuturePEV-Pop',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FutPop,
+  },
+  'DVRPC-FuturePEV-HH': {
+    id: 'DVRPC-FuturePEV-HH',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FutHH,
+  },
+  'DVRPC-FuturePEV-SM': {
+    id: 'DVRPC-FuturePEV-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FutSM,
+  },
+  'DVRPC-FuturePEV-Veh': {
+    id: 'DVRPC-FuturePEV-Veh',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FutVeh,
+  },
+  'DVRPC-FC-KD-SM': {
+    id: 'DVRPC-FC-KD-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FC_KD_SM,
+  },
+  'DVRPC-FC-KD-JB': {
+    id: 'DVRPC-FC-KD-JB',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FC_KD_JB,
+  },
+  'DVRPC-FC-CE-SM': {
+    id: 'DVRPC-FC-CE-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FC_CE_SM,
+  },
+  'DVRPC-FC-CE-JB': {
+    id: 'DVRPC-FC-CE-JB',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: FC_CE_JB,
+  },
+  'DVRPC-PC-KD-SM': {
+    id: 'DVRPC-PC-KD-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: PC_KD_SM,
+  },
+  'DVRPC-PC-KD-JB': {
+    id: 'DVRPC-PC-KD-JB',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: PC_KD_JB,
+  },
+  'DVRPC-PC-CE-SM': {
+    id: 'DVRPC-PC-CE-SM',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: PC_CE_SM,
+  },
+  'DVRPC-PC-CE-JB': {
+    id: 'DVRPC-PC-CE-JB',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: PC_CE_JB,
   }
 }
 
-  // generic to replace secondaryMapLayers
-  const makeSecondaryMapLayer = name => {
-    console.log('name is ', name)
-    const layerInfo = layerSpecs[name]
+// layer generator to reduce hard coding of layers
+const makeSecondaryMapLayer = name => {
+  const layerInfo = layerSpecs[name]
 
-    return {
-        'id': layerInfo.id,
-        'type': 'fill',
-        'source': 'pev',
-        'source-layer': layerInfo.sourceLayer,
-        'layout': {},
-        'paint': {
-          'fill-color': layerInfo.fillColor,
-          "fill-opacity": {
-            base: 9,
-            stops: [
-              [9, 1],
-              [10, .8],
-              [11, .7],
-              [12, .65],
-              [13, .5],
-              [14, .4]
-            ]
-          }
+  return {
+      'id': layerInfo.id,
+      'type': 'fill',
+      'source': 'pev',
+      'source-layer': layerInfo.sourceLayer,
+      'layout': {},
+      'paint': {
+        'fill-color': layerInfo.fillColor,
+        "fill-opacity": {
+          base: 9,
+          stops: [
+            [9, 1],
+            [10, .8],
+            [11, .7],
+            [12, .65],
+            [13, .5],
+            [14, .4]
+          ]
         }
-    }
+      }
   }
+}
 
-// New Jersey
-
-
+// @update: for this project, overlay layers are secondaryMapLayers
 const secondaryMapLayers = {
   'charging': {
     id: 'charging',
@@ -265,406 +341,64 @@ const secondaryMapLayers = {
       },
     },
   },
-
-// DVRPC
-'DVRPC-CurrentPEV-Pop': {
-  'id': 'DVRPC-CurrentPEV-Pop',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
-    'fill-color': ['step',
-      ['get', 'CuPEVPop'],
-      pev1,
-      .086, pev2,
-      .138, pev3,
-      .2085,  pev4,
-      .303,  pev5,
-      .45,  pev6,
-      .71, pev7
-    ],
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
+  'dvrpc-projected': {
+    'id': 'dvrpc-projected',
+    'type': 'circle',
+    'source': 'pev',
+    'source-layer': 'pev_bg_centroids',
+    'paint': {
+        // make circles larger as the user zooms from z12 to z22
+        'circle-radius': {
+          property: 'FutPEV',
+          stops: [
+            [{zoom: 8, value: 42.05}, 1],
+            [{zoom: 8, value: 124.15}, 2],
+            [{zoom: 8, value: 259.88}, 4],
+            [{zoom: 8, value: 509.8}, 7.5],
+            [{zoom: 8, value: 1235}, 11],
+            [{zoom: 12, value: 42.05}, 2],
+            [{zoom: 12, value: 124.15}, 4],
+            [{zoom: 12, value: 259.88}, 6.6],
+            [{zoom: 12, value: 509.8}, 9.5],
+            [{zoom: 12, value: 1235}, 14],
+          ]
+        },
+        'circle-color':'#3182D1',
+        'circle-opacity':1
     },
-  }
-},
-'DVRPC-CurrentPEV-HH': {
-  'id': 'DVRPC-CurrentPEV-HH',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
- 'fill-color': CurHH,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
-  }
-},
-'DVRPC-CurrentPEV-SM': {
-  'id': 'DVRPC-CurrentPEV-SM',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
-    'fill-color': ['step',
-      ['get', 'CuPEV_SM'],
-      pev1,
-      2.98, pev2,
-      5.25,pev3,
-      8.01, pev4,
-      11.9, pev5,
-      17.65, pev6,
-      33.71, pev7
-    ],
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ]
-    }
-  }
-},
-'DVRPC-CurrentPEV-Veh': {
-  'id': 'DVRPC-CurrentPEV-Veh',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
- 'fill-color': CurVeh,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-  ],
-},
-  }
-},
-'dvrpc-projected': {
-  'id': 'dvrpc-projected',
-  'type': 'circle',
-  'source': 'pev',
-  'source-layer': 'pev_bg_centroids',
-  'paint': {
-      // make circles larger as the user zooms from z12 to z22
+    "filter": ["all",
+      ["==","MAPTYPE","DVRPC"],
+      [">=","FutPEV",0.1]
+    ]
+  },
+  'dvrpc-current': {
+    'id': 'dvrpc-current',
+    'type': 'circle',
+    'source': 'pev',
+    'source-layer': 'pev_bg_centroids',
+    'paint': {
       'circle-radius': {
-        property: 'FutPEV',
+        property: 'CurPEV',
         stops: [
-        [{zoom: 8, value: 42.05}, 1],
-        [{zoom: 8, value: 124.15}, 2],
-        [{zoom: 8, value: 259.88}, 4],
-        [{zoom: 8, value: 509.8}, 7.5],
-        [{zoom: 8, value: 1235}, 11],
-        [{zoom: 12, value: 42.05}, 2],
-        [{zoom: 12, value: 124.15}, 4],
-        [{zoom: 12, value: 259.88}, 6.6],
-        [{zoom: 12, value: 509.8}, 9.5],
-        [{zoom: 12, value: 1235}, 14],
+          [{zoom: 8, value: 1.16}, .5],
+          [{zoom: 8, value: 2.37}, 1],
+          [{zoom: 8, value: 4.49}, 2],
+          [{zoom: 8, value: 8.89}, 3],
+          [{zoom: 8, value: 105}, 5],
+          [{zoom: 12, value: 1.16}, 2],
+          [{zoom: 12, value: 2.37}, 3],
+          [{zoom: 12, value: 4.49}, 4],
+          [{zoom: 12, value: 8.89}, 6],
+          [{zoom: 12, value: 105}, 9],
         ]
         },
-      'circle-color':'#3182D1',
-      'circle-opacity':1
-  },
-  "filter": ["all",
-  ["==","MAPTYPE","DVRPC"],
-  [">=","FutPEV",0.1]
-  ]  
-  },
-  'DVRPC-FuturePEV-BG': {
-  'id': 'DVRPC-FuturePEV-BG',
-  'type': 'fill',
-  'source': 'pev',
-  'source-layer': 'dvrpc_pev_bg',
-  'layout': {},
-  'paint': {
- 'fill-color': FutPev,
- "fill-opacity": {
-  base: 9,
-  stops: [
-    [9, 1],
-    [10, .8],
-    [11, .7],
-    [12, .65],
-    [13, .5],
-    [14, .4],
-   ],
-  },
-    }
-  },
-  'DVRPC-FuturePEV-Pop': {
-    'id': 'DVRPC-FuturePEV-Pop',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-   'fill-color': FutPop,
-   "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [10, .8],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-      ],
-    },
-      }
-  },
-  'DVRPC-FuturePEV-HH': {
-    'id': 'DVRPC-FuturePEV-HH',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-    'fill-color': FutHH,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
-      }
-  },
-  'DVRPC-FuturePEV-SM': {
-    'id': 'DVRPC-FuturePEV-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-    'fill-color': FutSM,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
-      }
-  },
-  'DVRPC-FuturePEV-Veh': {
-    'id': 'DVRPC-FuturePEV-Veh',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-    'fill-color': FutVeh,
-    "fill-opacity": {
-      base: 9,
-      stops: [
-        [9, 1],
-        [10, .8],
-        [11, .7],
-        [12, .65],
-        [13, .5],
-        [14, .4],
-      ],
-    },
-      }
-  },
-  // FREE
-  'DVRPC-FC-KD-SM': {
-    'id': 'DVRPC-FC-KD-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': FC_KD_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-FC-KD-JB': {
-    'id': 'DVRPC-FC-KD-JB',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': FC_KD_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-FC-CE-SM': {
-    'id': 'DVRPC-FC-CE-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': FC_CE_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-FC-CE-JB': {
-    'id': 'DVRPC-FC-CE-JB',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': FC_CE_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  //Paid
-  'DVRPC-PC-KD-SM': {
-    'id': 'DVRPC-PC-KD-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': PC_KD_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-PC-KD-JB': {
-    'id': 'DVRPC-PC-KD-JB',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': PC_KD_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-PC-CE-SM': {
-    'id': 'DVRPC-PC-CE-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': PC_CE_SM,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
-  },
-  'DVRPC-PC-CE-JB': {
-    'id': 'DVRPC-PC-CE-JB',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {},
-    'paint': {
-  'fill-color': PC_CE_JB,
-  "fill-opacity": {
-    base: 9,
-    stops: [
-      [9, 1],
-      [11, .7],
-      [12, .65],
-      [13, .5],
-      [14, .4],
-    ],
-  },
-    }
+        'circle-color': '#EA563D',
+        'circle-opacity':.75
+      },
+    "filter": ["all",
+      ["==","MAPTYPE","DVRPC"],
+      [">=","CurPEV",0.1]
+    ] 
   },
 
   // New Jersey
@@ -984,35 +718,7 @@ export { makeSecondaryMapLayer, secondaryMapLayers }
 //     },
 // },
 // @update what is?
-// 'dvrpc-current': {
-//     'id': 'dvrpc-current',
-//     'type': 'circle',
-//     'source': 'pev',
-//     'source-layer': 'pev_bg_centroids',
-//     'paint': {
-//         'circle-radius': {
-//           property: 'CurPEV',
-//           stops: [
-//           [{zoom: 8, value: 1.16}, .5],
-//           [{zoom: 8, value: 2.37}, 1],
-//           [{zoom: 8, value: 4.49}, 2],
-//           [{zoom: 8, value: 8.89}, 3],
-//           [{zoom: 8, value: 105}, 5],
-//           [{zoom: 12, value: 1.16}, 2],
-//           [{zoom: 12, value: 2.37}, 3],
-//           [{zoom: 12, value: 4.49}, 4],
-//           [{zoom: 12, value: 8.89}, 6],
-//           [{zoom: 12, value: 105}, 9],
-//           ]
-//           },
-//           'circle-color': '#EA563D',
-//           'circle-opacity':.75
-//         },
-//         "filter": ["all",
-//         ["==","MAPTYPE","DVRPC"],
-//         [">=","CurPEV",0.1]
-//         ]   
-// },
+
 
   // 'PA-FuturePEV': {
   //     'id': 'PA-FuturePEV',
