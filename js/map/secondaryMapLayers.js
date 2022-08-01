@@ -195,11 +195,190 @@ wpjob1,
 ];
 
 
+// Pennsylvannia Layer Specs
+let PA_Cur = ['step',
+  ['get', 'CurPEV'],
+  pev1,
+  .98, pev2,
+  1.64, pev3,
+  2.66, pev4,
+  4.22, pev5,
+  6.47, pev6,
+  11.83,pev7
+]
+let PA_CurPop = ['step',
+  ['get', 'CuPEVPop'],
+  pev1,
+  0.07, pev2,
+  0.1, pev3,
+  0.14,  pev4,
+  0.19,  pev5,
+  0.28,  pev6,
+  0.71, pev7
+]
+let PA_CurHH = ['step',
+  ['get', 'CuPEV_HU'],
+  pev1,
+  0.183, pev2,
+  0.253, pev3,
+  0.347, pev4,
+  0.48, pev5,
+  0.69, pev6,
+  1.15, pev7
+];
+let PA_CurSM = ['step',
+  ['get', 'CuPEV_SM'],
+  pev1,
+  0.21, pev2,
+  1.07, pev3,
+  2.91, pev4,
+  5.41, pev5,
+  9.62, pev6,
+  19.36, pev7
+];
+let PA_CurVeh = ['step',
+  ['get', 'PerCuPEV'],
+  pev1,
+  0.001, pev2,
+  0.0015, pev3,
+  0.002, pev4,
+  0.0028, pev5,
+  0.0038, pev6,
+  0.0066, pev7
+];
+let PA_FutPev = ['step',
+  ['get', 'FutPEV'],
+  pev1,
+  , pev2,
+  , pev3,
+  ,  pev4,
+  ,  pev5,
+  ,  pev6,
+  , pev7
+];
+let PA_FutPop = ['step',
+  ['get', 'FuPEVPop'],
+  pev1,
+   pev2,
+   pev3,
+  ,  pev4,
+  ,  pev5,
+  ,  pev6,
+  , pev7
+];
+let PA_FutHH = ['step',
+  ['get', 'FuPEV_HU'],
+  pev1,
+  ,pev2,
+  , pev3,
+  ,  pev4,
+  ,  pev5,
+  ,  pev6,
+  , pev7
+];
+let PA_FutSM = ['step',
+  ['get', 'FUPEV_SM'],
+  pev1,
+  , pev2,
+  ,pev3,
+  , pev4,
+  , pev5,
+  , pev6,
+  , pev7
+];
+let PA_FutVeh = ['step',
+  ['get', 'PerFuPEV'],
+  pev1,
+  , pev2,
+  , pev3,
+  , pev4,
+  , pev5,
+  , pev6,
+  , pev7
+];
+let PA_FC_KD_SM = ['step',
+  ['get', 'FC_KD_SM'],
+  wp1,
+  , wp2,
+  , wp3,
+  , wp4,
+  ,  wp5,
+  ,  wp6,
+  ,  wp7
+];
+let PA_FC_KD_JB = ['step',
+  ['get', 'FC_KD_JB'],
+  wpjob1 ,
+  , wpjob2,
+  , wpjob3,
+  , wpjob4,
+  ,  wpjob5,
+  ,  wpjob6,
+  ,  wpjob7
+];
+let PA_FC_CE_SM = ['step',
+  ['get', 'FC_CE_SM'],
+  wp1,
+  , wp2,
+  , wp3,
+  , wp4,
+  ,  wp5,
+  ,  wp6,
+  ,  wp7
+];
+let PA_FC_CE_JB = ['step',
+  ['get', 'FC_CE_JB'],
+  wpjob1,
+  , wpjob2,
+  , wpjob3,
+  , wpjob4,
+  ,  wpjob5,
+  ,  wpjob6,
+  ,  wpjob7
+];
+let PA_PC_KD_SM = ['step',
+  ['get', 'PC_KD_SM'],
+  wp1,
+  , wp2,
+  , wp3,
+  ,  wp4,
+  ,  wp5,
+  ,  wp6,
+  , wp7
+];
+let PA_PC_KD_JB = ['step',
+  ['get', 'PC_KD_JB'],
+  wpjob1,
+  , wpjob2,
+  , wpjob3,
+  ,  wpjob4,
+  ,  wpjob5,
+  ,  wpjob6,
+  , wpjob7
+];
+let PA_PC_CE_SM = ['step',
+  ['get', 'PC_CE_SM'],
+  wp1,
+  , wp2,
+  , wp3,
+  ,  wp4,
+  ,  wp5,
+  ,  wp6,
+  , wp7
+];
+let PA_PC_CE_JB = ['step',
+  ['get', 'PC_CE_JB'],
+  wpjob1,
+  , wpjob2,
+  , wpjob3,
+  ,  wpjob4,
+  ,  wpjob5,
+  ,  wpjob6,
+  ,   wpjob7
+];
+
+
 // New Jersey Layer Specs
-
-
-
-// PA Layer Specs
 
 
 
@@ -289,7 +468,100 @@ const layerSpecs = {
     id: 'DVRPC-PC-CE-JB',
     sourceLayer: 'dvrpc_pev_bg',
     fillColor: PC_CE_JB,
-  }
+  },
+
+  // Pennsylvannia 
+  'PA-CurrentPEV-BG': {
+    id: 'PA-CurrentPEV-BG',
+    sourceLayer: 'pa_bev_bg',
+    fillColor: PA_Cur
+  },
+  'PA-CurrentPEV-Pop': {
+    id: 'PA-CurrentPEV-Pop',
+    sourceLayer: 'pa_bev_bg',
+    fillColor: PA_CurPop
+  },
+  'PA-CurrentPEV-HH': {
+    id: 'PA-CurrentPEV-HH',
+    sourceLayer: 'pa_bev_bg',
+    fillColor: PA_CurHH
+  },
+  'PA-CurrentPEV-SM': {
+    id: 'PA-CurrentPEV-SM',
+    sourceLayer: 'pa_bev_bg',
+    fillColor: PA_CurSM
+  },
+  'PA-CurrentPEV-Veh': {
+    id: 'PA-CurrentPEV-Veh',
+    sourceLayer: 'pa_bev_bg',
+    fillColor: PA_CurVeh
+  },
+  'PA-FuturePEV-BG': {
+    id: 'PA-FuturePEV-BG',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FutPev,
+  },
+  'PA-FuturePEV-Pop': {
+    id: 'PA-FuturePEV-Pop',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FutPop,
+  },
+  'PA-FuturePEV-HH': {
+    id: 'PA-FuturePEV-HH',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FutHH,
+  },
+  'PA-FuturePEV-SM': {
+    id: 'PA-FuturePEV-SM',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FutSM,
+  },
+  'PA-FuturePEV-Veh': {
+    id: 'PA-FuturePEV-Veh',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FutVeh,
+  },
+  'PA-FC-KD-SM': {
+    id: 'PA-FC-KD-SM',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FC_KD_SM,
+  },
+  'PA-FC-KD-JB': {
+    id: 'PA-FC-KD-JB',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FC_KD_JB,
+  },
+  'PA-FC-CE-SM': {
+    id: 'PA-FC-CE-SM',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FC_CE_SM,
+  },
+  'PA-FC-CE-JB': {
+    id: 'PA-FC-CE-JB',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_FC_CE_JB,
+  },
+  'PA-PC-KD-SM': {
+    id: 'PA-PC-KD-SM',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_PC_KD_SM,
+  },
+  'PA-PC-KD-JB': {
+    id: 'PA-PC-KD-JB',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_PC_KD_JB,
+  },
+  'PA-PC-CE-SM': {
+    id: 'PA-PC-CE-SM',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_PC_CE_SM,
+  },
+  'PA-PC-CE-JB': {
+    id: 'PA-PC-CE-JB',
+    sourceLayer: 'pa_pev_bg',
+    fillColor: PA_PC_CE_JB,
+  },
+
 }
 
 // layer generator to reduce hard coding of layers
@@ -364,7 +636,9 @@ const secondaryMapLayers = {
           ]
         },
         'circle-color':'#3182D1',
-        'circle-opacity':1
+        'circle-stroke-color': 'white',
+        'circle-stroke-width': 1,
+        'circle-opacity': 1
     },
     "filter": ["all",
       ["==","MAPTYPE","DVRPC"],
@@ -552,154 +826,154 @@ const secondaryMapLayers = {
 
 
   //PA
-  'PA-CurrentPEV-BG': {
-    'id': 'PA-CurrentPEV-BG',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {},
-    'paint': {
-      'fill-color': ['step',
-          ['get', 'CurPEV'],
-          pev1,
-          .98, pev2,
-          1.64, pev3,
-          2.66, pev4,
-          4.22, pev5,
-          6.47, pev6,
-          11.83,pev7
-        ],
-      "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .9],
-          [12, .8],
-          [14, .4]
-        ]
-      }
-    }
-  },
-  'PA-CurrentPEV-Pop': {
-    'id': 'PA-CurrentPEV-Pop',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {},
-    'paint': {
-      'fill-color': ['step',
-        ['get', 'CuPEVPop'],
-        pev1,
-        0.07, pev2,
-        0.1, pev3,
-        0.14, pev4,
-        0.19, pev5,
-        0.28, pev6,
-        0.71, pev7
-      ],
-      "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .8],
-          [11, .7],
-          [12, .65],
-          [13, .5],
-          [14, .4]
-        ]
-      }
-    }
-  },
-  'PA-CurrentPEV-HH': {
-    'id': 'PA-CurrentPEV-HH',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {},
-    'paint': {
-      'fill-color': ['step',
-        ['get', 'CuPEV_HU'],
-        pev1,
-        0.183, pev2,
-        0.253, pev3,
-        0.347, pev4,
-        0.48, pev5,
-        0.69, pev6,
-        1.15, pev7
-      ],
-      "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .8],
-          [11, .7],
-          [12, .65],
-          [13, .5],
-          [14, .4]
-        ]
-      }
-    }
-  },
-  'PA-CurrentPEV-SM': {
-    'id': 'PA-CurrentPEV-SM',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {},
-    'paint': {
-      'fill-color': ['step',
-        ['get', 'CuPEV_SM'],
-        pev1,
-        0.21, pev2,
-        1.07, pev3,
-        2.91, pev4,
-        5.41, pev5,
-        9.62, pev6,
-        19.36, pev7
-      ],
-      "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .8],
-          [11, .7],
-          [12, .65],
-          [13, .5],
-          [14, .4]
-        ]
-      }
-    }
-  },
-  'PA-CurrentPEV-Veh': {
-    'id': 'PA-CurrentPEV-Veh',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {},
-    'paint': {
-      'fill-color': ['step',
-        ['get', 'PerCuPEV'],
-        pev1,
-        0.001, pev2,
-        0.0015, pev3,
-        0.002, pev4,
-        0.0028, pev5,
-        0.0038, pev6,
-        0.0066, pev7,
-      ],
-      "fill-opacity": {
-        base: 9,
-        stops: [
-          [9, 1],
-          [10, .8],
-          [11, .7],
-          [12, .65],
-          [13, .5],
-          [14, .4]
-        ]
-      }
-    }
-  },
+  // 'PA-CurrentPEV-BG': {
+  //   'id': 'PA-CurrentPEV-BG',
+  //   'type': 'fill',
+  //   'source': 'pev',
+  //   'source-layer': 'pa_pev_bg',
+  //   'layout': {},
+  //   'paint': {
+  //     'fill-color': ['step',
+  //         ['get', 'CurPEV'],
+  //         pev1,
+  //         .98, pev2,
+  //         1.64, pev3,
+  //         2.66, pev4,
+  //         4.22, pev5,
+  //         6.47, pev6,
+  //         11.83,pev7
+  //       ],
+  //     "fill-opacity": {
+  //       base: 9,
+  //       stops: [
+  //         [9, 1],
+  //         [10, .9],
+  //         [12, .8],
+  //         [14, .4]
+  //       ]
+  //     }
+  //   }
+  // },
+  // 'PA-CurrentPEV-Pop': {
+  //   'id': 'PA-CurrentPEV-Pop',
+  //   'type': 'fill',
+  //   'source': 'pev',
+  //   'source-layer': 'pa_pev_bg',
+  //   'layout': {},
+  //   'paint': {
+  //     'fill-color': ['step',
+  //       ['get', 'CuPEVPop'],
+  //       pev1,
+  //       0.07, pev2,
+  //       0.1, pev3,
+  //       0.14, pev4,
+  //       0.19, pev5,
+  //       0.28, pev6,
+  //       0.71, pev7
+  //     ],
+  //     "fill-opacity": {
+  //       base: 9,
+  //       stops: [
+  //         [9, 1],
+  //         [10, .8],
+  //         [11, .7],
+  //         [12, .65],
+  //         [13, .5],
+  //         [14, .4]
+  //       ]
+  //     }
+  //   }
+  // },
+  // 'PA-CurrentPEV-HH': {
+  //   'id': 'PA-CurrentPEV-HH',
+  //   'type': 'fill',
+  //   'source': 'pev',
+  //   'source-layer': 'pa_pev_bg',
+  //   'layout': {},
+  //   'paint': {
+  //     'fill-color': ['step',
+  //       ['get', 'CuPEV_HU'],
+  //       pev1,
+  //       0.183, pev2,
+  //       0.253, pev3,
+  //       0.347, pev4,
+  //       0.48, pev5,
+  //       0.69, pev6,
+  //       1.15, pev7
+  //     ],
+  //     "fill-opacity": {
+  //       base: 9,
+  //       stops: [
+  //         [9, 1],
+  //         [10, .8],
+  //         [11, .7],
+  //         [12, .65],
+  //         [13, .5],
+  //         [14, .4]
+  //       ]
+  //     }
+  //   }
+  // },
+  // 'PA-CurrentPEV-SM': {
+  //   'id': 'PA-CurrentPEV-SM',
+  //   'type': 'fill',
+  //   'source': 'pev',
+  //   'source-layer': 'pa_pev_bg',
+  //   'layout': {},
+  //   'paint': {
+  //     'fill-color': ['step',
+  //       ['get', 'CuPEV_SM'],
+  //       pev1,
+  //       0.21, pev2,
+  //       1.07, pev3,
+  //       2.91, pev4,
+  //       5.41, pev5,
+  //       9.62, pev6,
+  //       19.36, pev7
+  //     ],
+  //     "fill-opacity": {
+  //       base: 9,
+  //       stops: [
+  //         [9, 1],
+  //         [10, .8],
+  //         [11, .7],
+  //         [12, .65],
+  //         [13, .5],
+  //         [14, .4]
+  //       ]
+  //     }
+  //   }
+  // },
+  // 'PA-CurrentPEV-Veh': {
+  //   'id': 'PA-CurrentPEV-Veh',
+  //   'type': 'fill',
+  //   'source': 'pev',
+  //   'source-layer': 'pa_pev_bg',
+  //   'layout': {},
+  //   'paint': {
+  //     'fill-color': ['step',
+  //       ['get', 'PerCuPEV'],
+  //       pev1,
+  //       0.001, pev2,
+  //       0.0015, pev3,
+  //       0.002, pev4,
+  //       0.0028, pev5,
+  //       0.0038, pev6,
+  //       0.0066, pev7,
+  //     ],
+  //     "fill-opacity": {
+  //       base: 9,
+  //       stops: [
+  //         [9, 1],
+  //         [10, .8],
+  //         [11, .7],
+  //         [12, .65],
+  //         [13, .5],
+  //         [14, .4]
+  //       ]
+  //     }
+  //   }
+  // },
 }
 
 export { makeSecondaryMapLayer, secondaryMapLayers }
