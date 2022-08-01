@@ -196,6 +196,50 @@ wpjob1,
 .014,   wpjob7
 ];
 
+const layerSpecs = {
+  'DVRPC-CurrentPEV-Pop': {
+    id: 'DVRPC-CurrentPEV-Pop',
+    sourceLayer: 'dvrpc_pev_bg',
+    fillColor: ['step',
+      ['get', 'CuPEVPop'],
+      pev1,
+      .086, pev2,
+      .138, pev3,
+      .2085,  pev4,
+      .303,  pev5,
+      .45,  pev6,
+      .71, pev7
+    ]
+  }
+}
+
+  // generic to replace secondaryMapLayers
+  const makeSecondaryMapLayer = name => {
+    console.log('name is ', name)
+    const layerInfo = layerSpecs[name]
+
+    return {
+        'id': layerInfo.id,
+        'type': 'fill',
+        'source': 'pev',
+        'source-layer': layerInfo.sourceLayer,
+        'layout': {},
+        'paint': {
+          'fill-color': layerInfo.fillColor,
+          "fill-opacity": {
+            base: 9,
+            stops: [
+              [9, 1],
+              [10, .8],
+              [11, .7],
+              [12, .65],
+              [13, .5],
+              [14, .4]
+            ]
+          }
+        }
+    }
+  }
 
 // New Jersey
 
@@ -924,7 +968,7 @@ const secondaryMapLayers = {
   },
 }
 
-export default secondaryMapLayers
+export { makeSecondaryMapLayer, secondaryMapLayers }
 
 
 // @update declutter unknown layers

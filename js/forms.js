@@ -1,4 +1,4 @@
-import secondaryMapLayers from "./map/secondaryMapLayers.js";
+import { makeSecondaryMapLayer, secondaryMapLayers } from "./map/secondaryMapLayers.js";
 
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
@@ -17,8 +17,9 @@ const handleFormInputs = (inputs, map) => {
 
       // add layer on first pass
       if (checked) {
+        // keep old method b/c only overlays hit this fnc
         const mapLayer = secondaryMapLayers[layer];
-           map.addLayer(mapLayer, "road-label");
+        map.addLayer(mapLayer, "road-label");
       }
     }
   });
@@ -45,8 +46,9 @@ const handleFormSelect = (selects, map) => {
 
         // add layer on first pass
         if (selected) {
+          // keep old method b/c only overlays hit this fnc
           const mapLayer = secondaryMapLayers[layer];
-           map.addLayer(mapLayer, "road-label");
+          map.addLayer(mapLayer, "road-label");
         }
       }
     });
@@ -74,22 +76,24 @@ const constructMainQuery = map => {
   const type = $('#type_select option:selected').val()
   const layer = $('#layout_select option:selected').val()
 
-  let newMainLayer;
+  let newLayerId;
 
-  if(theme == 'workplace') newMainLayer = chargeType(geo, type, layer)
-  else newMainLayer = pevType(geo, type, layer)
+  if(theme == 'workplace') newLayerId = chargeType(geo, type, layer)
+  else newLayerId = pevType(geo, type, layer)
 
   // toggle visibility or add layer (first pass only)
-  if (map.getLayer(newMainLayer)) {
-      map.setLayoutProperty(newMainLayer, "visibility", 'visible');
+  if (map.getLayer(newLayerId)) {
+      map.setLayoutProperty(newLayerId, "visibility", 'visible');
     } else {
-      map.addLayer(secondaryMapLayers[newMainLayer], "dvrpcPEVBG-line");
+      // create & add layer
+      const newLayer = makeSecondaryMapLayer(newLayerId)
+      map.addLayer(newLayer, "dvrpcPEVBG-line");
   }
 
   // update localStorage
-  localStorage.setItem('active-main-layer', newMainLayer)
+  localStorage.setItem('active-main-layer', newLayerId)
 
-  return newMainLayer
+  return newLayerId
 }
 
 const handleForms = (type, toggles, map) => {
