@@ -23,46 +23,6 @@ let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
 // DVRPC Layer Specs
-// let CurPop = ['step',
-// ['get', 'CuPEVPop'],
-// pev1,
-// .086, pev2,
-// .138, pev3,
-// .2085,  pev4,
-// .303,  pev5,
-// .45,  pev6,
-// .71, pev7
-// ]
-let CurHH = ['step',
-['get', 'CuPEV_HU'],
-pev1,
-.229, pev2,
-.355,pev3,
-.548, pev4,
-.7783, pev5,
-1.16, pev6,
-1.89, pev7
-];
-let CurSM = ['step',
-['get', 'CuPEV_SM'],
-pev1,
-2.98, pev2,
-5.25,pev3,
-8.01, pev4,
-11.9, pev5,
-17.65, pev6,
-33.71, pev7
-];
-let CurVeh = ['step',
-['get', 'PerCuPEV'],
-pev1,
-.0016, pev2,
-.0024,pev3,
-.0032, pev4,
-.0044, pev5,
-.0065, pev6,
-.0103, pev7
-];
 let FutPev = ['step',
 ['get', 'FutPEV'],
 pev1,
@@ -588,11 +548,13 @@ const pevStyle = (vals, layer) => {
 
 // make wp layers
 const wpStyle = (vals, layer) => {
-  
+
 }
 
 // make wpjob layers
+const wpjobStyle = (vals, layer) => {
 
+}
 
 
 // Obj to reference all geographic layer specs
@@ -605,17 +567,17 @@ const layerSpecs = {
   'DVRPC-CurrentPEV-HH': {
     id: 'DVRPC-CurrentPEV-HH',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: CurHH
+    fillColor: pevStyle([.229,.355,.548,.7783,1.16,1.89], 'CuPEV_HU')
   },
   'DVRPC-CurrentPEV-SM': {
     id: 'DVRPC-CurrentPEV-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: CurSM
+    fillColor: pevStyle([2.98,5.25,8.01,11.9,17.65,33.71], 'CuPEV_SM')
   },
   'DVRPC-CurrentPEV-Veh': {
     id: 'DVRPC-CurrentPEV-Veh',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: CurVeh
+    fillColor: pevStyle([.0016,.0024,.0032,.0044,.0065,.0103], 'PerCuPEV')
   },
   'DVRPC-FuturePEV-BG': {
     id: 'DVRPC-FuturePEV-BG',
