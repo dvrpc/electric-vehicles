@@ -129,281 +129,9 @@ let PA_FutVeh = ['step',
   0.0409, pev6,
   0.0716, pev7
 ];
-// @update: missing data
-let PA_FC_KD_SM = ['step',
-  ['get', 'FC_KD_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-// @update: missing data
-let PA_FC_KD_JB = ['step',
-  ['get', 'FC_KD_JB'],
-  wpjob1 ,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-// @update: missing data
-let PA_FC_CE_SM = ['step',
-  ['get', 'FC_CE_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-// @update: missing data
-let PA_FC_CE_JB = ['step',
-  ['get', 'FC_CE_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-// @update: missing data
-let PA_PC_KD_SM = ['step',
-  ['get', 'PC_KD_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-// @update: missing data
-let PA_PC_KD_JB = ['step',
-  ['get', 'PC_KD_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-// @update: missing data
-let PA_PC_CE_SM = ['step',
-  ['get', 'PC_CE_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-// @update: missing data
-let PA_PC_CE_JB = ['step',
-  ['get', 'PC_CE_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-
-
-// New Jersey Layer Specs
-let NJ_Cur = ['step',
-  ['get', 'CurPEV'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  ,pev7
-]
-let NJ_CurPop = ['step',
-  ['get', 'CuPEVPop'],
-  pev1,
-  , pev2,
-  , pev3,
-  ,  pev4,
-  ,  pev5,
-  ,  pev6,
-  , pev7
-]
-let NJ_CurHH = ['step',
-  ['get', 'CuPEV_HU'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_CurSM = ['step',
-  ['get', 'CuPEV_SM'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_CurVeh = ['step',
-  ['get', 'PerCuPEV'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FutPev = ['step',
-  ['get', 'FutPEV'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FutPop = ['step',
-  ['get', 'FuPEVPop'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FutHH = ['step',
-  ['get', 'FuPEV_HU'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FutSM = ['step',
-  ['get', 'FUPEV_SM'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FutVeh = ['step',
-  ['get', 'PerFuPEV'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let NJ_FC_KD_SM = ['step',
-  ['get', 'FC_KD_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-let NJ_FC_KD_JB = ['step',
-  ['get', 'FC_KD_JB'],
-  wpjob1 ,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-let NJ_FC_CE_SM = ['step',
-  ['get', 'FC_CE_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-let NJ_FC_CE_JB = ['step',
-  ['get', 'FC_CE_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-let NJ_PC_KD_SM = ['step',
-  ['get', 'PC_KD_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-let NJ_PC_KD_JB = ['step',
-  ['get', 'PC_KD_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
-let NJ_PC_CE_SM = ['step',
-  ['get', 'PC_CE_SM'],
-  wp1,
-  , wp2,
-  , wp3,
-  , wp4,
-  , wp5,
-  , wp6,
-  , wp7
-];
-let NJ_PC_CE_JB = ['step',
-  ['get', 'PC_CE_JB'],
-  wpjob1,
-  , wpjob2,
-  , wpjob3,
-  , wpjob4,
-  , wpjob5,
-  , wpjob6,
-  , wpjob7
-];
 
 
 // @update make layer def fncs
-
 // make pev layers
 const pevStyle = (vals, layer) => {
   let [a, b, c, d, e, f] = vals
@@ -420,24 +148,6 @@ const pevStyle = (vals, layer) => {
 }
 
 // make wp layers
-
-// @update: can abstract to 1 generic
-const makeFillColor = (vals, layer, colors) => {
-  const [a, b, c, d, e, f] = vals
-  const [g, h, i, j, k, l, m] = colors
-
-  return ['step',
-    ['get', layer],
-    g,
-    a, h,
-    b, i,
-    c, j,
-    d, k,
-    e, l,
-    f, m
-  ]  
-}
-
 const wpStyle = (vals, layer) => {
   let [a, b, c, d, e, f] = vals
   return ['step',
@@ -465,6 +175,23 @@ const wpjobStyle = (vals, layer) => {
     e, '#5ab4ac',
     f, '#01665e'
   ]
+}
+
+// @update: can abstract ^ to this:
+const makeFillColor = (vals, layer, colors) => {
+  const [a, b, c, d, e, f] = vals
+  const [g, h, i, j, k, l, m] = colors
+
+  return ['step',
+    ['get', layer],
+    g,
+    a, h,
+    b, i,
+    c, j,
+    d, k,
+    e, l,
+    f, m
+  ]  
 }
 
 
@@ -560,190 +287,205 @@ const layerSpecs = {
   'PA-CurrentPEV-BG': {
     id: 'PA-CurrentPEV-BG',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_Cur
+    fillColor: pevStyle([], 'CurPEV')
   },
   'PA-CurrentPEV-Pop': {
     id: 'PA-CurrentPEV-Pop',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_CurPop
+    fillColor: pevStyle([], 'CuPEVPop')
   },
   'PA-CurrentPEV-HH': {
     id: 'PA-CurrentPEV-HH',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_CurHH
+    fillColor: pevStyle([], 'CuPEV_HU')
   },
   'PA-CurrentPEV-SM': {
     id: 'PA-CurrentPEV-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_CurSM
+    fillColor: pevStyle([], 'CuPEV_SM')
   },
   'PA-CurrentPEV-Veh': {
     id: 'PA-CurrentPEV-Veh',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_CurVeh
+    fillColor: pevStyle([], 'PerCuPEV')
   },
   'PA-FuturePEV-BG': {
     id: 'PA-FuturePEV-BG',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FutPev
+    fillColor: pevStyle([], 'FutPEV')
   },
   'PA-FuturePEV-Pop': {
     id: 'PA-FuturePEV-Pop',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FutPop
+    fillColor: pevStyle([], 'FuPEVPop')
   },
   'PA-FuturePEV-HH': {
     id: 'PA-FuturePEV-HH',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FutHH
+    fillColor: pevStyle([], 'FuPEV_HU')
   },
   'PA-FuturePEV-SM': {
     id: 'PA-FuturePEV-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FutSM
+    fillColor: pevStyle([], 'FUPEV_SM')
   },
   'PA-FuturePEV-Veh': {
     id: 'PA-FuturePEV-Veh',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FutVeh
+    fillColor: pevStyle([], 'PerFuPEV')
   },
   'PA-FC-KD-SM': {
     id: 'PA-FC-KD-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FC_KD_SM
+    fillColor: wpStyle([], 'FC_KD_SM')
   },
   'PA-FC-KD-JB': {
     id: 'PA-FC-KD-JB',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FC_KD_JB
+    fillColor: wpjobStyle([], 'FC_KD_JB')
   },
   'PA-FC-CE-SM': {
     id: 'PA-FC-CE-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FC_CE_SM
+    fillColor: wpStyle([], 'FC_CE_SM')
   },
   'PA-FC-CE-JB': {
     id: 'PA-FC-CE-JB',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_FC_CE_JB
+    fillColor: wpjobStyle([], 'FC_CE_JB')
   },
   'PA-PC-KD-SM': {
     id: 'PA-PC-KD-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_PC_KD_SM
+    fillColor: wpStyle([], 'PC_KD_SM')
   },
   'PA-PC-KD-JB': {
     id: 'PA-PC-KD-JB',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_PC_KD_JB
+    fillColor: wpjobStyle([], 'PC_KD_JB')
   },
   'PA-PC-CE-SM': {
     id: 'PA-PC-CE-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_PC_CE_SM
+    fillColor: wpStyle([], 'PC_CE_SM')
   },
   'PA-PC-CE-JB': {
     id: 'PA-PC-CE-JB',
     sourceLayer: 'pa_pev_bg',
-    fillColor: PA_PC_CE_JB
+    fillColor: wpjobStyle([], 'PC_CE_JB')
   },
 
   // New Jersey
   'NJ-CurrentPEV-BG': {
     id: 'NJ-CurrentPEV-BG',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_Cur
+    fillColor: pevStyle([], 'CurPEV')
   },
   'NJ-CurrentPEV-Pop': {
     id: 'NJ-CurrentPEV-Pop',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_CurPop
+    fillColor: pevStyle([], 'CuPEVPop')
   },
   'NJ-CurrentPEV-HH': {
     id: 'NJ-CurrentPEV-HH',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_CurHH
+    fillColor: pevStyle([], 'CuPEV_HU')
   },
   'NJ-CurrentPEV-SM': {
     id: 'NJ-CurrentPEV-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_CurSM
+    fillColor: pevStyle([], 'CuPEV_SM')
   },
   'NJ-CurrentPEV-Veh': {
     id: 'NJ-CurrentPEV-Veh',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_CurVeh
+    fillColor: pevStyle([], 'PerCuPEV')
   },
   'NJ-FuturePEV-BG': {
     id: 'NJ-FuturePEV-BG',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FutPev
+    fillColor: pevStyle([], 'FutPEV')
   },
   'NJ-FuturePEV-Pop': {
     id: 'NJ-FuturePEV-Pop',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FutPop
+    fillColor: pevStyle([], 'FuPEVPop')
   },
   'NJ-FuturePEV-HH': {
     id: 'NJ-FuturePEV-HH',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FutHH
+    fillColor: pevStyle([], 'FuPEV_HU')
   },
   'NJ-FuturePEV-SM': {
     id: 'NJ-FuturePEV-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FutSM
+    fillColor: pevStyle([], 'FUPEV_SM')
   },
   'NJ-FuturePEV-Veh': {
     id: 'NJ-FuturePEV-Veh',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FutVeh
+    fillColor: pevStyle([], 'PerFuPEV')
   },
   'NJ-FC-KD-SM': {
     id: 'NJ-FC-KD-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FC_KD_SM
+    fillColor: wpStyle([], 'FC_KD_SM')
   },
   'NJ-FC-KD-JB': {
     id: 'NJ-FC-KD-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FC_KD_JB
+    fillColor: wpjobStyle([], 'FC_KD_JB')
   },
   'NJ-FC-CE-SM': {
     id: 'NJ-FC-CE-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FC_CE_SM
+    fillColor: wpStyle([], 'FC_CE_SM')
   },
   'NJ-FC-CE-JB': {
     id: 'NJ-FC-CE-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_FC_CE_JB
+    fillColor: wpjobStyle([], 'FC_CE_JB')
   },
   'NJ-PC-KD-SM': {
     id: 'NJ-PC-KD-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_PC_KD_SM
+    fillColor: wpStyle([], 'PC_KD_SM')
   },
   'NJ-PC-KD-JB': {
     id: 'NJ-PC-KD-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_PC_KD_JB
+    fillColor: wpjobStyle([], 'PC_KD_JB')
   },
   'NJ-PC-CE-SM': {
     id: 'NJ-PC-CE-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_PC_CE_SM
+    fillColor: wpStyle([], 'PC_CE_SM')
   },
   'NJ-PC-CE-JB': {
     id: 'NJ-PC-CE-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: NJ_PC_CE_JB
+    fillColor: wpjobStyle([], 'PC_CE_JB')
   }
 }
 
 // layer generator to reduce hard coding of layers
 const makeSecondaryMapLayer = name => {
   const layerInfo = layerSpecs[name]
+
+  // @update: if breaking up into one obj per geo
+  // switch(name.split(['-'][0])) {
+  //   case 'NJ':
+  //     console.log('nj jawn')
+  //     // layerInfo = njSpecs[name]
+  //     break
+  //   case 'PA':
+  //     console.log('pa jawn')
+  //     // layerInfo = paSpecs[name]
+  //     break
+  //   default:
+  //     console.log('dvrpc jawn')
+  //     // layerInfo = dvrpcSpecs[name]
+  // }
 
   return {
       'id': layerInfo.id,
