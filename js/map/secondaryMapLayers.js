@@ -326,42 +326,42 @@ const layerSpecs = {
   'NJ-FC-KD-SM': {
     id: 'NJ-FC-KD-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpStyle([], 'FC_KD_SM')
+    fillColor: wpStyle([12.29,28.98,56.37,100.15,164.75,321.26], 'FC_KD_SM')
   },
   'NJ-FC-KD-JB': {
     id: 'NJ-FC-KD-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpjobStyle([], 'FC_KD_JB')
+    fillColor: wpjobStyle([0.0546,0.074,0.0898,0.1046,0.1228,0.1517], 'FC_KD_JB')
   },
   'NJ-FC-CE-SM': {
     id: 'NJ-FC-CE-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpStyle([], 'FC_CE_SM')
+    fillColor: wpStyle([1.802,4.2266,8.1766,14.1452,23.9576,44.3198], 'FC_CE_SM')
   },
   'NJ-FC-CE-JB': {
     id: 'NJ-FC-CE-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpjobStyle([], 'FC_CE_JB')
+    fillColor: wpjobStyle([0.0083,0.0108,0.0128,0.0145,0.0169,0.0209], 'FC_CE_JB')
   },
   'NJ-PC-KD-SM': {
     id: 'NJ-PC-KD-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpStyle([], 'PC_KD_SM')
+    fillColor: wpStyle([8.52,20.03,39.14,69.46,114.29,222.67], 'PC_KD_SM')
   },
   'NJ-PC-KD-JB': {
     id: 'NJ-PC-KD-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpjobStyle([], 'PC_KD_JB')
+    fillColor: wpjobStyle([0.0378,0.0512,0.0623,0.0724,0.0853,0.1052], 'PC_KD_JB')
   },
   'NJ-PC-CE-SM': {
     id: 'NJ-PC-CE-SM',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpStyle([], 'PC_CE_SM')
+    fillColor: wpStyle([1.2,2.83,5.48,9.5,15.96,29.68], 'PC_CE_SM')
   },
   'NJ-PC-CE-JB': {
     id: 'NJ-PC-CE-JB',
     sourceLayer: 'nj_pev_bg',
-    fillColor: wpjobStyle([], 'PC_CE_JB')
+    fillColor: wpjobStyle([0.0056,0.0072,0.0085,0.0097,0.0113,0.014], 'PC_CE_JB')
   }
 }
 
