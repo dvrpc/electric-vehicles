@@ -23,56 +23,6 @@ let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
 // DVRPC Layer Specs
-let FutPev = ['step',
-['get', 'FutPEV'],
-pev1,
-4.49, pev2,
-7.87, pev3,
-12.87,  pev4,
-21.39,  pev5,
-35.52,  pev6,
-72.51, pev7
-];
-let FutPop = ['step',
-['get', 'FuPEVPop'],
-pev1,
-.44, pev2,
-.72, pev3,
-1.13,  pev4,
-1.69,  pev5,
-2.54,  pev6,
-4.75, pev7
-];
-let FutHH = ['step',
-['get', 'FuPEV_HU'],
-pev1,
-1.25,pev2,
-1.94, pev3,
-2.94,  pev4,
-4.31,  pev5,
-6.66,  pev6,
-12.27, pev7
-];
-let FutSM = ['step',
-['get', 'FUPEV_SM'],
-pev1,
-26.97, pev2,
-45.94,pev3,
-67.38, pev4,
-92.56, pev5,
-134.82, pev6,
-238.44, pev7
-];
-let FutVeh = ['step',
-['get', 'PerFuPEV'],
-pev1,
-.0111, pev2,
-.0149, pev3,
-.01983, pev4,
-.02648, pev5,
-.03766, pev6,
-.06804, pev7
-];
 let FC_KD_SM = ['step',
 ['get', 'FC_KD_SM'],
 wp1,
@@ -582,27 +532,27 @@ const layerSpecs = {
   'DVRPC-FuturePEV-BG': {
     id: 'DVRPC-FuturePEV-BG',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FutPev
+    fillColor: pevStyle([4.49,7.87,12.87,21.39,35.52,72.51], 'FutPEV')
   },
   'DVRPC-FuturePEV-Pop': {
     id: 'DVRPC-FuturePEV-Pop',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FutPop
+    fillColor: pevStyle([0.44,0.72,1.13,1.69,2.54,4.75], 'FuPEVPop')
   },
   'DVRPC-FuturePEV-HH': {
     id: 'DVRPC-FuturePEV-HH',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FutHH
+    fillColor: pevStyle([1.25,1.94,2.94,4.31,6.66,12.27], 'FuPEV_HU')
   },
   'DVRPC-FuturePEV-SM': {
     id: 'DVRPC-FuturePEV-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FutSM
+    fillColor: pevStyle([26.97,45.94,67.38,92.56,134.82,238.44], 'FUPEV_SM')
   },
   'DVRPC-FuturePEV-Veh': {
     id: 'DVRPC-FuturePEV-Veh',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FutVeh
+    fillColor: pevStyle([.0111,.0149,.01983,.02648,.03766,.06804], 'PerFuPEV')
   },
   'DVRPC-FC-KD-SM': {
     id: 'DVRPC-FC-KD-SM',
