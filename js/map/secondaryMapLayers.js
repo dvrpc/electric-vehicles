@@ -23,16 +23,16 @@ let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
 // DVRPC Layer Specs
-let CurPop = ['step',
-['get', 'CuPEVPop'],
-pev1,
-.086, pev2,
-.138, pev3,
-.2085,  pev4,
-.303,  pev5,
-.45,  pev6,
-.71, pev7
-]
+// let CurPop = ['step',
+// ['get', 'CuPEVPop'],
+// pev1,
+// .086, pev2,
+// .138, pev3,
+// .2085,  pev4,
+// .303,  pev5,
+// .45,  pev6,
+// .71, pev7
+// ]
 let CurHH = ['step',
 ['get', 'CuPEV_HU'],
 pev1,
@@ -569,13 +569,178 @@ let NJ_PC_CE_JB = ['step',
 ];
 
 
+// @update make layer def fncs
+
+// make pev layers
+const pevStyle = (vals, layer) => {
+  let [a, b, c, d, e, f] = vals
+  return ['step',
+    ['get', layer],
+    '#f0f9e8',
+    a, '#ccebc5',
+    b, '#a8ddb5',
+    c, '#7bccc4',
+    d, '#4eb3d3',
+    e, '#2b8cbe',
+    f, '#08589e'
+  ]
+}
+
+// make wp layers
+
+
+// make wpjob layers
+
+
+const currPevStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'CurPEV'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const currPopStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'CurPEVPop'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const currHHStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'CurPEV_HU'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const currSMStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'CurPEV_SM'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const currVehStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'PerCuPEV'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+
+const futPevStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'FutPEV'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const futPopStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'FuPEVPop'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const futHHStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'FuPEV_HU'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const futSMStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'FUPEV_SM'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+const futVehStyle = vals => {
+  let [a, b, c, d, e, f] = vals
+  return `
+    ['step',
+    ['get', 'PerFuPEV'],
+    ${pev1},
+    ${a}, ${pev2},
+    ${b}, ${pev3},
+    ${c}, ${pev4},
+    ${d}, ${pev5},
+    ${e}, ${pev6},
+    ${f}, ${pev}7
+  `
+}
+
 
 // Obj to reference all geographic layer specs
 const layerSpecs = {
   'DVRPC-CurrentPEV-Pop': {
     id: 'DVRPC-CurrentPEV-Pop',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: CurPop
+    fillColor: pevStyle([.086,.138,.2085,.303,.45,.71], 'CuPEVPop')
   },
   'DVRPC-CurrentPEV-HH': {
     id: 'DVRPC-CurrentPEV-HH',
