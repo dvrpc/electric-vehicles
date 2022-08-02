@@ -50,7 +50,7 @@ body {
 }
 .legend-container {
     min-width: unset;
-    max-width: 150px;
+    max-width: 90%;
     min-height: unset;
 }
 .mapboxgl-ctrl-geocoder {
