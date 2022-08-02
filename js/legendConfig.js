@@ -7,8 +7,10 @@
         label: '' // legend icon label
         color: '' // hex code, rgb value, valid name, etc
     }
-
 */
+// @update: make similar fnc to in secondaryMapLayers
+
+
 const legendConfig = {
 
   // General / Overlay

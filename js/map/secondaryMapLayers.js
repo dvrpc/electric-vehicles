@@ -211,9 +211,9 @@ let PA_CurPop = ['step',
   pev1,
   0.07, pev2,
   0.1, pev3,
-  0.14,  pev4,
-  0.19,  pev5,
-  0.28,  pev6,
+  0.14, pev4,
+  0.19, pev5,
+  0.28, pev6,
   0.71, pev7
 ]
 let PA_CurHH = ['step',
