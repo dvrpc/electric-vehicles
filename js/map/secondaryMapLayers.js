@@ -28,110 +28,6 @@ const wpjobColors = [
 ]
 
 
-// Pennsylvannia Layer Specs
-let PA_Cur = ['step',
-  ['get', 'CurPEV'],
-  pev1,
-  .98, pev2,
-  1.64, pev3,
-  2.66, pev4,
-  4.22, pev5,
-  6.47, pev6,
-  11.83,pev7
-]
-let PA_CurPop = ['step',
-  ['get', 'CuPEVPop'],
-  pev1,
-  0.07, pev2,
-  0.1, pev3,
-  0.14, pev4,
-  0.19, pev5,
-  0.28, pev6,
-  0.71, pev7
-]
-let PA_CurHH = ['step',
-  ['get', 'CuPEV_HU'],
-  pev1,
-  0.183, pev2,
-  0.253, pev3,
-  0.347, pev4,
-  0.48, pev5,
-  0.69, pev6,
-  1.15, pev7
-];
-let PA_CurSM = ['step',
-  ['get', 'CuPEV_SM'],
-  pev1,
-  0.21, pev2,
-  1.07, pev3,
-  2.91, pev4,
-  5.41, pev5,
-  9.62, pev6,
-  19.36, pev7
-];
-let PA_CurVeh = ['step',
-  ['get', 'PerCuPEV'],
-  pev1,
-  0.001, pev2,
-  0.0015, pev3,
-  0.002, pev4,
-  0.0028, pev5,
-  0.0038, pev6,
-  0.0066, pev7
-];
-let PA_FutPev = ['step',
-  ['get', 'FutPEV'],
-  pev1,
-  , pev2,
-  , pev3,
-  , pev4,
-  , pev5,
-  , pev6,
-  , pev7
-];
-let PA_FutPop = ['step',
-  ['get', 'FuPEVPop'],
-  pev1,
-  0.73, pev2,
-  1.12, pev3,
-  1.53, pev4,
-  2.06, pev5,
-  2.93, pev6,
-  5.2, pev7
-];
-let PA_FutHH = ['step',
-  ['get', 'FuPEV_HU'],
-  pev1,
-  1.87, pev2,
-  2.78, pev3,
-  3.72, pev4,
-  5.02, pev5,
-  7.16, pev6,
-  12.91, pev7
-];
-let PA_FutSM = ['step',
-  ['get', 'FUPEV_SM'],
-  pev1,
-  2.63, pev2,
-  13.94, pev3,
-  37.71, pev4,
-  69.56, pev5,
-  120.07, pev6,
-  231.87, pev7
-];
-let PA_FutVeh = ['step',
-  ['get', 'PerFuPEV'],
-  pev1,
-  0.0135, pev2,
-  0.0177, pev3,
-  0.0225, pev4,
-  0.0291, pev5,
-  0.0409, pev6,
-  0.0716, pev7
-];
-
-
-// @update make layer def fncs
 // make pev layers
 const pevStyle = (vals, layer) => {
   let [a, b, c, d, e, f] = vals
@@ -287,28 +183,29 @@ const layerSpecs = {
   'PA-CurrentPEV-BG': {
     id: 'PA-CurrentPEV-BG',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'CurPEV')
+    fillColor: pevStyle([0.98,1.64,2.66,4.22,6.47,11.83], 'CurPEV')
   },
   'PA-CurrentPEV-Pop': {
     id: 'PA-CurrentPEV-Pop',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'CuPEVPop')
+    fillColor: pevStyle([0.07,0.1,0.14,0.19,0.28,0.71], 'CuPEVPop')
   },
   'PA-CurrentPEV-HH': {
     id: 'PA-CurrentPEV-HH',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'CuPEV_HU')
+    fillColor: pevStyle([0.183,0.253,0.347,0.48,0.69,1.15], 'CuPEV_HU')
   },
   'PA-CurrentPEV-SM': {
     id: 'PA-CurrentPEV-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'CuPEV_SM')
+    fillColor: pevStyle([0.21,1.07,2.91,5.41,9.62,19.36], 'CuPEV_SM')
   },
   'PA-CurrentPEV-Veh': {
     id: 'PA-CurrentPEV-Veh',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'PerCuPEV')
+    fillColor: pevStyle([0.001,0.0015,0.002,0.0028,0.0038,0.0066], 'PerCuPEV')
   },
+  // @update missing data
   'PA-FuturePEV-BG': {
     id: 'PA-FuturePEV-BG',
     sourceLayer: 'pa_pev_bg',
@@ -317,22 +214,22 @@ const layerSpecs = {
   'PA-FuturePEV-Pop': {
     id: 'PA-FuturePEV-Pop',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'FuPEVPop')
+    fillColor: pevStyle([0.73,1.12,1.53,2.06,2.93,5.2], 'FuPEVPop')
   },
   'PA-FuturePEV-HH': {
     id: 'PA-FuturePEV-HH',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'FuPEV_HU')
+    fillColor: pevStyle([1.87,2.78,3.72,5.02,7.16,12.91], 'FuPEV_HU')
   },
   'PA-FuturePEV-SM': {
     id: 'PA-FuturePEV-SM',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'FUPEV_SM')
+    fillColor: pevStyle([2.63,13.94,37.71,69.56,120.07,231.87], 'FUPEV_SM')
   },
   'PA-FuturePEV-Veh': {
     id: 'PA-FuturePEV-Veh',
     sourceLayer: 'pa_pev_bg',
-    fillColor: pevStyle([], 'PerFuPEV')
+    fillColor: pevStyle([0.0135,0.0177,0.0225,0.0291,0.0409,0.0716], 'PerFuPEV')
   },
   'PA-FC-KD-SM': {
     id: 'PA-FC-KD-SM',
@@ -538,7 +435,6 @@ const secondaryMapLayers = {
     'source': 'pev',
     'source-layer': 'pev_bg_centroids',
     'paint': {
-        // make circles larger as the user zooms from z12 to z22
         'circle-radius': {
           property: 'FutPEV',
           stops: [
@@ -596,25 +492,3 @@ const secondaryMapLayers = {
 }
 
 export { makeSecondaryMapLayer, secondaryMapLayers }
-
-
-  // 'PA-FuturePEV': {
-  //     'id': 'PA-FuturePEV',
-  //     'type': 'fill',
-  //     'source': 'pev',
-  //     'source-layer': 'pa_pev_bg',
-  //     'layout': {},
-  //     'paint': {
-  //       'fill-color': expressionPA1,
-  //       "fill-opacity": {
-  //         base: 9,
-  //         stops: [
-  //           [9, 1],
-  //           [11, .7],
-  //           [12, .65],
-  //           [13, .5],
-  //           [14, .4],
-  //         ],
-  //       },
-  //     }
-  //   },
