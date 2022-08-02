@@ -94,6 +94,8 @@ a {
   background: var(--theme-white);
   color: var(--theme-black);
   width: 50em;
+  max-height: 80%;
+  overflow-y: auto;
   padding: var(--padding-double);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
