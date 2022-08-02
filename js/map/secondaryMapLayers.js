@@ -1,68 +1,31 @@
-let pev1 = '#f0f9e8';
-let pev2 = '#ccebc5';
-let pev3 = '#a8ddb5';
-let pev4 = '#7bccc4';
-let pev5 = '#4eb3d3';
-let pev6 = '#2b8cbe';
-let pev7 = '#08589e';
-
-let wp1 = '#ffffd4';
-let wp2 = '#fed976';
-let wp3 = '#feb24c';
-let wp4 = '#fd8d3c';
-let wp5 = '#fc4e2a';
-let wp6 = '#e31a1c';
-let wp7 = '#b10026';
-
-let wpjob1 = '#8c510a';
-let wpjob2 = '#d8b365';
-let wpjob3 = '#f6e8c3';
-let wpjob4 = '#f5f5f5';
-let wpjob5 = '#c7eae5';
-let wpjob6 = '#5ab4ac';
-let wpjob7 = '#01665e';
-
-// DVRPC Layer Specs
-let PC_KD_SM = ['step',
-['get', 'PC_KD_SM'],
-wp1,
-8.52, wp2,
-20.03, wp3,
-39.14,  wp4,
-69.46,  wp5,
-114.29,  wp6,
-222.67, wp7
-];
-let PC_KD_JB = ['step',
-['get', 'PC_KD_JB'],
-wpjob1,
-.0378, wpjob2,
-.0512, wpjob3,
-.0623,  wpjob4,
-.0724,  wpjob5,
-.0853,  wpjob6,
-.1052, wpjob7
-];
-let PC_CE_SM = ['step',
-['get', 'PC_CE_SM'],
-wp1,
-1.2, wp2,
-2.83, wp3,
-5.48,  wp4,
-9.5,  wp5,
-15.96,  wp6,
-29.68, wp7
-];
-let PC_CE_JB = ['step',
-['get', 'PC_CE_JB'],
-wpjob1,
-.0056, wpjob2,
-.0072, wpjob3,
-.0085,  wpjob4,
-.0097,  wpjob5,
-.0113,  wpjob6,
-.014,   wpjob7
-];
+// @update for change to 1 generic fillColor fnc
+const pevColors = [
+  '#f0f9e8',
+  '#ccebc5',
+  '#a8ddb5',
+  '#7bccc4',
+  '#4eb3d3',
+  '#2b8cbe',
+  '#08589e'
+]
+const wpColors = [
+  '#ffffd4',
+  '#fed976',
+  '#feb24c',
+  '#fd8d3c',
+  '#fc4e2a',
+  '#e31a1c',
+  '#b10026'
+]
+const wpjobColors = [
+  '#8c510a',
+  '#d8b365',
+  '#f6e8c3',
+  '#f5f5f5',
+  '#c7eae5',
+  '#5ab4ac',
+  '#01665e'
+]
 
 
 // Pennsylvannia Layer Specs
@@ -457,6 +420,24 @@ const pevStyle = (vals, layer) => {
 }
 
 // make wp layers
+
+// @update: can abstract to 1 generic
+const makeFillColor = (vals, layer, colors) => {
+  const [a, b, c, d, e, f] = vals
+  const [g, h, i, j, k, l, m] = colors
+
+  return ['step',
+    ['get', layer],
+    g,
+    a, h,
+    b, i,
+    c, j,
+    d, k,
+    e, l,
+    f, m
+  ]  
+}
+
 const wpStyle = (vals, layer) => {
   let [a, b, c, d, e, f] = vals
   return ['step',
@@ -557,22 +538,22 @@ const layerSpecs = {
   'DVRPC-PC-KD-SM': {
     id: 'DVRPC-PC-KD-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: PC_KD_SM
+    fillColor: wpStyle([8.52,20.03,39.14,69.46,114.29,222.67], 'PC_KD_SM')
   },
   'DVRPC-PC-KD-JB': {
     id: 'DVRPC-PC-KD-JB',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: PC_KD_JB
+    fillColor: wpjobStyle([.0378,.0512,.0623,.0724,.0853,.1052], 'PC_KD_JB')
   },
   'DVRPC-PC-CE-SM': {
     id: 'DVRPC-PC-CE-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: PC_CE_SM
+    fillColor: wpStyle([1.2,2.83,5.48,9.5,15.96,29.68], 'PC_CE_SM')
   },
   'DVRPC-PC-CE-JB': {
     id: 'DVRPC-PC-CE-JB',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: PC_CE_JB
+    fillColor: wpjobStyle([.0056,.0072,.0085,.0097,.0113,.014], 'PC_CE_JB')
   },
 
   // Pennsylvannia 
