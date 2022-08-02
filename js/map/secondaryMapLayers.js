@@ -23,46 +23,6 @@ let wpjob6 = '#5ab4ac';
 let wpjob7 = '#01665e';
 
 // DVRPC Layer Specs
-let FC_KD_SM = ['step',
-['get', 'FC_KD_SM'],
-wp1,
-12.29, wp2,
-28.98, wp3,
-56.37, wp4,
-100.15,  wp5,
-164.75,  wp6,
-321.26,  wp7
-];
-let FC_KD_JB = ['step',
-['get', 'FC_KD_JB'],
- wpjob1 ,
-.054, wpjob2 ,
-.074, wpjob3 ,
-.0898, wpjob4 ,
-.1046,  wpjob5 ,
-.1228,  wpjob6 ,
-.1517,  wpjob7
-];
-let FC_CE_SM = ['step',
-['get', 'FC_CE_SM'],
-wp1,
-1.802, wp2,
-4.2266, wp3,
-8.1766, wp4,
-14.1452,  wp5,
-23.9576,  wp6,
-44.3198,  wp7
-];
-let FC_CE_JB = ['step',
-['get', 'FC_CE_JB'],
-wpjob1,
-.0083, wpjob2,
-.0108, wpjob3,
-.0128, wpjob4,
-.0145,  wpjob5,
-.0169,  wpjob6,
-.0209,  wpjob7
-];
 let PC_KD_SM = ['step',
 ['get', 'PC_KD_SM'],
 wp1,
@@ -498,12 +458,32 @@ const pevStyle = (vals, layer) => {
 
 // make wp layers
 const wpStyle = (vals, layer) => {
-
+  let [a, b, c, d, e, f] = vals
+  return ['step',
+    ['get', layer],
+    '#ffffd4',
+    a, '#fed976',
+    b, '#feb24c',
+    c, '#fd8d3c',
+    d, '#fc4e2a',
+    e, '#e31a1c',
+    f, '#b10026'
+  ]
 }
 
 // make wpjob layers
 const wpjobStyle = (vals, layer) => {
-
+  let [a, b, c, d, e, f] = vals
+  return ['step',
+    ['get', layer],
+    '#8c510a',
+    a, '#d8b365',
+    b, '#f6e8c3',
+    c, '#f5f5f5',
+    d, '#c7eae5',
+    e, '#5ab4ac',
+    f, '#01665e'
+  ]
 }
 
 
@@ -557,22 +537,22 @@ const layerSpecs = {
   'DVRPC-FC-KD-SM': {
     id: 'DVRPC-FC-KD-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FC_KD_SM
+    fillColor: wpStyle([12.29,28.98,56.37,100.15,164.75,321.26], 'FC_KD_SM')
   },
   'DVRPC-FC-KD-JB': {
     id: 'DVRPC-FC-KD-JB',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FC_KD_JB
+    fillColor: wpjobStyle([.054,.074,.0898,.1046,.1228,.1517], 'FC_KD_JB')
   },
   'DVRPC-FC-CE-SM': {
     id: 'DVRPC-FC-CE-SM',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FC_CE_SM
+    fillColor: wpStyle([1.802,4.2266,8.1766,14.1452,23.9576,44.3198], 'FC_CE_SM')
   },
   'DVRPC-FC-CE-JB': {
     id: 'DVRPC-FC-CE-JB',
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: FC_CE_JB
+    fillColor: wpjobStyle([.0083,.0108,.0128,.0145,.0169,.0209], 'FC_CE_JB')
   },
   'DVRPC-PC-KD-SM': {
     id: 'DVRPC-PC-KD-SM',
