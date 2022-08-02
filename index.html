@@ -161,26 +161,21 @@
               </select>
             </label>
 
-                <!-- @update where does this belong? -->
-                <!-- <option value="PA-FuturePEV" id="pa-future" >PA Future PEV</option> -->
-
-              <br />by Census Block Group
+            <br />by Census Block Group
           </form>
 
           <form id="overlay-form" class="sidebar-form">
-            <fieldset>
-              <legend>Overlay Layers</legend>
+            <h3 class="sidebar-h3 overlay-h3">Add Context</h3>
 
-              <label class="label-input">
-                <input type="checkbox" value="charging"/>
-               Charging Locations
-              </label>
-              <br />
-              <label class="label-input">
-                <input type="checkbox" value="dvrpc-projected" />
-                Projected - Number of PEV's
-              </label>
-            </fieldset>
+            <label class="label-input overlay-input">
+              <input type="checkbox" value="charging"/>
+              Charging Locations
+            </label>
+
+            <label class="label-input overlay-input">
+              <input type="checkbox" value="dvrpc-projected" />
+              Projected - Number of PEV's
+            </label>
           </form>
           
           <div id="mapStart" class='infoLeft' style="height:100vh;">

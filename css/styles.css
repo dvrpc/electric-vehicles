@@ -359,6 +359,7 @@ select {
   border-bottom-color: transparent;
   border-radius: var(--border-radius);
   margin-top: 15px;
+  margin-bottom: 0.25em;
   border-bottom-color: rgba(85, 85, 38, 0.333);
 }
 /*Information Zone */
@@ -463,6 +464,13 @@ select {
 }
 .data-value2 {
   font-size: medium;
+}
+.overlay-h3 {
+  margin-bottom: 15px;
+}
+.overlay-input {
+  display: block;
+  margin-bottom: 10px;
 }
 /* END Sidebar */
 
