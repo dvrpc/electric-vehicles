@@ -264,26 +264,26 @@ const layerSpecs = {
 }
 
 // layer generator to reduce hard coding of layers
-const makeSecondaryMapLayer = name => {
-  const layerInfo = layerSpecs[name]
+const makeSecondaryMapLayer = id => {
+  const layerInfo = layerSpecs[id]
 
   // @update: if breaking up into one obj per geo
-  // switch(name.split(['-'][0])) {
+  // switch(id.split(['-'][0])) {
   //   case 'NJ':
-  //     console.log('nj jawn')
-  //     // layerInfo = njSpecs[name]
+  //     console.log('nj jawn', id)
+  //     // layerInfo = njSpecs[id]
   //     break
   //   case 'PA':
-  //     console.log('pa jawn')
-  //     // layerInfo = paSpecs[name]
+  //     console.log('pa jawn', id)
+  //     // layerInfo = paSpecs[id]
   //     break
   //   default:
-  //     console.log('dvrpc jawn')
-  //     // layerInfo = dvrpcSpecs[name]
+  //     console.log('dvrpc jawn', id)
+  //     // layerInfo = dvrpcSpecs[id]
   // }
 
   return {
-      'id': name,
+      'id': id,
       'type': 'fill',
       'source': 'pev',
       'source-layer': layerInfo.sourceLayer,
