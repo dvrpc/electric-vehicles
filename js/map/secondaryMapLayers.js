@@ -1,3 +1,5 @@
+import { stops, colors } from './mapPaint.js'
+
 // might just replace this w/old objs?? ugh
 const makeFillColor = (vals, layer, colors) => {
   const [a, b, c, d, e, f] = vals
@@ -79,7 +81,7 @@ const wpjobColors = [
 const layerSpecs = {
   'DVRPC-CurrentPEV-Pop': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.086,.138,.2085,.303,.45,.71], 'CuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.curPop, 'CuPEVPop', colors.pev)
   },
   'DVRPC-CurrentPEV-HH': {
     sourceLayer: 'dvrpc_pev_bg',
@@ -153,7 +155,7 @@ const layerSpecs = {
   },
   'PA-CurrentPEV-Pop': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.07,0.1,0.14,0.19,0.28,0.71], 'CuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.curPop, 'CuPEVPop', colors.pev)
   },
   'PA-CurrentPEV-HH': {
     sourceLayer: 'pa_pev_bg',
@@ -228,7 +230,7 @@ const layerSpecs = {
   },
   'NJ-CurrentPEV-Pop': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'CuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.curPop, 'CuPEVPop', colors.pev)
   },
   'NJ-CurrentPEV-HH': {
     sourceLayer: 'nj_pev_bg',
