@@ -1,6 +1,5 @@
 import { stops, colors } from './mapPaint.js'
 
-// might just replace this w/old objs?? ugh
 const makeFillColor = (vals, layer, colors) => {
   const [a, b, c, d, e, f] = vals
   const [g, h, i, j, k, l, m] = colors
@@ -17,7 +16,6 @@ const makeFillColor = (vals, layer, colors) => {
   ]  
 }
 
-// layer generator to reduce hard coding of layers
 const makeSecondaryMapLayer = id => {
   const layerInfo = layerSpecs[id]
 
@@ -44,39 +42,6 @@ const makeSecondaryMapLayer = id => {
   }
 }
 
-// @update: implement consistent scales.
-// each set of layer type (PEV current, PEV future, workplace free and workplace paid)
-// should have a single set of steps defined. Re-incorporate objs from old branch and
-// refactor the fillColor param to reference those. Do the same for the layerConfig fncs. 
-
-const pevColors = [
-  '#f0f9e8',
-  '#ccebc5',
-  '#a8ddb5',
-  '#7bccc4',
-  '#4eb3d3',
-  '#2b8cbe',
-  '#08589e'
-]
-const wpColors = [
-  '#ffffd4',
-  '#fed976',
-  '#feb24c',
-  '#fd8d3c',
-  '#fc4e2a',
-  '#e31a1c',
-  '#b10026'
-]
-const wpjobColors = [
-  '#8c510a',
-  '#d8b365',
-  '#f6e8c3',
-  '#f5f5f5',
-  '#c7eae5',
-  '#5ab4ac',
-  '#01665e'
-]
-
 // Obj to reference all geographic layer specs
 const layerSpecs = {
   'DVRPC-CurrentPEV-Pop': {
@@ -97,23 +62,23 @@ const layerSpecs = {
   },
   'DVRPC-FuturePEV-BG': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([4.49,7.87,12.87,21.39,35.52,72.51], 'FutPEV', pevColors)
+    fillColor: makeFillColor(stops.fut, 'FutPEV', colors.pev)
   },
   'DVRPC-FuturePEV-Pop': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([0.44,0.72,1.13,1.69,2.54,4.75], 'FuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.futPop, 'FuPEVPop', colors.pev)
   },
   'DVRPC-FuturePEV-HH': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([1.25,1.94,2.94,4.31,6.66,12.27], 'FuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.futHH, 'FuPEV_HU', colors.pev)
   },
   'DVRPC-FuturePEV-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([26.97,45.94,67.38,92.56,134.82,238.44], 'FUPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.futSM, 'FUPEV_SM', colors.pev)
   },
   'DVRPC-FuturePEV-Veh': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.0111,.0149,.01983,.02648,.03766,.06804], 'PerFuPEV', pevColors)
+    fillColor: makeFillColor(stops.futVeh, 'PerFuPEV', colors.pev)
   },
   'DVRPC-FC-KD-SM': {
     sourceLayer: 'dvrpc_pev_bg',
@@ -191,35 +156,35 @@ const layerSpecs = {
   },
   'PA-FC-KD-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'FC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_KD_SM, 'FC_KD_SM', colors.wp)
   },
   'PA-FC-KD-JB': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'FC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_KD_JB, 'FC_KD_JB', colors.wpJob)
   },
   'PA-FC-CE-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'FC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_CE_SM, 'FC_CE_SM', colors.wp)
   },
   'PA-FC-CE-JB': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'FC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_CE_JB, 'FC_CE_JB', colors.wpJob)
   },
   'PA-PC-KD-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'PC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_KD_SM, 'PC_KD_SM', colors.wp)
   },
   'PA-PC-KD-JB': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'PC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_KD_JB, 'PC_KD_JB', colors.wpJob)
   },
   'PA-PC-CE-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'PC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_CE_SM, 'PC_CE_SM', colors.wp)
   },
   'PA-PC-CE-JB': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'PC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_CE_JB, 'PC_CE_JB', colors.wpJob)
   },
 
   // New Jersey
@@ -245,55 +210,55 @@ const layerSpecs = {
   },
   'NJ-FuturePEV-BG': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'FutPEV', pevColors)
+    fillColor: makeFillColor(stops.fut, 'FutPEV', colors.pev)
   },
   'NJ-FuturePEV-Pop': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'FuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.futPop, 'FuPEVPop', colors.pev)
   },
   'NJ-FuturePEV-HH': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'FuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.futHH, 'FuPEV_HU', colors.pev)
   },
   'NJ-FuturePEV-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'FUPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.futSM, 'FUPEV_SM', colors.pev)
   },
   'NJ-FuturePEV-Veh': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'PerFuPEV', pevColors)
+    fillColor: makeFillColor(stops.futVeh, 'PerFuPEV', colors.pev)
   },
   'NJ-FC-KD-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([12.29,28.98,56.37,100.15,164.75,321.26], 'FC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_KD_SM, 'FC_KD_SM', colors.wp)
   },
   'NJ-FC-KD-JB': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([0.0546,0.074,0.0898,0.1046,0.1228,0.1517], 'FC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_KD_JB, 'FC_KD_JB', colors.wpJob)
   },
   'NJ-FC-CE-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([1.802,4.2266,8.1766,14.1452,23.9576,44.3198], 'FC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_CE_SM, 'FC_CE_SM', colors.wp)
   },
   'NJ-FC-CE-JB': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([0.0083,0.0108,0.0128,0.0145,0.0169,0.0209], 'FC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_CE_JB, 'FC_CE_JB', colors.wpJob)
   },
   'NJ-PC-KD-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([8.52,20.03,39.14,69.46,114.29,222.67], 'PC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_KD_SM, 'PC_KD_SM', colors.wp)
   },
   'NJ-PC-KD-JB': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([0.0378,0.0512,0.0623,0.0724,0.0853,0.1052], 'PC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_KD_JB, 'PC_KD_JB', colors.wpJob)
   },
   'NJ-PC-CE-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([1.2,2.83,5.48,9.5,15.96,29.68], 'PC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_CE_SM, 'PC_CE_SM', colors.wp)
   },
   'NJ-PC-CE-JB': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([0.0056,0.0072,0.0085,0.0097,0.0113,0.014], 'PC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_CE_JB, 'PC_CE_JB', colors.wpJob)
   }
 }
 
