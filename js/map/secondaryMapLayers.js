@@ -267,21 +267,6 @@ const layerSpecs = {
 const makeSecondaryMapLayer = id => {
   const layerInfo = layerSpecs[id]
 
-  // @update: if breaking up into one obj per geo
-  // switch(id.split(['-'][0])) {
-  //   case 'NJ':
-  //     console.log('nj jawn', id)
-  //     // layerInfo = njSpecs[id]
-  //     break
-  //   case 'PA':
-  //     console.log('pa jawn', id)
-  //     // layerInfo = paSpecs[id]
-  //     break
-  //   default:
-  //     console.log('dvrpc jawn', id)
-  //     // layerInfo = dvrpcSpecs[id]
-  // }
-
   return {
       'id': id,
       'type': 'fill',
