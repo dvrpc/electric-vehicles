@@ -93,7 +93,11 @@ const constructMainQuery = map => {
   // update localStorage
   localStorage.setItem('active-main-layer', newLayerId)
 
-  return newLayerId
+  // return generic id to create legend
+  let genericID = newLayerId.split('-')
+  genericID.shift()
+  genericID = genericID.join('-')
+  return genericID
 }
 
 const handleForms = (type, toggles, map) => {

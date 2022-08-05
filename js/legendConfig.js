@@ -1,28 +1,4 @@
-/* object with legend info
-
-    @entries:
-    // entry key corresponds to value on the toggle element
-    'value': {
-        iconType: '' // symbology. 'lines' and 'circles' included in styles. Can be customized
-        label: '' // legend icon label
-        color: '' // hex code, rgb value, valid name, etc
-    }
-*/
-/* @update: fnc to generate legends
-    // switch(legendType) {
-      case 'circle':
-        index legendConfig obj
-        break
-      default (scale)
-        invoke legendMaking fnc w/geo id and layer type 
-          // go goes in parentheses as param - ex (DVRPC region)
-          // layer type indexes legendConfigTwo (name tbd) 
-          // which is an obj of fncs that return layer legend objs
-    }
-*/
-
 const legendConfig = {
-
   // General / Overlay
   "charging": {
     legendType:"circle",
@@ -31,12 +7,12 @@ const legendConfig = {
     color: "#c8ffaf",
   },
   // @update what is? overlay layer?
-  // "dvrpc-current": {
-  //   legendType:"circle",
-  //   iconType: "circle",
-  //   label: "Current PEVs (Centroid)",
-  //   color: "#EA563D",
-  // },
+  "dvrpc-current": {
+    legendType:"circle",
+    iconType: "circle",
+    label: "Current PEVs (Centroid)",
+    color: "#EA563D",
+  },
   "dvrpc-projected": {
     legendType:"circle",
     iconType: "circle",
@@ -44,9 +20,9 @@ const legendConfig = {
     color: "#3182D1",
   },
 
-  // DVRPC
-  "DVRPC-CurrentPEV-BG": {
-    label: "Current PEVs (DVRPC region)",
+  // Geo layers
+  "CurrentPEV-BG": {
+    label: "Current PEVs",
     legendType:"scale",
     class:"gb",
     legendLable1:"0.98",
@@ -57,8 +33,8 @@ const legendConfig = {
     legendLable6:"11.83",
     legendLable7:"105"
   },
-  "DVRPC-CurrentPEV-Pop": {
-    label: "Current PEVs per 100 People (DVRPC region)",
+  "CurrentPEV-Pop": {
+    label: "Current PEVs per 100 People",
     legendType:"scale",
     class:"gb",
     legendLable1:"0.08%",
@@ -69,8 +45,8 @@ const legendConfig = {
     legendLable6:"0.71%",
     legendLable7:"3.74%"
   },
-  "DVRPC-CurrentPEV-HH": {
-    label: "Current PEVs per Household (DVRPC region)",
+  "CurrentPEV-HH": {
+    label: "Current PEVs per Household",
     legendType:"scale",
     class:"gb",
     legendLable1:"0.23%",
@@ -81,8 +57,8 @@ const legendConfig = {
     legendLable6:"1.89%",
     legendLable7:"11.02%"
   },
-  "DVRPC-CurrentPEV-SM": {
-    label: "Current PEVs per Sq. Mi. (DVRPC region)",
+  "CurrentPEV-SM": {
+    label: "Current PEVs per Sq. Mi.",
     legendType:"scale",
     class:"gb",
     legendLable1:"2.98",
@@ -93,8 +69,8 @@ const legendConfig = {
     legendLable6:"33.71",
     legendLable7:"760.41"
   },
-  "DVRPC-CurrentPEV-Veh": {
-    label: "Percentage of Passengers that are PEVs (DVRPC region)",
+  "CurrentPEV-Veh": {
+    label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
     class:"gb",
     legendLable1:"0.16%",
@@ -105,8 +81,8 @@ const legendConfig = {
     legendLable6:"1.03%",
     legendLable7:"5.78%"
   },
-  "DVRPC-FuturePEV-BG": {
-    label: "Future PEVs (DVRPC region)",
+  "FuturePEV-BG": {
+    label: "Future PEVs",
     legendType:"scale",
     class:"gb",
     legendLable1:"4.49",
@@ -117,8 +93,8 @@ const legendConfig = {
     legendLable6:"72.51",
     legendLable7:"1,233.16"
   },
-  "DVRPC-FuturePEV-Pop": {
-    label: "Future PEVs per 100 People (DVRPC region)",
+  "FuturePEV-Pop": {
+    label: "Future PEVs per 100 People",
     legendType:"scale",
     class:"gb",
     legendLable1:"0.44%",
@@ -129,8 +105,8 @@ const legendConfig = {
     legendLable6:"4.75%",
     legendLable7:"56.12%"
   },
-  "DVRPC-FuturePEV-HH": {
-    label: "Future PEVs per Household (DVRPC region)",
+  "FuturePEV-HH": {
+    label: "Future PEVs per Household",
     legendType:"scale",
     class:"gb",
     legendLable1:"1.25%",
@@ -141,8 +117,8 @@ const legendConfig = {
     legendLable6:"12.27%",
     legendLable7:"133.81%"
   },
-  "DVRPC-FuturePEV-SM": {
-    label: "Future PEVs per Sq. Mi. (DVRPC region)",
+  "FuturePEV-SM": {
+    label: "Future PEVs per Sq. Mi.",
     legendType:"scale",
     class:"gb",
     legendLable1:"26.97",
@@ -153,8 +129,8 @@ const legendConfig = {
     legendLable6:"238.44",
     legendLable7:"10,856.59"
   },
-  "DVRPC-FuturePEV-Veh": {
-    label: "Percentage of Passengers that are PEVs (DVRPC region)",
+  "FuturePEV-Veh": {
+    label: "Percentage of Passengers that are PEVs",
     legendType:"scale",
     class:"gb",
     legendLable1:"1.11%",
@@ -165,8 +141,8 @@ const legendConfig = {
     legendLable6:"6.80%",
     legendLable7:"66.76%"
   },
-  "DVRPC-FC-KD-SM": {
-    label: "Free Charging - kWh of Demand per Sq. Mi. (DVRPC region)",
+  "FC-KD-SM": {
+    label: "Free Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     legendLable1:"12.29",
@@ -178,8 +154,8 @@ const legendConfig = {
     legendLable7:"64,382.29",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
-  "DVRPC-FC-KD-JB": {
-    label: "Free Charging - kWh of Demand per Job (DVRPC region)",
+  "FC-KD-JB": {
+    label: "Free Charging - kWh of Demand per Job",
     legendType:"scale",
     class:"brg",
     legendLable1:"0.05",
@@ -191,8 +167,8 @@ const legendConfig = {
     legendLable7:"0.71",
     note:"kWh of Workplace Charging Demand per Job"
   },
-  "DVRPC-FC-CE-SM": {
-    label: "Free Charging - Charging Event per Sq. Mi. (DVRPC region)",
+  "FC-CE-SM": {
+    label: "Free Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     legendLable1:"1.80",
@@ -204,8 +180,8 @@ const legendConfig = {
     legendLable7:"9,048.82",
     note:"Number of Workplace Charging Events per Square Mile"
   },
-  "DVRPC-FC-CE-JB": {
-    label: "Free Charging - Charging Event per Job (DVRPC region)",
+  "FC-CE-JB": {
+    label: "Free Charging - Charging Event per Job",
     legendType:"scale",
     class:"brg",
     legendLable1:"0.008",
@@ -217,8 +193,8 @@ const legendConfig = {
     legendLable7:"0.111",
     note:"Number of Workplace Charging Events per Job"
   },
-  "DVRPC-PC-KD-SM": {
-    label: "Paid Charging - kWh of Demand per Sq. Mi. (DVRPC region)",
+  "PC-KD-SM": {
+    label: "Paid Charging - kWh of Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     legendLable1:"8.52",
@@ -230,8 +206,8 @@ const legendConfig = {
     legendLable7:"44,668.03",
     note:"kWh of Workplace Charging Demand per Square Mile"
   },
-  "DVRPC-PC-KD-JB": {
-    label: "Paid Charging - kWh of Demand per Job (DVRPC region)",
+  "PC-KD-JB": {
+    label: "Paid Charging - kWh of Demand per Job",
     legendType:"scale",
     class:"brg",
     legendLable1:"0.037",
@@ -243,8 +219,8 @@ const legendConfig = {
     legendLable7:"0.493",
     note:"kWh of Workplace Charging Demand per Job"
   },
-  "DVRPC-PC-CE-SM": {
-    label: "Paid Charging - Charging Event per Sq. Mi. (DVRPC region)",
+  "PC-CE-SM": {
+    label: "Paid Charging - Charging Event per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     legendLable1:"1.2",
@@ -256,8 +232,8 @@ const legendConfig = {
     legendLable7:"6,080.94",
     note:"Number of Workplace Charging Events per Square Mile"
   },
-  "DVRPC-PC-CE-JB": {
-    label: "Paid Charging - Charging Event per Job (DVRPC region)",
+  "PC-CE-JB": {
+    label: "Paid Charging - Charging Event per Job",
     legendType:"scale",
     class:"brg",
     legendLable1:"0.005",
@@ -268,132 +244,7 @@ const legendConfig = {
     legendLable6:"0.014",
     legendLable7:"0.074",
     note:"Number of Workplace Charging Events per Job"
-  },
-
-  // New Jersey
-  "NJ-CurrentPEV-BG": {
-    label: "Current PEVs (New Jersey)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.98",
-    legendLable2:"1.64",
-    legendLable3:"2.66",
-    legendLable4:"4.22",
-    legendLable5:"6.47",
-    legendLabel6:"11.83",
-    legendLabel7:"104.9"
-  },
-  "NJ-CurrentPEV-Pop": {
-    label: "Current PEVs per 100 People (New Jersey)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.086%",
-    legendLable2:"0.138%",
-    legendLable3:"0.2085%",
-    legendLable4:"0.303%",
-    legendLable5:"0.45%",
-    legendLabel6:"0.71%",
-    legendLabel7:"3.74%"
-  },
-  "NJ-CurrentPEV-HH": {
-    label: "Current PEVs per Household (New Jersey)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.229%",
-    legendLable2:"0.355%",
-    legendLable3:"0.548%",
-    legendLable4:"0.7783%",
-    legendLable5:"1.16%",
-    legendLable6:"1.89%",
-    legendLable7:"11.019%"
-  },
-  "NJ-CurrentPEV-SM": {
-    label: "Current PEVs per Sq. Mi. (New Jersey)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"2.98",
-    legendLable2:"5.25",
-    legendLable3:"8.01",
-    legendLable4:"11.9",
-    legendLable5:"17.65",
-    legendLable6:"33.71",
-    legendLable7:"760.41"
-  },
-  "NJ-CurrentPEV-Veh": {
-    label: "Percentage of Passengers that are PEVs (New Jersey)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.0016%",
-    legendLable2:"0.0024%",
-    legendLable3:"0.0032%",
-    legendLable4:"0.0044%",
-    legendLable5:"0.006543%",
-    legendLable6:"0.0103%",
-    legendLable7:"0.057866%"
-  },
-
-
-  // Pennsylvannia
-  "PA-CurrentPEV-BG": {
-    label: "Current PEVs (Pennsylvannia) FAKE DATA - DVRPC JAWN STILL",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.98",
-    legendLable2:"1.64",
-    legendLable3:"2.66",
-    legendLable4:"4.22",
-    legendLable5:"6.47",
-    legendLable6:"11.83",
-    legendLable7:"105"
-  },
-  "PA-CurrentPEV-Pop": {
-    label: "Current PEVs per 100 People (Pennsylvannia)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.07%",
-    legendLable2:"0.1%",
-    legendLable3:"0.14%",
-    legendLable4:"0.19%",
-    legendLable5:"0.28%",
-    legendLable6:"0.71%",
-    legendLable7:"3.74%"
-  },
-  "PA-CurrentPEV-HH": {
-    label: "Current PEVs per Household (Pennsylvannia)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.183%",
-    legendLable2:"0.253%",
-    legendLable3:"0.347%",
-    legendLable4:"0.48%",
-    legendLable5:"0.69%",
-    legendLable6:"1.15%",
-    legendLable7:"9.78%"
-  },
-  "PA-CurrentPEV-SM": {
-    label: "Current PEVs per Sq. Mi. (Pennsylvannia)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.21",
-    legendLable2:"1.07",
-    legendLable3:"2.91",
-    legendLable4:"5.41",
-    legendLable5:"9.62",
-    legendLable6:"19.36",
-    legendLable7:"760.41"
-  },
-  "PA-CurrentPEV-Veh": {
-    label: "Percentage of Passengers that are PEVs (Pennsylvannia)",
-    legendType:"scale",
-    class:"gb",
-    legendLable1:"0.01%",
-    legendLable2:"0.015%",
-    legendLable3:"0.02%",
-    legendLable4:"0.028%",
-    legendLable5:"0.038%",
-    legendLable6:"0.066%",
-    legendLable7:"0.43%"
-  },
+  }
 };
 
 export default legendConfig;

@@ -32,26 +32,27 @@ map.on('load', () => {
     togglerNJ(map)
     togglerDVRPC(map)
 
-    handleLegend(['DVRPC-CurrentPEV-BG'], legendContainer)
+    handleLegend(['CurrentPEV-BG'], legendContainer)
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     mainForm.onchange = () => {
         // update map & return layer id
-        let layerLegendID = handleForms('main', null, map)
+        let genericLayerID = handleForms('main', null, map)
         
         // clear any clicked queries
         mapDetails.style.display = 'none'
         mapStart.style.display = 'inline-block'
 
-        handleLegend([layerLegendID], legendContainer)
+        handleLegend([genericLayerID], legendContainer)
     }
 
     overlayForm.onchange = () => {
         const activeOverlayInputs = handleForms('input', overlayInputs, map)
         activeOverlayInputs.push(localStorage.getItem('active-main-layer'))
-        handleLegend(activeOverlayInputs, legendContainer)
+        console.log(activeOverlayInputs)
+        // handleLegend(activeOverlayInputs, legendContainer)
     }
 
     var hoveredStateId = null;
