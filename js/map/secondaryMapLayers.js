@@ -85,15 +85,15 @@ const layerSpecs = {
   },
   'DVRPC-CurrentPEV-HH': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.229,.355,.548,.7783,1.16,1.89], 'CuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.curHH, 'CuPEV_HU', colors.pev)
   },
   'DVRPC-CurrentPEV-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([2.98,5.25,8.01,11.9,17.65,33.71], 'CuPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.curSM, 'CuPEV_SM', colors.pev)
   },
   'DVRPC-CurrentPEV-Veh': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.0016,.0024,.0032,.0044,.0065,.0103], 'PerCuPEV', pevColors)
+    fillColor: makeFillColor(stops.curVeh, 'PerCuPEV', colors.pev)
   },
   'DVRPC-FuturePEV-BG': {
     sourceLayer: 'dvrpc_pev_bg',
@@ -151,7 +151,7 @@ const layerSpecs = {
   // Pennsylvannia 
   'PA-CurrentPEV-BG': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.98,1.64,2.66,4.22,6.47,11.83], 'CurPEV', pevColors)
+    fillColor: makeFillColor(stops.cur, 'CurPEV', colors.pev)
   },
   'PA-CurrentPEV-Pop': {
     sourceLayer: 'pa_pev_bg',
@@ -159,36 +159,35 @@ const layerSpecs = {
   },
   'PA-CurrentPEV-HH': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.183,0.253,0.347,0.48,0.69,1.15], 'CuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.curHH, 'CuPEV_HU', colors.pev)
   },
   'PA-CurrentPEV-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.21,1.07,2.91,5.41,9.62,19.36], 'CuPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.curSM, 'CuPEV_SM', colors.pev)
   },
   'PA-CurrentPEV-Veh': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.001,0.0015,0.002,0.0028,0.0038,0.0066], 'PerCuPEV', pevColors)
+    fillColor: makeFillColor(stops.curVeh, 'PerCuPEV', colors.pev)
   },
-  // @update missing data
   'PA-FuturePEV-BG': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([], 'FutPEV', pevColors)
+    fillColor: makeFillColor(stops.fut, 'FutPEV', colors.pev)
   },
   'PA-FuturePEV-Pop': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.73,1.12,1.53,2.06,2.93,5.2], 'FuPEVPop', pevColors)
+    fillColor: makeFillColor(stops.futPop, 'FuPEVPop', colors.pev)
   },
   'PA-FuturePEV-HH': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([1.87,2.78,3.72,5.02,7.16,12.91], 'FuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.futHH, 'FuPEV_HU', colors.pev)
   },
   'PA-FuturePEV-SM': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([2.63,13.94,37.71,69.56,120.07,231.87], 'FUPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.futSM, 'FUPEV_SM', colors.pev)
   },
   'PA-FuturePEV-Veh': {
     sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor([0.0135,0.0177,0.0225,0.0291,0.0409,0.0716], 'PerFuPEV', pevColors)
+    fillColor: makeFillColor(stops.futVeh, 'PerFuPEV', colors.pev)
   },
   'PA-FC-KD-SM': {
     sourceLayer: 'pa_pev_bg',
@@ -226,7 +225,7 @@ const layerSpecs = {
   // New Jersey
   'NJ-CurrentPEV-BG': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'CurPEV', pevColors)
+    fillColor: makeFillColor(stops.cur, 'CurPEV', colors.pev)
   },
   'NJ-CurrentPEV-Pop': {
     sourceLayer: 'nj_pev_bg',
@@ -234,15 +233,15 @@ const layerSpecs = {
   },
   'NJ-CurrentPEV-HH': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'CuPEV_HU', pevColors)
+    fillColor: makeFillColor(stops.curHH, 'CuPEV_HU', colors.pev)
   },
   'NJ-CurrentPEV-SM': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'CuPEV_SM', pevColors)
+    fillColor: makeFillColor(stops.curSM, 'CuPEV_SM', colors.pev)
   },
   'NJ-CurrentPEV-Veh': {
     sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor([], 'PerCuPEV', pevColors)
+    fillColor: makeFillColor(stops.curVeh, 'PerCuPEV', colors.pev)
   },
   'NJ-FuturePEV-BG': {
     sourceLayer: 'nj_pev_bg',
