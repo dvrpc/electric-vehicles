@@ -117,35 +117,35 @@ const layerSpecs = {
   },
   'DVRPC-FC-KD-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([12.29,28.98,56.37,100.15,164.75,321.26], 'FC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_KD_SM, 'FC_KD_SM', colors.wp)
   },
   'DVRPC-FC-KD-JB': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.054,.074,.0898,.1046,.1228,.1517], 'FC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_KD_JB, 'FC_KD_JB', colors.wpJob)
   },
   'DVRPC-FC-CE-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([1.802,4.2266,8.1766,14.1452,23.9576,44.3198], 'FC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.FC_CE_SM, 'FC_CE_SM', colors.wp)
   },
   'DVRPC-FC-CE-JB': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.0083,.0108,.0128,.0145,.0169,.0209], 'FC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.FC_CE_JB, 'FC_CE_JB', colors.wpJob)
   },
   'DVRPC-PC-KD-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([8.52,20.03,39.14,69.46,114.29,222.67], 'PC_KD_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_KD_SM, 'PC_KD_SM', colors.wp)
   },
   'DVRPC-PC-KD-JB': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.0378,.0512,.0623,.0724,.0853,.1052], 'PC_KD_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_KD_JB, 'PC_KD_JB', colors.wpJob)
   },
   'DVRPC-PC-CE-SM': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([1.2,2.83,5.48,9.5,15.96,29.68], 'PC_CE_SM', wpColors)
+    fillColor: makeFillColor(stops.PC_CE_SM, 'PC_CE_SM', colors.wp)
   },
   'DVRPC-PC-CE-JB': {
     sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor([.0056,.0072,.0085,.0097,.0113,.014], 'PC_CE_JB', wpjobColors)
+    fillColor: makeFillColor(stops.PC_CE_JB, 'PC_CE_JB', colors.wpJob)
   },
 
   // Pennsylvannia 
