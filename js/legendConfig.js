@@ -8,8 +8,18 @@
         color: '' // hex code, rgb value, valid name, etc
     }
 */
-// @update: make similar fnc to in secondaryMapLayers
-
+/* @update: fnc to generate legends
+    // switch(legendType) {
+      case 'circle':
+        index legendConfig obj
+        break
+      default (scale)
+        invoke legendMaking fnc w/geo id and layer type 
+          // go goes in parentheses as param - ex (DVRPC region)
+          // layer type indexes legendConfigTwo (name tbd) 
+          // which is an obj of fncs that return layer legend objs
+    }
+*/
 
 const legendConfig = {
 

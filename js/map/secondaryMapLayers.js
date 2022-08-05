@@ -1,3 +1,52 @@
+// might just replace this w/old objs?? ugh
+const makeFillColor = (vals, layer, colors) => {
+  const [a, b, c, d, e, f] = vals
+  const [g, h, i, j, k, l, m] = colors
+
+  return ['step',
+    ['get', layer],
+    g,
+    a, h,
+    b, i,
+    c, j,
+    d, k,
+    e, l,
+    f, m
+  ]  
+}
+
+// layer generator to reduce hard coding of layers
+const makeSecondaryMapLayer = id => {
+  const layerInfo = layerSpecs[id]
+
+  return {
+      'id': id,
+      'type': 'fill',
+      'source': 'pev',
+      'source-layer': layerInfo.sourceLayer,
+      'layout': {},
+      'paint': {
+        'fill-color': layerInfo.fillColor,
+        "fill-opacity": {
+          base: 9,
+          stops: [
+            [9, 1],
+            [10, .8],
+            [11, .7],
+            [12, .65],
+            [13, .5],
+            [14, .4]
+          ]
+        }
+      }
+  }
+}
+
+// @update: implement consistent scales.
+// each set of layer type (PEV current, PEV future, workplace free and workplace paid)
+// should have a single set of steps defined. Re-incorporate objs from old branch and
+// refactor the fillColor param to reference those. Do the same for the layerConfig fncs. 
+
 const pevColors = [
   '#f0f9e8',
   '#ccebc5',
@@ -25,22 +74,6 @@ const wpjobColors = [
   '#5ab4ac',
   '#01665e'
 ]
-
-const makeFillColor = (vals, layer, colors) => {
-  const [a, b, c, d, e, f] = vals
-  const [g, h, i, j, k, l, m] = colors
-
-  return ['step',
-    ['get', layer],
-    g,
-    a, h,
-    b, i,
-    c, j,
-    d, k,
-    e, l,
-    f, m
-  ]  
-}
 
 // Obj to reference all geographic layer specs
 const layerSpecs = {
@@ -260,33 +293,6 @@ const layerSpecs = {
   'NJ-PC-CE-JB': {
     sourceLayer: 'nj_pev_bg',
     fillColor: makeFillColor([0.0056,0.0072,0.0085,0.0097,0.0113,0.014], 'PC_CE_JB', wpjobColors)
-  }
-}
-
-// layer generator to reduce hard coding of layers
-const makeSecondaryMapLayer = id => {
-  const layerInfo = layerSpecs[id]
-
-  return {
-      'id': id,
-      'type': 'fill',
-      'source': 'pev',
-      'source-layer': layerInfo.sourceLayer,
-      'layout': {},
-      'paint': {
-        'fill-color': layerInfo.fillColor,
-        "fill-opacity": {
-          base: 9,
-          stops: [
-            [9, 1],
-            [10, .8],
-            [11, .7],
-            [12, .65],
-            [13, .5],
-            [14, .4]
-          ]
-        }
-      }
   }
 }
 
