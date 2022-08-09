@@ -103,7 +103,7 @@ const legendConfig = {
     label: "Free Charging - kWh of Demand per Job",
     legendType:"scale",
     class:"brg",
-    paintType: 'FD_KD_JB',
+    paintType: 'FC_KD_JB',
     perc: false,
     note:"kWh of Workplace Charging Demand per Job"
   },
