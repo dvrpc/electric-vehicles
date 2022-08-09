@@ -51,7 +51,6 @@ map.on('load', () => {
     overlayForm.onchange = () => {
         const activeOverlayInputs = handleForms('input', overlayInputs, map)
         activeOverlayInputs.push(localStorage.getItem('active-main-layer'))
-        console.log(activeOverlayInputs)
         // handleLegend(activeOverlayInputs, legendContainer)
     }
 
