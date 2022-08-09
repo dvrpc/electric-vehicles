@@ -124,8 +124,8 @@ map.on('load', () => {
     }
 
     // @update: apply *only* to active layer
-        // could have multiple localStorage per fill layer, include as param in hover/leave fncs
-        // could add logic to show/hide when updating geos
+        // even with hoverSTate param, it's always active b/c it loads by default
+        // add logic to form handler that loops thru hover layers and hides/shows according to the ${geo} variable
     map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
     map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
         

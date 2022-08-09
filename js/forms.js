@@ -65,6 +65,7 @@ const chargeType = (geo, cost, showing) => {
 return `${geo}-${cost}-${showing}`
 }
 
+// @update: add logic to show/hide hover layers depending on active ${geo}
 const constructMainQuery = map => {
   // clear existing layer
   const activeMainLayer = localStorage.getItem('active-main-layer')
