@@ -123,9 +123,7 @@ map.on('load', () => {
         localStorage.setItem(hoverState, null)
     }
 
-    // @update: apply *only* to active layer
-        // even with hoverSTate param, it's always active b/c it loads by default
-        // add logic to form handler that loops thru hover layers and hides/shows according to the ${geo} variable
+    // establish mouse events
     map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
     map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
         

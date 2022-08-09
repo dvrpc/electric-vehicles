@@ -91,6 +91,32 @@ const constructMainQuery = map => {
       map.addLayer(newLayer, "dvrpcPEVBG-line");
   }
 
+  // toggle hover layers visibility
+  switch(geo) {
+    case 'PA':
+      map.setLayoutProperty('paPEVBG', 'visibility', 'visible')
+      map.setLayoutProperty('paPEVBG-line', 'visibility', 'visible')
+      map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
+      map.setLayoutProperty('dvrpcPEVBG-line', 'visibility', 'none')
+      // uncomment pending addition of layer
+      // map.setLayoutProperty('njPEVBG', 'visibility', 'none')
+      break
+      case 'NJ':
+        // uncomment pending addition of layer
+        // map.setLayoutProperty('njPEVBG', 'visibility', 'visible')
+        map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
+        map.setLayoutProperty('paPEVBG', 'visibility', 'none')
+        break
+    default:
+      map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'visible')
+      map.setLayoutProperty('dvrpcPEVBG-line', 'visibility', 'visible')
+      map.setLayoutProperty('paPEVBG', 'visibility', 'none')
+      map.setLayoutProperty('paPEVBG-line', 'visibility', 'none')
+      // uncomment pending addition of layer
+      // map.setLayoutProperty('njPEVBG', 'visibility', 'none')
+
+  }
+
   // update localStorage
   localStorage.setItem('active-main-layer', newLayerId)
 

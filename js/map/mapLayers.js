@@ -128,7 +128,9 @@ const layers = {
     'type': 'fill',
     'source': 'pev',
     'source-layer': 'pa_pev_bg',
-    'layout': {}, 
+    'layout': {
+      'visibility': 'none'
+    }, 
     'paint': {
         'fill-color': '#e2eb32',
         'fill-opacity': [
@@ -145,7 +147,9 @@ const layers = {
     'type': 'line',
     'source': 'pev',
     'source-layer': 'pa_pev_bg',
-    'layout': {}, 
+    'layout': {
+      'visibility': 'none'
+    }, 
     'paint': {
         "line-width": [
             'case',
