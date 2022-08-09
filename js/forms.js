@@ -23,7 +23,7 @@ const handleFormInputs = (inputs, map) => {
       }
     }
   });
-
+  
   return active;
 };
 
@@ -102,10 +102,12 @@ const constructMainQuery = map => {
 
 const handleForms = (type, toggles, map) => {
   switch (type) {
-    case 'select-main':
+    case 'select':
       return handleFormSelect(toggles, map)
     case 'main':
       return constructMainQuery(map)
+    case 'input':
+      return handleFormInputs(toggles, map)
     default:
       return handleFormInputs(toggles, map);
   }

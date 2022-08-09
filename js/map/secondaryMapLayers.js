@@ -265,6 +265,7 @@ const layerSpecs = {
 // for this project, overlay layers are secondaryMapLayers
 const secondaryMapLayers = {
   'charging': {
+    id: 'charging',
     type: 'circle',
     source: 'charging',
     paint: {

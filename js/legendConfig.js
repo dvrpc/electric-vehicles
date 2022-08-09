@@ -6,7 +6,6 @@ const legendConfig = {
     label: "Charging Locations",
     color: "#c8ffaf",
   },
-  // @update what is? overlay layer?
   "dvrpc-current": {
     legendType:"circle",
     iconType: "circle",

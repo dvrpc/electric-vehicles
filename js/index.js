@@ -21,6 +21,7 @@ $('.charge').hide()
 $('.workplace').hide()
 
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-BG')
+localStorage.setItem('active-geo', 'dvrpc')
 
 const map = makeMap()
 
@@ -40,6 +41,7 @@ map.on('load', () => {
     mainForm.onchange = () => {
         // update map & return layer id + geo
         let [genericID, layerGeo] = handleForms('main', null, map)
+        localStorage.setItem('active-geo', layerGeo)
 
         // clear any clicked queries
         mapDetails.style.display = 'none'
@@ -50,8 +52,14 @@ map.on('load', () => {
 
     overlayForm.onchange = () => {
         const activeOverlayInputs = handleForms('input', overlayInputs, map)
-        activeOverlayInputs.push(localStorage.getItem('active-main-layer'))
-        // handleLegend(activeOverlayInputs, legendContainer)
+        const activeGeo = localStorage.getItem('active-geo')
+        let activeMainLayer = localStorage.getItem('active-main-layer').split('-')
+        
+        activeMainLayer.shift()
+        activeMainLayer = activeMainLayer.join('-')
+        activeOverlayInputs.push(activeMainLayer)
+
+        handleLegend(activeOverlayInputs, legendContainer, activeGeo)
     }
 
     var hoveredStateId = null;
