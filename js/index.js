@@ -22,6 +22,7 @@ $('.workplace').hide()
 
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-BG')
 localStorage.setItem('active-geo', 'dvrpc')
+localStorage.setItem('hoveredStateId', null)
 
 const map = makeMap()
 
@@ -64,64 +65,66 @@ map.on('load', () => {
 
         handleLegend(activeOverlayInputs, legendContainer, activeGeo)
     }
-
-    var hoveredStateId = null;
    
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
-    // generic mousemov fnc
-    const hoverGeoFill = (e, layer) => {
-        var tileID = e.features[0].properties.GEOID10;
+    const hoverGeoFill = (e, fillLayer, lineLayer) => {
+        let hoveredStateId = localStorage.getItem('hoveredStateId')
+
         map.getCanvas().style.cursor = "pointer";
+
         if (e.features.length > 0) {
-        if (hoveredStateId !== null) {
-        map.setFeatureState(
-        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-        { hover: false }
-        );
-        map.setFeatureState(
-            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-            { hover: false }
-        );
-        }
-        hoveredStateId = e.features[0].id;
-        map.setFeatureState(
-        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-        { hover: true }
-        );
-        map.setFeatureState(
-            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-            { hover: true}
-        );
+            if (hoveredStateId !== null) {
+                map.setFeatureState(
+                    { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
+                    { hover: false }
+                );
+                map.setFeatureState(
+                    { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
+                    { hover: false }
+                );
+            }
+
+            hoveredStateId = e.features[0].id;
+
+            map.setFeatureState(
+                { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
+                { hover: true }
+            );
+            map.setFeatureState(
+                { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
+                { hover: true}
+            );
+
+            localStorage.setItem('hoveredStateId', hoveredStateId)
         }
     }
-
-    map.on('mousemove', 'dvrpcPEVBG', e => {
-        hoveredStateId = hoverGeoFill(e, 'dvrpc_pev_bg')}
-    )
-    // map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa_pev_bg', hoveredStateId))
 
     // When the mouse leaves the state-fill layer, update the feature state of the
     // previously hovered feature.
-    const leaveGeoFill = (e, layer) => {
-        //  var tileID = e.features[0].properties.GEOID10;
+    const leaveGeoFill = (fillLayer, lineLayer) => {
+        let hoveredStateId = localStorage.getItem('hoveredStateId')
+
         map.getCanvas().style.cursor = "";
+
         if (hoveredStateId !== null) {
-        map.setFeatureState(
-        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-        { hover: false }
-        );
-        map.setFeatureState(
-            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
-            { hover: false }
-        );
+            map.setFeatureState(
+                { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
+                { hover: false }
+            );
+            map.setFeatureState(
+                { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
+                { hover: false }
+            );
         }
 
-        hoveredStateId = null;
-        //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', 999999]);
+        localStorage.setItem('hoveredStateId', null)
     }
+
+    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    // map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa_pev_bg', hoveredStateId))
         
-    map.on('mouseleave', 'dvrpcPEVBG', e => leaveGeoFill(e, 'dvrpc_pev_bg'))
+    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('dvrpc_pev_bg', 'dvrpcPEVBG-line'))
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
