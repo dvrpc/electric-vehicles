@@ -122,6 +122,23 @@ const layers = {
         ]
     },
     "filter": [">=", "POP", 0.1],
+  },
+  PAPevFills: {
+    'id': 'paPEVBG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {}, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        .8,
+        0.0
+        ]
+    },
+    "filter": [">=", "POP", 0.1],
   }
 };
 

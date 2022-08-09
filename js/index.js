@@ -69,52 +69,59 @@ map.on('load', () => {
    
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
-    map.on('mousemove', 'dvrpcPEVBG', (e) => {
+    // generic mousemov fnc
+    const hoverGeoFill = (e, layer, hoveredStateId) => {
         var tileID = e.features[0].properties.GEOID10;
         map.getCanvas().style.cursor = "pointer";
         if (e.features.length > 0) {
         if (hoveredStateId !== null) {
         map.setFeatureState(
-        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
         { hover: false }
         );
         map.setFeatureState(
-            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
             { hover: false }
         );
         }
         hoveredStateId = e.features[0].id;
         map.setFeatureState(
-        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
         { hover: true }
         );
         map.setFeatureState(
-            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
             { hover: true}
         );
         }
-     //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', tileID]);
-      //  handleHighlight(props)
-    });
-        
+    }
+
+    map.on('mousemove', 'dvrpcPEVBG', e => {
+        hoveredStateId = hoverGeoFill(e, 'dvrpc_pev_bg', hoveredStateId)}
+    )
+    // map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa_pev_bg', hoveredStateId))
+
     // When the mouse leaves the state-fill layer, update the feature state of the
     // previously hovered feature.
-    map.on('mouseleave', 'dvrpcPEVBG', () => {
-      //  var tileID = e.features[0].properties.GEOID10;
+    const leaveGeoFill = (e, layer, hoveredStateId) => {
+        //  var tileID = e.features[0].properties.GEOID10;
         map.getCanvas().style.cursor = "";
         if (hoveredStateId !== null) {
         map.setFeatureState(
-        { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+        { source: 'pev', sourceLayer: layer, id: hoveredStateId },
         { hover: false }
         );
         map.setFeatureState(
-            { source: 'pev', sourceLayer:'dvrpc_pev_bg', id: hoveredStateId },
+            { source: 'pev', sourceLayer: layer, id: hoveredStateId },
             { hover: false }
         );
         }
+
         hoveredStateId = null;
-     //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', 999999]);
-    });
+        //   map.setFilter('dvrpcPEVBG-line-RED', ['==', 'GEOID10', 999999]);
+    }
+        
+    map.on('mouseleave', 'dvrpcPEVBG', e => leaveGeoFill(e, 'dvrpc_pev_bg', hoveredStateId))
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
