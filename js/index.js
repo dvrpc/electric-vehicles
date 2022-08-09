@@ -23,6 +23,8 @@ $('.workplace').hide()
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-BG')
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', null)
+localStorage.setItem('pa-hoveredStateId', null)
+localStorage.setItem('nj-hoveredStateId', null)
 
 const map = makeMap()
 
@@ -68,8 +70,8 @@ map.on('load', () => {
    
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
-    const hoverGeoFill = (e, fillLayer, lineLayer) => {
-        let hoveredStateId = localStorage.getItem('hoveredStateId')
+    const hoverGeoFill = (e, hoverState, fillLayer, lineLayer) => {
+        let hoveredStateId = localStorage.getItem(hoverState)
 
         map.getCanvas().style.cursor = "pointer";
 
@@ -96,14 +98,14 @@ map.on('load', () => {
                 { hover: true}
             );
 
-            localStorage.setItem('hoveredStateId', hoveredStateId)
+            localStorage.setItem(hoverState, hoveredStateId)
         }
     }
 
     // When the mouse leaves the state-fill layer, update the feature state of the
     // previously hovered feature.
-    const leaveGeoFill = (fillLayer, lineLayer) => {
-        let hoveredStateId = localStorage.getItem('hoveredStateId')
+    const leaveGeoFill = (hoverState, fillLayer, lineLayer) => {
+        let hoveredStateId = localStorage.getItem(hoverState)
 
         map.getCanvas().style.cursor = "";
 
@@ -118,13 +120,17 @@ map.on('load', () => {
             );
         }
 
-        localStorage.setItem('hoveredStateId', null)
+        localStorage.setItem(hoverState, null)
     }
 
-    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
-    // map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa_pev_bg', hoveredStateId))
+    // @update: apply *only* to active layer
+        // could have multiple localStorage per fill layer, include as param in hover/leave fncs
+        // could add logic to show/hide when updating geos
+    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
         
-    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
