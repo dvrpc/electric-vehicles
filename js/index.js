@@ -32,20 +32,20 @@ map.on('load', () => {
     togglerNJ(map)
     togglerDVRPC(map)
 
-    handleLegend(['CurrentPEV-BG'], legendContainer)
+    handleLegend(['CurrentPEV-BG'], legendContainer, 'dvrpc')
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')
 
     mainForm.onchange = () => {
-        // update map & return layer id
-        let genericLayerID = handleForms('main', null, map)
-        
+        // update map & return layer id + geo
+        let [genericID, layerGeo] = handleForms('main', null, map)
+
         // clear any clicked queries
         mapDetails.style.display = 'none'
         mapStart.style.display = 'inline-block'
 
-        handleLegend([genericLayerID], legendContainer)
+        handleLegend([genericID], legendContainer, layerGeo)
     }
 
     overlayForm.onchange = () => {

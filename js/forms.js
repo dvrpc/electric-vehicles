@@ -95,9 +95,9 @@ const constructMainQuery = map => {
 
   // return generic id to create legend
   let genericID = newLayerId.split('-')
-  genericID.shift()
+  let layerGeo = genericID.shift().toLowerCase()
   genericID = genericID.join('-')
-  return genericID
+  return [genericID, layerGeo]
 }
 
 const handleForms = (type, toggles, map) => {
