@@ -70,7 +70,7 @@ const stops = {
         futVeh: [],
         
         // Free Charging
-        FC_KD_SM: [],
+        FC_KD_SM: [16.58,44.92,97.28,180.8,335.44,671.86,65409.92],
         FC_KD_JB: [],
         FC_CE_SM: [],
         FC_CE_JB: [],
