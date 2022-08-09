@@ -47,7 +47,10 @@ map.on('load', () => {
         mapDetails.style.display = 'none'
         mapStart.style.display = 'inline-block'
 
-        handleLegend([genericID], legendContainer, layerGeo)
+        // handle possibility of active overlays when toggling main layers
+        const activeLayers = handleForms('input', overlayInputs, map)
+        activeLayers.push(genericID)
+        handleLegend(activeLayers, legendContainer, layerGeo)
     }
 
     overlayForm.onchange = () => {

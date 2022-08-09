@@ -20,11 +20,11 @@ const createLegendItem = (val, geo) => {
       </div>
       `;
   }
-    return `
+  return `
     <div class="flex-row flex-align-center legend-item">
-          <span class="legend-icon-${legendDetails.iconType}" style="background-color:${legendDetails.color};"></span>
-          <span class="legend-text">${legendDetails.label}</span>
-  </div>
+      <span class="legend-icon-${legendDetails.iconType}" style="background-color:${legendDetails.color};"></span>
+      <span class="legend-text">${legendDetails.label}</span>
+    </div>
   `;
 };
 
