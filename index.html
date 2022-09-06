@@ -50,10 +50,9 @@
 
     <div id="nav-btns">
       <button id="btn-home" class="nav-btn">home</button>
-      <button id="btn-data" class="nav-btn">data</button>
       <button id="btn-map" class="nav-btn">map</button>
-      <button id="btn-glossary" class="nav-btn">glossary</button>
     </div>
+    <button id="modal-toggle" class="modal-btn">glossary</button>
   </nav>
   <main>
     <div id="home-section" class="section">
@@ -161,202 +160,215 @@
           </p>
         </i>
       </div>
-    </div>
-    <div id="data-section" class="section">
-      <div class="text-container">
-        <img src="./img/Analysis.jpg" alt="Delaware Valley region map" />
-        <div>
-          <h1>Data</h1>
-          <p>
-            The following series of maps show interactive results of the
-            geographic distribution of PEVs and the associated demand for
-            workplace charging calculated by the calibrated DVRPC/UC Davis EV
-            Planning Toolkit for ArcGIS (the Toolkit). These results reflect the
-            following PEV penetration scenarios:
-          </p>
-          <ul>
-            <li>
-              <p>
-                DVRPC Region: 5 percent of passenger vehicles (or about 200,000
-                vehicles) are PEVs;
-              </p>
-            </li>
-            <li>
-              <p>
-                Pennsylvania: 5 percent of passenger vehicles (or about 400,000
-                vehicles) are PEVs;
-              </p>
-            </li>
-            <li>
-              <p>
-                New Jersey: 330,000 passenger vehicles (about 10 percent) are
-                PEVs.
-                <a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml">This is in line with the
-                  New
-                  Jersey, state-wide, zero-emission
-                  vehicle adoption goal for 2025.</a>
-                However, this tool does not predict the total number of passenger
-                vehicles in 2025.
-              </p>
-            </li>
-          </ul>
-          <br />
-          <p>
-            DVRPC considered using projections based on planning horizon. However,
-            there is a wide variation in the projections available, and there is
-            no one "official" projection. In addition, these projections are
-            generally at a much larger geography than the DVRPC region,
-            Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New
-            Jersey officials working on EVs. Pennsylvania suggested that we use a
-            5 percent PEV penetration. New Jersey suggested that we use their 2025
-            goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for
-            the region.
-          </p>
+      <div>
+        <h1>Data</h1>
+        <div class="text-container-image">
+          <img src="./img/Analysis.jpg" alt="Delaware Valley region map" />
+          <div>
+            <p>
+              The following series of maps show interactive results of the
+              geographic distribution of PEVs and the associated demand for
+              workplace charging calculated by the calibrated DVRPC/UC Davis EV
+              Planning Toolkit for ArcGIS (the Toolkit). These results reflect the
+              following PEV penetration scenarios:
+            </p>
+            <ul>
+              <li>
+                <p>
+                  DVRPC Region: 5 percent of passenger vehicles (or about 200,000
+                  vehicles) are PEVs;
+                </p>
+              </li>
+              <li>
+                <p>
+                  Pennsylvania: 5 percent of passenger vehicles (or about 400,000
+                  vehicles) are PEVs;
+                </p>
+              </li>
+              <li>
+                <p>
+                  New Jersey: 330,000 passenger vehicles (about 10 percent) are
+                  PEVs.
+                  <a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml">This is in line with
+                    the
+                    New
+                    Jersey, state-wide, zero-emission
+                    vehicle adoption goal for 2025.</a>
+                  However, this tool does not predict the total number of passenger
+                  vehicles in 2025.
+                </p>
+              </li>
+            </ul>
+            <br />
+            <p>
+              DVRPC considered using projections based on planning horizon. However,
+              there is a wide variation in the projections available, and there is
+              no one "official" projection. In addition, these projections are
+              generally at a much larger geography than the DVRPC region,
+              Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New
+              Jersey officials working on EVs. Pennsylvania suggested that we use a
+              5 percent PEV penetration. New Jersey suggested that we use their 2025
+              goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for
+              the region.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="text-container">
-        <img src="./img/PEV.jpg" alt="Delaware Valley PEV distribution" />
+      <div>
         <h1>PEV Distribution</h1>
-        <p>
-          <a href="https://drive.google.com/file/d/1dWqTvCc8vAE2un0KJ1O3X1_ySKIg-pa_/view?usp=sharing">Map 1 - PEV
-            Distribution</a>
-        </p>
-        <p>
-          PEV Distribution shows layers for current and projected numbers of
-          PEVs at the census block group and municipal levels. The municipal PEV
-          counts were aggregated from the census block group counts, assigning
-          the counts from each block group to the municipality housing that
-          block groups centroid. The projected percentage of PEVs per
-          municipality and block group are purely based on the penetration of
-          PEVs and do not account for any increase in the total passenger
-          vehicle fleet.
-        </p>
-        <br />
-        <p>
-          Current and projected numbers of PEVs are of great value in planning
-          for the increasing adoption of PEVs. Electric Distribution Companies
-          (EDCs) can use this information to inform where infrastructure
-          upgrades may need to be made. Municipalities and counties can use this
-          information to inform decisions on permitting processes that may help
-          future PEV owners more easily install charging infrastructure in their
-          homes. They may also see certain block groups that could benefit from
-          PEV parking allowances or other mechanisms to ensure parking
-          infrastructure for EV owners, such as requiring multi-family
-          residences to include a certain number of PEV parking spaces with
-          charging.
-        </p>
+        <div class="text-container-image">
+          <img src="./img/PEV.jpg" alt="Delaware Valley PEV distribution" />
+          <div>
+            <p>
+              <a href="https://drive.google.com/file/d/1dWqTvCc8vAE2un0KJ1O3X1_ySKIg-pa_/view?usp=sharing">Map 1 - PEV
+                Distribution</a>
+            </p>
+            <p>
+              PEV Distribution shows layers for current and projected numbers of
+              PEVs at the census block group and municipal levels. The municipal PEV
+              counts were aggregated from the census block group counts, assigning
+              the counts from each block group to the municipality housing that
+              block groups centroid. The projected percentage of PEVs per
+              municipality and block group are purely based on the penetration of
+              PEVs and do not account for any increase in the total passenger
+              vehicle fleet.
+            </p>
+            <br />
+            <p>
+              Current and projected numbers of PEVs are of great value in planning
+              for the increasing adoption of PEVs. Electric Distribution Companies
+              (EDCs) can use this information to inform where infrastructure
+              upgrades may need to be made. Municipalities and counties can use this
+              information to inform decisions on permitting processes that may help
+              future PEV owners more easily install charging infrastructure in their
+              homes. They may also see certain block groups that could benefit from
+              PEV parking allowances or other mechanisms to ensure parking
+              infrastructure for EV owners, such as requiring multi-family
+              residences to include a certain number of PEV parking spaces with
+              charging.
+            </p>
+          </div>
+
+        </div>
       </div>
-      <div class="text-container">
-        <img src="./img/WorkPlaceChargin.jpg" alt="Delaware Valley workplace charging distribution" />
+      <div>
         <h1>Workplace Charging Demand</h1>
-        <p>
-          <a href="https://drive.google.com/file/d/1SUvBCIr9vMLYmr0nyhax2dX842bU_gxC/view?usp=sharing">Map 2 - Paid
-            Charging kWh per Square Mile</a>
-        </p>
-        <p>
-          Workplace Charging Demand shows layers depicting workplace charging
-          demand in number of charging events and kWh of demand by census block
-          group for the following three scenarios:
-        </p>
-        <ol>
-          <li>
-            <p>workplace charging is free (free charging),</p>
-          </li>
-          <li>
+        <div class="text-container-image">
+          <img src="./img/WorkPlaceChargin.jpg" alt="Delaware Valley workplace charging distribution" />
+          <div>
             <p>
-              workplace charging is twice the cost of home charging (expensive
-              charging).
+              <a href="https://drive.google.com/file/d/1SUvBCIr9vMLYmr0nyhax2dX842bU_gxC/view?usp=sharing">Map 2 - Paid
+                Charging kWh per Square Mile</a>
             </p>
-          </li>
-        </ol>
-        <p>
-          These two scenarios allow users to see how pricing the cost of
-          charging can influence demand at the workplace. In general, the lower
-          the cost of charging, the more demand for charging there will be. A
-          business may only have enough capital or space to install a certain
-          number of chargers. Looking at the scenarios can help the business
-          determine how aggressively to price charging for its employees based
-          on the expected demand for each price point.
-        </p>
-        <br />
-        <p>
-          <a href="https://drive.google.com/file/d/1UcQUYLngx55AN8r6BgmJuugE_Ls1QlVe/view?usp=sharing">Map 3 - Paid
-            Charing per job</a>
-        </p>
-        <p>
-          This level of analysis is useful for employers who may be looking at
-          building a new parking garage or for new employers to an area. This
-          analysis can also inform employers on how best to charge for the
-          electricity that will be used by the vehicles. If an employer has
-          already established some EV charging, this analysis could help them
-          price it so that their infrastructure is not overburdened.
-        </p>
-        <p>
-          Additionally, this could help inform municipalities on how much EV
-          parking they may want to require for businesses in future zoning code
-          updates or Electric Distribution Companies (EDCs) that are looking
-          into infrastructure upgrades and need to know how much power will be
-          drawn in an area.
-        </p>
-        <p>
-          If you have any questions regarding these maps or wish to access the
-          GIS datasets used in the analysis, please contact:
-        </p>
-        <p>
-          Sean Greene, Manager, Air Quality Programs | sgreene@dvrpc.org | (215)
-          238-2860
-        </p>
-        <p><br /></p>
-        <p>
-          To obtain your own copy of UC Davis's EV Planning Toolkit and
-          supporting documentation, please contact:
-        </p>
-        <p>
-          Gil Tal, PhD | gtal@ucdavis.edu |
-          <a href="https://phev.ucdavis.edu/">https://phev.ucdavis.edu/</a>
-        </p>
-        <br />
-        <p>Datasets Used in Analysis</p>
-        <ol>
-          <li>
             <p>
-              2021 vehicle registration data provided by the Pennsylvania
-              Department of Transportation
+              Workplace Charging Demand shows layers depicting workplace charging
+              demand in number of charging events and kWh of demand by census block
+              group for the following three scenarios:
             </p>
-          </li>
-          <li>
+            <ol>
+              <li>
+                <p>workplace charging is free (free charging),</p>
+              </li>
+              <li>
+                <p>
+                  workplace charging is twice the cost of home charging (expensive
+                  charging).
+                </p>
+              </li>
+            </ol>
             <p>
-              2021 vehicle registration data from the New Jersey Motor Vehicle
-              Commission provided by the New Jersey Department of Environmental
-              Protection
+              These two scenarios allow users to see how pricing the cost of
+              charging can influence demand at the workplace. In general, the lower
+              the cost of charging, the more demand for charging there will be. A
+              business may only have enough capital or space to install a certain
+              number of chargers. Looking at the scenarios can help the business
+              determine how aggressively to price charging for its employees based
+              on the expected demand for each price point.
             </p>
-          </li>
-          <li>
+            <br />
             <p>
-              <a href="https://www.census.gov/programs-surveys/acs">2015-2019 American Community Survey 5-year
-                Estimates</a>
+              <a href="https://drive.google.com/file/d/1UcQUYLngx55AN8r6BgmJuugE_Ls1QlVe/view?usp=sharing">Map 3 - Paid
+                Charing per job</a>
             </p>
-          </li>
-          <li>
             <p>
-              <a href="https://lehd.ces.census.gov/data/">LEHD Origin-Destination Employment Statistics (LODES), version
-                7</a>
+              This level of analysis is useful for employers who may be looking at
+              building a new parking garage or for new employers to an area. This
+              analysis can also inform employers on how best to charge for the
+              electricity that will be used by the vehicles. If an employer has
+              already established some EV charging, this analysis could help them
+              price it so that their infrastructure is not overburdened.
             </p>
-          </li>
-          <li>
             <p>
-              Block group-to-block group commuting distances from DVRPCs Travel
-              Improvement Model 2.1, accessed December 2017.
+              Additionally, this could help inform municipalities on how much EV
+              parking they may want to require for businesses in future zoning code
+              updates or Electric Distribution Companies (EDCs) that are looking
+              into infrastructure upgrades and need to know how much power will be
+              drawn in an area.
             </p>
-          </li>
-          <li>
             <p>
-              Block group-to-block group commuting distances calculated from
-              Esris ArcGIS Network Analyst, used in 2017.
+              If you have any questions regarding these maps or wish to access the
+              GIS datasets used in the analysis, please contact:
             </p>
-          </li>
-        </ol>
+            <p>
+              Sean Greene, Manager, Air Quality Programs | sgreene@dvrpc.org | (215)
+              238-2860
+            </p>
+            <p><br /></p>
+            <p>
+              To obtain your own copy of UC Davis's EV Planning Toolkit and
+              supporting documentation, please contact:
+            </p>
+            <p>
+              Gil Tal, PhD | gtal@ucdavis.edu |
+              <a href="https://phev.ucdavis.edu/">https://phev.ucdavis.edu/</a>
+            </p>
+            <br />
+            <p>Datasets Used in Analysis</p>
+            <ol>
+              <li>
+                <p>
+                  2021 vehicle registration data provided by the Pennsylvania
+                  Department of Transportation
+                </p>
+              </li>
+              <li>
+                <p>
+                  2021 vehicle registration data from the New Jersey Motor Vehicle
+                  Commission provided by the New Jersey Department of Environmental
+                  Protection
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://www.census.gov/programs-surveys/acs">2015-2019 American Community Survey 5-year
+                    Estimates</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  <a href="https://lehd.ces.census.gov/data/">LEHD Origin-Destination Employment Statistics (LODES),
+                    version
+                    7</a>
+                </p>
+              </li>
+              <li>
+                <p>
+                  Block group-to-block group commuting distances from DVRPCs Travel
+                  Improvement Model 2.1, accessed December 2017.
+                </p>
+              </li>
+              <li>
+                <p>
+                  Block group-to-block group commuting distances calculated from
+                  Esris ArcGIS Network Analyst, used in 2017.
+                </p>
+              </li>
+            </ol>
+          </div>
+
+        </div>
       </div>
+
     </div>
     <div id="map-section" class="section flex-row flex-between main-content-wrapper">
       <section class="sidebar">
@@ -662,6 +674,105 @@
           wires or a track. Others are powered by fuel cells (FCEVs). These are
           not covered in this document, which addresses only PEVs.
         </p>
+      </div>
+    </div>
+    <div id="modal" class="modal" role="dialog">
+      <div class="modal-content">
+        <span id="close-modal" class="close-modal">&times;</span>
+        <h2 class="modal-content-subheader">Glossary of Terms</h2>
+        <section class="modal-section">
+          <p>
+            <b>ACS:</b> American Community Survey. The ACS is an ongoing survey updated
+            annually by the U.S. Census Bureau. It regularly gathers information
+            previously contained only in the long form of the decennial census,
+            such as ancestry, citizenship, educational attainment, income,
+            language proficiency, migration, disability, employment, and housing
+            characteristics.
+          </p>
+          <p><b>AEV:</b> All-Electric Vehicle. An alternate term for BEV.</p>
+          <p>
+            <b>Census Block:</b> The smallest geographic area for which the Census Bureau
+            collects and tabulates decennial census data.
+          </p>
+          <p>
+            <b>Census Block Group:</b> A combination of census blocks that is a
+            subdivision of a census tract. The Block Group is the smallest
+            geographic entity for which the decennial census tabulates and
+            publishes the sample data (socioeconomic information).
+          </p>
+          <p>
+            <b>Charging Event:</b> The act of plugging-in a PEV to charge the battery.
+          </p>
+          <p>
+            <b>EDC:</b> Electric Distribution Company. The public utility that provides
+            facilities for the transmission and distribution of electricity to
+            retail customers. Electric distribution companies are regulated by
+            state utility commissions. Exceptions include building or facility
+            owners or operators that manage their internal distribution system and
+            supply electric power and electric services to occupants of the
+            building or facility.
+          </p>
+          <p>
+            <b>EV:</b> A generic term for a vehicle that gets some or all of its power
+            from an electric motor. Sometimes used to mean PEV, BEV, or AEV (and
+            occasionally HEV).
+          </p>
+          <p>
+            <b>GIS:</b> Geographic Information System. A Geographic Information System is
+            a system designed to capture, store, manipulate, analyze, manage, and
+            present spatial or geographic data. GIS applications are tools that
+            allow users to create interactive queries, analyze spatial
+            information, edit data in maps, and present the results of all these
+            operations. Esri's ArcGIS is a popular GIS software application.
+          </p>
+          <p>
+            <b>HEV:</b> Hybrid Electric Vehicle. HEVs are vehicles that do not plug in,
+            but have a large battery on board that is charged by the vehicle's
+            braking. The energy stored by this battery assists the ICE in moving
+            the car, significantly improving the gas mileage. Current examples
+            include the Toyota Prius and Honda Accord Hybrid.
+          </p>
+          <p>
+            <b>ICE:</b> Internal Combustion Engine. Gasoline and diesel cars and trucks
+            use an internal combustion engine to convert fuel to the motion that
+            moves the vehicle. Propane or compressed natural gas are used in some
+            ICE vehicles as well.
+          </p>
+          <p>
+            <b>kWh:</b> Kilowatt-hour. A measure of electrical energy equivalent to a
+            power consumption of 1,000 watts (about what a hand-held hair dryer
+            uses) for 1 hour. It is the standard unit of measurement to describe
+            PEV battery capacities and the amount of electricity transferred to
+            the battery during charging.
+          </p>
+          <p><b>LEHD:</b> Longitudinal Employer-Household Dynamics.</p>
+          <p>
+            <b>LODES:</b> Longitudinal Employer-Household Dynamics (LEHD)
+            Origin-Destination Employment Statistics. LODES Data provides detailed
+            spatial distributions of workers' employment and residential locations
+            and the relation between the two at the Census Block level. LODES also
+            provides characteristic detail on age, earnings, industry
+            distributions, and local workforce indicators.
+          </p>
+          <p><b>MPO:</b> Metropolitan Planning Organization.</p>
+          <p>Municipality: A city, township, or borough.</p>
+          <p>
+            <b>PHEV:</b> Plug-in Hybrid Electric Vehicle. PHEVs use both an ICE and an
+            electric motor with a battery that recharges by plugging into an
+            external source. Depending on its exact configuration, the PHEV's
+            battery can either assist the ICE, or fully power the vehicle until
+            the battery has been discharged, at which time the vehicle continues
+            to operate as an HEV. A current example is the Toyota Prius Prime.
+          </p>
+          <p>
+            <b>PEV:</b> Plug-in Electric Vehicle. An EV that plugs into an external
+            source to charge an on-board battery that provides the electricity for
+            the electric motor. Some EVs, such as trollies, subways, trains, and
+            trolley buses, are powered by external electricity, from overhead
+            wires or a track. Others are powered by fuel cells (FCEVs). These are
+            not covered in this document, which addresses only PEVs.
+          </p>
+        </section>
       </div>
     </div>
   </main>

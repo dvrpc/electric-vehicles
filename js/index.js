@@ -2,6 +2,7 @@ import makeMap from "./map/map.js";
 import sources from "./map/mapSources.js";
 import layers from "./map/mapLayers.js";
 import handleForms from "./forms.js";
+import handleModal from "./modal.js";
 import handleLegend from "./legend.js";
 import { handleBlockGroups, handleMCD } from "./click.js";
 import {
@@ -13,10 +14,13 @@ import {
   filterCurrent,
 } from "./toggler.js";
 
+const modal = document.getElementById("modal");
+const modalToggle = document.getElementById("modal-toggle");
+const closeModal = document.getElementById("close-modal");
+
 $(document).ready(() => {
   // default page id
   const defaultPage = "home-section";
-
   [...document.querySelectorAll(".section")].map((page) => {
     if (page.id !== defaultPage) $(page).hide();
   });
@@ -258,3 +262,5 @@ map.on("idle", () => {
   const spinner = map["_container"].querySelector(".lds-ring");
   spinner.classList.remove("lds-ring-active");
 });
+
+handleModal(modal, modalToggle, closeModal);
