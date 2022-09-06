@@ -800,6 +800,10 @@ footer {
   margin-left: auto;
 }
 
+.text-container > hr {
+  margin: 1%;
+}
+
 @media (min-width: 768px) {
   .text-container,
   .text-container-image {
@@ -810,6 +814,12 @@ footer {
     padding-bottom: 1%;
     margin-left: auto;
     margin-right: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-container-image {
+    flex-direction: column;
   }
 }
 
