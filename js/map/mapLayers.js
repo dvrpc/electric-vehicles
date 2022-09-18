@@ -176,6 +176,60 @@ const layers = {
       },
     "filter": [">=", "POP", 0.1],
   },
+
+  NJPevFills: {
+    'id': 'njPEVBG',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {
+      'visibility': 'none'
+    }, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-opacity': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        .8,
+        0.0
+        ]
+    },
+    "filter": [">=", "POP", 0.1],
+  },
+  NJPevLines: {
+    'id': 'njPEVBG-line',
+    'type': 'line',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {
+      'visibility': 'none'
+    }, 
+    'paint': {
+        "line-width": [
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            6,
+            1
+            ],
+        "line-color":[
+            'case',
+            ['boolean', ['feature-state', 'hover'], false],
+            "#FF0000", "#9cafb5"
+            ],
+        "line-opacity": {
+            base: 9,
+            stops: [
+              [9, .4],
+              [10, .5],
+              [11, .65],
+              [12, .7],
+              [13, .8],
+              [14, .9],
+            ],
+         }
+      },
+    "filter": [">=", "POP", 0.1],
+  }
 };
 
 export default layers;

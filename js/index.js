@@ -127,9 +127,11 @@ map.on('load', () => {
     // establish mouse events
     map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
     map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
+    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
         
     map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
     map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
+    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
 
     map.on('click','dvrpcPEVBG', (e) => {
         // mapbox function calling of geojson properties
@@ -139,15 +141,39 @@ map.on('load', () => {
         handleBlockGroups(props,map)
         // var coordinates = e.features[0].geometry.coordinates[0];
         // var FID = e.features[0].id;
-        // console.log(coordinates);
         // handleSidebarDisplay()
         // handleHighlight(FID)
-      });
-
-    map.on('click','dvrpcPEVMCD', (e) => {
-        var props = e.features[0].properties;
-        handleMCD(props)
     });
+
+    map.on('click','paPEVBG', (e) => {
+        // mapbox function calling of geojson properties
+        mapStart.style.display = "none";
+        mapDetails.style.display = "inline-block";
+        var props = e.features[0].properties;
+        handleBlockGroups(props,map)
+        // var coordinates = e.features[0].geometry.coordinates[0];
+        // var FID = e.features[0].id;
+        // handleSidebarDisplay()
+        // handleHighlight(FID)
+    });
+
+    map.on('click','njPEVBG', (e) => {
+        // mapbox function calling of geojson properties
+        mapStart.style.display = "none";
+        mapDetails.style.display = "inline-block";
+        var props = e.features[0].properties;
+        handleBlockGroups(props,map)
+        // var coordinates = e.features[0].geometry.coordinates[0];
+        // var FID = e.features[0].id;
+        // handleSidebarDisplay()
+        // handleHighlight(FID)
+    });
+
+    // @TODO shelf until MCD's get incorporated
+    // map.on('click','dvrpcPEVMCD', (e) => {
+    //     var props = e.features[0].properties;
+    //     handleMCD(props)
+    // });
 })
 
 // loading spinner 
