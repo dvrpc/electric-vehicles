@@ -68,6 +68,7 @@ map.on('load', () => {
         handleLegend(activeOverlayInputs, legendContainer, activeGeo)
     }
    
+    // @todo: pull hover and click fncs into new mapEvents.js file within /js/map/
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
     const hoverGeoFill = (e, hoverState, fillLayer, lineLayer) => {
