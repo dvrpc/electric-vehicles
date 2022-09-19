@@ -22,7 +22,7 @@ input {
   cursor: pointer;
 }
 select {
-  background-color: white;
+  background-color: var(--theme-white);
   color: var(--theme-dvrpc);
   padding: 0.5em 0.75em;
   border: 2px dotted transparent;
@@ -30,6 +30,7 @@ select {
   margin-bottom: 0.25em;
   border-bottom-color: rgba(85, 85, 38, 0.333);
   font-size: inherit;
+  font-weight: 700;
 }
 input[type="radio"],
 input[type="checkbox"] {
@@ -40,7 +41,9 @@ a {
 }
 summary {
   cursor: pointer;
-  padding: var(--padding);
+  padding: var(--padding) var(--padding-double);
+  color: var(--theme-black);
+  font-weight: 700;
 }
 :root {
   --theme-dvrpc: #0078ae;
@@ -91,7 +94,7 @@ summary {
 .modal {
   position: fixed;
   display: none;
-  z-index: 3;
+  z-index: 4;
   top: 0;
   width: 100%;
   height: 100%;
@@ -225,7 +228,7 @@ nav {
 
 /* Sidebar */
 .sidebar {
-  width: 33%;
+  width: 30%;
   height: 100%;
   overflow-y: auto;
   overflow-x: hidden;
@@ -256,14 +259,19 @@ nav {
   border-radius: var(--border-radius);
 }
 .form-wrapper {
+  position: absolute;
+  z-index: 3;
+  left: 10px;
+  top: 10px;
+  background-color: white;
   box-shadow: var(--box-shadow-half);
   border: 3px solid white;
   border-radius: var(--border-radius);
 }
 .sidebar-form {
-  padding: var(--padding-double);
+  padding: var(--padding) var(--padding-double);
   border-radius: var(--border-radius);
-  background-color: var(--theme-white);
+  background-color: white;
 }
 .sidebar-fieldset label {
   margin-right: 5px;
@@ -415,7 +423,6 @@ input[class="lbox"]{
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-half);
   border: 3px solid white;
-  margin-bottom: 10px;
 }
 .data-subheader {
   background-color: var(--theme-sidebar);
@@ -469,7 +476,7 @@ input[class="lbox"]{
 /* Map */
 .map {
   position: relative;
-  width: 67%;
+  width: 70%;
   height: 100%;
 }
 .mapboxgl-popup-content {
@@ -495,13 +502,13 @@ input[class="lbox"]{
 /* Legend Boxes */
 .legend-container {
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   left: 10px;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
   background-color: #fff;
   color: var(--theme-black);
-  z-index: 1;
+  z-index: 3;
   padding: var(--padding);
 }
 .legend-title {
