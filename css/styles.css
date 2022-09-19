@@ -45,6 +45,9 @@ summary {
   color: var(--theme-black);
   font-weight: 700;
 }
+details[open] summary{
+  padding-bottom: 0;
+}
 :root {
   --theme-dvrpc: #0078ae;
   --theme-dvrpc-accent: #366478;
