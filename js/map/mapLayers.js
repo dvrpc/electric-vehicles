@@ -36,22 +36,22 @@ const layers = {
     },
     filter: ["==", "DVRPC", "Yes"],
   },
-  'DVRPC-CurrentPEV-BG': {
-    'id': 'DVRPC-CurrentPEV-BG',
+  'DVRPC-CurrentPEV-Pop': {
+    'id': 'DVRPC-CurrentPEV-Pop',
     'type': 'fill',
     'source': 'pev',
     'source-layer': 'dvrpc_pev_bg',
     'layout': {},
     'paint': {
       'fill-color': ['step',
-          ['get', 'CurPEV'],
+          ['get', 'CuPEVPop'],
           pev1,
-          .98, pev2,
-          1.64, pev3,
-          2.66, pev4 ,
-          4.22, pev5 ,
-          6.47, pev6 ,
-          11.83,pev7
+          .086, pev2,
+          .138, pev3,
+          .2085, pev4 ,
+          .303, pev5 ,
+          .45, pev6 ,
+          .71,pev7
         ],
       "fill-opacity": {
         base: 9,
@@ -174,7 +174,7 @@ const layers = {
             ],
          }
       },
-    "filter": [">=", "POP", 0.1]
+    "filter": [">=", "POP", 0.1],
   },
   NJPevFills: {
     'id': 'njPEVBG',

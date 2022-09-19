@@ -20,7 +20,7 @@ const mapDetails = document.getElementById('mapDetails')
 $('.charge').hide()
 $('.workplace').hide()
 
-localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-BG')
+localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', null)
 localStorage.setItem('pa-hoveredStateId', null)

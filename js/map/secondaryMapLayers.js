@@ -44,10 +44,6 @@ const makeSecondaryMapLayer = id => {
 
 // Obj to reference all geographic layer specs
 const layerSpecs = {
-  'DVRPC-CurrentPEV-Pop': {
-    sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor(stops.dvrpc.curPop, 'CuPEVPop', colors.pev)
-  },
   'DVRPC-CurrentPEV-HH': {
     sourceLayer: 'dvrpc_pev_bg',
     fillColor: makeFillColor(stops.dvrpc.curHH, 'CuPEV_HU', colors.pev)
@@ -59,10 +55,6 @@ const layerSpecs = {
   'DVRPC-CurrentPEV-Veh': {
     sourceLayer: 'dvrpc_pev_bg',
     fillColor: makeFillColor(stops.dvrpc.curVeh, 'PerCuPEV', colors.pev)
-  },
-  'DVRPC-FuturePEV-BG': {
-    sourceLayer: 'dvrpc_pev_bg',
-    fillColor: makeFillColor(stops.dvrpc.fut, 'FutPEV', colors.pev)
   },
   'DVRPC-FuturePEV-Pop': {
     sourceLayer: 'dvrpc_pev_bg',
@@ -114,10 +106,6 @@ const layerSpecs = {
   },
 
   // Pennsylvannia 
-  'PA-CurrentPEV-BG': {
-    sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor(stops.pa.cur, 'CurPEV', colors.pev)
-  },
   'PA-CurrentPEV-Pop': {
     sourceLayer: 'pa_pev_bg',
     fillColor: makeFillColor(stops.pa.curPop, 'CuPEVPop', colors.pev)
@@ -133,10 +121,6 @@ const layerSpecs = {
   'PA-CurrentPEV-Veh': {
     sourceLayer: 'pa_pev_bg',
     fillColor: makeFillColor(stops.pa.curVeh, 'PerCuPEV', colors.pev)
-  },
-  'PA-FuturePEV-BG': {
-    sourceLayer: 'pa_pev_bg',
-    fillColor: makeFillColor(stops.pa.fut, 'FutPEV', colors.pev)
   },
   'PA-FuturePEV-Pop': {
     sourceLayer: 'pa_pev_bg',
@@ -188,10 +172,6 @@ const layerSpecs = {
   },
 
   // New Jersey
-  'NJ-CurrentPEV-BG': {
-    sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor(stops.nj.cur, 'CurPEV', colors.pev)
-  },
   'NJ-CurrentPEV-Pop': {
     sourceLayer: 'nj_pev_bg',
     fillColor: makeFillColor(stops.nj.curPop, 'CuPEVPop', colors.pev)
@@ -207,10 +187,6 @@ const layerSpecs = {
   'NJ-CurrentPEV-Veh': {
     sourceLayer: 'nj_pev_bg',
     fillColor: makeFillColor(stops.nj.curVeh, 'PerCuPEV', colors.pev)
-  },
-  'NJ-FuturePEV-BG': {
-    sourceLayer: 'nj_pev_bg',
-    fillColor: makeFillColor(stops.nj.fut, 'FutPEV', colors.pev)
   },
   'NJ-FuturePEV-Pop': {
     sourceLayer: 'nj_pev_bg',
