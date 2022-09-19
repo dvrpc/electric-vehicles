@@ -369,10 +369,7 @@ select {
   display: inline-block;
 }
 .infoLeft {
-  /* padding: 10px; */
   width: 100%;
-  height: 100%;
-  background-color: var(--theme-offwhite2);
   margin-top: 10px;
 }
 #startContent {
@@ -396,7 +393,7 @@ select {
   border-radius: 3px;
   text-align: center;
   margin: 10px auto 13px auto;
-  /* padding: 0px 10% 10px 10%; */
+  padding: 10px 0;
   background-color: var(--theme-dark2);
   width: 90%;
   line-height: 30px;
@@ -406,6 +403,7 @@ select {
 #BGInfo {
   color: var(--theme-black);
   margin: 10px auto 13px auto;
+  padding: 5px;
 }
 .dataTable {
   width: 100%;
@@ -422,9 +420,8 @@ select {
 .data-wrapper {
   background-color: #fff;
   border-radius: 3px;
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
-  margin-left: 10px;
-  margin-top: 10px;
+  box-shadow: var(--box-shadow-half);
+  margin-bottom: 10px;
 }
 .data-subheader {
   background-color: var(--theme-sidebar);

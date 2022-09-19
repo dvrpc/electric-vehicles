@@ -75,6 +75,30 @@
     <main class="flex-row flex-between main-content-wrapper">
       <section class="sidebar">
         <div class="sidebar-content">
+          <div id="mapStart" class="infoLeft">
+            <div id="startContent">
+              <h1>Click the map to view Municipal and Census Block Group level data</h1>
+            </div>
+          </div>
+
+          <div id="mapDetails" class="infoLeft">
+            <div id="data-wrapper">
+             
+              <!-- @UPDATE: shelf until MCD added -->
+              <!-- <div class="data-wrapper">
+                 <h2 class="data-subheader">Municipal Level Information</h2>
+                 <div id="mcdName"></div>
+                <div id="mcdAGG"></div>
+              </div> -->
+
+              <div class="data-wrapper">
+                <h2 class="data-subheader">Block Group Level Information</h2>
+                <div id="BGName"></div>
+                <div id="BGInfo"></div>
+              </div>
+            </div>
+          </div>
+
           <form id="main-form" class="sidebar-form">
             <h3 class="sidebar-h3">Select a Geography</h3>
             <div class="scoreTogglers">
@@ -177,34 +201,6 @@
               Projected number of PEV's (DVRPC region)
             </label>
           </form>
-          
-          <div id="mapStart" class='infoLeft' style="height:100vh;">
-            <div id="startContent">
-              <h1>Click the map to view Municipal and Census Block Group level data</h1>
-            </div>
-          </div>
-
-          <div id="mapDetails" class='infoLeft'>
-            <div id='data-wrapper' class='data-wrapper'>
-             
-              <!-- @UPDATE: shelf until MCD added -->
-              <!-- <div class='data-wrapper' id='data-wrapper'>     
-                 <h2 class='data-subheader'>
-                 Municipal Level Information</h2>
-                 <div id="mcdName"></div>
-                  <div id="mcdAGG"></div>
-              </div> -->
-    
-              <div class='data-wrapper' id='data-wrapper'>     
-                  <h2 class='data-subheader'>
-                  Block Group Level Information</h2>
-                   <div id="BGName"></div>
-                   <div id="BGInfo"></div>
-              </div>
-            </div>
-
-          </div>
-
         </div>
 
         <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
