@@ -36,7 +36,7 @@ map.on('load', () => {
     togglerNJ(map)
     togglerDVRPC(map)
 
-    handleLegend(['CurrentPEV-BG'], legendContainer, 'dvrpc')
+    handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
 
     for(const source in sources) map.addSource(source, sources[source])
     for(const layer in layers) map.addLayer(layers[layer], 'road-label')

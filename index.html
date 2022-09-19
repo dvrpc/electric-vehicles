@@ -149,8 +149,8 @@
             <!-- value here is extracted for the query builder -->
             <label class="flex-align-center flex-between label-select">
               <select name="layout_select" id="layout_select">
-                <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option>
-                <option value="Pop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+                <!-- <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option> -->
+                <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
                 <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
                 <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
                 <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
@@ -187,12 +187,13 @@
           <div id="mapDetails" class='infoLeft'>
             <div id='data-wrapper' class='data-wrapper'>
              
-              <div class='data-wrapper' id='data-wrapper'>     
+              <!-- @UPDATE: shelf until MCD added -->
+              <!-- <div class='data-wrapper' id='data-wrapper'>     
                  <h2 class='data-subheader'>
                  Municipal Level Information</h2>
                  <div id="mcdName"></div>
                   <div id="mcdAGG"></div>
-              </div>
+              </div> -->
     
               <div class='data-wrapper' id='data-wrapper'>     
                   <h2 class='data-subheader'>
