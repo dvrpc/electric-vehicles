@@ -389,37 +389,29 @@ select {
 }
 #mcdName,
 #BGName {
-  color: #fff;
-  border-radius: 3px;
+  width: 100%;
+  background-color: var(--theme-dark);
+  color: var(--theme-white);
+  border-top-right-radius: var(--border-radius);
+  border-top-left-radius: var(--border-radius);
   text-align: center;
-  margin: 10px auto 13px auto;
   padding: 10px 0;
-  background-color: var(--theme-dark2);
-  width: 90%;
-  line-height: 30px;
-  border: 2px solid var(--theme-dark);
-  box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  box-shadow: var(--box-shadow-half);
 }
 #BGInfo {
   color: var(--theme-black);
-  margin: 10px auto 13px auto;
   padding: 5px;
 }
 .dataTable {
   width: 100%;
 }
 .dataTable tr {
-  /* display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 3px 0; */
   text-align: center;
   border-bottom: 1px dotted #414770;
-  /* margin: 0px 10px 0px 0px; */
 }
 .data-wrapper {
   background-color: #fff;
-  border-radius: 3px;
+  border-radius: var(--border-radius);
   box-shadow: var(--box-shadow-half);
   margin-bottom: 10px;
 }
@@ -436,19 +428,14 @@ select {
 .data-subtitle{
   text-align: center;
   font-weight: bold;
+  margin-top: 20px;
 }
-.data-subtitle2{
-  text-align: center;
-}
-.data-row {
-  /* text-align: left; */
-  margin: 10px;
+.data-row, .dataTable-row {
   border-bottom: 1px dotted #414770;
 }
 .data-info {
   font-size: small;
   color: #808080;
-  /* border-bottom: 1px dotted #414770; */
   text-align: left;
 }
 .data-info2 {
@@ -457,8 +444,6 @@ select {
   text-align: left;
 }
 .data-value {
-  font-size: medium;
-  /* border-bottom: 1px dotted #414770; */
   float: right;
 }
 .data-value2 {

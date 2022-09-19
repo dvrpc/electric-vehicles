@@ -22,7 +22,7 @@ const handleBlockGroups = function (props,map) {
   let county = lookupCounty[props.countyfp10];
 
   var BGName = "<h3>Block Group ID: "+ props.GEOID10 +
-  "</span></h3>"+"<div class='data-subtitle'><span>Municipality Containing This Block Group: </span></span></div><div class='data-subtitle'><span> " +
+  "</span></h3>"+"<div><span>Municipality Containing This Block Group: </span></span></div><div><span> " +
   props.MUN_NAME +
   "</span></div>" 
   ;
@@ -42,7 +42,7 @@ const handleBlockGroups = function (props,map) {
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>"+
-  "<div class='data-subtitle2'>Plug-in Electric Vehicle Distribution</div>"+
+  "<div class='data-subtitle'>Plug-in Electric Vehicle Distribution</div>"+
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
@@ -95,7 +95,7 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "</table></div>"+
-    "<div class='data-subtitle2'>Workplace Charging Demand</div>"+
+    "<div class='data-subtitle'>Workplace Charging Demand</div>"+
     "<div><table class='dataTable'>" +
       "<tr>" +
       "<th scope='col'></th>" +
