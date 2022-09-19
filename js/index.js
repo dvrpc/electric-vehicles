@@ -158,6 +158,7 @@ map.on('load', () => {
     });
 
     map.on('click','njPEVBG', (e) => {
+        console.log('wtf nj')
         // mapbox function calling of geojson properties
         mapStart.style.display = "none";
         mapDetails.style.display = "inline-block";

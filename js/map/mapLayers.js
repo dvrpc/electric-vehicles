@@ -174,9 +174,8 @@ const layers = {
             ],
          }
       },
-    "filter": [">=", "POP", 0.1],
+    "filter": [">=", "POP", 0.1]
   },
-
   NJPevFills: {
     'id': 'njPEVBG',
     'type': 'fill',
