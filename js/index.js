@@ -140,6 +140,7 @@ map.on('load', () => {
         var props = e.features[0].properties;
         handleBlockGroups(props,map)
         // var coordinates = e.features[0].geometry.coordinates[0];
+        // @TODO: implemnet handleHighlight to keep clicked jawn highlighted
         // var FID = e.features[0].id;
         // handleSidebarDisplay()
         // handleHighlight(FID)

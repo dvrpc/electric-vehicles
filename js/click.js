@@ -21,8 +21,8 @@ const handleBlockGroups = function (props,map) {
 
   let county = lookupCounty[props.countyfp10];
 
-  var BGName = "<h3>Block Group ID: "+ props.GEOID10 +
-  "</span></h3>"+"<div><span>Municipality Containing This Block Group: </span></span></div><div><span> " +
+  var BGName = "<h2>Block Group ID: "+ props.GEOID10 +
+  "</span></h2>"+"<div><span>Municipality Containing This Block Group: </span></span></div><div><span class='block-name'> " +
   props.MUN_NAME +
   "</span></div>" 
   ;
