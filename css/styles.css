@@ -267,7 +267,6 @@ nav {
   z-index: 3;
   left: 10px;
   top: 10px;
-  background-color: white;
   box-shadow: var(--box-shadow-half);
   border: 3px solid white;
   border-radius: var(--border-radius);
@@ -275,7 +274,6 @@ nav {
 .sidebar-form {
   padding: var(--padding) var(--padding-double);
   border-radius: var(--border-radius);
-  background-color: white;
 }
 .sidebar-fieldset label {
   margin-right: 5px;
@@ -504,6 +502,9 @@ input[class="lbox"]{
   cursor: text;
   color: var(--theme-black);
 }
+.map-overlay-trans {
+  background-color: rgba(255, 255, 255, 0.925);
+}
 /* END Map */
 
 /* Legend Boxes */
@@ -513,7 +514,6 @@ input[class="lbox"]{
   left: 10px;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
-  background-color: #fff;
   color: var(--theme-black);
   z-index: 3;
   padding: var(--padding);
