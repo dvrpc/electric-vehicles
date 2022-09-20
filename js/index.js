@@ -5,7 +5,6 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
-import { makePopup, makePopupContent } from './map/popup.js'
 import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
 
 const modal = document.getElementById('modal')
@@ -26,7 +25,7 @@ localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', null)
 localStorage.setItem('pa-hoveredStateId', null)
 localStorage.setItem('nj-hoveredStateId', null)
-localStorage.setItem('clickedLayer', false)
+localStorage.setItem('clickedLayer', '')
 
 const map = makeMap()
 
@@ -51,7 +50,7 @@ map.on('load', () => {
         // clear any clicked queries
         mapDetails.style.display = 'none'
         const activeClicked = localStorage.getItem('clickedLayer')
-        if(activeClicked) map.setFilter(activeClicked, ['==', ['id'], ''])
+        if(activeClicked.length) map.setFilter(activeClicked, ['==', ['id'], ''])
 
         mapStart.setAttribute('open', '')
 
@@ -148,7 +147,7 @@ map.on('load', () => {
             
         // show/hide clicked fill
         const activeClicked = localStorage.getItem('clickedLayer')
-        if(activeClicked) map.setFilter(activeClicked, ['==', ['id'], ''])
+        if(activeClicked.length) map.setFilter(activeClicked, ['==', ['id'], ''])
 
         map.setFilter(clickLayer, ['==', ['id'], features.id])
         localStorage.setItem('clickedLayer', clickLayer)
