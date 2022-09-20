@@ -75,14 +75,24 @@
     <main class="flex-row flex-between main-content-wrapper">
       <section class="sidebar">
         <div class="sidebar-content">
-          <div id="mapStart" class="infoLeft">
-            <div id="startContent">
-              <!-- <h1>Click the map to view Municipal and Census Block Group level data</h1> -->
-              <!-- @todo: improve this text + add backup to the about section -->
-              <!-- include click hints + map form toggle how-to. Illustrate with graphics -->
-              <h1>Click the highlighted map areas to view Census Block Group level data</h1>
+          <details id="mapStart" class="infoLeft" open>
+            <summary class="sidebar-summmary">How To</summary>
+
+            <div id="startContent" class="startContent">
+              <h2 class="sidebar-h2">Here's how it works...</h2>
+              
+              <ul class="startContent-ul">
+                <li>
+                  Click the highlighted map areas to view Census Block Group level data on electric vehicles.
+                </li>
+
+                <li>
+                  Click the "show/hide map toggles" map overlay and interact with the buttons and dropdowns
+                  to change the data on the map.
+                </li>
+              </ul>
             </div>
-          </div>
+          </details>
 
           <div id="mapDetails" class="infoLeft">
             <div id="data-wrapper">

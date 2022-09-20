@@ -59,7 +59,7 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
-    "<td class='data-info'>Percentage of Passenger Vehicles That Are PEVs</td>" +
+    "<td class='data-info'>% of Passenger Vehicles That Are PEVs</td>" +
     "<td class='data-value-left'>" +
     numeral(props.PerCuPEV).format("(0.00%)") +
     "</td>" +

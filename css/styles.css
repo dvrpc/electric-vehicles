@@ -10,7 +10,6 @@ body {
 }
 h1 {
   text-align: center;
-  /* font-size: inherit; */
 }
 fieldset {
   font-size: 1em;
@@ -246,14 +245,16 @@ nav {
   overflow-y: auto;
 }
 .sidebar-h2 {
-  color: var(--theme-dvrpc);
-  font-size: 2em;
-  text-align: center;
+  font-size: 1.25em;
 }
 .sidebar-h3 {
   color: var(--theme-dvrpc-accent);
   font-size: inherit;
   font-weight: 400;
+}
+.sidebar-summmary {
+  padding: var(--padding);
+  padding-top: 0;
 }
 .sidebar-img {
   display: block;
@@ -385,16 +386,17 @@ input[class="lbox"]{
 .infoLeft {
   width: 100%;
 }
-#startContent {
+.startContent {
   color: var(--theme-dark);
-  border-radius: 3px;
-  text-align: center;
+  border-radius: var(--border-radius);
   margin-bottom: var(--padding);
-  padding: 0px 10%;
-  background-color: white;
-  min-height: 30px;
-  border: 3px solid var(--theme-dark);
+  padding: var(--padding) var(--padding-double);
+  background-color: var(--theme-white);
+  border: 3px solid white;
   box-shadow: var(--box-shadow-half);
+}
+.startContent-ul {
+  margin-top: var(--padding);
 }
 #mapDetails {
   display: none;
@@ -410,10 +412,11 @@ input[class="lbox"]{
 }
 #BGInfo {
   color: var(--theme-black);  
-  padding: var(--padding-half) var(--padding-double);
+  padding: 0 var(--padding-double);
 }
 .dataTable {
   width: 100%;
+  border-collapse: collapse;
 }
 .dataTable tr {
   text-align: center;
@@ -421,6 +424,8 @@ input[class="lbox"]{
 }
 .dataTable th {
   font-size: small;
+  font-weight: 400;
+  color: #808080;
 }
 .data-wrapper {
   border-radius: var(--border-radius);
@@ -438,7 +443,6 @@ input[class="lbox"]{
   font-size: 20px;
 }
 .data-subtitle{
-  text-align: center;
   font-weight: bold;
   margin-top: 20px;
 }

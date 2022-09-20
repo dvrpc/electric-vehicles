@@ -48,7 +48,8 @@ map.on('load', () => {
 
         // clear any clicked queries
         mapDetails.style.display = 'none'
-        mapStart.style.display = 'inline-block'
+
+        mapStart.setAttribute('open', '')
 
         // handle possibility of active overlays when toggling main layers
         const activeLayers = handleForms('input', overlayInputs, map)
@@ -133,42 +134,26 @@ map.on('load', () => {
     map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
     map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
 
+    // @todo: fitBounds after click. consider highlight too
     map.on('click','dvrpcPEVBG', (e) => {
-        // mapbox function calling of geojson properties
-        mapStart.style.display = "none";
-        mapDetails.style.display = "inline-block";
         var props = e.features[0].properties;
+        mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
-        // var coordinates = e.features[0].geometry.coordinates[0];
-        // @TODO: implemnet handleHighlight to keep clicked jawn highlighted
-        // var FID = e.features[0].id;
-        // handleSidebarDisplay()
-        // handleHighlight(FID)
+        mapDetails.style.display = "inline-block";
     });
 
     map.on('click','paPEVBG', (e) => {
-        // mapbox function calling of geojson properties
-        mapStart.style.display = "none";
-        mapDetails.style.display = "inline-block";
         var props = e.features[0].properties;
+        mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
-        // var coordinates = e.features[0].geometry.coordinates[0];
-        // var FID = e.features[0].id;
-        // handleSidebarDisplay()
-        // handleHighlight(FID)
+        mapDetails.style.display = "inline-block";
     });
 
     map.on('click','njPEVBG', (e) => {
-        console.log('wtf nj')
-        // mapbox function calling of geojson properties
-        mapStart.style.display = "none";
-        mapDetails.style.display = "inline-block";
         var props = e.features[0].properties;
+        mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
-        // var coordinates = e.features[0].geometry.coordinates[0];
-        // var FID = e.features[0].id;
-        // handleSidebarDisplay()
-        // handleHighlight(FID)
+        mapDetails.style.display = "inline-block";
     });
 
     // @TODO shelf until MCD's get incorporated
