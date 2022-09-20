@@ -74,38 +74,6 @@ const layers = {
         'fill-opacity': 0.0
     }
   },
-  PevLines: {
-    'id': 'dvrpcPEVBG-line',
-    'type': 'line',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_bg',
-    'layout': {}, 
-    'paint': {
-        "line-width": [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            6,
-            1
-            ],
-        "line-color":[
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            "#FF0000", "#9cafb5"
-            ],
-        "line-opacity": {
-            base: 9,
-            stops: [
-              [9, .4],
-              [10, .5],
-              [11, .65],
-              [12, .7],
-              [13, .8],
-              [14, .9],
-            ],
-         }
-      },
-    "filter": [">=", "POP", 0.1],
-  },
   PevFills: {
     'id': 'dvrpcPEVBG',
     'type': 'fill',
@@ -124,8 +92,8 @@ const layers = {
           'case',
           ['boolean', ['feature-state', 'hover'], false],
           '#FF0000',
-          '#9cafb5'
-          ] 
+          '#000000'
+        ]
     },
     "filter": [">=", "POP", 0.1],
   },
@@ -152,46 +120,18 @@ const layers = {
     'paint': {
         'fill-color': '#e2eb32',
         'fill-opacity': [
-        'case',
-        ['boolean', ['feature-state', 'hover'], false],
-        .8,
-        0.0
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          .8,
+          0.0
+        ],
+        'fill-outline-color':[
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          '#FF0000',
+          '#000000'
         ]
     },
-    "filter": [">=", "POP", 0.1],
-  },
-  PAPevLines: {
-    'id': 'paPEVBG-line',
-    'type': 'line',
-    'source': 'pev',
-    'source-layer': 'pa_pev_bg',
-    'layout': {
-      'visibility': 'none'
-    }, 
-    'paint': {
-        "line-width": [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            6,
-            1
-            ],
-        "line-color":[
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            "#FF0000", "#9cafb5"
-            ],
-        "line-opacity": {
-            base: 9,
-            stops: [
-              [9, .4],
-              [10, .5],
-              [11, .65],
-              [12, .7],
-              [13, .8],
-              [14, .9],
-            ],
-         }
-      },
     "filter": [">=", "POP", 0.1],
   },
   PAPevClick: {
@@ -217,46 +157,18 @@ const layers = {
     'paint': {
         'fill-color': '#e2eb32',
         'fill-opacity': [
-        'case',
-        ['boolean', ['feature-state', 'hover'], false],
-        .8,
-        0.0
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          .8,
+          0.0
+        ],
+        'fill-outline-color':[
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          '#FF0000',
+          '#000000'
         ]
     },
-    "filter": [">=", "POP", 0.1],
-  },
-  NJPevLines: {
-    'id': 'njPEVBG-line',
-    'type': 'line',
-    'source': 'pev',
-    'source-layer': 'nj_pev_bg',
-    'layout': {
-      'visibility': 'none'
-    }, 
-    'paint': {
-        "line-width": [
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            6,
-            1
-            ],
-        "line-color":[
-            'case',
-            ['boolean', ['feature-state', 'hover'], false],
-            "#FF0000", "#9cafb5"
-            ],
-        "line-opacity": {
-            base: 9,
-            stops: [
-              [9, .4],
-              [10, .5],
-              [11, .65],
-              [12, .7],
-              [13, .8],
-              [14, .9],
-            ],
-         }
-      },
     "filter": [">=", "POP", 0.1],
   },
   NJPevClick: {

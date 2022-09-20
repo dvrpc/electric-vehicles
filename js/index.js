@@ -22,9 +22,9 @@ $('.workplace').hide()
 
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 localStorage.setItem('active-geo', 'dvrpc')
-localStorage.setItem('hoveredStateId', null)
-localStorage.setItem('pa-hoveredStateId', null)
-localStorage.setItem('nj-hoveredStateId', null)
+localStorage.setItem('hoveredStateId', '')
+localStorage.setItem('pa-hoveredStateId', '')
+localStorage.setItem('nj-hoveredStateId', '')
 localStorage.setItem('clickedLayer', '')
 
 const map = makeMap()
@@ -75,19 +75,15 @@ map.on('load', () => {
     // @todo: pull hover and click fncs into new mapEvents.js file within /js/map/
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
-    const hoverGeoFill = (e, hoverState, fillLayer, lineLayer) => {
+    const hoverGeoFill = (e, hoverState, fillLayer) => {
         let hoveredStateId = localStorage.getItem(hoverState)
 
         map.getCanvas().style.cursor = "pointer";
 
         if (e.features.length > 0) {
-            if (hoveredStateId !== null) {
+            if (hoveredStateId.length) {
                 map.setFeatureState(
                     { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
-                    { hover: false }
-                );
-                map.setFeatureState(
-                    { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
                     { hover: false }
                 );
             }
@@ -98,10 +94,6 @@ map.on('load', () => {
                 { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
                 { hover: true }
             );
-            map.setFeatureState(
-                { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
-                { hover: true}
-            );
 
             localStorage.setItem(hoverState, hoveredStateId)
         }
@@ -109,18 +101,14 @@ map.on('load', () => {
 
     // When the mouse leaves the state-fill layer, update the feature state of the
     // previously hovered feature.
-    const leaveGeoFill = (hoverState, fillLayer, lineLayer) => {
+    const leaveGeoFill = (hoverState, fillLayer) => {
         let hoveredStateId = localStorage.getItem(hoverState)
 
         map.getCanvas().style.cursor = "";
 
-        if (hoveredStateId !== null) {
+        if (hoveredStateId.length) {
             map.setFeatureState(
                 { source: 'pev', sourceLayer: fillLayer, id: hoveredStateId },
-                { hover: false }
-            );
-            map.setFeatureState(
-                { source: 'pev', sourceLayer: lineLayer, id: hoveredStateId },
                 { hover: false }
             );
         }
@@ -159,13 +147,13 @@ map.on('load', () => {
     }
 
     // establish mouse events
-    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
-    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
-    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
+    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg'))
+    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg'))
+    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg'))
         
-    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
-    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
-    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
+    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg'))
+    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg'))
+    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg'))
 
     map.on('click','dvrpcPEVBG', (e) => clickFill(e, 'dvrpcPEVBG-click'));
     map.on('click','paPEVBG', (e) => clickFill(e, 'paPEVBG-click'));

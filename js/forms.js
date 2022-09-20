@@ -88,37 +88,28 @@ const constructMainQuery = map => {
     } else {
       // create & add layer
       const newLayer = makeSecondaryMapLayer(newLayerId)
-      map.addLayer(newLayer, "dvrpcPEVBG-line");
+      map.addLayer(newLayer, "dvrpcPEVBG");
   }
 
   // toggle hover layers visibility
   switch(geo) {
     case 'PA':
       map.setLayoutProperty('paPEVBG', 'visibility', 'visible')
-      map.setLayoutProperty('paPEVBG-line', 'visibility', 'visible')
 
       map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('dvrpcPEVBG-line', 'visibility', 'none')
       map.setLayoutProperty('njPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('njPEVBG-line', 'visibility', 'none')
       break
     case 'NJ':
       map.setLayoutProperty('njPEVBG', 'visibility', 'visible')
-      map.setLayoutProperty('njPEVBG-line', 'visibility', 'visible')
 
       map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('dvrpcPEVBG-line', 'visibility', 'none')
       map.setLayoutProperty('paPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('paPEVBG-line', 'visibility', 'none')
       break
     default:
       map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'visible')
-      map.setLayoutProperty('dvrpcPEVBG-line', 'visibility', 'visible')
 
       map.setLayoutProperty('paPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('paPEVBG-line', 'visibility', 'none')
       map.setLayoutProperty('njPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('njPEVBG-line', 'visibility', 'none')
   }
 
   // update localStorage
