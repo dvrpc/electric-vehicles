@@ -423,7 +423,6 @@ input[class="lbox"]{
 .dataTable th {
   font-size: small;
   font-weight: 400;
-  color: #808080;
 }
 .data-wrapper {
   border-radius: var(--border-radius);
@@ -452,12 +451,10 @@ input[class="lbox"]{
 }
 .data-info {
   font-size: small;
-  color: #808080;
   text-align: left;
 }
 .data-info2 {
   font-size: small;
-  color: #808080;
   text-align: left;
 }
 .block-name {
@@ -562,7 +559,6 @@ input[class="lbox"]{
   width: 14%;
   text-align: right;
   font-size: 11px;
-  color: #808080;
 }
 .legend-note{
   font-size: 11px;
