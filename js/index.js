@@ -125,17 +125,9 @@ map.on('load', () => {
         localStorage.setItem(hoverState, null)
     }
 
-    // establish mouse events
-    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
-    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
-    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
-        
-    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
-    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
-    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
-
-    // @todo: fitBounds after click. consider highlight too
-    map.on('click','dvrpcPEVBG', (e) => {
+    // @todo keep highlight for clicked feature
+        // use similar feature state local storage - on each click, clear and re-establish highlighted jawn
+    const clickFill = e => {
         const features = e.features[0]
         var props = features.properties;
         const geo = features.geometry.coordinates[0]
@@ -153,21 +145,20 @@ map.on('load', () => {
         mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
         mapDetails.style.display = "inline-block";
-    });
+    }
 
-    map.on('click','paPEVBG', (e) => {
-        var props = e.features[0].properties;
-        mapStart.removeAttribute('open')
-        handleBlockGroups(props,map)
-        mapDetails.style.display = "inline-block";
-    });
+    // establish mouse events
+    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
+    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
+        
+    map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg', 'dvrpcPEVBG-line'))
+    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
+    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
 
-    map.on('click','njPEVBG', (e) => {
-        var props = e.features[0].properties;
-        mapStart.removeAttribute('open')
-        handleBlockGroups(props,map)
-        mapDetails.style.display = "inline-block";
-    });
+    map.on('click','dvrpcPEVBG', (e) => clickFill(e));
+    map.on('click','paPEVBG', (e) => clickFill(e));
+    map.on('click','njPEVBG', (e) => clickFill(e));
 
     // @TODO shelf until MCD's get incorporated
     // map.on('click','dvrpcPEVMCD', (e) => {
