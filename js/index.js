@@ -137,6 +137,16 @@ map.on('load', () => {
     // @todo: fitBounds after click. consider highlight too
     map.on('click','dvrpcPEVBG', (e) => {
         var props = e.features[0].properties;
+        const geo = e.features[0].geometry.coordinates[0]
+        const geoMid = Math.floor(geo.length / 2)
+        const a = geo[0]
+        const b = geo[geoMid]
+
+        map.fitBounds(
+            [a, b],
+            {padding: {top: 30, bottom: 30, left: 30, right: 30}}
+        )
+
         mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
         mapDetails.style.display = "inline-block";
