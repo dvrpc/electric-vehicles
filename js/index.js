@@ -5,6 +5,7 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
+import { makePopup, makePopupContent } from './map/popup.js'
 import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
 
 const modal = document.getElementById('modal')
@@ -25,6 +26,7 @@ localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', null)
 localStorage.setItem('pa-hoveredStateId', null)
 localStorage.setItem('nj-hoveredStateId', null)
+localStorage.setItem('clickedLayer', false)
 
 const map = makeMap()
 
@@ -48,6 +50,8 @@ map.on('load', () => {
 
         // clear any clicked queries
         mapDetails.style.display = 'none'
+        const activeClicked = localStorage.getItem('clickedLayer')
+        if(activeClicked) map.setFilter(activeClicked, ['==', ['id'], ''])
 
         mapStart.setAttribute('open', '')
 
@@ -125,12 +129,12 @@ map.on('load', () => {
         localStorage.setItem(hoverState, null)
     }
 
-    // @todo keep highlight for clicked feature
-        // use similar feature state local storage - on each click, clear and re-establish highlighted jawn
-    const clickFill = e => {
+    // zoom to + highlight clicked area
+    const clickFill = (e, clickLayer) => {
         const features = e.features[0]
-        var props = features.properties;
+        const props = features.properties;
         const geo = features.geometry.coordinates[0]
+        
         const geoMid = Math.floor(geo.length / 2)
         const a = geo[0]
         const b = geo[geoMid]
@@ -141,7 +145,15 @@ map.on('load', () => {
                 maxZoom: 10
             }
         )
+            
+        // show/hide clicked fill
+        const activeClicked = localStorage.getItem('clickedLayer')
+        if(activeClicked) map.setFilter(activeClicked, ['==', ['id'], ''])
 
+        map.setFilter(clickLayer, ['==', ['id'], features.id])
+        localStorage.setItem('clickedLayer', clickLayer)
+
+        // handle sidebar elements
         mapStart.removeAttribute('open')
         handleBlockGroups(props,map)
         mapDetails.style.display = "inline-block";
@@ -156,9 +168,9 @@ map.on('load', () => {
     map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg', 'paPEVBG-line'))
     map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg', 'njPEVBG-line'))
 
-    map.on('click','dvrpcPEVBG', (e) => clickFill(e));
-    map.on('click','paPEVBG', (e) => clickFill(e));
-    map.on('click','njPEVBG', (e) => clickFill(e));
+    map.on('click','dvrpcPEVBG', (e) => clickFill(e, 'dvrpcPEVBG-click'));
+    map.on('click','paPEVBG', (e) => clickFill(e, 'paPEVBG-click'));
+    map.on('click','njPEVBG', (e) => clickFill(e, 'njPEVBG-click'));
 
     // @TODO shelf until MCD's get incorporated
     // map.on('click','dvrpcPEVMCD', (e) => {

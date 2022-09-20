@@ -9,23 +9,12 @@ const makePopupContent = (map, target, popup) => {
     .addTo(map)
 }
 
-// @params props
-    // {
-    //  display: 'name to display',
-    //  prop: 'value of property'
-    // }
 const makePopupHTML = props => {
-    let html = ''
-
-    props.forEach(prop => {
-        html += `
-            <span class="popup-span">
-                ${prop.display}: <strong>${prop.prop}</strong> 
-            </span>
-        `
-    })
-    
-    return html
+    return `
+        <span class="popup-span">
+            ${props.namelsad10}
+        </span>
+    `
 }
 
 export { makePopup, makePopupContent }

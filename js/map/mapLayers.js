@@ -119,9 +119,27 @@ const layers = {
         ['boolean', ['feature-state', 'hover'], false],
         .8,
         0.0
-        ]
+        ],
+        'fill-outline-color':[
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          '#FF0000',
+          '#9cafb5'
+          ] 
     },
     "filter": [">=", "POP", 0.1],
+  },
+  PevClick: {
+    'id': 'dvrpcPEVBG-click',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'dvrpc_pev_bg',
+    'layout': {}, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-outline-color': '#FF0000'
+    },
+    "filter": ["==", "geoid10", ''],
   },
   PAPevFills: {
     'id': 'paPEVBG',
@@ -176,6 +194,18 @@ const layers = {
       },
     "filter": [">=", "POP", 0.1],
   },
+  PAPevClick: {
+    'id': 'paPEVBG-click',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'pa_pev_bg',
+    'layout': {}, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-outline-color': '#FF0000'
+    },
+    "filter": ["==", "geoid10", ''],
+  },
   NJPevFills: {
     'id': 'njPEVBG',
     'type': 'fill',
@@ -228,7 +258,19 @@ const layers = {
          }
       },
     "filter": [">=", "POP", 0.1],
-  }
+  },
+  NJPevClick: {
+    'id': 'njPEVBG-click',
+    'type': 'fill',
+    'source': 'pev',
+    'source-layer': 'nj_pev_bg',
+    'layout': {}, 
+    'paint': {
+        'fill-color': '#e2eb32',
+        'fill-outline-color': '#FF0000'
+    },
+    "filter": ["==", "geoid10", ''],
+  },
 };
 
 export default layers;
