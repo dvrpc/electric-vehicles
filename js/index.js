@@ -136,15 +136,18 @@ map.on('load', () => {
 
     // @todo: fitBounds after click. consider highlight too
     map.on('click','dvrpcPEVBG', (e) => {
-        var props = e.features[0].properties;
-        const geo = e.features[0].geometry.coordinates[0]
+        const features = e.features[0]
+        var props = features.properties;
+        const geo = features.geometry.coordinates[0]
         const geoMid = Math.floor(geo.length / 2)
         const a = geo[0]
         const b = geo[geoMid]
 
-        map.fitBounds(
-            [a, b],
-            {padding: {top: 30, bottom: 30, left: 30, right: 30}}
+        map.fitBounds([a, b], 
+            {
+                padding: {top: 0, bottom: 30, left: 0, right: 0},
+                maxZoom: 10
+            }
         )
 
         mapStart.removeAttribute('open')
