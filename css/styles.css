@@ -263,13 +263,10 @@ nav {
   border-radius: var(--border-radius);
 }
 .form-wrapper {
-  position: absolute;
-  z-index: 4;
-  left: 10px;
-  top: 10px;
   box-shadow: var(--box-shadow-half);
-  border: 3px solid white;
   border-radius: var(--border-radius);
+  background-color: var(--theme-white);
+  border: 3px solid white;
 }
 .sidebar-form {
   padding: var(--padding) var(--padding-double);
@@ -290,7 +287,6 @@ nav {
   cursor: pointer;
   border-radius: 16px;
 }
-
 .button:hover {
   background-color: #f1f1f1;
 }
@@ -507,7 +503,7 @@ input[class="lbox"]{
 /* Legend Boxes */
 .legend-container {
   position: absolute;
-  bottom: 10px;
+  top: 10px;
   left: 10px;
   box-shadow: var(--box-shadow);
   border-radius: var(--border-radius);
@@ -523,7 +519,7 @@ input[class="lbox"]{
   border-bottom: 1px solid var(--theme-black);
 }
 .legend-item {
-  margin: 10px 0;
+  margin-bottom: 10px;
   width: max-content;
 }
 .legend-item:last-child {
@@ -544,6 +540,7 @@ input[class="lbox"]{
   height: 15px;
   margin-right: 9px;
   border-radius: 50%;
+  border: 1px solid var(--theme-black);
 }
 .legend-text {
   font-size: 1em;
@@ -586,6 +583,9 @@ input[class="lbox"]{
 #legend-box2 {
   z-index: 1001;
   padding: 8px;
+}
+.legend-hr {
+  margin: 10px 0;
 }
 /*Colors */
 .gb-1 {

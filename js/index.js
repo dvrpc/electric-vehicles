@@ -52,7 +52,7 @@ map.on('load', () => {
         let part = activeClicked.split('-')[0]
         let activeGeo = part.substring(part.length - 5, 0)
         
-        if(layerGeo != activeGeo){
+        if(activeGeo && layerGeo != activeGeo){
             mapDetails.style.display = 'none'
             map.setFilter(activeClicked, ['==', ['id'], ''])
             mapStart.setAttribute('open', '')

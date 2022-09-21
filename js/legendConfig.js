@@ -91,68 +91,60 @@ const legendConfig = {
     perc: true
   },
   "FC-KD-SM": {
-    label: "Free Charging - kWh of Demand per Sq. Mi.",
+    label: "Free Charging - kWh of Workplace Charging Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     paintType: 'FC_KD_SM',
     perc: false,
-    note:"kWh of Workplace Charging Demand per Square Mile"
   },
   "FC-KD-JB": {
-    label: "Free Charging - kWh of Demand per Job",
+    label: "Free Charging - kWh of Workplace Charging Demand per Job",
     legendType:"scale",
     class:"brg",
     paintType: 'FC_KD_JB',
     perc: false,
-    note:"kWh of Workplace Charging Demand per Job"
   },
   "FC-CE-SM": {
-    label: "Free Charging - Charging Event per Sq. Mi.",
+    label: "Free Charging - Workplace Charging Events per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     paintType: 'FC_CE_SM',
     perc: false,
-    note:"Number of Workplace Charging Events per Square Mile"
   },
   "FC-CE-JB": {
-    label: "Free Charging - Charging Event per Job",
+    label: "Free Charging - Workplace Charging Events per Job",
     legendType:"scale",
     class:"brg",
     paintType: 'FC_CE_JB',
     perc: false,
-    note:"Number of Workplace Charging Events per Job"
   },
   "PC-KD-SM": {
-    label: "Paid Charging - kWh of Demand per Sq. Mi.",
+    label: "Paid Charging - kWh of Workplace Charging Demand per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     paintType: 'PC_KD_SM',
     perc: false,
-    note:"kWh of Workplace Charging Demand per Square Mile"
   },
   "PC-KD-JB": {
-    label: "Paid Charging - kWh of Demand per Job",
+    label: "Paid Charging - kWh of Workplace Charging Demand per Job",
     legendType:"scale",
     class:"brg",
     paintType: 'PC_KD_JB',
     perc: false,
-    note:"kWh of Workplace Charging Demand per Job"
   },
   "PC-CE-SM": {
-    label: "Paid Charging - Charging Event per Sq. Mi.",
+    label: "Paid Charging - Workplace Charging Event per Sq. Mi.",
     legendType:"scale",
     class:"yor",
     paintType: 'PC_CE_SM',
     perc: false,
-    note:"Number of Workplace Charging Events per Square Mile"
   },
   "PC-CE-JB": {
-    label: "Paid Charging - Charging Event per Job",
+    label: "Paid Charging - Workplace Charging Event per Job",
     legendType:"scale",
     class:"brg",
     paintType: 'PC_CE_JB',
     perc: false,
-    note:"Number of Workplace Charging Events per Job"
   }
 };
 

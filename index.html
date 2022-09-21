@@ -137,115 +137,117 @@
       </section>
 
       <div id="map" class="map">
-        <details class="form-wrapper map-overlay-trans">
-          <summary>show/hide map toggles</summary>
-
-          <form id="main-form" class="sidebar-form">
-            <h3 class="sidebar-h3">select a map theme</h3>
-            <div class="scoreTogglers">
-              <label id="PEV" class="toggle-btn toggle-btn-active PEV scoreBox2 score-cb">
-                <input
-                  type="radio"
-                  class="lbox"
-                  name="theme"
-                  value="distribution"
-                  checked
-                />
-                PEV Distribution
-              </label>
-
-              <label id="WP" class="toggle-btn WP score-cb">
-                <input
-                  type="radio"
-                  class="lbox"
-                  name="theme"
-                  value="workplace"
-                />
-                Workplace Charging
-              </label>
-            </div>
-
-            <h3 class="sidebar-h3">select a geography</h3>
-            <div class="scoreTogglers">
-              <label id="DVRPC-toggle" class="toggle-btn toggle-btn-active">
-                <input
-                  type="radio"
-                  class="lbox"
-                  name="geo"
-                  value="DVRPC"
-                  checked
-                />
-                DVRPC Region
-              </label>
-
-              <label id="PA-toggle" class="toggle-btn">
-                <input
-                  type="radio"
-                  class="lbox"
-                  name="geo"
-                  value="PA"
-                />
-                PA
-              </label>
-
-              <label id="NJ-toggle" class="toggle-btn">
-                <input
-                  type="radio"
-                  class="lbox"
-                  name="geo"
-                  value="NJ"
-                />
-                NJ
-              </label>
-            </div>
-
-            <!-- scenario toggles -->
-            <h3 class="sidebar-h3">select data</h3>
-            <label class="flex-align-center flex-between label-select">
-              view
-              <select name="type_select" id="type_select" >
-                <option value="Current" data-type="time" class="distribution">Current</option>
-                <option value="Future" data-type="time" class="distribution">Future</option>
-                <option value="FC" data-type="charge" class="workplace" >Free Charging</option>
-                <option value="PC" data-type="charge" class="workplace" >Paid Charging</option>
-              </select>
-            </label>
-
-            <!-- value here is extracted for the query builder -->
-            <label class="flex-align-center flex-between label-select">
-              <select name="layout_select" id="layout_select">
-                <!-- <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option> -->
-                <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
-                <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
-                <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
-                <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
-                <option value="KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
-                <option value="KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
-                <option value="CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
-                <option value="CE-JB" class="dvrpc charge">Charging Event per Job</option>
-              </select>
-            </label>
-
-            <br />by Census Block Group
-          </form>
-          
-          <form id="overlay-form" class="sidebar-form">
-            <h3 class="sidebar-h3 overlay-h3">add context</h3>
-
-            <label class="label-input overlay-input">
-              <input type="checkbox" value="charging"/>
-              Charging Locations
-            </label>
-
-            <label class="label-input overlay-input">
-              <input type="checkbox" value="dvrpc-projected" />
-              Projected number of PEV's (DVRPC region)
-            </label>
-          </form>
-        </details>
-        
         <div class="legend-container map-overlay-trans">
           <div id="legend-container"></div>
+
+          <hr class="legend-hr" />
+
+          <details class="form-wrapper">
+            <summary>show/hide map toggles</summary>
+  
+            <form id="main-form" class="sidebar-form">
+              <h3 class="sidebar-h3">select a map theme</h3>
+              <div class="scoreTogglers">
+                <label id="PEV" class="toggle-btn toggle-btn-active PEV scoreBox2 score-cb">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="theme"
+                    value="distribution"
+                    checked
+                  />
+                  PEV Distribution
+                </label>
+  
+                <label id="WP" class="toggle-btn WP score-cb">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="theme"
+                    value="workplace"
+                  />
+                  Workplace Charging
+                </label>
+              </div>
+  
+              <h3 class="sidebar-h3">select a geography</h3>
+              <div class="scoreTogglers">
+                <label id="DVRPC-toggle" class="toggle-btn toggle-btn-active">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="DVRPC"
+                    checked
+                  />
+                  DVRPC Region
+                </label>
+  
+                <label id="PA-toggle" class="toggle-btn">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="PA"
+                  />
+                  PA
+                </label>
+  
+                <label id="NJ-toggle" class="toggle-btn">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="NJ"
+                  />
+                  NJ
+                </label>
+              </div>
+  
+              <!-- scenario toggles -->
+              <h3 class="sidebar-h3">select data</h3>
+              <label class="flex-align-center flex-between label-select">
+                view
+                <select name="type_select" id="type_select" >
+                  <option value="Current" data-type="time" class="distribution">Current</option>
+                  <option value="Future" data-type="time" class="distribution">Future</option>
+                  <option value="FC" data-type="charge" class="workplace" >Free Charging</option>
+                  <option value="PC" data-type="charge" class="workplace" >Paid Charging</option>
+                </select>
+              </label>
+  
+              <!-- value here is extracted for the query builder -->
+              <label class="flex-align-center flex-between label-select">
+                <select name="layout_select" id="layout_select">
+                  <!-- <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option> -->
+                  <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+                  <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+                  <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
+                  <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
+                  <option value="KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
+                  <option value="KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
+                  <option value="CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
+                  <option value="CE-JB" class="dvrpc charge">Charging Event per Job</option>
+                </select>
+              </label>
+  
+              <br />by Census Block Group
+            </form>
+            
+            <form id="overlay-form" class="sidebar-form">
+              <h3 class="sidebar-h3 overlay-h3">add context</h3>
+  
+              <label class="label-input overlay-input">
+                <input type="checkbox" value="charging"/>
+                Charging Locations
+              </label>
+  
+              <label class="label-input overlay-input">
+                <input type="checkbox" value="dvrpc-projected" />
+                Projected number of PEV's (DVRPC region)
+              </label>
+            </form>
+          </details>
         </div>
 
         <div class="lds-ring lds-ring-active">

@@ -15,7 +15,6 @@ const createLegendItem = (val, geo) => {
           <div class='legend clearfix'>
             ${paintArr.map((val, index) => `<span class='${legendDetails.class}-${index++}'></span>`).join('')}
             ${paintArr.map(paintVal => `<label>${legendDetails.perc ? numeral(paintVal * 100).format('(0,0.000)') : numeral(paintVal).format('(0,0.000)')}</label>`).join('')}
-            ${legendDetails.note ? `<div class="legend-note">${legendDetails.note}</div>` : ''}
           </div>
       </div>
       `;
