@@ -47,12 +47,16 @@ map.on('load', () => {
         let [genericID, layerGeo] = handleForms('main', null, map)
         localStorage.setItem('active-geo', layerGeo)
 
-        // clear any clicked queries
-        mapDetails.style.display = 'none'
+        // clear any clicked queries if geo changes
         const activeClicked = localStorage.getItem('clickedLayer')
-        if(activeClicked.length) map.setFilter(activeClicked, ['==', ['id'], ''])
-
-        mapStart.setAttribute('open', '')
+        let part = activeClicked.split('-')[0]
+        let activeGeo = part.substring(part.length - 5, 0)
+        
+        if(layerGeo != activeGeo){
+            mapDetails.style.display = 'none'
+            map.setFilter(activeClicked, ['==', ['id'], ''])
+            mapStart.setAttribute('open', '')
+        }
 
         // handle possibility of active overlays when toggling main layers
         const activeLayers = handleForms('input', overlayInputs, map)
