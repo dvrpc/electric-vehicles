@@ -390,7 +390,7 @@ input[class="lbox"]{
   box-shadow: var(--box-shadow-half);
 }
 .startContent-ul {
-  margin-top: var(--padding);
+  margin-bottom: var(--padding);
 }
 #mapDetails {
   display: none;
