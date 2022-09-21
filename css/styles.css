@@ -547,6 +547,7 @@ input[class="lbox"]{
 }
 .legend-text {
   font-size: 1em;
+  font-weight: 700;
 }
 .legend {
   width: 375px;
