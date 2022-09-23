@@ -12,12 +12,6 @@ const legendConfig = {
     label: "Current PEVs (Centroid)",
     color: "#EA563D",
   },
-  "dvrpc-projected": {
-    legendType:"circle",
-    iconType: "circle",
-    label: "Projected PEVs (Centroid)",
-    color: "#3182D1",
-  },
 
   // Geo layers
   "CurrentPEV-BG": {

@@ -260,37 +260,6 @@ const secondaryMapLayers = {
       },
     }
   },
-  'dvrpc-projected': {
-    'id': 'dvrpc-projected',
-    'type': 'circle',
-    'source': 'pev',
-    'source-layer': 'pev_bg_centroids',
-    'paint': {
-        'circle-radius': {
-          property: 'FutPEV',
-          stops: [
-            [{zoom: 8, value: 42.05}, 1],
-            [{zoom: 8, value: 124.15}, 2],
-            [{zoom: 8, value: 259.88}, 4],
-            [{zoom: 8, value: 509.8}, 7.5],
-            [{zoom: 8, value: 1235}, 11],
-            [{zoom: 12, value: 42.05}, 2],
-            [{zoom: 12, value: 124.15}, 4],
-            [{zoom: 12, value: 259.88}, 6.6],
-            [{zoom: 12, value: 509.8}, 9.5],
-            [{zoom: 12, value: 1235}, 14],
-          ]
-        },
-        'circle-color':'#3182D1',
-        'circle-stroke-color': 'white',
-        'circle-stroke-width': 1,
-        'circle-opacity': 1
-    },
-    "filter": ["all",
-      ["==","MAPTYPE","DVRPC"],
-      [">=","FutPEV",0.1]
-    ]
-  },
   'dvrpc-current': {
     'id': 'dvrpc-current',
     'type': 'circle',
