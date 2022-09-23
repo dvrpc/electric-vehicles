@@ -1,5 +1,6 @@
-import { makeSecondaryMapLayer, secondaryMapLayers } from "./map/secondaryMapLayers.js";
-import { makePopup } from "./map/popup.js";
+import { makeSecondaryMapLayer, secondaryMapLayers } from './map/secondaryMapLayers.js';
+import { makePopup } from './map/popup.js';
+import { handleChargingPopup } from './map/mapUtils.js'
 
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
@@ -8,19 +9,25 @@ const handleFormInputs = (inputs, map) => {
   inputs.forEach((input) => {
     const layer = input.value;
     const checked = input.checked;
-    const visibility = checked ? "visible" : "none";
+    const visibility = checked ? 'visible' : 'none';
 
     if (checked) active.push(layer);
 
     if (map.getLayer(layer)) {
-      map.setLayoutProperty(layer, "visibility", visibility);
-    } else {
+      map.setLayoutProperty(layer, 'visibility', visibility);
 
       // add layer on first pass
+    } else {
       if (checked) {
         // keep old method b/c only overlays hit this fnc
         const mapLayer = secondaryMapLayers[layer];
-        map.addLayer(mapLayer, "road-label");
+
+        if(layer === 'charging'){
+          const popup = makePopup()
+          handleChargingPopup('charging', map, popup)
+        }
+
+        map.addLayer(mapLayer, 'county-outline');
       }
     }
   });
@@ -37,19 +44,19 @@ const handleFormSelect = (selects, map) => {
     options.forEach((option) => {
       const layer = option.value;
       const selected = option.selected;
-      const visibility = selected ? "visible" : "none";
+      const visibility = selected ? 'visible' : 'none';
 
       if (selected) active.push(layer);
 
       if (map.getLayer(layer)) {
-        map.setLayoutProperty(layer, "visibility", visibility);
+        map.setLayoutProperty(layer, 'visibility', visibility);
       } else {
 
         // add layer on first pass
         if (selected) {
           // keep old method b/c only overlays hit this fnc
           const mapLayer = secondaryMapLayers[layer];
-          map.addLayer(mapLayer, "road-label");
+          map.addLayer(mapLayer, 'road-label');
         }
       }
     });
@@ -84,17 +91,11 @@ const constructMainQuery = map => {
 
   // toggle visibility or add layer (first pass only)
   if (map.getLayer(newLayerId)) {
-    map.setLayoutProperty(newLayerId, "visibility", 'visible');
+    map.setLayoutProperty(newLayerId, 'visibility', 'visible');
   } else {
     // create & add layer
     const newLayer = makeSecondaryMapLayer(newLayerId)
-
-    if(newLayerId === 'charging'){
-      const popup = makePopup()
-      handleCharginPopup('charging', map, popup)
-    }
-
-    map.addLayer(newLayer);
+    map.addLayer(newLayer, 'dvrpcPEVBG');
   }
 
   // toggle hover layers visibility

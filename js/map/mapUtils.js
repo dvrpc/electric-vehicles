@@ -1,14 +1,33 @@
 import { makePopupContent } from "./popup.js"
 
-const handleCharginPopup = (id, map, popup) => {
-    map.on('mousemove', id, e => {
-        map.getCanvas().style.cursor = "pointer"
+const handleChargingPopup = (id, map, popup) => {
+    map.on('mouseenter', id, e => {
         makePopupContent(map, e, popup)
+        map.setFeatureState(
+            {
+                source: 'charging',
+                sourceLayer: id,
+                id: e.features[0].id
+            },
+            {
+                hover: true
+            }
+        )
     })
 
-    map.on('mouseleave', id, () => {
-        map.getCanvas().style.cursor = ""
+    map.on('mouseleave', id, e => {
+        popup.remove()
+        map.setFeatureState(
+            {
+                source: 'charging',
+                sourceLayer: id,
+                id: e.features[0].id
+            },
+            {
+                hover: false
+            }
+        )
     })   
 }
 
-export { handleCharginPopup }
+export { handleChargingPopup }

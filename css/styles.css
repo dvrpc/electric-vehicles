@@ -482,9 +482,13 @@ input[class="lbox"]{
 }
 .popup-span {
   display: block;
+  z-index: 4;
 }
 .popup-span:not(:last-of-type) {
   border-bottom: 1px dotted var(--theme-black);
+}
+.popup-hr {
+  margin: 5px 0;
 }
 .mapboxgl-ctrl-geocoder,
 .mapboxgl-ctrl-geocoder .suggestions,
@@ -581,7 +585,6 @@ input[class="lbox"]{
 }
 #legend-box1,
 #legend-box2 {
-  z-index: 1001;
   padding: 8px;
 }
 .legend-hr {

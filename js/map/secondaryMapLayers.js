@@ -246,7 +246,13 @@ const secondaryMapLayers = {
     source: 'charging',
     paint: {
       'circle-stroke-color': '#3C4C34',
-      'circle-stroke-width': 0.5,
+      // 'circle-stroke-width': 0.5,
+      'circle-stroke-width': [
+        'case',
+        ['boolean', ['feature-state', 'hover'], false],
+        0.5,
+        3
+      ],
       'circle-color': '#c8ffaf',
       'circle-radius': {
         base: 9,
