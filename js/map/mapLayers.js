@@ -153,7 +153,8 @@ const layers = {
       "line-width": 2.5,
       "line-color": "#505a5e",
     },
-    filter: ["==", "DVRPC", "Yes"],
+    // @todo disable for PA and NJ boundaries
+    // filter: ["==", "DVRPC", "Yes"],
   },
   muniOutline: {
     id: "municipality-outline",
@@ -171,7 +172,8 @@ const layers = {
       },
       "line-color": "#4a5c64",
     },
-    filter: ["==", "DVRPC", "Yes"],
+    // @todo disable for PA and NJ boundaries
+    // filter: ["==", "DVRPC", "Yes"],
   }
 };
 
