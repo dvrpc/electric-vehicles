@@ -1,4 +1,5 @@
 import { makeSecondaryMapLayer, secondaryMapLayers } from "./map/secondaryMapLayers.js";
+import { makePopup } from "./map/popup.js";
 
 // handles: checkboxes, toggles, radio buttons
 const handleFormInputs = (inputs, map) => {
@@ -88,7 +89,8 @@ const constructMainQuery = map => {
     } else {
       // create & add layer
       const newLayer = makeSecondaryMapLayer(newLayerId)
-      if(newLayerId === 'charging') handleCharginPopup('charging', map)
+      const popup = makePopup()
+      if(newLayerId === 'charging') handleCharginPopup('charging', map, popup)
       map.addLayer(newLayer);
   }
 
