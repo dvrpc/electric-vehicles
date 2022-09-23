@@ -191,8 +191,6 @@ const handleMCD = function (props,map) {
   "</span></div>" 
   ;
   document.getElementById("mcdAGG").innerHTML = mcdAGGInfo;
-  
-
 }
   
 export {handleBlockGroups, handleMCD};

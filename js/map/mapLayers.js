@@ -35,16 +35,6 @@ const layers = {
       },
     }
   },
-  dvrpcMCD: {
-    'id': 'dvrpcPEVMCD',
-    'type': 'fill',
-    'source': 'pev',
-    'source-layer': 'dvrpc_pev_mcd',
-    'layout': {}, 
-    'paint': {
-        'fill-opacity': 0.0
-    }
-  },
   PevFills: {
     'id': 'dvrpcPEVBG',
     'type': 'fill',
@@ -87,7 +77,7 @@ const layers = {
     'source-layer': 'pa_pev_bg',
     'layout': {
       'visibility': 'none'
-    }, 
+    },
     'paint': {
         'fill-color': '#e2eb32',
         'fill-opacity': [

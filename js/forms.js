@@ -88,7 +88,8 @@ const constructMainQuery = map => {
     } else {
       // create & add layer
       const newLayer = makeSecondaryMapLayer(newLayerId)
-      map.addLayer(newLayer, "dvrpcPEVBG");
+      if(newLayerId === 'charging') handleCharginPopup('charging', map)
+      map.addLayer(newLayer);
   }
 
   // toggle hover layers visibility

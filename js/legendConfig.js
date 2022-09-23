@@ -6,12 +6,6 @@ const legendConfig = {
     label: "Charging Locations",
     color: "#c8ffaf",
   },
-  "dvrpc-current": {
-    legendType:"circle",
-    iconType: "circle",
-    label: "Current PEVs (Centroid)",
-    color: "#EA563D",
-  },
 
   // Geo layers
   "CurrentPEV-BG": {

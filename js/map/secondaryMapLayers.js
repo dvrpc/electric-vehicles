@@ -27,7 +27,7 @@ const makeSecondaryMapLayer = id => {
       'layout': {},
       'paint': {
         'fill-color': layerInfo.fillColor,
-        "fill-opacity": {
+        'fill-opacity': {
           base: 9,
           stops: [
             [9, 1],
@@ -245,10 +245,10 @@ const secondaryMapLayers = {
     type: 'circle',
     source: 'charging',
     paint: {
-      "circle-stroke-color": "#3C4C34",
-      "circle-stroke-width": 0.5,
-      "circle-color": "#c8ffaf",
-      "circle-radius": {
+      'circle-stroke-color': '#3C4C34',
+      'circle-stroke-width': 0.5,
+      'circle-color': '#c8ffaf',
+      'circle-radius': {
         base: 9,
         stops: [
           [10, 3],
@@ -256,38 +256,9 @@ const secondaryMapLayers = {
           [13, 4.5],
           [14, 5],
           [15, 5.5],
-        ],
-      },
-    }
-  },
-  'dvrpc-current': {
-    'id': 'dvrpc-current',
-    'type': 'circle',
-    'source': 'pev',
-    'source-layer': 'pev_bg_centroids',
-    'paint': {
-      'circle-radius': {
-        property: 'CurPEV',
-        stops: [
-          [{zoom: 8, value: 1.16}, .5],
-          [{zoom: 8, value: 2.37}, 1],
-          [{zoom: 8, value: 4.49}, 2],
-          [{zoom: 8, value: 8.89}, 3],
-          [{zoom: 8, value: 105}, 5],
-          [{zoom: 12, value: 1.16}, 2],
-          [{zoom: 12, value: 2.37}, 3],
-          [{zoom: 12, value: 4.49}, 4],
-          [{zoom: 12, value: 8.89}, 6],
-          [{zoom: 12, value: 105}, 9],
         ]
-        },
-        'circle-color': '#EA563D',
-        'circle-opacity':.75
-      },
-    "filter": ["all",
-      ["==","MAPTYPE","DVRPC"],
-      [">=","CurPEV",0.1]
-    ] 
+      }
+    }
   }
 }
 
