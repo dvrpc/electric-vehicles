@@ -1,31 +1,12 @@
-const handleBlockGroups = function (props,map) {
- 
-  let lookupState = {
-    '34': "New Jersey",
-    '42': "Pennsylvania"
-  };
+const handleBlockGroups = function (props) {
+  const geoid = props.GEOID10 || props.geoid10
 
-  let state = lookupState[props.statefp10];
-
-  let lookupCounty = {
-    '017': "Bucks",
-    '029':"Chester",
-    '045': "Delaware",
-    '091': "Montgomery",
-    '101': "Philadelphia",
-    '005': "Burlington",
-    '007': "Camden",
-    '015': "Gloucester",
-    '021': "Mercer"
-  };
-
-  let county = lookupCounty[props.countyfp10];
-
-  var BGName = "<h2>Block Group ID: "+ props.GEOID10 +
+  var BGName = "<h2>Block Group ID: "+ geoid +
   "</span></h2>"+"<div><span>Municipality Containing This Block Group: </span></span></div><div><span class='block-name'> " +
   props.MUN_NAME +
   "</span></div>" 
   ;
+
   document.getElementById("BGName").innerHTML = BGName;
 
   var BGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Block Group Demographics Summary</div>"+
@@ -140,6 +121,7 @@ const handleBlockGroups = function (props,map) {
       "</tr>" +
       "</table></div>";
   ;
+  
   document.getElementById("BGInfo").innerHTML = BGInfo;
 }
 

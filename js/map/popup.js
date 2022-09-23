@@ -16,6 +16,10 @@ const makePopupHTML = props => {
     else if(props.ev_level1_evse_num) chargeType = 'Level 1'
     else if(props.ev_level2_evse_num) chargeType = 'Level 2'
     else chargeType = 'no info available'
+
+    let connector;
+    if(props.ev_connector_types) connector = props.ev_connector_types.slice(1, -1)
+    else connector = 'no info available'
     
     return `
         <span class="popup-span">
@@ -25,7 +29,7 @@ const makePopupHTML = props => {
             <hr class="popup-hr"/>
             <strong>Type: </strong>${chargeType}<br />
             <strong>EVSE Ports: </strong>${props.ev_dc_fast_num || 0 + props.ev_level1_evse_num || 0 + props.ev_level2_evse_num || 0}<br />
-            <strong>Connector(s): </strong>${props.ev_connector_types.slice(1, -1) || 'no info available'}<br />
+            <strong>Connector(s): </strong>${connector}<br />
             <strong>Charge Network: </strong>${props.ev_network || 'no info available'}<br />
             <strong>Access Info: </strong>${props.access_days_time || 'no info available'}<br />
             <em>Station details are subject to change</em>

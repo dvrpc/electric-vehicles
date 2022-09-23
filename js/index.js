@@ -6,6 +6,7 @@ import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
 import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
+import { extents } from './map/mapUtils.js'
 
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
@@ -16,6 +17,7 @@ const overlayForm = document.getElementById('overlay-form')
 const overlayInputs = overlayForm.querySelectorAll('input')
 const mapStart = document.getElementById('mapStart')
 const mapDetails = document.getElementById('mapDetails')
+let extentBtn;
 
 $('.charge').hide()
 $('.workplace').hide()
@@ -58,6 +60,25 @@ map.on('load', () => {
             mapStart.setAttribute('open', '')
         }
 
+        // filter muni and county bounds & adjust extent btn
+        if(!extentBtn) extentBtn = document.getElementById('extent-btn')
+        switch(layerGeo) {
+            case 'pa':
+                map.setFilter('municipality-outline', ["==", "STATE", 'PA'])
+                map.setFilter('county-outline', ["==", "STATE", 'PA'])
+                extentBtn.onclick = () => map.flyTo({ center: extents.pa.center, zoom: extents.pa.zoom });
+                break
+            case 'nj':
+                map.setFilter('municipality-outline', ["==", "STATE", 'NJ'])
+                map.setFilter('county-outline', ["==", "STATE", 'NJ'])
+                extentBtn.onclick = () => map.flyTo({ center: extents.nj.center, zoom: extents.nj.zoom });
+                break
+            default:
+                map.setFilter('municipality-outline', ["==", "DVRPC", 'Yes'])
+                map.setFilter('county-outline', ["==", "DVRPC", 'Yes'])
+                extentBtn.onclick = () => map.flyTo({ center: extents.dvrpc.center, zoom: extents.dvrpc.zoom });
+        }
+
         // handle possibility of active overlays when toggling main layers
         const activeLayers = handleForms('input', overlayInputs, map)
         activeLayers.push(genericID)
@@ -76,7 +97,6 @@ map.on('load', () => {
         handleLegend(activeOverlayInputs, legendContainer, activeGeo)
     }
    
-    // @todo: pull hover and click fncs into new mapEvents.js file within /js/map/
     // When the user moves their mouse over the state-fill layer, we'll update the
     // feature state for the feature under the mouse.
     const hoverGeoFill = (e, hoverState, fillLayer) => {

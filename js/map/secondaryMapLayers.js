@@ -246,12 +246,11 @@ const secondaryMapLayers = {
     source: 'charging',
     paint: {
       'circle-stroke-color': '#3C4C34',
-      // 'circle-stroke-width': 0.5,
       'circle-stroke-width': [
         'case',
         ['boolean', ['feature-state', 'hover'], false],
-        0.5,
-        3
+        3,
+        0.5
       ],
       'circle-color': '#c8ffaf',
       'circle-radius': {
@@ -259,9 +258,9 @@ const secondaryMapLayers = {
         stops: [
           [10, 3],
           [12,3.5],
-          [13, 4.5],
-          [14, 5],
-          [15, 5.5],
+          [13, 5],
+          [14, 5.5],
+          [15, 6],
         ]
       }
     }
