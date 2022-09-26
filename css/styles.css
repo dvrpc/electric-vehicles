@@ -10,6 +10,8 @@ body {
 }
 h1 {
   text-align: center;
+  font-size: 1.25em;
+  font-weight: 500;
 }
 fieldset {
   font-size: 1em;
@@ -40,12 +42,15 @@ a {
 }
 summary {
   cursor: pointer;
-  padding: var(--padding) var(--padding-double);
+  padding: var(--padding) var(--padding-2);
   color: var(--theme-black);
   font-weight: 700;
 }
 details[open] summary{
   padding-bottom: 0;
+}
+hr {
+  color: var(--theme-sidebar);
 }
 :root {
   --theme-dvrpc: #0078ae;
@@ -60,7 +65,7 @@ details[open] summary{
 
   --padding-half: 5px;
   --padding: 10px;
-  --padding-double: 20px;
+  --padding-2: 20px;
 
   --border-radius: 4px;
   --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
@@ -110,7 +115,7 @@ details[open] summary{
   width: 50em;
   max-height: 80%;
   overflow-y: auto;
-  padding: var(--padding-double);
+  padding: var(--padding-2);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
 }
@@ -134,23 +139,21 @@ details[open] summary{
 .modal-content-subheader {
   text-align: center;
   margin-bottom: 1rem;
-  color: var(--theme-dvrpc);
 }
 .modal-hr {
-  margin: var(--padding-double) auto;
+  margin: var(--padding-2) auto;
   width: 45em;
 }
 /* END Modal */
 
 /* Navbar */
 nav {
-  position: relative;
-  height: 6vh;
+  height: 50px;
+  width: calc(100% - var(--padding-2));
   padding: 0 var(--padding);
   background-color: var(--theme-sidebar);
   color: var(--theme-white);
-  box-shadow: var(--box-shadow-nav);
-  z-index: 2;
+  border-bottom: 3px solid white;
 }
 .nav-btn {
   font-size: 1em;
@@ -168,7 +171,7 @@ nav {
 }
 #dvrpc-logo {
   display: block;
-  width: 75px;
+  width: 65px;
 }
 .project-logo {
   margin-right: var(--padding-half);
@@ -177,7 +180,7 @@ nav {
 
 /* Main Webmap Area */
 .main-content-wrapper {
-  height: 94vh;
+  height: 100vh;
 }
 #regional-extent-img {
   display: block;
@@ -229,19 +232,23 @@ nav {
 /* END Main Webmap Area */
 
 /* Sidebar */
-.sidebar {
+.sidebar-container {
   width: 30%;
   height: 100%;
+  box-shadow: var(--box-shadow);
+  z-index: 1;
+}
+.sidebar {
+  height: 100%;
+  width: 100%;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: var(--theme-offwhite);
   color: var(--theme-black);
-  box-shadow: var(--box-shadow-half);
-  z-index: 1;
 }
 .sidebar-content {
   padding: var(--padding);
-  height: calc(95% - 20px);
+  height: calc(95% - 23px);
   overflow-y: auto;
 }
 .sidebar-h2 {
@@ -269,7 +276,7 @@ nav {
   border: 3px solid white;
 }
 .sidebar-form {
-  padding: var(--padding) var(--padding-double);
+  padding: var(--padding) var(--padding-2);
   border-radius: var(--border-radius);
 }
 .sidebar-fieldset label {
@@ -384,7 +391,7 @@ input[class="lbox"]{
   color: var(--theme-dark);
   border-radius: var(--border-radius);
   margin-bottom: var(--padding);
-  padding: var(--padding) var(--padding-double);
+  padding: var(--padding) var(--padding-2);
   background-color: var(--theme-white);
   border: 3px solid white;
   box-shadow: var(--box-shadow-half);
@@ -406,7 +413,7 @@ input[class="lbox"]{
 }
 #BGInfo {
   color: var(--theme-black);  
-  padding: 0 var(--padding-double);
+  padding: 0 var(--padding-2);
 }
 .dataTable {
   width: 100%;
@@ -478,7 +485,7 @@ input[class="lbox"]{
   height: 100%;
 }
 .mapboxgl-popup-content {
-  padding: var(--padding-double) var(--padding);
+  padding: var(--padding-2) var(--padding);
 }
 .popup-span {
   display: block;
@@ -673,10 +680,11 @@ input[class="lbox"]{
 
 /* Footer */
 footer {
-  height: calc(5% - 20px);
+  height: calc(5% - 23px);
   width: calc(100% - var(--padding-2));
   padding: var(--padding);
   background-color: var(--theme-white);
   color: var(--theme-black);
+  border-top: 3px solid white;
 }
 /* END Footer */

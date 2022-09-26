@@ -41,7 +41,7 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 800px)" />
+    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1050px)" />
 
     <script defer type="module" src="./js/index.js"></script>
 
@@ -58,87 +58,89 @@
   </head>
 
   <body>
-    <nav class="flex-row flex-align-center">
-      <a href="/" class="nav-links"
-        ><img
-          src="./img/DVRPC-logo.png"
-          alt="DVRPC logo"
-          id="dvrpc-logo"
-          class="nav-logos"
-      /></a>
-
-      <span class="nav-vr">|</span>
-
-      <!-- @todo logo? -->
-      <!-- <img
-        src="./imgs/project-logo.png"
-        alt=""
-        class="project-logo"
-        title="bruhhh"
-      /> -->
-
-      <h1>Planning for Electric Vehicles</h1>
-
-      <span class="nav-vr">|</span>
-
-      <button id="modal-toggle" class="nav-btn">about</button>
-    </nav>
-
     <main class="flex-row flex-between main-content-wrapper">
-      <section class="sidebar">
-        <div class="sidebar-content">
-          <details id="mapStart" class="infoLeft" open>
-            <summary class="sidebar-summmary">How To</summary>
+      <div class="flex-column flex-around sidebar-container">
+        <nav class="flex-row flex-align-center flex-around">
+          <a href="/" class="nav-links"
+            ><img
+              src="./img/DVRPC-logo.png"
+              alt="DVRPC logo"
+              id="dvrpc-logo"
+              class="nav-logos"
+          /></a>
+    
+          <span class="nav-vr">|</span>
+    
+          <!-- @todo logo? -->
+          <!-- <img
+            src="./imgs/project-logo.png"
+            alt=""
+            class="project-logo"
+            title="bruhhh"
+          /> -->
+    
+          <h1>Planning for Electric Vehicles</h1>
+    
+          <span class="nav-vr">|</span>
+    
+          <button id="modal-toggle" class="nav-btn">about</button>
+        </nav>
 
-            <div id="startContent" class="startContent">
-              <h2 class="sidebar-h2">View the Data...</h2>
-              
-              <ul class="startContent-ul">
-                <li>
-                  Hover over the painted map areas to highlight Census Block Groups.
-                </li>
-
-                <li>
-                  Click the highlighted Census Block Groups to view data on electric vehicles.
-                </li>
-              </ul>
-
-              <h2 class="sidebar-h2">Update the Map...</h2>
-
-              <ul class="startContent-ul">
-                <li>
-                  Click the "show/hide map toggles" map overlay and interact with the buttons and dropdowns
-                  to update the data on the map.
-                </li>
+        <section class="sidebar">
+          <div class="sidebar-content">
+            <details id="mapStart" class="infoLeft" open>
+              <summary class="sidebar-summmary">How To</summary>
+  
+              <div id="startContent" class="startContent">
+                <h2 class="sidebar-h2">View the Data...</h2>
                 
-                <li>
-                  The default map view shows current PEV distribution per 100 people for the DVRPC region.
-                </li>
-              </ul>
-            </div>
-          </details>
-
-          <div id="mapDetails" class="infoLeft">
-            <div id="data-wrapper">
-             
-              <!-- @UPDATE: shelf until MCD added -->
-              <!-- <div class="data-wrapper">
-                 <h2 class="data-subheader">Municipal Level Information</h2>
-                 <div id="mcdName"></div>
-                <div id="mcdAGG"></div>
-              </div> -->
-
-              <div class="data-wrapper">
-                <!-- <h2 class="data-subheader">Block Group Level Information</h2> -->
-                <div id="BGName"></div>
-                <div id="BGInfo"></div>
+                <ul class="startContent-ul">
+                  <li>
+                    Hover over the painted map areas to highlight Census Block Groups.
+                  </li>
+  
+                  <li>
+                    Click the highlighted Census Block Groups to view data on electric vehicles.
+                  </li>
+                </ul>
+  
+                <h2 class="sidebar-h2">Update the Map...</h2>
+  
+                <ul class="startContent-ul">
+                  <li>
+                    Click the "show/hide map toggles" map overlay and interact with the buttons and dropdowns
+                    to update the data on the map.
+                  </li>
+                  
+                  <li>
+                    The default map view shows current PEV distribution per 100 people for the DVRPC region.
+                  </li>
+                </ul>
+              </div>
+            </details>
+  
+            <div id="mapDetails" class="infoLeft">
+              <div id="data-wrapper">
+               
+                <!-- @UPDATE: shelf until MCD added -->
+                <!-- <div class="data-wrapper">
+                   <h2 class="data-subheader">Municipal Level Information</h2>
+                   <div id="mcdName"></div>
+                  <div id="mcdAGG"></div>
+                </div> -->
+  
+                <div class="data-wrapper">
+                  <!-- <h2 class="data-subheader">Block Group Level Information</h2> -->
+                  <div id="BGName"></div>
+                  <div id="BGInfo"></div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-
-        <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
-      </section>
+  
+          <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
+        </section>
+      </div>
 
       <div id="map" class="map">
         <div class="legend-container map-overlay-trans">
