@@ -71,14 +71,6 @@
     
           <span class="nav-vr">|</span>
     
-          <!-- @todo logo? -->
-          <!-- <img
-            src="./imgs/project-logo.png"
-            alt=""
-            class="project-logo"
-            title="bruhhh"
-          /> -->
-    
           <h1>Planning for Electric Vehicles</h1>
     
           <span class="nav-vr">|</span>
@@ -121,16 +113,7 @@
   
             <div id="mapDetails" class="infoLeft">
               <div id="data-wrapper">
-               
-                <!-- @UPDATE: shelf until MCD added -->
-                <!-- <div class="data-wrapper">
-                   <h2 class="data-subheader">Municipal Level Information</h2>
-                   <div id="mcdName"></div>
-                  <div id="mcdAGG"></div>
-                </div> -->
-  
                 <div class="data-wrapper">
-                  <!-- <h2 class="data-subheader">Block Group Level Information</h2> -->
                   <div id="BGName"></div>
                   <div id="BGInfo"></div>
                 </div>
@@ -262,48 +245,50 @@
 
     <div id="modal" class="modal" role="dialog">
       <div class="modal-content">
-        <span id="close-modal" class="close-modal">&times;</span>
-
-        <h2 class="modal-content-subheader">Planning for Electric Vehicles</h2>
-
-        <section class="modal-section">
-          <h3>About</h3>
-          <p>
-            The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC/UC Davis EV Planning Toolkit for ArcGIS (the Toolkit). These results reflect the following PEV penetration scenarios:
-          </p>
-          <br>
-          <ul>
-            <li><em>DVRPC Region</em> : 5 percent of passenger vehicles (or about 200,000 vehicles) are PEVs;</li>
-            <li><em>Pennsylvania</em> : 5 percent of passenger vehicles (or about 400,000 vehicles) are PEV;</li>
-            <li><em>New Jersey</em> : 10 percent of passenger vehicles (or about 330,000 vehicles) are PEV.<a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null"><strong> </strong></a><a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null" ><br>This is in line with the New Jersey, state-wide, zero-emission vehicle adoption goal for 2025. </a><br>However, this tool does not predict the total number of passenger vehicles&nbsp; in 2025.</li>
-          </ul>
-          <br>
-          View DVRPC's <a href="https://experience.arcgis.com/experience/6eaa68e0ba5740c5984b9cef4e172026/page/Home/" target="_blank" rel="noopener noreferrer">Planning for Electric Vehicles page</a> to find out more.
-        </section>
-
-        <hr class="modal-hr" />
-
-        <section class="modal-section">
-          <h3>Disclaimer</h3>
-          <p>DVRPC considered using projections based on planning horizon. However, there is a wide variation in the projections available, and there is no one "official" projection. In addition, these projections are generally at a much larger geography than the DVRPC region, Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New Jersey officials working on EVs. Pennsylvania suggested that we use a 5 percent PEV penetration. New Jersey suggested that we use their 2025 goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for the region.</p>
-        </section>
-
-        <hr class="modal-hr" />
-
-        <section class="modal-section">
-          <h3>Follow Up</h3>
-          <p>
-            If you have any questions regarding these maps or wish to access the GIS datasets used in the analysis, please contact: 
+        <div class="modal-overflow">
+          <span id="close-modal" class="close-modal">&times;</span>
+  
+          <h2 class="modal-content-subheader">Planning for Electric Vehicles</h2>
+  
+          <section class="modal-section">
+            <h3>About</h3>
+            <p>
+              The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC/UC Davis EV Planning Toolkit for ArcGIS (the Toolkit). These results reflect the following PEV penetration scenarios:
+            </p>
             <br>
-            <strong>Sean Greene</strong>, Manager, Air Quality Programs | sgreene@dvrpc.org | (215) 238-2860
-          </p>
-
-          <p>
-            To obtain your own copy of UC Davis's EV Planning Toolkit and supporting documentation, please contact: 
+            <ul>
+              <li><em>DVRPC Region</em> : 5 percent of passenger vehicles (or about 200,000 vehicles) are PEVs;</li>
+              <li><em>Pennsylvania</em> : 5 percent of passenger vehicles (or about 400,000 vehicles) are PEV;</li>
+              <li><em>New Jersey</em> : 10 percent of passenger vehicles (or about 330,000 vehicles) are PEV.<a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null"><strong> </strong></a><a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null" ><br>This is in line with the New Jersey, state-wide, zero-emission vehicle adoption goal for 2025. </a><br>However, this tool does not predict the total number of passenger vehicles&nbsp; in 2025.</li>
+            </ul>
             <br>
-            <strong>Gil Tal</strong>, PhD | gtal@ucdavis.edu |  <a href="https://phev.ucdavis.edu/" target="_blank" rel="noopener noreferrer">https://phev.ucdavis.edu/</a>
-          </p>
-        </section>
+            View DVRPC's <a href="https://experience.arcgis.com/experience/6eaa68e0ba5740c5984b9cef4e172026/page/Home/" target="_blank" rel="noopener noreferrer">Planning for Electric Vehicles page</a> to find out more.
+          </section>
+  
+          <hr class="modal-hr" />
+  
+          <section class="modal-section">
+            <h3>Disclaimer</h3>
+            <p>DVRPC considered using projections based on planning horizon. However, there is a wide variation in the projections available, and there is no one "official" projection. In addition, these projections are generally at a much larger geography than the DVRPC region, Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New Jersey officials working on EVs. Pennsylvania suggested that we use a 5 percent PEV penetration. New Jersey suggested that we use their 2025 goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for the region.</p>
+          </section>
+  
+          <hr class="modal-hr" />
+  
+          <section class="modal-section">
+            <h3>Follow Up</h3>
+            <p>
+              If you have any questions regarding these maps or wish to access the GIS datasets used in the analysis, please contact: 
+              <br>
+              <strong>Sean Greene</strong>, Manager, Air Quality Programs | sgreene@dvrpc.org | (215) 238-2860
+            </p>
+  
+            <p>
+              To obtain your own copy of UC Davis's EV Planning Toolkit and supporting documentation, please contact: 
+              <br>
+              <strong>Gil Tal</strong>, PhD | gtal@ucdavis.edu |  <a href="https://phev.ucdavis.edu/" target="_blank" rel="noopener noreferrer">https://phev.ucdavis.edu/</a>
+            </p>
+          </section>
+        </div>
       </div>
     </div>
 

@@ -4,7 +4,7 @@ const legendConfig = {
     legendType:"circle",
     iconType: "circle",
     label: "Charging Locations",
-    color: "#c8ffaf",
+    color: "#e6afff",
   },
 
   // Geo layers

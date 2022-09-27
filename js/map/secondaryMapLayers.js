@@ -252,15 +252,15 @@ const secondaryMapLayers = {
         3,
         0.5
       ],
-      'circle-color': '#c8ffaf',
+      'circle-color': '#e6afff',
       'circle-radius': {
         base: 9,
         stops: [
           [10, 3],
-          [12,3.5],
-          [13, 5],
-          [14, 5.5],
-          [15, 6],
+          [12,4.5],
+          [13, 5.5],
+          [14, 6],
+          [15, 7.5],
         ]
       }
     }

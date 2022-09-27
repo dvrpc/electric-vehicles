@@ -182,12 +182,6 @@ map.on('load', () => {
     map.on('click','dvrpcPEVBG', (e) => clickFill(e, 'dvrpcPEVBG-click'));
     map.on('click','paPEVBG', (e) => clickFill(e, 'paPEVBG-click'));
     map.on('click','njPEVBG', (e) => clickFill(e, 'njPEVBG-click'));
-
-    // @TODO shelf until MCD's get incorporated
-    // map.on('click','dvrpcPEVMCD', (e) => {
-    //     var props = e.features[0].properties;
-    //     handleMCD(props)
-    // });
 })
 
 // loading spinner 

@@ -68,8 +68,7 @@ hr {
   --padding-2: 20px;
 
   --border-radius: 4px;
-  --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.15);
-  --box-shadow-nav: 1px 2px 3px rgba(0, 0, 0, 0.3);
+  --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
   --box-shadow-half: 0.5px 1px 1.5px rgba(0, 0, 0, 0.15);
 }
 .flex-row {
@@ -108,13 +107,18 @@ hr {
   overflow: auto;
   background: rgba(0, 0, 0, 0.3);
 }
+.modal-overflow {
+  height: 100%;
+  overflow-y: auto;
+  background-color: var(--theme-white);
+}
 .modal-content {
   position: relative;
-  background: var(--theme-white);
+  background-color: rgba(255, 255, 255, 0.825);
   color: var(--theme-black);
   width: 50em;
-  max-height: 80%;
-  overflow-y: auto;
+  height: 85%;
+  padding: var(--padding-2) var(--padding-half);
   padding: var(--padding-2);
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
@@ -124,7 +128,7 @@ hr {
   margin-top: 0.25em;
 }
 .modal-section {
-  width: 45em;
+  width: 40em;
   margin: 0 auto;
 }
 .modal-section h3 {
@@ -132,17 +136,18 @@ hr {
 }
 .close-modal {
   position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 1.5em;
+  right: 5px;
+  top: -15px;
+  font-size: 1.7em;
+  font-weight: 700;
 }
 .modal-content-subheader {
   text-align: center;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .modal-hr {
   margin: var(--padding-2) auto;
-  width: 45em;
+  width: 40em;
 }
 /* END Modal */
 
@@ -153,7 +158,10 @@ nav {
   padding: 0 var(--padding);
   background-color: var(--theme-sidebar);
   color: var(--theme-white);
-  border-bottom: 3px solid white;
+  z-index: 1;
+  box-shadow: var(--box-shadow);
+  border-top-right-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
 }
 .nav-btn {
   font-size: 1em;
@@ -237,6 +245,7 @@ nav {
   height: 100%;
   box-shadow: var(--box-shadow);
   z-index: 1;
+  border-top-right-radius: var(--border-radius);
 }
 .sidebar {
   height: 100%;
@@ -262,12 +271,6 @@ nav {
 .sidebar-summmary {
   padding: var(--padding);
   padding-top: 0;
-}
-.sidebar-img {
-  display: block;
-  max-width: 100%;
-  box-shadow: var(--box-shadow);
-  border-radius: var(--border-radius);
 }
 .form-wrapper {
   box-shadow: var(--box-shadow-half);
@@ -409,7 +412,6 @@ input[class="lbox"]{
   border-top-left-radius: var(--border-radius);
   text-align: center;
   padding: 10px 0;
-  /* box-shadow: var(--box-shadow-half); */
 }
 #BGInfo {
   color: var(--theme-black);  
