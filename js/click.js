@@ -1,31 +1,12 @@
-const handleBlockGroups = function (props,map) {
- 
-  let lookupState = {
-    '34': "New Jersey",
-    '42': "Pennsylvania"
-  };
+const handleBlockGroups = function (props) {
+  const geoid = props.GEOID10 || props.geoid10
 
-  let state = lookupState[props.statefp10];
-
-  let lookupCounty = {
-    '017': "Bucks",
-    '029':"Chester",
-    '045': "Delaware",
-    '091': "Montgomery",
-    '101': "Philadelphia",
-    '005': "Burlington",
-    '007': "Camden",
-    '015': "Gloucester",
-    '021': "Mercer"
-  };
-
-  let county = lookupCounty[props.countyfp10];
-
-  var BGName = "<h3>Block Group ID: "+ props.GEOID10 +
-  "</span></h3>"+"<div class='data-subtitle'><span>Municipality Containing This Block Group: </span></span></div><div class='data-subtitle'><span> " +
+  var BGName = "<h2>Block Group ID: "+ geoid +
+  "</span></h2>"+"<div><span>Municipality Containing This Block Group: </span></span></div><div><span class='block-name'> " +
   props.MUN_NAME +
   "</span></div>" 
   ;
+
   document.getElementById("BGName").innerHTML = BGName;
 
   var BGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Block Group Demographics Summary</div>"+
@@ -42,7 +23,7 @@ const handleBlockGroups = function (props,map) {
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>"+
-  "<div class='data-subtitle2'>Plug-in Electric Vehicle Distribution</div>"+
+  "<div class='data-subtitle'>Plug-in Electric Vehicle Distribution</div>"+
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
@@ -59,7 +40,7 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
-    "<td class='data-info'>Percentage of Passenger Vehicles That Are PEVs</td>" +
+    "<td class='data-info'>% of Passenger Vehicles That Are PEVs</td>" +
     "<td class='data-value-left'>" +
     numeral(props.PerCuPEV).format("(0.00%)") +
     "</td>" +
@@ -95,7 +76,7 @@ const handleBlockGroups = function (props,map) {
     "</td>" +
     "</tr>" +
     "</table></div>"+
-    "<div class='data-subtitle2'>Workplace Charging Demand</div>"+
+    "<div class='data-subtitle'>Workplace Charging Demand</div>"+
     "<div><table class='dataTable'>" +
       "<tr>" +
       "<th scope='col'></th>" +
@@ -140,6 +121,7 @@ const handleBlockGroups = function (props,map) {
       "</tr>" +
       "</table></div>";
   ;
+  
   document.getElementById("BGInfo").innerHTML = BGInfo;
 }
 
@@ -191,8 +173,6 @@ const handleMCD = function (props,map) {
   "</span></div>" 
   ;
   document.getElementById("mcdAGG").innerHTML = mcdAGGInfo;
-  
-
 }
   
 export {handleBlockGroups, handleMCD};

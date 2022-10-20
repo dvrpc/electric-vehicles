@@ -4,15 +4,13 @@ mapboxgl.accessToken =
 const initMap = () => {
   return new mapboxgl.Map({
     container: "map",
-     style: "mapbox://styles/mapbox/light-v10",
-    //style: "mapbox://styles/crvanpollard/ck4edq5c250ra1cn0tl6qa96o",
-    //style: "mapbox://styles/crvanpollard/ck5fpyqti0v971itf7edp2eyd",
+    style: "mapbox://styles/crvanpollard/ck5fpyqti0v971itf7edp2eyd",
     center: [-75.2273, 40.071],
     bounds: [
       [-76.09405517578125, 39.49211914385648],
       [-74.32525634765625, 40.614734298694216],
     ],
-    minZoom: 8,
+    minZoom: 5,
     maxZoom: 17
   });
 };
@@ -34,6 +32,7 @@ const makeRegionalExtentEls = (map) => {
   button.type = "button";
   button.title = "Zoom to regional extent";
 
+  button.id = 'extent-btn'
   icon.id = "regional-extent-img";
   icon.alt = "DVRPC Alternative Logo";
   icon.src = "https://www.dvrpc.org/img/banner/new/bug-favicon.png";

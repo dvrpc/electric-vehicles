@@ -7,9 +7,9 @@
       name="viewport"
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
-    <meta name="created" content="" />
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
+    <meta name="created" content="9/21/2022" />
+    <meta name="description" content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC/UC Davis EV Planning Toolkit for ArcGIS (the Toolkit)." />
+    <meta name="keywords" content="Electric Vehicles, PEV, Charging, Planning for Electric Vehicles, EV, EVs, PEV Planning, Green Infrastructure, DVRPC/UC Davis EV Planning Toolkit, DVRPC PEV, UC Davis PEV" />
     <meta
       name="author"
       content="Delaware Valley Regional Planning Commission (DVRPC)"
@@ -17,14 +17,14 @@
     <meta name="owner" content="webmaster@dvrpc.org" />
     <meta name="distribution" content="global" />
     <meta name="robots" content="index, follow" />
-    <meta name="copyright" content="1995-2020 all rights reserved" />
-    <!--  DVRPC Website VERSION #7.0 Copyright (c) 1995-2020 Delaware Valley Regional Planning Commission. All rights reserved.   -->
+    <meta name="copyright" content="1995-2022 all rights reserved" />
+    <!--  DVRPC Website VERSION #7.0 Copyright (c) 1995-2022 Delaware Valley Regional Planning Commission. All rights reserved.   -->
 
     <!-- social media -->
-    <meta property="og:title" content="" />
+    <meta property="og:title" content="Planning for Electric Vehicles" />
     <meta propery="og:type" content="website" />
-    <meta property="og:url" content="" />
-    <meta property="og:description" content="" />
+    <meta property="og:url" content="https://www.dvrpc.org/webmaps/electric-vehicles/" />
+    <meta property="og:description" content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC/UC Davis EV Planning Toolkit for ArcGIS (the Toolkit)." />
     <meta property="og:image" content="" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
@@ -41,217 +41,197 @@
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
 
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 800px)" />
+    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1050px)" />
 
     <script defer type="module" src="./js/index.js"></script>
+
+    <!-- Analytics -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-9825778-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-9825778-1');
+    </script>
   </head>
 
   <body>
-    <nav class="flex-row flex-align-center">
-      <a href="/" class="nav-links"
-        ><img
-          src="./img/DVRPC-logo.png"
-          alt="DVRPC logo"
-          id="dvrpc-logo"
-          class="nav-logos"
-      /></a>
-
-      <span class="nav-vr">|</span>
-
-      <img
-        src="./imgs/project-logo.png"
-        alt=""
-        class="project-logo"
-        title="bruhhh"
-      />
-
-      <h1>Planning for Electric Vehicles</h1>
-
-      <span class="nav-vr">|</span>
-
-      <button id="modal-toggle" class="nav-btn">about</button>
-    </nav>
-
     <main class="flex-row flex-between main-content-wrapper">
-      <section class="sidebar">
-        <div class="sidebar-content">
-
-          <!-- <h3 class="sidebar-h3">Select a Geography</h3>
-          
-          <div id="scoreTogglers" data-title="Analysis Methods" data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method.">
-          <div id="scoreBox">
-            <div id="DVRPC" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-DVRPC"
-                id="control_01"
-                name="select"
-                value="1"
-                checked
-              />
-              <label id="label-box-DVRPC" class="DVRPC" for="control_01">
-                DVRPC Region
-              </label>
-            </div>
-          </div>
-
-          <div id="scoreBox">
-            <div id="PA" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-PA"
-                id="control_02"
-                name="select"
-                value="2"
-              />
-              <label id="label-box-PA" class="PA" for="control_02">
-                Pennsylvania
-              </label>
-            </div>
-          </div>
-
-          <div id="scoreBox">
-            <div id="NJ" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-NJ"
-                id="control_03"
-                name="select"
-                value="3"
-              />
-              <label id="label-box-NJ" class="NJ" for="control_03">
-               New Jersey
-              </label>
-            </div>
-          </div>
-        </div> -->
-
-          <h3 class="sidebar-h3">Select a Map Theme</h3>
-          <div
-          id="scoreTogglers"
-          data-title="Analysis Methods"
-          data-intro="Click on colored boxes to change which score is showing on the map. Box with the check mark is the active method."
-          >
-          <div id="scoreBox2">
-            <div id="PEV" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-PEV"
-                id="control_04"
-                name="select"
-                value="4"
-                checked
-              />
-              <label id="label-box-PEV" class="PEV" for="control_04">
-               PEV Distribution
-              </label>
-            </div>
-          </div>
-
-          <div id="scoreBox2">
-            <div id="WP" class="score-cb">
-              <input
-                type="radio"
-                class="lbox-WP"
-                id="control_05"
-                name="select"
-                value="5"
-              />
-              <label id="label-box-WP" class="WP" for="control_05">
-                Workplace Charging
-              </label>
-            </div>
-          </div>
-          </div>
-
-          <form id="toggle-form" class="sidebar-form">
-            <label class=" flex-align-center flex-between label-select">
-              Showing 
-              <select name="type_select" id="type_select" >
-                <option value="current" class="distribution" >Current</option>
-                <option value="future" class="distribution" >Future</option>
-                <option value="free" class="workplace" >Free Charing</option>
-                <option value="paid" class="workplace" >Paid Charing</option>
-              </select>
-
-              <select name="layout_select" id="layout_select">
-                <option value="DVRPC-CurrentPEV-BG" id="topCurrent" class="dvrpc current pev">Current PEVs</option>
-                <option value="DVRPC-CurrentPEV-Pop" class="dvrpc current pev">Current PEVs per 100 People</option>
-                <option value="DVRPC-CurrentPEV-HH" class="dvrpc current pev">Current PEVs per Household</option>
-                <option value="DVRPC-CurrentPEV-SM" class="dvrpc current pev">Current PEVs per Sq. Mi.</option>
-                <option value="DVRPC-CurrentPEV-Veh" class="dvrpc current pev">Current Percentage of Passengers that are PEVs</option>
-
-                <option value="DVRPC-FuturePEV-BG" id="topFuture"class="dvrpc future pev">Future PEVs</option>
-                <option value="DVRPC-FuturePEV-Pop" class="dvrpc future pev">Future PEVs per 100 People</option>
-                <option value="DVRPC-FuturePEV-HH" class="dvrpc future pev">Future PEVs per Household</option>
-                <option value="DVRPC-FuturePEV-SM" class="dvrpc future pev">Future PEVs per Sq. Mi.</option>
-                <option value="DVRPC-FuturePEV-Veh" class="dvrpc future pev">Future Percentage of Passengers that are PEVs</option>
-
-                <option value="DVRPC-FC-KD-SM" id="topFree" class="dvrpc free work">Free Charging - kWh of Demand per Sq. Mi.</option>
-                <option value="DVRPC-FC-KD-JB" class="dvrpc free work">Free Charging - kWh of Demand per Job</option>
-                <option value="DVRPC-FC-CE-SM" class="dvrpc free work">Free Charging - Charging Event per Sq. Mi.</option>
-                <option value="DVRPC-FC-CE-JB" class="dvrpc free work">Free Charging - Charging Event per Job</option>
-
-                <option value="DVRPC-PC-KD-SM" id="topPaid" class="dvrpc paid work">Paid Charging - kWh of Demand per Sq. Mi.</option>
-                <option value="DVRPC-PC-KD-JB" class="dvrpc paid work">Paid Charging - kWh of Demand per Job</option>
-                <option value="DVRPC-PC-CE-SM" class="dvrpc paid work">Paid Charging - Charging Event per Sq. Mi.</option>
-                <option value="DVRPC-PC-CE-JB" class="dvrpc paid work">Paid Charging - Charging Event per Job</option>
-
-                <option value="PA-FuturePEV" id="pa-future" >PA Future PEV</option>
-                <!-- <option value="DVRPC-BG">Block Group</option> -->
-              </select>
-              by Census Block Group
-            </label>
-            <fieldset>
-              <legend>Overlay Layers</legend>
-
-              <label class="label-input">
-                <input type="checkbox" value="charging"/>
-               Charging Locations
-              </label>
-              <br />
-              <!-- <label class="label-input">
-                <input type="checkbox" value="dvrpc-projected" />
-                Projected - Number of PEV's
-              </label> -->
-            </fieldset>
-          </form>
-          <div id="mapStart" class='infoLeft' style="height:100vh;">
-            <div id="startContent">
-              <h1>Click the map to view Municipal and Census Block Group level data</h1>
-            </div>
-          </div>
-
-          <div id="mapDetails" class='infoLeft' style="height:100vh;">
-            <div id='data-wrapper' class='data-wrapper'>
-             
-              <div class='data-wrapper' id='data-wrapper'>     
-                 <h2 class='data-subheader'>
-                 Municipal Level Information</h2>
-                 <div id="mcdName"></div>
-                  <div id="mcdAGG"></div>
-              </div>
+      <div class="flex-column flex-around sidebar-container">
+        <nav class="flex-row flex-align-center flex-around">
+          <a href="/" class="nav-links"
+            ><img
+              src="./img/DVRPC-logo.png"
+              alt="DVRPC logo"
+              id="dvrpc-logo"
+              class="nav-logos"
+          /></a>
     
-              <div class='data-wrapper' id='data-wrapper'>     
-                  <h2 class='data-subheader'>
-                  Block Group Level Information</h2>
-                   <div id="BGName"></div>
-                   <div id="BGInfo"></div>
+          <span class="nav-vr">|</span>
+    
+          <h1>Planning for Electric Vehicles</h1>
+    
+          <span class="nav-vr">|</span>
+    
+          <button id="modal-toggle" class="nav-btn">about</button>
+        </nav>
+
+        <section class="sidebar">
+          <div class="sidebar-content">
+            <details id="mapStart" class="infoLeft" open>
+              <summary class="sidebar-summmary">How To</summary>
+  
+              <div id="startContent" class="startContent">
+                <h2 class="sidebar-h2">View the Data...</h2>
+                
+                <ul class="startContent-ul">
+                  <li>
+                    Hover over the painted map areas to highlight Census Block Groups.
+                  </li>
+  
+                  <li>
+                    Click the highlighted Census Block Groups to view data on electric vehicles.
+                  </li>
+                </ul>
+  
+                <h2 class="sidebar-h2">Update the Map...</h2>
+  
+                <ul class="startContent-ul">
+                  <li>
+                    Click the "show/hide map toggles" map overlay and interact with the buttons and dropdowns
+                    to update the data on the map.
+                  </li>
+                  
+                  <li>
+                    The default map view shows current PEV distribution per 100 people for the DVRPC region.
+                  </li>
+                </ul>
+              </div>
+            </details>
+  
+            <div id="mapDetails" class="infoLeft">
+              <div id="data-wrapper">
+                <div class="data-wrapper">
+                  <div id="BGName"></div>
+                  <div id="BGInfo"></div>
+                </div>
               </div>
             </div>
-
           </div>
-
-        </div>
-
-        <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
-      </section>
+  
+          <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
+        </section>
+      </div>
 
       <div id="map" class="map">
-       
-        <div class="legend-container">
-          <!-- <h4 class="legend-title">legend</h4> -->
+        <div class="legend-container map-overlay-trans">
           <div id="legend-container"></div>
+
+          <hr class="legend-hr" />
+
+          <details class="form-wrapper">
+            <summary>show/hide map toggles</summary>
+  
+            <form id="main-form" class="sidebar-form">
+              <h3 class="sidebar-h3">select a map theme</h3>
+              <div class="scoreTogglers">
+                <label id="PEV" class="toggle-btn toggle-btn-active PEV scoreBox2 score-cb">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="theme"
+                    value="distribution"
+                    checked
+                  />
+                  PEV Distribution
+                </label>
+  
+                <label id="WP" class="toggle-btn WP score-cb">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="theme"
+                    value="workplace"
+                  />
+                  Workplace Charging
+                </label>
+              </div>
+  
+              <h3 class="sidebar-h3">select a geography</h3>
+              <div class="scoreTogglers">
+                <label id="DVRPC-toggle" class="toggle-btn toggle-btn-active">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="DVRPC"
+                    checked
+                  />
+                  DVRPC Region
+                </label>
+  
+                <label id="PA-toggle" class="toggle-btn">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="PA"
+                  />
+                  PA
+                </label>
+  
+                <label id="NJ-toggle" class="toggle-btn">
+                  <input
+                    type="radio"
+                    class="lbox"
+                    name="geo"
+                    value="NJ"
+                  />
+                  NJ
+                </label>
+              </div>
+  
+              <!-- scenario toggles -->
+              <h3 class="sidebar-h3">select data</h3>
+              <label class="flex-align-center flex-between label-select">
+                view
+                <select name="type_select" id="type_select" >
+                  <option value="Current" data-type="time" class="distribution">Current</option>
+                  <option value="Future" data-type="time" class="distribution">Future</option>
+                  <option value="FC" data-type="charge" class="workplace" >Free Charging</option>
+                  <option value="PC" data-type="charge" class="workplace" >Paid Charging</option>
+                </select>
+              </label>
+  
+              <!-- value here is extracted for the query builder -->
+              <label class="flex-align-center flex-between label-select">
+                <select name="layout_select" id="layout_select">
+                  <!-- <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option> -->
+                  <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
+                  <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+                  <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
+                  <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
+                  <option value="KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
+                  <option value="KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
+                  <option value="CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
+                  <option value="CE-JB" class="dvrpc charge">Charging Event per Job</option>
+                </select>
+              </label>
+  
+              <br />by Census Block Group
+            </form>
+            
+            <form id="overlay-form" class="sidebar-form">
+              <h3 class="sidebar-h3 overlay-h3">add context</h3>
+  
+              <label class="label-input overlay-input">
+                <input type="checkbox" value="charging"/>
+                Charging Locations
+              </label>
+            </form>
+          </details>
         </div>
 
         <div class="lds-ring lds-ring-active">
@@ -265,32 +245,50 @@
 
     <div id="modal" class="modal" role="dialog">
       <div class="modal-content">
-        <span id="close-modal" class="close-modal">&times;</span>
-
-        <h2 class="modal-content-subheader">Project Name</h2>
-
-        <section class="modal-section">
-          <h3>About</h3>
-          <p>
-            Use this template to bootstrap a web map with robust context needed
-            in the sidebar. Charts and other data viz, explanations, anything
-            goes in the sidebar.
-          </p>
-        </section>
-
-        <hr class="modal-hr" />
-
-        <section class="modal-section">
-          <h3>Methodology</h3>
-          <p>lorem ipsum...</p>
-        </section>
-
-        <hr class="modal-hr" />
-
-        <section class="modal-section">
-          <h3>Disclaimer</h3>
-          <p>lorem ipsum...</p>
-        </section>
+        <div class="modal-overflow">
+          <span id="close-modal" class="close-modal">&times;</span>
+  
+          <h2 class="modal-content-subheader">Planning for Electric Vehicles</h2>
+  
+          <section class="modal-section">
+            <h3>About</h3>
+            <p>
+              The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC/UC Davis EV Planning Toolkit for ArcGIS (the Toolkit). These results reflect the following PEV penetration scenarios:
+            </p>
+            <br>
+            <ul>
+              <li><em>DVRPC Region</em> : 5 percent of passenger vehicles (or about 200,000 vehicles) are PEVs;</li>
+              <li><em>Pennsylvania</em> : 5 percent of passenger vehicles (or about 400,000 vehicles) are PEV;</li>
+              <li><em>New Jersey</em> : 10 percent of passenger vehicles (or about 330,000 vehicles) are PEV.<a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null"><strong> </strong></a><a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null" ><br>This is in line with the New Jersey, state-wide, zero-emission vehicle adoption goal for 2025. </a><br>However, this tool does not predict the total number of passenger vehicles&nbsp; in 2025.</li>
+            </ul>
+            <br>
+            View DVRPC's <a href="https://experience.arcgis.com/experience/6eaa68e0ba5740c5984b9cef4e172026/page/Home/" target="_blank" rel="noopener noreferrer">Planning for Electric Vehicles page</a> to find out more.
+          </section>
+  
+          <hr class="modal-hr" />
+  
+          <section class="modal-section">
+            <h3>Disclaimer</h3>
+            <p>DVRPC considered using projections based on planning horizon. However, there is a wide variation in the projections available, and there is no one "official" projection. In addition, these projections are generally at a much larger geography than the DVRPC region, Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New Jersey officials working on EVs. Pennsylvania suggested that we use a 5 percent PEV penetration. New Jersey suggested that we use their 2025 goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for the region.</p>
+          </section>
+  
+          <hr class="modal-hr" />
+  
+          <section class="modal-section">
+            <h3>Follow Up</h3>
+            <p>
+              If you have any questions regarding these maps or wish to access the GIS datasets used in the analysis, please contact: 
+              <br>
+              <strong>Sean Greene</strong>, Manager, Air Quality Programs | sgreene@dvrpc.org | (215) 238-2860
+            </p>
+  
+            <p>
+              To obtain your own copy of UC Davis's EV Planning Toolkit and supporting documentation, please contact: 
+              <br>
+              <strong>Gil Tal</strong>, PhD | gtal@ucdavis.edu |  <a href="https://phev.ucdavis.edu/" target="_blank" rel="noopener noreferrer">https://phev.ucdavis.edu/</a>
+            </p>
+          </section>
+        </div>
       </div>
     </div>
 

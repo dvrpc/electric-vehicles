@@ -7,11 +7,17 @@ body {
 
 
 /* Modal */
+.modal-overflow {
+    padding: 0 var(--padding-2);
+}
 .modal-content {
     width: 85%;
 }
 .modal-section, .modal-hr {
     width: unset;
+}
+.close-modal {
+    font-size: 1.8rem;
 }
 /* END Modal */
 
@@ -19,7 +25,7 @@ body {
 
 /* Navbar */
 #dvrpc-logo {
-    width: 55px;
+    width: 45px;
 }
 /* END Navbar */
 
@@ -34,11 +40,15 @@ body {
 
 
 /* Sidebar */
-.sidebar {
+.sidebar-container {
     width: 100%;
+    height: 45%;
 }
 .sidebar-content, footer {
     height: unset;
+}
+footer {
+    padding: var(--padding-half) var(--padding);
 }
 /* END Sidebar */
 
@@ -49,9 +59,11 @@ body {
     width: 100%;
 }
 .legend-container {
-    min-width: unset;
-    max-width: 150px;
-    min-height: unset;
+    width: calc(100% - 30px);
+    top: unset;
+    bottom: 10px;
+    background-color: #fff;
+    padding: var(--padding-half);
 }
 .mapboxgl-ctrl-geocoder {
     font-size: 0.8rem;
@@ -60,6 +72,7 @@ body {
 }
 .mapboxgl-ctrl-geocoder--input {
     height: 30px;
+    width: 35ch;
     padding: 6px 35px;
     padding-right: 0;
 }
