@@ -1,12 +1,12 @@
 * {
     margin: 0;
-  }
-  body {
+}
+body {
     font-size: 15px;
     font-family: "Roboto", sans-serif;
     line-height: 1.45;
     text-rendering: optimizeLegibility;
-  }
+}
 :root {
     --theme-dvrpc: #0078ae;
     --theme-dvrpc-accent: #366478;
@@ -17,30 +17,55 @@
     --theme-dark: #505a5e;
     --theme-dark2: #979797;
     --theme-sidebar: #254661;
-  
+
     --padding-half: 5px;
     --padding: 10px;
     --padding-2: 20px;
-  
+
     --border-radius: 4px;
     --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
     --box-shadow-half: 0.5px 1px 1.5px rgba(0, 0, 0, 0.15);
-  }
+}
 .flex-row {
     display: flex;
-    align-items: center;
-  }
-  .flex-column {
+}
+.flex-column {
     display: flex;
     flex-direction: column;
-    align-items: center;
-  }
-  .flex-between {
+}
+.flex-between {
     justify-content: space-between;
-  }
-  .flex-around {
+}
+.flex-around {
     justify-content: space-around;
-  }
-  .flex-end {
+}
+.flex-end {
     justify-content: flex-end;
-  }
+}
+.flex-start {
+    justify-content: flex-start;
+}
+.flex-align-start {
+    align-content: flex-start;
+}
+
+
+
+/* Side Nav */
+.nav {
+    height: 100vh;
+    width: 15%;
+}
+/* End Side Nav */
+
+
+
+/* Main Content */
+.main {
+    width: 85%;
+}
+.main-column {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* End Main Content */
