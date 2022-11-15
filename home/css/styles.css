@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+  }
+  body {
+    font-size: 15px;
+    font-family: "Roboto", sans-serif;
+    line-height: 1.45;
+    text-rendering: optimizeLegibility;
+  }
+:root {
+    --theme-dvrpc: #0078ae;
+    --theme-dvrpc-accent: #366478;
+    --theme-black: #505a5e;
+    --theme-white: #f7f7f7;
+    --theme-offwhite: #f2f2f2;
+    --theme-offwhite2: #ebebf3;
+    --theme-dark: #505a5e;
+    --theme-dark2: #979797;
+    --theme-sidebar: #254661;
+  
+    --padding-half: 5px;
+    --padding: 10px;
+    --padding-2: 20px;
+  
+    --border-radius: 4px;
+    --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
+    --box-shadow-half: 0.5px 1px 1.5px rgba(0, 0, 0, 0.15);
+  }
+.flex-row {
+    display: flex;
+    align-items: center;
+  }
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .flex-between {
+    justify-content: space-between;
+  }
+  .flex-around {
+    justify-content: space-around;
+  }
+  .flex-end {
+    justify-content: flex-end;
+  }
