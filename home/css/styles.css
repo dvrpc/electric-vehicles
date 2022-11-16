@@ -147,7 +147,7 @@ body {
 }
 .main-column p {
     max-width: 70ch;
-    margin: var(--padding) auto;
+    margin: var(--padding-2) auto;
 }
 .main-header {
     margin-bottom: var(--padding-2);
@@ -159,6 +159,14 @@ body {
 .main-h3 {
     font-weight: 300;
     font-size: 1.15rem;
+}
+.main-ul {
+    max-width: 55ch;
+    margin: var(--padding-2) auto;
+    padding-left: 0;
+}
+.main-ul li {
+    margin-bottom: var(--padding-half);
 }
 /* End Main Content */
 
