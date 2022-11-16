@@ -11,11 +11,10 @@ body {
 :root {
     --theme-dvrpc: #0078ae;
     --theme-dvrpc-accent: #366478;
-    --theme-black: #505a5e;
+    --theme-black: #363636;
     --theme-white: #f7f7f7;
     --theme-offwhite: #f2f2f2;
     --theme-offwhite2: #ebebf3;
-    --theme-dark: #505a5e;
     --theme-dark2: #979797;
     --theme-sidebar: #254661;
 
@@ -24,6 +23,7 @@ body {
     --padding-2: 20px;
     --padding-3: 30px;
     --padding-4: 40px;
+    --padding-8: 80px;
 
     --border-radius: 4px;
     --box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.3);
@@ -77,11 +77,21 @@ body {
 
     box-shadow: var(--box-shadow);
 }
+.top-bar-tab {
+    display: block;
+    text-align: left;
+    background: rgba(255,255,255,0.75);
+    padding: var(--padding-2) 7.5%;
+    border-top-right-radius: var(--border-radius);
+    border-bottom-right-radius: var(--border-radius);
+}
 .top-bar-img {
-    margin-right: var(--padding-2);
+    filter: invert(80%);
 }
 .main-h1 {
     font-size: 3rem;
+    color: var(--theme-black);
+    line-height: initial;
 }
 /* End Top Bar */
 
@@ -91,13 +101,16 @@ body {
 .nav {
     position: sticky;
     margin-top: var(--padding-3);
-    top: var(--padding-3);
+    top: var(--padding-8);
     left: 7.5%;
     padding: var(--padding-4);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--theme-white);
     border: 3px solid white;
+}
+.nav-h3 {
+    color: var(--theme-black);
 }
 /* End Side Nav */
 
@@ -116,7 +129,7 @@ body {
 }
 .main-column {
     margin: 0 auto;
-    padding: var(--padding-3) 0;
+    padding: var(--padding-4) 0;
 }
 .main-column p {
     max-width: 70ch;
@@ -126,7 +139,7 @@ body {
     margin-bottom: var(--padding-2);
 }
 .main-h2 {
-    font-size: 1.75rem;
+    font-size: 1.85rem;
     color: var(--theme-sidebar);
 }
 .main-h3 {
