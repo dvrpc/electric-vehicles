@@ -104,7 +104,7 @@ body {
     margin: var(--padding-3) 0;
     top: var(--padding-8);
     left: 7.5%;
-    padding: var(--padding-4);
+    padding: var(--padding-3) var(--padding-4);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--theme-white);
