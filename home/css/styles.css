@@ -168,6 +168,13 @@ body {
 .main-ul li {
     margin-bottom: var(--padding-half);
 }
+.main-img{
+    width: 600px;
+    float: right;
+    margin: var(--padding-2) 0;
+    margin-right: 7.5%;
+    border-radius: var(--border-radius);
+}
 /* End Main Content */
 
 
