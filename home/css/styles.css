@@ -111,7 +111,9 @@ body {
     border: 3px solid white;
 }
 .nav-ul {
+    width: max-content;
     list-style: none;
+    padding-left: 0;
 }
 .nav-ul li {
     margin-bottom: var(--padding);
@@ -213,14 +215,14 @@ footer a {
 .footer-h3 {
     font-size: 1.65rem;
     text-align: center;
-    padding-bottom: var(--padding-3);
+    padding-bottom: var(--padding-2);
 }
 .footer-contact {
     font-size: 1.15rem;
-    margin-bottom: var(--padding-4);
+    margin-bottom: var(--padding-2);
 }
-.footer-contact:last-of-type {
-    margin: 0;
+.contact-last {
+    margin-bottom: var(--padding-4);
 }
 .footer-links {
     font-size: 1.15rem;
