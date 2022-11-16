@@ -163,6 +163,9 @@ nav {
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
 }
+.a-h1 {
+  color: var(--theme-white);
+}
 .nav-btn {
   font-size: 1em;
   color: var(--theme-white);
@@ -260,6 +263,7 @@ nav {
   height: calc(95% - 23px);
   overflow-y: auto;
 }
+
 .sidebar-h2 {
   font-size: 1.25em;
 }
