@@ -24,6 +24,7 @@ body {
     --padding-2: 20px;
     --padding-3: 30px;
     --padding-4: 40px;
+    --padding-6: 60px;
     --padding-8: 80px;
 
     --border-radius: 4px;
@@ -155,6 +156,10 @@ body {
 .main-h2 {
     font-size: 1.85rem;
     color: var(--theme-sidebar);
+    margin-top: var(--padding-6);
+}
+.main-h2:first-child {
+    margin-top: 0;
 }
 .main-h3 {
     font-weight: 300;
@@ -165,15 +170,21 @@ body {
     margin: var(--padding-2) auto;
     padding-left: 0;
 }
+.main-ul-wide {
+    max-width: 66ch;
+}
 .main-ul li {
     margin-bottom: var(--padding-half);
 }
 .main-img{
-    width: 600px;
-    float: right;
-    margin: var(--padding-2) 0;
-    margin-right: 7.5%;
+    display: block;
+    width: 800px;
+    margin: var(--padding-2) auto;
     border-radius: var(--border-radius);
+}
+.main-hr {
+    max-width: 70ch;
+    margin: var(--padding-6) auto;
 }
 /* End Main Content */
 

@@ -150,20 +150,196 @@
                   DVRPC considered using projections based on planning horizon. However, there is a wide variation in the projections available, and there is no one "official" projection. In addition, these projections are generally at a much larger geography than the DVRPC region, Pennsylvania, or New Jersey. DVRPC consulted Pennsylvania and New Jersey officials working on EVs. Pennsylvania suggested that we use a 5 percent PEV penetration. New Jersey suggested that we use their 2025 goal of 330,000 PEVs. DVRPC chose to use 5 percent PEV penetration for the region, with no estimated date for when this will be reached.
                 </p>
 
-                <h2 id="pev" class="centered-header main-h2">PEV Distribution</h2>
-
-                <img src="./img/PEV.jpg" class="main-img" loading="lazy" alt="current and projected PEV distribution per census block in the DVRPC region" />
+                <h2 id="pev" class="centered-header main-h2">Plug-in Electric Vehicle (PEV) Distribution</h2>
 
                 <p>
                   <strong>PEV Distribution</strong>
-                  shows layers for current and projected numbers of PEVs at the census block group and municipal levels. The municipal PEV counts were aggregated from the census block group counts, assigning the counts from each block group to the municipality housing that block group’s centroid. The projected percentage of PEVs per municipality and block group are purely based on the penetration of PEVs and do not account for any increase in the total passenger vehicle fleet.
+                  shows layers for current and projected numbers of PEVs at the census block group and municipal levels. The municipal PEV counts were aggregated from the census block group counts, assigning the counts from each block group to the municipality housing that block group's centroid. The projected percentage of PEVs per municipality and block group are purely based on the penetration of PEVs and do not account for any increase in the total passenger vehicle fleet.
                 </p>
+
+                <img src="./img/PEV.jpg" class="main-img" loading="lazy" alt="map of current and projected PEV distribution per census block in the DVRPC region." />
 
                 <p>
                   Current and projected numbers of PEVs are of great value in planning for the increasing adoption of PEVs. Electric Distribution Companies (EDCs) can use this information to inform where infrastructure upgrades may need to be made. Municipalities and counties can use this information to inform decisions on permitting processes that may help future PEV owners more easily install charging infrastructure in their homes. They may also see certain block groups that could benefit from PEV parking allowances or other mechanisms to ensure parking infrastructure for EV owners, such as requiring multi-family residences to include a certain number of PEV parking spaces with charging.
                 </p>
 
                 <h2 id="charging" class="centered-header main-h2">Workplace Charging Demand</h2>
+
+                <p>
+                  <strong>Workplace Charging Demand</strong>
+                  shows layers depicting workplace charging demand in number of charging events and kWh of demand by census block group for the following two scenarios:
+                </p>
+
+                <ul class="main-ul">
+                  <li>
+                    workplace charging is free (free charging),
+                  </li>
+
+                  <li>
+                    workplace charging is twice the cost of home charging (expensive charging).
+                  </li>
+                </ul>
+
+                <img src="./img/WorkPlaceChargin.jpg" class="main-img" loading="lazy" alt="map of workplace charging demand in number of charging events and kWh of demand by census block group for paid charging." />
+
+                <p>
+                  These two scenarios allow users to see how pricing the cost of charging can influence demand at the workplace. In general, the lower the cost of charging, the more demand for charging there will be. A business may only have enough capital or space to install a certain number of chargers. Looking at the scenarios can help the business determine how aggressively to price charging for its employees based on the expected demand for each price point.
+                </p>
+
+                <img src="./img/Analysis.jpg" class="main-img" loading="lazy" alt="map of workplace charging demand in number of charging events and kWh of demand by census block group for free charging." />
+
+                <p>
+                  This analysis is useful for employers who may be looking to build a new parking facility or for new employers to an area. It can also inform employers on how best to charge for the electricity that will be used by the vehicles. If an employer has already established EV charging, this analysis could help to price it so that the infrastructure is not overburdened.
+                </p>
+
+                <p>
+                  Additionally, this could help inform municipalities on how much EV parking they may want to require for businesses in future zoning code updates or Electric Distribution Companies (EDCs) that are looking into infrastructure upgrades and need to know how much power will be drawn in an area.
+                </p>
+
+                <p>
+                  <em>
+                    If you have any questions regarding these maps or wish to access the GIS datasets used in the analysis, please contact:
+                  </em>
+                  
+                  <br>
+
+                  <strong>Sean Greene</strong>, Manager, Air Quality Programs | sgreene@dvrpc.org | (215) 238-2860
+                </p>
+
+                <p>
+                  To obtain your own copy of UC Davis's EV Planning Toolkit and supporting documentation, please contact:
+
+                  <br>
+
+                  <strong>Gil Tal</strong>, PhD | gtal@ucdavis.edu |  <a href="https://phev.ucdavis.edu/" rel="external" target="_blank">https://phev.ucdavis.edu/</a>
+                </p>
+
+                <h2 id="datasets" class="centered-header main-h2">Datasets Used in Analysis</h2>
+
+                <ul class="main-ul main-ul-wide">
+                  <li>
+                    2021 vehicle registration data provided by the Pennsylvania Department of Transportation
+                  </li>
+                  
+                  <li>
+                    2021 vehicle registration data from the New Jersey Motor Vehicle Commission provided by the New Jersey Department of Environmental Protection
+                  </li>
+                  
+                  <li>
+                    <a href="https://www.census.gov/programs-surveys/acs" rel="external" target="_blank">2015-2019 American Community Survey 5-year Estimates</a>
+                  </li>
+                  
+                  <li>
+                    <a href="https://lehd.ces.census.gov/data/" rel="external" target="_blank">LEHD Origin-Destination Employment Statistics (LODES), version 7</a>
+                  </li>
+                  
+                  <li>
+                    Block group-to-block group commuting distances from DVRPC's Travel Improvement Model 2.1, accessed December 2017.
+                  </li>
+                  
+                  <li>
+                    Block group-to-block group commuting distances calculated from Esri's ArcGIS Network Analyst, used in 2017.
+                  </li>
+                </ul>
+
+                <h2 id="glossary" class="centered-header main-h2">Glossary of Terms</h2>
+
+                <ul class="main-ul main-ul-wide">
+                  <li>
+                    <strong>ACS</strong>: American Community Survey. The ACS is an ongoing survey updated annually by the U.S. Census Bureau. It regularly gathers information previously contained only in the long form of the decennial census, such as ancestry, citizenship, educational attainment, income, language proficiency, migration, disability, employment, and housing characteristics.
+                  </li>
+                  
+                  <li>
+                    <strong>AEV</strong>: All-Electric Vehicle. An alternate term for BEV.
+                  </li>
+                  
+                  <li>
+                    <strong>Census Block</strong>: The smallest geographic area for which the Census Bureau collects and tabulates decennial census data. 
+                  </li>
+                  
+                  <li>
+                    <strong>Census Block Group</strong>: A combination of census blocks that is a subdivision of a census tract. The Block Group is the smallest geographic entity for which the decennial census tabulates and publishes the sample data (socioeconomic information). 
+                  </li>
+                  
+                  <li>
+                    <strong>Charging Event</strong>: The act of plugging-in a PEV to charge the battery.
+                  </li>
+                  
+                  <li>
+                    <strong>EDC</strong>: Electric Distribution Company. The public utility that provides facilities for the transmission and distribution of electricity to retail customers. Electric distribution companies are regulated by state utility commissions. Exceptions include building or facility owners or operators that manage their internal distribution system and supply electric power and electric services to occupants of the building or facility.
+                  </li>
+                  
+                  <li>
+                    <strong>EV</strong>: A generic term for a vehicle that gets some or all of its power from an electric motor. Sometimes used to mean PEV, BEV, or AEV (and occasionally HEV).
+                  </li>
+                  
+                  <li>
+                    <strong>GIS</strong>: Geographic Information System. A Geographic Information System is a system designed to capture, store, manipulate, analyze, manage, and present spatial or geographic data. GIS applications are tools that allow users to create interactive queries, analyze spatial information, edit data in maps, and present the results of all these operations. Esri's ArcGIS is a popular GIS software application.
+                  </li>
+                  
+                  <li>
+                    <strong>HEV</strong>: Hybrid Electric Vehicle. HEVs are vehicles that do not plug in, but have a large battery on board that is charged by the vehicle's braking. The energy stored by this battery assists the ICE in moving the car, significantly improving the gas mileage. Current examples include the Toyota Prius and Honda Accord Hybrid.
+                  </li>
+                  
+                  <li>
+                    <strong>ICE</strong>: Internal Combustion Engine. Gasoline and diesel cars and trucks use an internal combustion engine to convert fuel to the motion that moves the vehicle. Propane or compressed natural gas are used in some ICE vehicles as well.
+                  </li>
+                  
+                  <li>
+                    <strong>kWh</strong>: Kilowatt-hour. A measure of electrical energy equivalent to a power consumption of 1,000 watts (about what a hand-held hair dryer uses) for 1 hour. It is the standard unit of measurement to describe PEV battery capacities and the amount of electricity transferred to the battery during charging.
+                  </li>
+                  
+                  <li>
+                    <strong>LEHD</strong>: Longitudinal Employer-Household Dynamics.
+                  </li>
+                  
+                  <li>
+                    <strong>LODES</strong>: Longitudinal Employer-Household Dynamics (LEHD) Origin-Destination Employment Statistics. LODES Data provides detailed spatial distributions of workers' employment and residential locations and the relation between the two at the Census Block level. LODES also provides characteristic detail on age, earnings, industry distributions, and local workforce indicators.
+                  </li>
+                  
+                  <li>
+                    <strong>MPO</strong>: Metropolitan Planning Organization.
+                  </li>
+                  
+                  <li>
+                    <strong>Municipality</strong>: A city, township, or borough.
+                  </li>
+                  
+                  <li>
+                    <strong>PHEV</strong>: Plug-in Hybrid Electric Vehicle. PHEVs use both an ICE and an electric motor with a battery that recharges by plugging into an external source. Depending on its exact configuration, the PHEV's battery can either assist the ICE, or fully power the vehicle until the battery has been discharged, at which time the vehicle continues to operate as an HEV. A current example is the Toyota Prius Prime. 
+                  </li>
+                  
+                  <li>
+                    <strong>PEV</strong>: Plug-in Electric Vehicle. An EV that plugs into an external source to charge an on-board battery that provides the electricity for the electric motor. Some EVs, such as trollies, subways, trains, and trolley buses, are powered by external electricity, from overhead wires or a track. Others are powered by fuel cells (FCEVs). These are not covered in this document, which addresses only PEVs.
+                  </li>
+                </ul>
+
+                <hr class="main-hr"/>
+
+                <p>
+                  <em>
+                    The Delaware Valley Regional Planning Commission is the federally designated Metropolitan Planning Organization for a diverse nine-county region in two states: Bucks, Chester, Delaware, Montgomery, and Philadelphia in Pennsylvania; and Burlington, Camden, Gloucester, and Mercer in New Jersey.
+                  </em>
+                </p>
+
+                <p>
+                  <em>
+                    DVRPC's vision for the Greater Philadelphia Region is a prosperous, innovative, equitable, resilient, and sustainable region that increases mobility choices by investing in a safe and modern transportation system; that protects and preserves our natural resources while creating healthy communities; and that fosters greater opportunities for all.
+                  </em>
+                </p>
+
+                <p>
+                  <em>
+                    DVRPC's mission is to achieve this vision by convening the widest array of partners to inform and facilitate data-driven decision-making. We are engaged across the region, and strive to be leaders and innovators, exploring new ideas and creating best practices. 
+                  </em>
+                </p>
+
+                <p>
+                  <em>
+                    For more information, visit
+                    <a href="/Policies/">https://www.dvrpc.org/Policies/</a>
+                  </em>
+                </p>
             </div>
         </main>
     </div>
