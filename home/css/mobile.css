@@ -18,36 +18,36 @@ body {
     padding: var(--padding-2) var(--padding);
     line-height: 1.65;
 }
+.nav-h3 {
+    line-height: initial;
+}
 .nav-ul {
     width: unset;
 }
 .main {
-    width: 70%
+    width: 70%;
+    padding: 0 var(--padding-2);
+}
+.main-column p, .main-h2, .main-h2:first-child {
+    max-width: unset;
+}
+.main-ul, .main-ul-wide {
+    max-width: 90%;
 }
 .main-h2 {
-    max-width: 20ch;
     line-height: 1.5;
     font-size: 1.25rem;
 }
 .main-h2:first-child {
     font-size: 1.5rem;
-    max-width: 25ch;
 }
 .main-h3 {
     font-size: 1rem;
     line-height: 1.45;
 }
-.main-column p {
-    max-width: 30ch;
-}
 .main-img {
-    max-width: 100%;
-}
-.main-ul {
-    max-width: 25ch;
-}
-.main-ul-wide {
-    max-width: 27ch;
+    max-width: calc(100% + var(--padding-4));
+    margin-left: -20px;
 }
 .main-ul li {
     margin-bottom: var(--padding);
