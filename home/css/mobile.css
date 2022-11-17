@@ -78,5 +78,5 @@ footer {
     margin-bottom: var(--padding-2);
 }
 .footer-text {
-    margin-top: var(--padding-6);
+    margin: var(--padding-6) auto 0 auto
 }
