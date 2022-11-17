@@ -12,3 +12,31 @@ body {
 .main-img {
     width: 70ch;
 }
+footer {
+    padding: var(--padding-4);
+}
+.footer-container {
+    width: 100%;
+    flex-direction: column-reverse;
+}
+.footer-contact-container {
+    margin: 0 auto;
+}
+.footer-h3 {
+    font-size: 1.5rem;
+}
+.footer-contact, .footer-links {
+    font-size: 1rem;
+}
+.footer-links {
+    margin-bottom: var(--padding);
+}
+.footer-h3, .footer-logo {
+    padding-bottom: 0;
+}
+.contact-last {
+    margin-bottom: var(--padding-2);
+}
+.footer-text {
+    margin: var(--padding-6) auto 0 auto
+}
