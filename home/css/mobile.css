@@ -56,10 +56,13 @@ footer {
     padding: var(--padding-4);
 }
 .footer-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
+}
+.footer-contact-container {
+    margin: 0 auto;
 }
 .footer-h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 .footer-contact, .footer-links {
     font-size: 1rem;

@@ -206,7 +206,7 @@ footer a {
     color: var(--theme-white);
 }
 .footer-container {
-    width: 95%;
+    width: 70%;
     margin: 0 auto;
 }
 .footer-logo {
@@ -217,8 +217,10 @@ footer a {
 }
 .footer-h3 {
     font-size: 1.65rem;
+    padding-bottom: var(--padding);
+}
+.footer-contact-container {
     text-align: center;
-    padding-bottom: var(--padding-2);
 }
 .footer-contact {
     font-size: 1.15rem;
@@ -229,7 +231,7 @@ footer a {
 }
 .footer-links {
     font-size: 1.15rem;
-    margin-bottom: var(--padding-2);
+    margin-bottom: var(--padding);
 }
 .footer-links:last-of-type {
     margin: 0;
@@ -238,7 +240,7 @@ footer a {
     margin-bottom: var(--padding-4);
 }
 .footer-text {
-    max-width: 70ch;
+    max-width: 65ch;
 }
 .footer-text p {
     margin-bottom: var(--padding-2);
