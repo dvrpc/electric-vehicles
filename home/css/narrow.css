@@ -1,0 +1,14 @@
+body {
+    font-size: 14px;
+}
+.main-h2 {
+    max-width: 35ch;
+    margin: var(--padding-8) auto 0 auto;
+}
+.nav {
+    left: 3%;
+    padding: var(--padding-2) var(--padding-3);
+}
+.main-img {
+    width: 70ch;
+}
