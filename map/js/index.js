@@ -5,7 +5,7 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import {handleBlockGroups, handleMCD} from "./click.js";
-import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
+import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
 import { extents } from './map/mapUtils.js'
 
 const modal = document.getElementById('modal')
@@ -19,9 +19,6 @@ const mapStart = document.getElementById('mapStart')
 const mapDetails = document.getElementById('mapDetails')
 let extentBtn;
 
-$('.charge').hide()
-$('.workplace').hide()
-
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', '')
@@ -32,9 +29,11 @@ localStorage.setItem('clickedLayer', '')
 const map = makeMap()
 
 map.on('load', () => {    
+    // @todo move these outside
     togglerPEV();
     togglerWP();
-    filterCurrent();
+
+    // @todo update
     togglerPA(map)
     togglerNJ(map)
     togglerDVRPC(map)
