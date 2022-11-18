@@ -4,7 +4,7 @@ import layers from './map/mapLayers.js'
 import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
-import {handleBlockGroups, handleMCD} from "./click.js";
+import { handleBlockGroups } from "./click.js";
 import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
 import { extents } from './map/mapUtils.js'
 
@@ -25,10 +25,13 @@ const mapDetails = document.getElementById('mapDetails')
 const pevToggle = document.getElementById("PEV")
 const wpToggle = document.getElementById("WP")
 const njToggle = document.getElementById("NJ-toggle")
+const paToggle = document.getElementById("PA-toggle")
+const dvrpcToggle =document.getElementById("DVRPC-toggle")
 
-
+// variables
 let extentBtn;
 
+// default state
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', '')
@@ -36,15 +39,20 @@ localStorage.setItem('pa-hoveredStateId', '')
 localStorage.setItem('nj-hoveredStateId', '')
 localStorage.setItem('clickedLayer', '')
 
-// default settings
-pevToggle.onclick = () => togglerPEV()
-wpToggle.onclick = () => togglerWP()
+// default visibility
+$('.charge').hide()
+$('.workplace').hide()
+
+// event handlers
+pevToggle.onclick = () => togglerPEV(pevToggle, wpToggle)
+wpToggle.onclick = () => togglerWP(pevToggle, wpToggle)
+
 const map = makeMap()
 
-map.on('load', () => {    
-    togglerPA(map)
-    njToggle.onclick = () => togglerNJ(map)
-    togglerDVRPC(map)
+map.on('load', () => {   
+    njToggle.onclick = () => togglerNJ(map, njToggle, paToggle, dvrpcToggle)
+    paToggle.onclick = () => togglerPA(map, njToggle, paToggle, dvrpcToggle)
+    dvrpcToggle.onclick = () => togglerDVRPC(map, njToggle, paToggle, dvrpcToggle)
 
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
 
