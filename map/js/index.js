@@ -8,15 +8,25 @@ import {handleBlockGroups, handleMCD} from "./click.js";
 import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
 import { extents } from './map/mapUtils.js'
 
+// general elements
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
+
+// map elements
 const mainForm = document.getElementById('main-form')
 const overlayForm = document.getElementById('overlay-form')
 const overlayInputs = overlayForm.querySelectorAll('input')
 const mapStart = document.getElementById('mapStart')
 const mapDetails = document.getElementById('mapDetails')
+
+// toggles
+const pevToggle = document.getElementById("PEV")
+const wpToggle = document.getElementById("WP")
+const njToggle = document.getElementById("NJ-toggle")
+
+
 let extentBtn;
 
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
@@ -26,16 +36,14 @@ localStorage.setItem('pa-hoveredStateId', '')
 localStorage.setItem('nj-hoveredStateId', '')
 localStorage.setItem('clickedLayer', '')
 
+// default settings
+pevToggle.onclick = () => togglerPEV()
+wpToggle.onclick = () => togglerWP()
 const map = makeMap()
 
 map.on('load', () => {    
-    // @todo move these outside
-    togglerPEV();
-    togglerWP();
-
-    // @todo update
     togglerPA(map)
-    togglerNJ(map)
+    njToggle.onclick = () => togglerNJ(map)
     togglerDVRPC(map)
 
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
