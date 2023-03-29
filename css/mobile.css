@@ -11,10 +11,17 @@ body {
     display: block;
     margin: 0 auto;
 }
+.scroll-header-h2 {
+    font-size: 8px;
+    margin-left: 4px;
+}
 .nav {
     width: 25%;
-    top: 15%;
+    top: var(--padding-4);
+    margin-top: var(--padding-4);
     left: 0;
+    box-shadow: none;
+    border-radius: unset;
     padding: var(--padding-2) var(--padding);
     line-height: 1.65;
 }

@@ -9,6 +9,13 @@ body {
     left: 3%;
     padding: var(--padding-2) var(--padding-3);
 }
+.scroll-header-img {
+    display: none;
+}
+.scroll-header-h2 {
+    font-size: 12px;
+    margin-left: 10px;
+}
 .main-img {
     width: 70ch;
 }

@@ -62,6 +62,10 @@ body {
 .italic {
     font-style: italic;
 }
+.map-link {
+    font-weight: 700;
+}
+/* END General */
 
 
 
@@ -98,17 +102,42 @@ body {
 
 
 
+/* Scroll Nav */
+.scroll-header {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: var(--padding-half) 0;
+    color: var(--theme-black);
+    background-color: rgba(255,255,255,0.75);
+    box-shadow: var(--box-shadow);
+    z-index: 0;
+}
+.scroll-header-img {
+    filter: invert(80%);
+    padding: 0 var(--padding);
+    width: 50px;
+}
+.scroll-header-h2 {
+    font-size: 14px;
+    color: var(--theme-black);
+}
+/* END Scroll Nav */
+
+
+
 /* Side Nav */
 .nav {
     position: sticky;
     margin: var(--padding-3) 0;
-    top: var(--padding-8);
+    top: 100px;
     left: 7.5%;
     padding: var(--padding-3) var(--padding-4);
     box-shadow: var(--box-shadow);
     border-radius: var(--border-radius);
     background-color: var(--theme-white);
     border: 3px solid white;
+    z-index: 2;
 }
 .nav-ul {
     width: max-content;
@@ -125,6 +154,10 @@ body {
     display: inline-block;
     color: var(--theme-black);
     line-height: 1.5;
+    text-decoration: none;
+}
+.internal-link:hover {
+    color: var(--theme-dvrpc-accent);
 }
 .nav-h3 {
     color: var(--theme-black);
@@ -141,6 +174,7 @@ body {
 .main {
     width: 85%;
     background: var(--theme-white);
+    z-index: 1;
 }
 .centered-header {
     text-align: center;
