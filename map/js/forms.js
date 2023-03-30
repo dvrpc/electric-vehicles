@@ -73,9 +73,7 @@ const chargeType = (cost, showing) => {
 return `DVRPC-${cost}-${showing}`
 }
 
-const constructMainQuery = map => {
-  console.log('constructMainQuery invoked')
-  
+const constructMainQuery = map => {  
   // clear existing layer
   const activeMainLayer = localStorage.getItem('active-main-layer')
   map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
@@ -105,7 +103,7 @@ const constructMainQuery = map => {
   let genericID = newLayerId.split('-')
   let layerGeo = genericID.shift().toLowerCase()
   genericID = genericID.join('-')
-  
+
   return [genericID, layerGeo]
 }
 

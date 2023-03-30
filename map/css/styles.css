@@ -61,6 +61,7 @@ hr {
   --theme-offwhite2: #ebebf3;
   --theme-dark: #505a5e;
   --theme-dark2: #979797;
+  --theme-popup: #e6afff;
   --theme-sidebar: #254661;
 
   --padding-half: 5px;
@@ -503,15 +504,23 @@ input[class="lbox"]{
   width: 70%;
   height: 100%;
 }
+.mapboxgl-popup {
+  z-index: 4;
+}
 .mapboxgl-popup-content {
   padding: var(--padding-2) var(--padding);
+  border-top: 6px solid var(--theme-popup);
 }
 .popup-span {
   display: block;
-  z-index: 4;
 }
 .popup-span:not(:last-of-type) {
   border-bottom: 1px dotted var(--theme-black);
+}
+.popup-h3 {
+  display: inline;
+  margin: 0;
+  padding: 0;
 }
 .popup-hr {
   margin: 5px 0;
