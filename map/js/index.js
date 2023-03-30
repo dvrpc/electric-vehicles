@@ -4,24 +4,34 @@ import layers from './map/mapLayers.js'
 import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
-import {handleBlockGroups, handleMCD} from "./click.js";
-import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC, filterCurrent } from "./toggler.js";
+import { handleBlockGroups } from "./click.js";
+import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
 import { extents } from './map/mapUtils.js'
 
+// general elements
 const modal = document.getElementById('modal')
 const modalToggle = document.getElementById('modal-toggle')
 const closeModal = document.getElementById('close-modal')
 const legendContainer = document.getElementById('legend-container')
+
+// map elements
 const mainForm = document.getElementById('main-form')
 const overlayForm = document.getElementById('overlay-form')
 const overlayInputs = overlayForm.querySelectorAll('input')
 const mapStart = document.getElementById('mapStart')
 const mapDetails = document.getElementById('mapDetails')
+
+// toggles
+const pevToggle = document.getElementById("PEV")
+const wpToggle = document.getElementById("WP")
+const njToggle = document.getElementById("NJ-toggle")
+const paToggle = document.getElementById("PA-toggle")
+const dvrpcToggle =document.getElementById("DVRPC-toggle")
+
+// variables
 let extentBtn;
 
-$('.charge').hide()
-$('.workplace').hide()
-
+// default state
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', '')
@@ -29,15 +39,20 @@ localStorage.setItem('pa-hoveredStateId', '')
 localStorage.setItem('nj-hoveredStateId', '')
 localStorage.setItem('clickedLayer', '')
 
+// default visibility
+$('.charge').hide()
+$('.workplace').hide()
+
+// event handlers
+pevToggle.onclick = () => togglerPEV(pevToggle, wpToggle)
+wpToggle.onclick = () => togglerWP(pevToggle, wpToggle)
+
 const map = makeMap()
 
-map.on('load', () => {    
-    togglerPEV();
-    togglerWP();
-    filterCurrent();
-    togglerPA(map)
-    togglerNJ(map)
-    togglerDVRPC(map)
+map.on('load', () => {   
+    njToggle.onclick = () => togglerNJ(map, njToggle, paToggle, dvrpcToggle)
+    paToggle.onclick = () => togglerPA(map, njToggle, paToggle, dvrpcToggle)
+    dvrpcToggle.onclick = () => togglerDVRPC(map, njToggle, paToggle, dvrpcToggle)
 
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
 

@@ -88,7 +88,7 @@ const constructMainQuery = map => {
 
   if(theme == 'workplace') newLayerId = chargeType(geo, type, layer)
   else newLayerId = pevType(geo, type, layer)
-
+  
   // toggle visibility or add layer (first pass only)
   if (map.getLayer(newLayerId)) {
     map.setLayoutProperty(newLayerId, 'visibility', 'visible');

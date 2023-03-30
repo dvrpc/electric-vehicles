@@ -1,83 +1,61 @@
-/* General */
 body {
-    font-size: 12px;
+    line-height: 1.8;
 }
-/* END General */
-
-
-
-/* Modal */
-.modal-overflow {
-    padding: 0 var(--padding-2);
+.top-bar-tab {
+    background-color: rgba(255,255,255,0.85);
 }
-.modal-content {
-    width: 85%;
+.main-h1 {
+    font-size: 2.5rem;
 }
-.modal-section, .modal-hr {
+.top-bar-img {
+    display: block;
+    margin: 0 auto;
+}
+.scroll-header-h2 {
+    font-size: 8px;
+    margin-left: 4px;
+}
+.nav {
+    width: 25%;
+    top: var(--padding-4);
+    margin-top: var(--padding-4);
+    left: 0;
+    box-shadow: none;
+    border-radius: unset;
+    padding: var(--padding-2) var(--padding);
+    line-height: 1.65;
+}
+.nav-h3 {
+    line-height: initial;
+}
+.nav-ul {
     width: unset;
 }
-.close-modal {
-    font-size: 1.8rem;
+.main {
+    width: 70%;
+    padding: 0 var(--padding-2);
 }
-/* END Modal */
-
-
-
-/* Navbar */
-#dvrpc-logo {
-    width: 45px;
+.main-column p, .main-h2, .main-h2:first-child {
+    max-width: unset;
 }
-/* END Navbar */
-
-
-
-/* Main Webmap Area */
-.main-content-wrapper {
-    flex-direction: column-reverse;
+.main-ul, .main-ul-wide {
+    max-width: 90%;
 }
-/* END Main Webmap Area */
-
-
-
-/* Sidebar */
-.sidebar-container {
-    width: 100%;
-    height: 45%;
+.main-h2 {
+    line-height: 1.5;
+    font-size: 1.25rem;
 }
-.sidebar-content, footer {
-    height: unset;
+.main-h2:first-child {
+    font-size: 1.5rem;
 }
-footer {
-    padding: var(--padding-half) var(--padding);
+.main-h3 {
+    font-size: 1rem;
+    line-height: 1.45;
 }
-/* END Sidebar */
-
-
-
-/* Map */
-.map {
-    width: 100%;
+.main-img {
+    max-width: calc(100% + var(--padding-4));
+    margin-left: -20px;
 }
-.legend-container {
-    width: calc(100% - 30px);
-    top: unset;
-    bottom: 10px;
-    background-color: #fff;
-    padding: var(--padding-half);
+.main-ul li {
+    margin-bottom: var(--padding);
 }
-.mapboxgl-ctrl-geocoder {
-    font-size: 0.8rem;
-    min-width: unset;
-    width: 75%;
-}
-.mapboxgl-ctrl-geocoder--input {
-    height: 30px;
-    width: 35ch;
-    padding: 6px 35px;
-    padding-right: 0;
-}
-.mapboxgl-ctrl-geocoder--icon-search {
-    top: 3px;
-    left: 6px;
-}
-/* END Map */
