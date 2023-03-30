@@ -26,6 +26,8 @@ const togglerWP = (pevToggle, wpToggle) => {
 };
 
 // update state, mapZoom & muni/county boundaries on geobtns click
+
+// @UPDATE: remove
 const togglerNJ = (map, njToggle, paToggle, dvrpcToggle) => {
   map.flyTo({center: [-74.52, 40.24], speed: 0.7, zoom: 7})
 
@@ -35,6 +37,7 @@ const togglerNJ = (map, njToggle, paToggle, dvrpcToggle) => {
   njToggle.classList.add('toggle-btn-active')
 }
 
+// @UPDATE: remove
 const togglerPA = (map, njToggle, paToggle, dvrpcToggle) => {
   map.flyTo({center: [-77.76,40.92], speed: 0.7, zoom: 6.25})
 

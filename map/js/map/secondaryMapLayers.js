@@ -105,6 +105,7 @@ const layerSpecs = {
     fillColor: makeFillColor(stops.dvrpc.PC_CE_JB, 'PC_CE_JB', colors.wpJob)
   },
 
+  // @UPDATE: remove
   // Pennsylvannia 
   'PA-CurrentPEV-Pop': {
     sourceLayer: 'pa_pev_bg',
@@ -236,6 +237,7 @@ const layerSpecs = {
     sourceLayer: 'nj_pev_bg',
     fillColor: makeFillColor(stops.nj.PC_CE_JB, 'PC_CE_JB', colors.wpJob)
   }
+  // @UPDATE: end remove
 }
 
 // for this project, overlay layers are secondaryMapLayers

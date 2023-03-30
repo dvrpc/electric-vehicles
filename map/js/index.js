@@ -24,8 +24,12 @@ const mapDetails = document.getElementById('mapDetails')
 // toggles
 const pevToggle = document.getElementById("PEV")
 const wpToggle = document.getElementById("WP")
+
+// @UPDATE: remove
 const njToggle = document.getElementById("NJ-toggle")
 const paToggle = document.getElementById("PA-toggle")
+// @UPDATE: end remove
+
 const dvrpcToggle =document.getElementById("DVRPC-toggle")
 
 // variables
@@ -33,10 +37,17 @@ let extentBtn;
 
 // default state
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
+
+// @UPDATE: remove active-geo logic
 localStorage.setItem('active-geo', 'dvrpc')
+
 localStorage.setItem('hoveredStateId', '')
+
+// @UPDATE: remove
 localStorage.setItem('pa-hoveredStateId', '')
 localStorage.setItem('nj-hoveredStateId', '')
+// @UPDATE: end remove
+
 localStorage.setItem('clickedLayer', '')
 
 // default visibility
@@ -50,8 +61,11 @@ wpToggle.onclick = () => togglerWP(pevToggle, wpToggle)
 const map = makeMap()
 
 map.on('load', () => {   
+    // @UPDATE: remove
     njToggle.onclick = () => togglerNJ(map, njToggle, paToggle, dvrpcToggle)
     paToggle.onclick = () => togglerPA(map, njToggle, paToggle, dvrpcToggle)
+    // @UPDATE: end remove
+
     dvrpcToggle.onclick = () => togglerDVRPC(map, njToggle, paToggle, dvrpcToggle)
 
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
@@ -62,6 +76,8 @@ map.on('load', () => {
     mainForm.onchange = () => {
         // update map & return layer id + geo
         let [genericID, layerGeo] = handleForms('main', null, map)
+
+        // @UPDATE: remove active geo logic
         localStorage.setItem('active-geo', layerGeo)
 
         // clear any clicked queries if geo changes
@@ -69,6 +85,7 @@ map.on('load', () => {
         let part = activeClicked.split('-')[0]
         let activeGeo = part.substring(part.length - 5, 0)
         
+        // @UPDATE: remove geo logic
         if(activeGeo && layerGeo != activeGeo){
             mapDetails.style.display = 'none'
             map.setFilter(activeClicked, ['==', ['id'], ''])
@@ -77,6 +94,8 @@ map.on('load', () => {
 
         // filter muni and county bounds & adjust extent btn
         if(!extentBtn) extentBtn = document.getElementById('extent-btn')
+
+        // @UPDATE: remove layerGeo logic
         switch(layerGeo) {
             case 'pa':
                 map.setFilter('municipality-outline', ["==", "STATE", 'PA'])
@@ -187,16 +206,25 @@ map.on('load', () => {
 
     // establish mouse events
     map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg'))
+
+    // @UPDATE: remove
     map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg'))
     map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg'))
+    // @UPDATE: end rmove
         
     map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg'))
+
+    // @UPDATE: remove
     map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg'))
     map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg'))
+    // @UPDATE: end remove
 
     map.on('click','dvrpcPEVBG', (e) => clickFill(e, 'dvrpcPEVBG-click'));
+
+    // @UPDATE: remove
     map.on('click','paPEVBG', (e) => clickFill(e, 'paPEVBG-click'));
     map.on('click','njPEVBG', (e) => clickFill(e, 'njPEVBG-click'));
+    // @UPDATE: end remove
 })
 
 // loading spinner 

@@ -70,6 +70,7 @@ const layers = {
     },
     "filter": ["==", "geoid10", ''],
   },
+  // @UPDATE: remove
   PAPevFills: {
     'id': 'paPEVBG',
     'type': 'fill',
@@ -95,6 +96,7 @@ const layers = {
     },
     "filter": [">=", "POP", 0.1],
   },
+  // @UPDATE: remove
   PAPevClick: {
     'id': 'paPEVBG-click',
     'type': 'fill',
@@ -107,6 +109,7 @@ const layers = {
     },
     "filter": ["==", "geoid10", ''],
   },
+  // @UPDATE: remove
   NJPevFills: {
     'id': 'njPEVBG',
     'type': 'fill',
@@ -132,6 +135,7 @@ const layers = {
     },
     "filter": [">=", "POP", 0.1],
   },
+  // @UPDATE: remove
   NJPevClick: {
     'id': 'njPEVBG-click',
     'type': 'fill',

@@ -91,6 +91,8 @@ hr {
 }
 /* END General */
 
+
+
 /* Modal */
 .modal-toggle,
 .close-modal {
@@ -151,6 +153,8 @@ hr {
 }
 /* END Modal */
 
+
+
 /* Navbar */
 nav {
   height: 50px;
@@ -188,6 +192,8 @@ nav {
   margin-right: var(--padding-half);
 }
 /* END Navbar */
+
+
 
 /* Main Webmap Area */
 .main-content-wrapper {
@@ -242,6 +248,8 @@ nav {
 }
 /* END Main Webmap Area */
 
+
+
 /* Sidebar */
 .sidebar-container {
   width: 30%;
@@ -263,7 +271,6 @@ nav {
   height: calc(95% - 23px);
   overflow-y: auto;
 }
-
 .sidebar-h2 {
   font-size: 1.25em;
 }
@@ -345,6 +352,8 @@ input.radio:active {
 input[class="lbox"]{
   display: none;
 }
+
+/* @UPDATE: remove PA and NJ */
 #label-box-DVRPC,
 #label-box-PA,
 #label-box-NJ {
@@ -377,6 +386,8 @@ input[class="lbox"]{
   min-width: 85px;
   max-width: 140px;
 }
+
+/* @UPDATE: remove PA nd NJ */
 #label-box-DVRPC:hover,
 #label-box-PA:hover,
 #label-box-NJ:hover,
@@ -484,6 +495,8 @@ input[class="lbox"]{
 }
 /* END Sidebar */
 
+
+
 /* Map */
 .map {
   position: relative;
@@ -516,6 +529,8 @@ input[class="lbox"]{
   background-color: rgba(255, 255, 255, 0.925);
 }
 /* END Map */
+
+
 
 /* Legend Boxes */
 .legend-container {
@@ -683,6 +698,8 @@ input[class="lbox"]{
   background: #045a8d;
 }
 /* End Score Colors */
+
+
 
 /* Footer */
 footer {

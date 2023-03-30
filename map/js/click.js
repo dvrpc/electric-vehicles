@@ -126,12 +126,16 @@ const handleBlockGroups = function (props) {
 }
 
 const handleMCD = function (props,map) {
- 
+  
+  // @UPDATE: remove
   let lookupState = {
     '34': "New Jersey",
     '42': "Pennsylvania"
   };
+
+  // @UPDATE: remove
   let state = lookupState[props.FIRST_MC_1.slice(0,2)];
+
   let lookupCounty = {
     '42017': "Bucks",
     '42029':"Chester",
@@ -143,13 +147,17 @@ const handleMCD = function (props,map) {
     '34015': "Gloucester",
     '34021': "Mercer"
   };
+
   let county = lookupCounty[props.FIRST_MC_1.slice(0,5)];
+
   var mcdName = '<h3>'+ props.MUN_NAME +'<br><small><span> ' +
   county  +
   '</span><span></span> County, <span>' +
+  // @UPDATE: remove state
   state +
   "</span></small></h3>" 
   ;
+  
   document.getElementById("mcdName").innerHTML = mcdName;
 
   var mcdAGGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Municipal Demographic Summary</div><div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +

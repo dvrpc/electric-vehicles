@@ -79,6 +79,8 @@ const constructMainQuery = map => {
   map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
 
   // extract and build new query
+
+  // @UPDATE: refactor 'geo' logic in this function
   const geo = $('input[name=geo]:checked', '#main-form').val()
   const theme = $('input[name=theme]:checked', '#main-form').val()
   const type = $('#type_select option:selected').val()
