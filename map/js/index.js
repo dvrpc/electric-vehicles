@@ -5,7 +5,7 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import { handleBlockGroups } from "./click.js";
-import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
+import { togglerPEV, togglerWP } from "./toggler.js";
 import { extents } from './map/mapUtils.js'
 
 // general elements
@@ -24,13 +24,6 @@ const mapDetails = document.getElementById('mapDetails')
 // toggles
 const pevToggle = document.getElementById("PEV")
 const wpToggle = document.getElementById("WP")
-
-// @UPDATE: remove
-const njToggle = document.getElementById("NJ-toggle")
-const paToggle = document.getElementById("PA-toggle")
-// @UPDATE: end remove
-
-const dvrpcToggle =document.getElementById("DVRPC-toggle")
 
 // variables
 let extentBtn;
@@ -61,13 +54,6 @@ wpToggle.onclick = () => togglerWP(pevToggle, wpToggle)
 const map = makeMap()
 
 map.on('load', () => {   
-    // @UPDATE: remove
-    njToggle.onclick = () => togglerNJ(map, njToggle, paToggle, dvrpcToggle)
-    paToggle.onclick = () => togglerPA(map, njToggle, paToggle, dvrpcToggle)
-    // @UPDATE: end remove
-
-    dvrpcToggle.onclick = () => togglerDVRPC(map, njToggle, paToggle, dvrpcToggle)
-
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
 
     for(const source in sources) map.addSource(source, sources[source])
