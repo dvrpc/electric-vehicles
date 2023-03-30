@@ -32,11 +32,4 @@ const handleChargingPopup = (id, map, popup) => {
     })   
 }
 
-const extents = {
-    dvrpc: {
-        center: [-75.2273, 40.071],
-        zoom: window.innerWidth <= 420 ? 7.3 : 8.42
-    }
-}
-
-export { handleChargingPopup, extents }
+export { handleChargingPopup }

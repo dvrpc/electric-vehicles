@@ -127,13 +127,12 @@ const handleBlockGroups = function (props) {
 
 const handleMCD = function (props,map) {
   
-  // @UPDATE: remove
+  // @UPDATE: keep state for context
   let lookupState = {
     '34': "New Jersey",
     '42': "Pennsylvania"
   };
 
-  // @UPDATE: remove
   let state = lookupState[props.FIRST_MC_1.slice(0,2)];
 
   let lookupCounty = {
@@ -153,11 +152,10 @@ const handleMCD = function (props,map) {
   var mcdName = '<h3>'+ props.MUN_NAME +'<br><small><span> ' +
   county  +
   '</span><span></span> County, <span>' +
-  // @UPDATE: remove state
   state +
   "</span></small></h3>" 
   ;
-  
+
   document.getElementById("mcdName").innerHTML = mcdName;
 
   var mcdAGGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Municipal Demographic Summary</div><div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
