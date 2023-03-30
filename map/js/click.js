@@ -9,7 +9,7 @@ const handleBlockGroups = function (props) {
 
   document.getElementById("BGName").innerHTML = BGName;
 
-  var BGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i> Block Group Demographics Summary</div>"+
+  var BGInfo = "<div class='data-subtitle'><i class='fa fa-users' aria-hidden='true'></i>&nbsp Block Group Demographics Summary</div>"+
   "<div class='data-row'><span class='data-info'>Population</span><span class='data-value'> " +
   numeral(props.POP).format("(0,0)") +
   "</span></div>" +
@@ -23,7 +23,7 @@ const handleBlockGroups = function (props) {
   "<div class='data-row'><span class='data-info'>Passenger Vehicles</span><span class='data-value'> " +
   numeral(props.PASS_VEH).format("(0,0)")  +
   "</span></div>"+
-  "<div class='data-subtitle'>Plug-in Electric Vehicle Distribution</div>"+
+  "<div class='data-subtitle'><i class='fa-solid fa-car-battery'></i>&nbsp Plug-in Electric Vehicle Distribution</div>"+
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
@@ -76,7 +76,7 @@ const handleBlockGroups = function (props) {
     "</td>" +
     "</tr>" +
     "</table></div>"+
-    "<div class='data-subtitle'>Workplace Charging Demand</div>"+
+    "<div class='data-subtitle'><i class='fa-solid fa-charging-station'></i>&nbsp Workplace Charging Demand</div>"+
     "<div><table class='dataTable'>" +
       "<tr>" +
       "<th scope='col'></th>" +

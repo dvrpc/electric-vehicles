@@ -25,7 +25,7 @@ const makePopupHTML = props => {
     
     return `
         <span class="popup-span">
-            <h3 class="popup-h3"><strong>${props.station_name}</strong></h3><br />
+            <h3 class="popup-h3">${props.station_name}</h3><br />
             ${props.street_address}<br />
             ${props.city}, ${props.state}, ${props.zip}
             <hr class="popup-hr"/>
