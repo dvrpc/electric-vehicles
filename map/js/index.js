@@ -5,8 +5,7 @@ import handleModal from './modal.js'
 import handleForms from './forms.js'
 import handleLegend from './legend.js'
 import { handleBlockGroups } from "./click.js";
-import { togglerPEV, togglerWP, togglerPA, togglerNJ, togglerDVRPC } from "./toggler.js";
-import { extents } from './map/mapUtils.js'
+import { togglerPEV, togglerWP } from "./toggler.js";
 
 // general elements
 const modal = document.getElementById('modal')
@@ -24,19 +23,12 @@ const mapDetails = document.getElementById('mapDetails')
 // toggles
 const pevToggle = document.getElementById("PEV")
 const wpToggle = document.getElementById("WP")
-const njToggle = document.getElementById("NJ-toggle")
-const paToggle = document.getElementById("PA-toggle")
-const dvrpcToggle =document.getElementById("DVRPC-toggle")
-
-// variables
-let extentBtn;
 
 // default state
 localStorage.setItem('active-main-layer', 'DVRPC-CurrentPEV-Pop')
+
 localStorage.setItem('active-geo', 'dvrpc')
 localStorage.setItem('hoveredStateId', '')
-localStorage.setItem('pa-hoveredStateId', '')
-localStorage.setItem('nj-hoveredStateId', '')
 localStorage.setItem('clickedLayer', '')
 
 // default visibility
@@ -50,10 +42,6 @@ wpToggle.onclick = () => togglerWP(pevToggle, wpToggle)
 const map = makeMap()
 
 map.on('load', () => {   
-    njToggle.onclick = () => togglerNJ(map, njToggle, paToggle, dvrpcToggle)
-    paToggle.onclick = () => togglerPA(map, njToggle, paToggle, dvrpcToggle)
-    dvrpcToggle.onclick = () => togglerDVRPC(map, njToggle, paToggle, dvrpcToggle)
-
     handleLegend(['CurrentPEV-Pop'], legendContainer, 'dvrpc')
 
     for(const source in sources) map.addSource(source, sources[source])
@@ -62,40 +50,10 @@ map.on('load', () => {
     mainForm.onchange = () => {
         // update map & return layer id + geo
         let [genericID, layerGeo] = handleForms('main', null, map)
-        localStorage.setItem('active-geo', layerGeo)
-
-        // clear any clicked queries if geo changes
-        const activeClicked = localStorage.getItem('clickedLayer')
-        let part = activeClicked.split('-')[0]
-        let activeGeo = part.substring(part.length - 5, 0)
-        
-        if(activeGeo && layerGeo != activeGeo){
-            mapDetails.style.display = 'none'
-            map.setFilter(activeClicked, ['==', ['id'], ''])
-            mapStart.setAttribute('open', '')
-        }
-
-        // filter muni and county bounds & adjust extent btn
-        if(!extentBtn) extentBtn = document.getElementById('extent-btn')
-        switch(layerGeo) {
-            case 'pa':
-                map.setFilter('municipality-outline', ["==", "STATE", 'PA'])
-                map.setFilter('county-outline', ["==", "STATE", 'PA'])
-                extentBtn.onclick = () => map.flyTo({ center: extents.pa.center, zoom: extents.pa.zoom });
-                break
-            case 'nj':
-                map.setFilter('municipality-outline', ["==", "STATE", 'NJ'])
-                map.setFilter('county-outline', ["==", "STATE", 'NJ'])
-                extentBtn.onclick = () => map.flyTo({ center: extents.nj.center, zoom: extents.nj.zoom });
-                break
-            default:
-                map.setFilter('municipality-outline', ["==", "DVRPC", 'Yes'])
-                map.setFilter('county-outline', ["==", "DVRPC", 'Yes'])
-                extentBtn.onclick = () => map.flyTo({ center: extents.dvrpc.center, zoom: extents.dvrpc.zoom });
-        }
 
         // handle possibility of active overlays when toggling main layers
         const activeLayers = handleForms('input', overlayInputs, map)
+
         activeLayers.push(genericID)
         handleLegend(activeLayers, legendContainer, layerGeo)
     }
@@ -186,17 +144,9 @@ map.on('load', () => {
     }
 
     // establish mouse events
-    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg'))
-    map.on('mousemove', 'paPEVBG', e => hoverGeoFill(e, 'pa-hoveredStateId', 'pa_pev_bg'))
-    map.on('mousemove', 'njPEVBG', e => hoverGeoFill(e, 'nj-hoveredStateId', 'nj_pev_bg'))
-        
+    map.on('mousemove', 'dvrpcPEVBG', e => hoverGeoFill(e, 'hoveredStateId', 'dvrpc_pev_bg'))        
     map.on('mouseleave', 'dvrpcPEVBG', () => leaveGeoFill('hoveredStateId', 'dvrpc_pev_bg'))
-    map.on('mouseleave', 'paPEVBG', () => leaveGeoFill('pa-hoveredStateId', 'pa_pev_bg'))
-    map.on('mouseleave', 'njPEVBG', () => leaveGeoFill('nj-hoveredStateId', 'nj_pev_bg'))
-
     map.on('click','dvrpcPEVBG', (e) => clickFill(e, 'dvrpcPEVBG-click'));
-    map.on('click','paPEVBG', (e) => clickFill(e, 'paPEVBG-click'));
-    map.on('click','njPEVBG', (e) => clickFill(e, 'njPEVBG-click'));
 })
 
 // loading spinner 

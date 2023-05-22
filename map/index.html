@@ -161,40 +161,6 @@
                 </label>
               </div>
   
-              <h3 class="sidebar-h3">select a geography</h3>
-              <div class="scoreTogglers">
-                <label id="DVRPC-toggle" class="toggle-btn toggle-btn-active">
-                  <input
-                    type="radio"
-                    class="lbox"
-                    name="geo"
-                    value="DVRPC"
-                    checked
-                  />
-                  DVRPC Region
-                </label>
-  
-                <label id="PA-toggle" class="toggle-btn">
-                  <input
-                    type="radio"
-                    class="lbox"
-                    name="geo"
-                    value="PA"
-                  />
-                  PA
-                </label>
-  
-                <label id="NJ-toggle" class="toggle-btn">
-                  <input
-                    type="radio"
-                    class="lbox"
-                    name="geo"
-                    value="NJ"
-                  />
-                  NJ
-                </label>
-              </div>
-  
               <!-- scenario toggles -->
               <h3 class="sidebar-h3">select data</h3>
               <label class="flex-align-center flex-between label-select">
@@ -210,7 +176,6 @@
               <!-- value here is extracted for the query builder -->
               <label class="flex-align-center flex-between label-select">
                 <select name="layout_select" id="layout_select">
-                  <!-- <option value="BG" id="pevTop" class="dvrpc pev">PEVs</option> -->
                   <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
                   <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
                   <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
@@ -260,8 +225,6 @@
             <br>
             <ul>
               <li><em>DVRPC Region</em> : 5 percent of passenger vehicles (or about 200,000 vehicles) are PEVs;</li>
-              <li><em>Pennsylvania</em> : 5 percent of passenger vehicles (or about 400,000 vehicles) are PEV;</li>
-              <li><em>New Jersey</em> : 10 percent of passenger vehicles (or about 330,000 vehicles) are PEV.<a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null"><strong> </strong></a><a href="https://www.nj.gov/governor/news/news/562019/approved/20190603b.shtml" target="_self" data-uniqueid="" data-dsid="" data-link="null" ><br>This is in line with the New Jersey, state-wide, zero-emission vehicle adoption goal for 2025. </a><br>However, this tool does not predict the total number of passenger vehicles&nbsp; in 2025.</li>
             </ul>
             <br>
             View DVRPC's <a href="/webmaps/PEV/">Planning for Electric Vehicles page</a> to find out more.

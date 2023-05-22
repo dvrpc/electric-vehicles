@@ -12,18 +12,20 @@ const makePopupContent = (map, e, popup) => {
 // only one hover popup for this project so keep it simple for now
 const makePopupHTML = props => {
     let chargeType;
+
     if(props.ev_dc_fast_num) chargeType = 'Fast Charging'
     else if(props.ev_level1_evse_num) chargeType = 'Level 1'
     else if(props.ev_level2_evse_num) chargeType = 'Level 2'
     else chargeType = 'no info available'
 
     let connector;
+    
     if(props.ev_connector_types) connector = props.ev_connector_types.slice(1, -1)
     else connector = 'no info available'
     
     return `
         <span class="popup-span">
-            <strong>${props.station_name}</strong><br />
+            <h3 class="popup-h3">${props.station_name}</h3><br />
             ${props.street_address}<br />
             ${props.city}, ${props.state}, ${props.zip}
             <hr class="popup-hr"/>

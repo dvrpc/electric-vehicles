@@ -66,57 +66,34 @@ const handleFormSelect = (selects, map) => {
 };
 
 // helpers to build layer id query
-const pevType = (geo, time, showing) => {
-  return `${geo}-${time}PEV-${showing}`
+const pevType = (time, showing) => {
+  return `DVRPC-${time}PEV-${showing}`
 }
-const chargeType = (geo, cost, showing) => {
-return `${geo}-${cost}-${showing}`
+const chargeType = (cost, showing) => {
+return `DVRPC-${cost}-${showing}`
 }
 
-const constructMainQuery = map => {
+const constructMainQuery = map => {  
   // clear existing layer
   const activeMainLayer = localStorage.getItem('active-main-layer')
   map.setLayoutProperty(activeMainLayer, 'visibility', 'none')
 
   // extract and build new query
-  const geo = $('input[name=geo]:checked', '#main-form').val()
   const theme = $('input[name=theme]:checked', '#main-form').val()
   const type = $('#type_select option:selected').val()
   const layer = $('#layout_select option:selected').val()
 
   let newLayerId;
 
-  if(theme == 'workplace') newLayerId = chargeType(geo, type, layer)
-  else newLayerId = pevType(geo, type, layer)
+  if(theme == 'workplace') newLayerId = chargeType(type, layer)
+  else newLayerId = pevType(type, layer)
   
   // toggle visibility or add layer (first pass only)
   if (map.getLayer(newLayerId)) {
     map.setLayoutProperty(newLayerId, 'visibility', 'visible');
   } else {
-    // create & add layer
     const newLayer = makeSecondaryMapLayer(newLayerId)
     map.addLayer(newLayer, 'dvrpcPEVBG');
-  }
-
-  // toggle hover layers visibility
-  switch(geo) {
-    case 'PA':
-      map.setLayoutProperty('paPEVBG', 'visibility', 'visible')
-
-      map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('njPEVBG', 'visibility', 'none')
-      break
-    case 'NJ':
-      map.setLayoutProperty('njPEVBG', 'visibility', 'visible')
-
-      map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('paPEVBG', 'visibility', 'none')
-      break
-    default:
-      map.setLayoutProperty('dvrpcPEVBG', 'visibility', 'visible')
-
-      map.setLayoutProperty('paPEVBG', 'visibility', 'none')
-      map.setLayoutProperty('njPEVBG', 'visibility', 'none')
   }
 
   // update localStorage
@@ -126,6 +103,7 @@ const constructMainQuery = map => {
   let genericID = newLayerId.split('-')
   let layerGeo = genericID.shift().toLowerCase()
   genericID = genericID.join('-')
+
   return [genericID, layerGeo]
 }
 
