@@ -31,10 +31,11 @@ localStorage.setItem("active-geo", "dvrpc");
 localStorage.setItem("hoveredStateId", "");
 localStorage.setItem("clickedLayer", "");
 
+
 // default visibility
 $(".charge").hide();
 $(".workplace").hide();
-$("#type_select").show();
+$("#type_select").hide();
 
 // event handlers
 pevToggle.onclick = () => togglerPEV(pevToggle, wpToggle);
