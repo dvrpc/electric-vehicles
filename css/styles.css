@@ -187,6 +187,11 @@ body {
     max-width: 70ch;
     margin: var(--padding-2) auto;
 }
+
+.main-column ul {
+    max-width: 70ch;
+    margin: var(--padding-2) auto;
+}
 .main-header {
     margin-bottom: var(--padding-2);
 }
