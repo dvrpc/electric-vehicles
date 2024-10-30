@@ -27,16 +27,11 @@ const handleBlockGroups = function (props) {
   "<div><table class='dataTable'>" +
     "<tr>" +
     "<th scope='col'></th>" +
-    "<th scope='col'>Current</th>" +
-    "<th scope='col'>Projected</th>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Number of Plug-In Electric Vehicles (PEVs)</td>" +
     "<td class='data-value-left'>" +
     numeral(props.CurPEV).format("(0,0)") +
-    "</td>" +
-    "<td class='data-value-right'>" +
-    numeral(props.FutPEV).format("(0,0)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
@@ -44,17 +39,11 @@ const handleBlockGroups = function (props) {
     "<td class='data-value-left'>" +
     numeral(props.PerCuPEV).format("(0.00%)") +
     "</td>" +
-    "<td class='data-value-right'>" +
-    numeral(props.PerFuPEV).format("(0.00%)") +
-    "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info'>Number of PEVs per 100 People</td>" +
     "<td class='data-value-left'>" +
     numeral(props.CuPEVPop).format("(0,0.0)") +
-    "</td>" +
-    "<td class='data-value-right'>" +
-    numeral(props.FuPEVPop).format("(0,0.0)") +
     "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
@@ -62,17 +51,11 @@ const handleBlockGroups = function (props) {
     "<td class='data-value-left'>" +
     numeral(props.CuPEV_HU).format("(0,0.0)") +
     "</td>" +
-    "<td class='data-value-right'>" +
-    numeral(props.FuPEV_HU).format("(0,0.0)") +
-    "</td>" +
     "</tr>" +
     "<tr class='dataTable-row'>" +
     "<td class='data-info2'>Number of PEVs per Sq. Mi.</td>" +
     "<td class='data-value2-left'>" +
      numeral(props.CuPEV_SM).format("(0,0.0)") +
-    "</td>" +
-    "<td class='data-value2-right'>" +
-     numeral(props.FUPEV_SM ).format("(0,0.0)")+
     "</td>" +
     "</tr>" +
     "</table></div>"+
