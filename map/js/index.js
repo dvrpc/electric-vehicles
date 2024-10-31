@@ -5,7 +5,6 @@ import handleModal from "./modal.js";
 import handleForms from "./forms.js";
 import handleLegend from "./legend.js";
 import { handleBlockGroups } from "./click.js";
-import { togglerPEV, togglerWP } from "./toggler.js";
 
 // general elements
 const modal = document.getElementById("modal");
@@ -20,9 +19,7 @@ const overlayInputs = overlayForm.querySelectorAll("input");
 const mapStart = document.getElementById("mapStart");
 const mapDetails = document.getElementById("mapDetails");
 
-// toggles
-const pevToggle = document.getElementById("PEV");
-const wpToggle = document.getElementById("WP");
+
 
 // default state
 localStorage.setItem("active-main-layer", "DVRPC-CurrentPEV-Pop");
@@ -37,9 +34,7 @@ $(".charge").hide();
 $(".workplace").hide();
 $("#type_select").hide();
 
-// event handlers
-pevToggle.onclick = () => togglerPEV(pevToggle, wpToggle);
-wpToggle.onclick = () => togglerWP(pevToggle, wpToggle);
+
 
 const map = makeMap();
 
