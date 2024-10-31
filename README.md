@@ -1,6 +1,6 @@
 # Planning for Electric Vehicles
 
-Informational homepage for the DVRPC/UC Davis EV Planning Toolkit for ArcGIS.
+Informational homepage for the DVRPC EV Planning Toolkit for ArcGIS.
 
 ## Interactive Map
 
