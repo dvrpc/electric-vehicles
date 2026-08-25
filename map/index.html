@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
@@ -8,8 +8,14 @@
       content="width=device-width,initial-scale=1,shrink-to-fit=no"
     />
     <meta name="created" content="9/21/2022" />
-    <meta name="description" content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC EV Planning Toolkit for ArcGIS (the Toolkit)." />
-    <meta name="keywords" content="Electric Vehicles, PEV, Charging, Planning for Electric Vehicles, EV, EVs, PEV Planning, Green Infrastructure, DVRPC EV Planning Toolkit, DVRPC PEV" />
+    <meta
+      name="description"
+      content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC EV Planning Toolkit for ArcGIS (the Toolkit)."
+    />
+    <meta
+      name="keywords"
+      content="Electric Vehicles, PEV, Charging, Planning for Electric Vehicles, EV, EVs, PEV Planning, Green Infrastructure, DVRPC EV Planning Toolkit, DVRPC PEV"
+    />
     <meta
       name="author"
       content="Delaware Valley Regional Planning Commission (DVRPC)"
@@ -23,36 +29,61 @@
     <!-- social media -->
     <meta property="og:title" content="Planning for Electric Vehicles Webmap" />
     <meta propery="og:type" content="website" />
-    <meta property="og:url" content="https://www.dvrpc.org/webmaps/electric-vehicles/" />
-    <meta property="og:description" content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC EV Planning Toolkit for ArcGIS (the Toolkit)." />
-    <meta property="og:image" content="https://www.dvrpc.org/webmaps/PEV/map/og-img.png" />
+    <meta
+      property="og:url"
+      content="https://www.dvrpc.org/webmaps/electric-vehicles/"
+    />
+    <meta
+      property="og:description"
+      content="The following series of maps show interactive results of the geographic distribution of PEVs and the associated demand for workplace charging calculated by the calibrated DVRPC EV Planning Toolkit for ArcGIS (the Toolkit)."
+    />
+    <meta
+      property="og:image"
+      content="https://www.dvrpc.org/webmaps/PEV/map/og-img.png"
+    />
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:200,300,400,500,700&amp;display=swap"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link
       rel="stylesheet"
       href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.css"
       type="text/css"
     />
-    <link href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css" rel="stylesheet">
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
 
     <link rel="stylesheet" href="./css/styles.css" />
-    <link rel="stylesheet" href="./css/mobile.css" media="(max-width: 1050px)" />
+    <link
+      rel="stylesheet"
+      href="./css/mobile.css"
+      media="(max-width: 1050px)"
+    />
 
     <script defer type="module" src="./js/index.js"></script>
+    <script src="config.js"></script>
 
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JBJS8YDBDQ"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-JBJS8YDBDQ"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-JBJS8YDBDQ');
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-JBJS8YDBDQ");
     </script>
   </head>
 
@@ -67,15 +98,15 @@
               id="dvrpc-logo"
               class="nav-logos"
           /></a>
-    
+
           <span class="nav-vr">|</span>
-    
+
           <h1>
             <a href="../" class="a-h1">Planning for Electric Vehicles</a>
           </h1>
-    
+
           <span class="nav-vr">|</span>
-    
+
           <button id="modal-toggle" class="nav-btn">about</button>
         </nav>
 
@@ -83,35 +114,39 @@
           <div class="sidebar-content">
             <details id="mapStart" class="infoLeft" open>
               <summary class="sidebar-summmary">How To</summary>
-  
+
               <div id="startContent" class="startContent">
                 <h2 class="sidebar-h2">View the Data...</h2>
-                
+
                 <ul class="startContent-ul">
                   <li>
-                    Hover over the painted map areas to highlight Census Block Groups.
+                    Hover over the painted map areas to highlight Census Block
+                    Groups.
                   </li>
-  
+
                   <li>
-                    Click the highlighted Census Block Groups to view data on electric vehicles.
+                    Click the highlighted Census Block Groups to view data on
+                    electric vehicles.
                   </li>
                 </ul>
-  
+
                 <h2 class="sidebar-h2">Update the Map...</h2>
-  
+
                 <ul class="startContent-ul">
                   <li>
-                    Click the "show/hide map toggles" map overlay and interact with the buttons and dropdowns
-                    to update the data on the map.
+                    Click the "show/hide map toggles" map overlay and interact
+                    with the buttons and dropdowns to update the data on the
+                    map.
                   </li>
-                  
+
                   <li>
-                    The default map view shows current PEV distribution per 100 people for the DVRPC region.
+                    The default map view shows current PEV distribution per 100
+                    people for the DVRPC region.
                   </li>
                 </ul>
               </div>
             </details>
-  
+
             <div id="mapDetails" class="infoLeft">
               <div id="data-wrapper">
                 <div class="data-wrapper">
@@ -121,8 +156,10 @@
               </div>
             </div>
           </div>
-  
-          <footer>contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a></footer>
+
+          <footer>
+            contact: <a href="mailto:sgreene@dvrpc.org">Sean Greene</a>
+          </footer>
         </section>
       </div>
 
@@ -134,43 +171,66 @@
 
           <details class="form-wrapper">
             <summary>show/hide map toggles</summary>
-  
-            <form id="main-form" class="sidebar-form">
 
-  
+            <form id="main-form" class="sidebar-form">
               <!-- scenario toggles -->
               <h3 class="sidebar-h3">select data</h3>
               <label class="flex-align-center flex-between label-select">
                 view
-                <select name="type_select" id="type_select" >
-                  <option value="Current" data-type="time" class="distribution">Current</option>
-                  <option value="FC" data-type="charge" class="workplace" >Free Charging</option>
-                  <option value="PC" data-type="charge" class="workplace" >Paid Charging</option>
+                <select name="type_select" id="type_select">
+                  <option value="Current" data-type="time" class="distribution">
+                    Current
+                  </option>
+                  <option value="FC" data-type="charge" class="workplace">
+                    Free Charging
+                  </option>
+                  <option value="PC" data-type="charge" class="workplace">
+                    Paid Charging
+                  </option>
                 </select>
               </label>
-  
+
               <!-- value here is extracted for the query builder -->
               <label class="flex-align-center flex-between label-select">
                 <select name="layout_select" id="layout_select">
-                  <option value="Pop" id="pevTop" data-type="pev100" class="dvrpc pev">PEVs per 100 People</option>
-                  <option value="HH" data-type="pevHouse" class="dvrpc pev">PEVs per Household</option>
+                  <option
+                    value="Pop"
+                    id="pevTop"
+                    data-type="pev100"
+                    class="dvrpc pev"
+                  >
+                    PEVs per 100 People
+                  </option>
+                  <option value="HH" data-type="pevHouse" class="dvrpc pev">
+                    PEVs per Household
+                  </option>
                   <option value="SM" class="dvrpc pev">PEVs per Sq. Mi.</option>
-                  <option value="Veh" class="dvrpc pev">PEV Market Share (%)</option>
-                  <option value="KD-SM" id="chargeTop" class="dvrpc charge">kWh of Demand per Sq. Mi.</option>
-                  <option value="KD-JB" class="dvrpc charge">kWh of Demand per Job</option>
-                  <option value="CE-SM" class="dvrpc charge">Charging Event per Sq. Mi.</option>
-                  <option value="CE-JB" class="dvrpc charge">Charging Event per Job</option>
+                  <option value="Veh" class="dvrpc pev">
+                    PEV Market Share (%)
+                  </option>
+                  <option value="KD-SM" id="chargeTop" class="dvrpc charge">
+                    kWh of Demand per Sq. Mi.
+                  </option>
+                  <option value="KD-JB" class="dvrpc charge">
+                    kWh of Demand per Job
+                  </option>
+                  <option value="CE-SM" class="dvrpc charge">
+                    Charging Event per Sq. Mi.
+                  </option>
+                  <option value="CE-JB" class="dvrpc charge">
+                    Charging Event per Job
+                  </option>
                 </select>
               </label>
-  
+
               <br />by Census Block Group
             </form>
-            
+
             <form id="overlay-form" class="sidebar-form">
               <h3 class="sidebar-h3 overlay-h3">add context</h3>
-  
+
               <label class="label-input overlay-input">
-                <input type="checkbox" value="charging"/>
+                <input type="checkbox" value="charging" />
                 Charging Locations
               </label>
             </form>
@@ -190,46 +250,53 @@
       <div class="modal-content">
         <div class="modal-overflow">
           <span id="close-modal" class="close-modal">&times;</span>
-  
-          <h2 class="modal-content-subheader">Planning for Electric Vehicles</h2>
-  
+
+          <h2 class="modal-content-subheader">
+            Planning for Electric Vehicles
+          </h2>
+
           <section class="modal-section">
             <h3>About</h3>
             <p>
-              The following series of maps show interactive results of the geographic distribution of PEVs in the Greater Philadelphia region. Vehicle registration data is provided by PennDOT and NJ DEP and is updated regularly.
+              The following series of maps show interactive results of the
+              geographic distribution of PEVs in the Greater Philadelphia
+              region. Vehicle registration data is provided by PennDOT and NJ
+              DEP and is updated regularly.
             </p>
-            <br>
+            <br />
 
-            View DVRPC's <a href="/webmaps/PEV/">Planning for Electric Vehicles page</a> to find out more.
+            View DVRPC's
+            <a href="/webmaps/PEV/">Planning for Electric Vehicles page</a> to
+            find out more.
           </section>
-  
+
           <hr class="modal-hr" />
-  
+
           <section class="modal-section">
             <h3>Contact</h3>
             <p>
-              If you have any questions regarding these maps or wish to access the GIS datasets used in the analysis, please contact: 
-              <br>
-              <strong>Sean Greene</strong>, Manager, Office of Freight and Clean Transportation | sgreene@dvrpc.org | (215) 238-2860
+              If you have any questions regarding these maps or wish to access
+              the GIS datasets used in the analysis, please contact:
+              <br />
+              <strong>Sean Greene</strong>, Manager, Office of Freight and Clean
+              Transportation | sgreene@dvrpc.org | (215) 238-2860
             </p>
-  
-
           </section>
         </div>
       </div>
     </div>
 
     <script
-    type="text/javascript"
-    src="https://code.jquery.com/jquery-3.6.0.min.js"
-    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-    crossorigin="anonymous"
-     ></script>
-     <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.7.0/mapbox-gl-geocoder.min.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js"></script>
-  
-  <script>
+
+    <script>
       var _gaq = [["_setAccount", "UA-9825778-1"], ["_trackPageview"]];
       (function (d) {
         var g = d.createElement("script"),
@@ -238,6 +305,5 @@
         s.parentNode.insertBefore(g, s);
       })(document);
     </script>
-
   </body>
 </html>
